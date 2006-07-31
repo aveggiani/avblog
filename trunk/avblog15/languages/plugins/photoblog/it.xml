@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="it">
+	<uploaderror>Errore in uplad!</uploaderror>
+	<add>aggiungi</add>
+	<modify>modifica</modify>
+	<name>Photoblog</name>
+	<photoblogmanager>Photoblog Manager</photoblogmanager>
+	<watermark>watermark</watermark>
+	<watermarktext>watermark text</watermarktext>
+	<thumbwidth>larghezza miniatura</thumbwidth>
+	<bigwidth>larghezza immagine grande</bigwidth>
+	<layouttype>tipo layout</layouttype>
+	<layoutorientation>orientamento</layoutorientation>
+	<zipfile>file zip</zipfile>
+	<galleryname>nome gallery</galleryname>
+	<gallerycategory>categoria</gallerycategory>
+	<nofiles>Non ci sono photoblog al momento!</nofiles>
+	<addgallery>Aggiungi una galleria</addgallery>
+	<editgallery>Modifica una galleria</editgallery>
+	<emptyarchive>non ci sono photoblog al momento</emptyarchive>
+	<gallerydate>data</gallerydate>
+	<gallerydescription>descrizione</gallerydescription>
+	<photoname>nome foto</photoname>
+	<discardchanges>annulla cambimenti</discardchanges>
+	<originalExifData>Dati Exif immagine originale</originalExifData>
+</language>
+	

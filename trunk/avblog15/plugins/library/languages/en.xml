@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<language id="eng">
+	<nofiles>No files in library at the moment!</nofiles>
+	<uploaderror>Upload error!</uploaderror>
+	<add>add</add>
+	<modify>modify</modify>
+	<fieldfile>file</fieldfile>
+	<namefile>name</namefile>
+	<categoryfile>category</categoryfile>
+	<name>Library</name>
+	<librarymanager>Library Manager</librarymanager>
+	<emptyarchive>file archive is empty</emptyarchive>
+	<addlibrary>add a file</addlibrary>
+	<modifylibrary>modify a file</modifylibrary>
+</language>

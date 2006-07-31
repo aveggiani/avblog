@@ -1,0 +1,473 @@
+#main
+{
+	padding: 0px;
+	width: 800px;
+}
+
+#entries
+{
+	float:left;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	color: #999;
+	text-decoration: none;
+	text-align:left;
+	background-color:#FFFFFF;
+	border-left:1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+#side
+{
+	width: 200px;
+	border-left: 1px solid #eee;
+	float:left;
+	color: #567;
+	text-align:left;
+	padding-left:0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	border-right: 1px solid #eee;
+	background-color:#fafafa;
+}
+
+.sidelogo
+	{
+		padding: 4px;
+		width:168px;
+		text-align:center;
+	}
+	
+#header 
+{
+
+	width: 778px;
+	background-color: #00a3dd;
+	text-align:left;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 1px;
+	background-image:url(images/bg_top.jpg);	
+	height:100px;
+}
+
+#headerlogo 
+{
+	vertical-align:middle;
+	height:100px;
+	float:left;
+}
+
+
+#headertext
+{
+	text-align:right; 
+	padding-right:10px;
+	margin-top:15px;
+	height:45px;
+	font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	color: #FFFFFF
+}
+#headertext a
+{
+	color: #FFFFFF;
+}
+
+
+#footer 
+{
+	text-align:left;	
+	clear:both;
+	background-color: #f0f5f9;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	color: #666;
+	margin-bottom:50px;
+	background-image:url(images/bg_02.jpg);
+}
+
+
+body { background-color: #f9fcff; cursor: default;
+margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+}
+
+.logoText { font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  color: #C5C5C5; }
+
+input, textarea, select {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 2px;
+}
+
+a
+{
+	color: #39c;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #69a;
+	text-decoration: none;
+}
+
+
+a:hover {
+	color: #c00;
+	text-decoration: underline;
+}
+
+hr {
+	color: #FFFFFF;
+  	background-color: #FFFFFF;
+  	height: 1px;
+  	width: 100%;
+  	border: solid #eee 1px;
+	visibility:hidden;
+}
+
+
+.login {
+  top : 0px;
+  padding : 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 7.5pt;
+}
+
+.catList {
+	width:190px;
+	overflow:hidden;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	border-top:1px solid #eee;
+
+}
+.catListTitle {
+	padding-bottom: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+	background-color:#fff;
+	background-image:url(images/bg_03.jpg);
+	display:block;
+	padding:5px;
+}
+.catListElement {
+	color: #999;
+	padding-left: 5px;
+}
+
+.Links {
+	padding-left: 0px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	border-top:1px solid #eee;
+}
+.LinksTitle {
+	padding-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+	background-color:#FFFFFF;
+	background-image:url(images/bg_03.jpg);	
+	display:block;
+	padding:5px;
+}
+.LinksElement {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #999;
+}
+
+select.monthArchive {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #003344;
+ 	width:180px;
+	background-color: #FFF; 
+	padding: 0px;
+}
+
+.functionMenu {
+	padding-left: 0px;
+	padding-bottom: 0px;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333;
+	border-top:1px solid #eee;
+}
+
+.blogNotPublished {
+	margin: 0px;
+	padding: 0px;
+	background-color:#EDEDE7;
+}
+
+.blogBody {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	border-bottom: 1px solid #ccc;
+	overflow-x: hidden;
+}
+
+.blogBodyPostDate {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-bottom: 2px;
+	padding-bottom: 10px;
+	overflow-x: hidden;
+}
+
+.blogDate {
+	background-color: #f0f0f0;
+	border-bottom:1px solid #ccc;
+	font-family: Tahoma, Georgia, serif;
+	font-size: 8pt;	
+	padding: 5px;
+	color: #003344;
+	background-image:url(images/bg_01.jpg);
+}
+
+.blogTitle {
+	font-family:"Trebuchet MS", Verdana;
+	font-size: 14pt;
+	font-weight:bold;
+	color:  #c00;;
+	padding-top: 5px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	letter-spacing: -0.05em;
+}
+.blogText {
+	font-family: Verdana,Georgia, serif;
+	font-size: 8pt;	
+	color: #666;
+	padding-left: 20px;
+	padding-right: 5px;
+}
+.blogMore { 
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #789;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+.blogAuthor { 
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #999;
+	text-align: right;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+
+.blogAuthor a {
+	color: #789;
+}
+
+.blogCommands { 
+	border-top: 1px solid #ddd;
+	padding-top: 4px;
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #ccc;
+	text-align: right;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	background-color:#f9f9f9;
+}
+
+.blogCommands a {
+	color: #789;
+}
+
+.blogAdmin {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+.statisticsMenu {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-top:1px solid black;
+	margin-top:10px;
+	text-align:center;
+}
+
+.trackbackPingBox {
+	border: 1px solid red;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;	
+	color: #666;
+	padding: 5px;
+}
+.trackbackPing {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	padding: 5px;
+	border-bottom: 1px dashed;
+}
+.commentBodyPrivate {
+	border: 1px solid red;
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.commentBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #999;
+}
+.commentDate {
+	border-top: 1px solid #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #789;
+}
+.commentText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	margin-top:5px;
+}
+.commentAuthor {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #999;
+	text-align: left;
+	font-weight: bold;
+	padding-top:3px;
+	margin-top:20px;
+	border-top: 0px solid #eee;
+}
+
+.trackbackBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.trackbackDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #003344;
+}
+.trackbackText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+
+.editorBody {
+	margin-top: 0px;
+	background-color: #eee;
+	padding: 0px;
+	width: 100%;
+	overflow-x: hidden;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #003344;
+}
+.editorTitle {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	background-color: #A7BCD6;
+	padding: 5px;
+	color: #003344;
+	font-weight: bold;
+}
+.editorList {
+	font-family: Georgia, serif;
+	font-size: 10pt;
+	color: #666;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	border-bottom: 1px dashed #FBC3AE;
+	margin-bottom: 10px;	
+}
+.editorForm {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+input.editorForm {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	border: 1px solid #666;
+	background-color: White;
+}
+
+.text {
+	font-family: Georgia, serif;
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+	
+.searchField
+	{
+		margin-left:10px;
+		margin-top:10px;
+		margin-right:2px;
+		margin-bottom:0px;
+		width:100px;
+	}
+
+.pageSelected
+	{
+		color: red;
+	}
+	
+.code
+	{
+		border:1px solid #888888;
+		background-color: #cccccc;
+		padding: 6px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:12px;
+		overflow: auto;
+		max-height: 200px;
+		width:510px;
+	}

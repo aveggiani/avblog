@@ -1,0 +1,121 @@
+.slideshowDate
+	{
+		background-color: #FBC3AE;
+		font-family: Georgia, serif;
+		font-size: 9pt;	
+		padding: 5px;
+		color: #003344;
+	}
+
+.slideshowView 
+	{
+		width: 100%;
+		text-align: left;
+		margin-left: 0px;
+		margin-bottom: 0px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		border-bottom: 1px solid #003344;
+		overflow-x: hidden;
+	}
+.slideshowImageborder
+	{
+		border: 1px solid #D0420A;
+	}
+.slideshowText
+	{
+		font-family: Georgia, serif;
+		font-size: 10pt;	
+		color: #ffffff;
+	}
+	
+.slideshowTitle
+	{
+		width: 68%;
+		float:left;
+		font-family:Georgia, serif;
+		font-size: 14pt;
+		color:  #D0420A;
+		padding: 5px;
+		letter-spacing: -0.05em;
+	}
+	
+.slideshowControls
+	{
+		width: 28%;
+		float:left;
+		text-align:right;
+		font-family:Georgia, serif;
+		font-size: 13pt;
+		color:  #FBC3AE;;
+		padding: 5px;
+		letter-spacing: -0.05em;
+	}
+	
+.slideshowImage
+	{
+		padding-top: 10px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align:center;
+		clear:both;
+		font-family: Georgia, serif;
+		font-size: 11pt;	
+	}
+	
+#photoBlogViewImagesBoth
+	{
+		float:left;
+		width: 100%;
+		height: 100%;
+		margin-left:  0px;
+		margin-right: 0px;
+		padding: 0px;
+		background-color:#5F7C9A;
+	}
+	
+#photoBlogViewImagesBothSingle
+	{
+		float:inherit;
+		margin: 10px;
+		font-family: Georgia, serif;
+		font-size: 10pt;	
+		color: #ffffff;
+	}
+	
+#photoBlogViewImagesH
+	{
+		width: 100%;
+		margin-left:  0px;
+		margin-right: 0px;
+		padding: 0px;
+		background-color:#D0420A;
+		overflow:auto;
+		font-family: Georgia, serif;
+		font-size: 10pt;	
+		color: #ffffff;
+	}
+	
+#photoBlogViewImagesV
+	{
+		width: 200px;
+		height: 400px;
+		margin-left:  0px;
+		margin-right: 0px;
+		padding: 0px;
+		background-color:#D0420A;
+		overflow:auto;
+		font-family: Georgia, serif;
+		font-size: 10pt;	
+		color: #ffffff;
+	}
+	
+.exifData
+	{
+		font-family: verdana;
+		font-size: 8pt;
+		vertical-align:top;
+		border-bottom: 1px solid black;
+	
+	}

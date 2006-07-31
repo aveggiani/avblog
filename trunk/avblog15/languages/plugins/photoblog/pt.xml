@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<language id="pt-BR">
+	<uploaderror>Erro ao carregar!</uploaderror>
+	<add>adicionar</add>
+	<modify>modificar</modify>
+	<name>FotoBlog</name>
+	<photoblogmanager>Administrador do Fotoblog</photoblogmanager>
+	<watermark>Marca d'água</watermark>
+	<watermarktext>Texto da marca d'água</watermarktext>
+	<thumbwidth>espessura do thumbnail</thumbwidth>
+	<layouttype>Tipo de layout</layouttype>
+	<layoutorientation>Orientação do layout</layoutorientation>
+	<bigwidth>Espessura grande</bigwidth>
+	<zipfile>Zipar Arquivo</zipfile>
+	<galleryname>Nome da galeria</galleryname>
+	<gallerycategory>Categoria da galeria</gallerycategory>
+	<nofiles>Não existem galerias nesse momento!</nofiles>
+	<addgallery>adicionar galeria</addgallery>
+	<editgallery>editar galeria</editgallery>
+	<emptyarchive>Não tem Fotoblog</emptyarchive>
+	<gallerydate>date</gallerydate>
+	<gallerydescription>description</gallerydescription>
+	<photoname>photo name</photoname>
+	<originalExifData>Original Image Exif Data</originalExifData>
+</language>

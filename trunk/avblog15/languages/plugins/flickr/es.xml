@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="es">
+	<apikey>API Key</apikey>
+	<photonumber>Max number of photos to view</photonumber>
+	<title>My Flickr photos</title>
+	<manager>Flickr manager</manager>
+	<adminmessage>use Configuration settings</adminmessage>
+</language>

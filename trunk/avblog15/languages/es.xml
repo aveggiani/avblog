@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="esp">
+	<language_description>Lenguaje</language_description>
+	<user>User Name</user>
+	<monthly_archive>Archivo del Mes</monthly_archive>
+	<categories>Editar categoras</categories>
+	<links>Editar enlaces</links>
+	<linkstitle>Enlaces</linkstitle>
+	<addblog>Agregar publicacin</addblog>	
+	<add>Agregar</add>
+	<edit>Editar</edit>
+	<delete>Borrar</delete>
+	<blog_date>Fecha de Blog</blog_date>
+	<blog_time>Hora de Blog</blog_time>
+	<category>Categora</category>
+	<category_select>(ninguno)</category_select>
+	<menu_item>Titulo del menu</menu_item>
+	<title>Titulo</title>
+	<clear>Cancelar</clear>
+	<confirm>Confirmar cambios</confirm>
+	<insertblog>Insertar Blog</insertblog>
+	<addcomment>Agregar comentario</addcomment>
+	<author>Autor</author>
+	<addcommentauthalert>Ingrese su nombre</addcommentauthalert>
+	<addcommentemailalert>Ingrese su e-mail</addcommentemailalert>
+	<addcommenttextalert>Ingrese el comentario</addcommenttextalert>
+	<email>E-mail</email>
+	<insertcomment>Ingrese Comentario</insertcomment>
+	<insertcategory>Ingrese Categora</insertcategory>
+	<editcategory>Editar Categora</editcategory>
+	<link_address>Direccin del Enlace</link_address>
+	<link_description>Descripcin del Enlace</link_description>
+	<editlink>Editar Enlace</editlink> 
+	<insertlink>Insertar Enlace</insertlink>
+	<reset>Recargar blog</reset>
+	<backup>Resguardar blog/configuration</backup>
+	<newcommentadded>Nuevo comentario en su blog</newcommentadded>
+	<comment>comentario</comment>
+	<comments>comentarios</comments>
+	<commentsentby>comentario enviado por</commentsentby>
+	<cancelaction>Usted quiere cancelar?</cancelaction>
+	<loadingcalendar>Cargando calendario...</loadingcalendar>
+	<titleconfig>Configuracin</titleconfig>
+	<changeconfig>Cambiar configuracin</changeconfig>
+	<linksito>Url del Sitio</linksito>
+	<description>Descripcin</description>
+	<header>Cabecera</header>
+	<footer>Pie</footer>
+	<visualthemes>Temas Visuales</visualthemes>
+	<sendemail>Cundo se agrega un comentario nuevo, enviar email</sendemail>
+	<sitetitle>Titulo del Sitio</sitetitle>
+	<authomaticbackup>Resguardo automatico</authomaticbackup>
+	<maxbackupindirectory>Max versiones de resguardo</maxbackupindirectory>
+	<maxbloginhomepage>Max dias de blog en portada</maxbloginhomepage>
+	<addblogdatealert>La fecha no es valida!</addblogdatealert>
+	<addblogmenualert>Inserte un titulo en el menu</addblogmenualert>
+	<addblogtitlealert>Inserte el titulo principal del blog</addblogtitlealert>
+	<addblogtextalert>Ingrese algun texto</addblogtextalert>
+	<calweekdays>"Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"</calweekdays> <!-- Use always comma and double quotes -->
+	<calmonths>"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"</calmonths>
+	<caltoggle>Primer da de la semana</caltoggle>
+	<calprevyear>Ao (presionar para menu)</calprevyear>
+	<calprevmonth>Mes (presionar para menu)</calprevmonth>
+	<calgotoday>Ir al Da</calgotoday>
+	<calnextmonth>Mes (presionar para menu)</calnextmonth>
+	<calnextyear>Ao (presionar para menu)</calnextyear>
+	<calseldate>Seleccione la fecha</calseldate>
+	<calparttoday>(hoy)</calparttoday>
+	<calmonfirst>Comenzar el Lunes</calmonfirst>
+	<calsunfirst>Comenzar el Domingo</calsunfirst>
+	<calclose>Comenzar el Domingo</calclose>
+	<caltoday>Hoy</caltoday>
+	<caldateformat>y-mm-dd</caldateformat>
+	<caldateformatlong>D, M d</caldateformatlong>
+	<user>Nombre de Usuario</user>
+	<password>Contrasea</password>
+	<accesstype>Access</accesstype>
+	<greeting>Hola</greeting>
+	<users>Editar Usuarios</users>
+	<edituser>Editar Usuario</edituser>
+	<adduser>Agregar Usuario</adduser>
+	<saveorder>Guardar ordenado</saveorder>
+	<layout>Formaro de pgina</layout>
+	<layoutfixleft>Corregido a la izquierda</layoutfixleft>
+	<layoutcentered>Centrado</layoutcentered>
+	<layoutjustified>Justificado al ancho</layoutjustified>
+	<showall>Mostrar todos los Blogs</showall>
+	<InternationalSettings>Configuracin Internacional</InternationalSettings>
+	<timeoffset>Diferencia Horaria</timeoffset>
+	<userfullname>Nombre Completo</userfullname>
+	<useremail>Email</useremail>
+	<clickformore>mas ...</clickformore>
+	<hideformore>.. ocultar</hideformore>
+	<trackback>trackback</trackback>
+	<trackbacks>trackbacks</trackbacks>
+	<addtrackback>add trackback</addtrackback>
+	<privatecomment>privado</privatecomment>
+	<privatecomments>privados</privatecomments>
+	<captcha>escribir el texto de la imagen Captcha</captcha>
+	<showemailonlytoblogger>Mostrar email solo al Blogger</showemailonlytoblogger>
+	<privatecommentadd>Mensajes privados</privatecommentadd>
+	<subscribecomment>Subscribir</subscribecomment>
+	<trackbackthis>Trackback url</trackbackthis>
+	<trackbackadd>Agregar trackback</trackbackadd>
+	<trackbackurl>su url</trackbackurl>
+	<trackbacktitle>su titulo</trackbacktitle>
+	<trackbackblogname>Nombre del Blog</trackbackblogname>
+	<trackbackto>ping trackback to url</trackbackto>
+	<newtrackbackadded>new trackback added</newtrackbackadded>
+	<newtrackbackping>new trackback ping</newtrackbackping>
+	<captcharequired>Insertar el texto Capthca</captcharequired>
+	<captchanotitle>Error</captchanotitle>
+	<captchanotext>El texto ingresado no coincide con la imagen capctha</captchanotext>
+	<publishedfuture>publicar en otra fecha</publishedfuture>
+	<publishedno>no publicado</publishedno>
+	<feed>FEED</feed>
+	<recentpost>Ultimas publicaciones</recentpost>
+	<recentcomment>Ultimos comentarios</recentcomment>
+	<officialmailinglist>Lista de correo</officialmailinglist>
+	<joinofficialmailinglist>subscribirse</joinofficialmailinglist>
+	<statistics>Estadistica</statistics>
+	<postdeleted>publicacion eliminada</postdeleted>
+	<subscribersnewcomment>nuevo comentario en la publicacion subscripta</subscribersnewcomment>
+	<subscribersnewpost>new post</subscribersnewpost>
+	<subscribersnewpostok>Thanks, a mail will be sent to you when the Blog is updated!</subscribersnewpostok>
+	<subscribersnewposttitle>subscribe Blog</subscribersnewposttitle>
+	<subscribersnewpostalert>alert subscribers</subscribersnewpostalert>
+	<timealert>inserte el timpo correcto</timealert>
+	<trackbackpingstilnow>trackback ping made until now</trackbackpingstilnow>
+	<configpermalink>permalinks</configpermalink>
+	<configricheditorinpost>rich editor while editing posts</configricheditorinpost>
+	<configricheditrointrackback>rich editor while editing manual trackbacks</configricheditrointrackback>
+	<configsmtpsettings>configuracin smtp</configsmtpsettings>
+	<configsmtpsettingssmtp>smtp</configsmtpsettingssmtp>
+	<configsmtpsettingsport>smtp port</configsmtpsettingsport>
+	<configsmtpsettingsuser>usuario</configsmtpsettingsuser>
+	<configsmtpsettingspwd>contrasea</configsmtpsettingspwd>
+	<configauthorgoogleaccount>Cuenta en Google Talk</configauthorgoogleaccount>
+	<configricheditorincomments>rich editor in comments</configricheditorincomments>
+	<configspamprotectionincomments>proteccion de spam en comentario</configspamprotectionincomments>
+	<configspamprotectionincommenttext>text (which will replace '@')</configspamprotectionincommenttext>
+	<configcommentsubstion>publicar subscription</configcommentsubstion>
+	<configallowprivatecomment>permitir comentarios privados</configallowprivatecomment>
+	<configwichricheditor>seleccionar editor</configwichricheditor>
+	<configwichtfckeditortoolbar>seleccionar barra del FCKEditor</configwichtfckeditortoolbar>
+	<configfeedapi>permitir XML-RPC feed</configfeedapi>
+	<configfeedapittype>seleccionar API</configfeedapittype>
+	<configfeedemail>permitir email feed</configfeedemail>
+	<configfeedemailschedule>comprobar email cada minutos</configfeedemailschedule>
+	<configfeedemailscheduleerror>Insert a value between 5 and 60</configfeedemailscheduleerror>
+	<configfeedemailsubject>llave de asunto</configfeedemailsubject>
+	<configfeedemailpop3>Cuenta de email POP3</configfeedemailpop3>
+	<configfeedemailport>Port POP3</configfeedemailport>
+	<configfeedemailuser>POP3 cuenta de usuario</configfeedemailuser>
+	<configfeedemailpwd>POP3 contrasea</configfeedemailpwd>
+	<configfeedim>permitir IM feed</configfeedim>
+	<configfeedimtype>seleccionar IM</configfeedimtype>
+	<configfeedimgoogleaccount>cuenta google</configfeedimgoogleaccount>
+	<configfeedimgooglepwd>contrasea</configfeedimgooglepwd>
+	<configfeedflashlite>permitir flashlite feed</configfeedflashlite>
+	<configstoragedatasourceusername>Nombre de Usuario</configstoragedatasourceusername>
+	<configstoragedatasourcepwd>contrasea</configstoragedatasourcepwd>
+	<logsessionstart>log comienzo de sesion</logsessionstart>
+	<logsessionend>log fin de sesion</logsessionend>
+	<logapplicationstart>log comienzo de aplicacion</logapplicationstart>
+	<logapplicationend>log fin de aplicacion</logapplicationend>
+	<logpostview>log publicacion vista</logpostview>
+	<logpostadd>log publicacion agregada</logpostadd>
+	<logpostmodify>log publicacion modificada</logpostmodify>
+	<logcommentadd>log comentario agregado</logcommentadd>
+	<logtrackbackadd>log trackbackadd</logtrackbackadd>
+	<loglogin>log login</loglogin>
+	<loglogout>log logout</loglogout>
+	<logpageview>log pagina vista</logpageview>
+	<logdownload>log descargas</logdownload>
+	<pluginselect>plugin</pluginselect>
+	<published>Publish</published>
+	<notpublished>Not publish</notpublished>
+	<charset>charset</charset>
+	<commentmoderate>moderate comments</commentmoderate>
+	<trackbacksmoderate>moderate trackbacks</trackbacksmoderate>
+	<search>search</search>
+	<searchresult>posts found for</searchresult>
+	<page>page</page>
+	<authoping>Authomatic pings</authoping>
+	<authopingstilnow>Authomatic pings til now</authopingstilnow>
+	<configxmppgatewayname>XMPP Gateway name</configxmppgatewayname>
+	<privateblog>Private BLOG</privateblog>
+	<commentadded>Comment inserted</commentadded>
+	<commentaddedonmoderation>Comment moderation is enabled, your comment will be visible upon moderator approvation</commentaddedonmoderation>
+	<wizards>Wizards</wizards>
+	<wizardxmltodb>Xml to DB</wizardxmltodb>
+	<wizarddbtoxml>DB to xml</wizarddbtoxml>
+	<timeoffsetGMT>Time offset from GMT</timeoffsetGMT>
+	<deleteSelected>Delete selected items</deleteSelected>
+	<subscriptions>Subscriptions</subscriptions>
+	<spamlist>Spam list</spamlist>
+	<spamsavelist>Save list</spamsavelist>
+	<insertrow>Insert row</insertrow>
+	<enclosures>Enclosures</enclosures>
+	<except>Except</except>
+	<fulltext>Full story</fulltext>
+	<checkpermalinks>Repair permalinks</checkpermalinks>
+	<permalinkserpaired>Permalinks repaired!</permalinkserpaired>
+	<iconsets>Icon Set</iconsets>
+	<notuseiconsets>do not use icons</notuseiconsets>
+	<socialbuttons>Social Buttons</socialbuttons>
+	<socialbuttonstext>Social Buttons: </socialbuttonstext>
+	<imports>Imports</imports>
+	<from>from</from>
+	<subscriptions>blog subscription</subscriptions>
+	<emailpostcontent>post email content upon reader advise</emailpostcontent>
+	<tagcloud>TagCloud</tagcloud>
+	<recentcomments>recent comments</recentcomments>
+	<recentposts>recent posts</recentposts>
+	<rss>rss</rss>
+	<archivemonths>Archive</archivemonths>
+	<selectall>Select all</selectall>
+	<useajax>Use Ajax</useajax>
+	<wichcaptcha>Wich captcha</wichcaptcha>
+	<spamnotitle>Error!</spamnotitle>
+	<spamnotext>Your comment has been rejected as one or more words included in the author Spam List where found!</spamnotext>
+	<intdateformat>(mm/dd/yyyy)</intdateformat>
+	<eurodateformat>(dd/mm/yyyy)</eurodateformat>
+</language>
