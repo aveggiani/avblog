@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><cfsilent><ping><address url="http://rpc.icerocket.com:10080"><![CDATA[Ice Rocket]]></address><address url="http://rpc.pingomatic.com"><![CDATA[Ping-O-matic]]></address><address url="http://rpc.technorati.com/rpc/ping"><![CDATA[TechnoRati]]></address></ping></cfsilent>

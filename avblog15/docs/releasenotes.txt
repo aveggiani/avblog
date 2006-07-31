@@ -1,0 +1,56 @@
+Version 1.5 - Beta 2 - 26 July 2006
+
+- Ajax support using Dojo; actually it's used on the admin section, on the delicious plugin 
+  and on the photoblog slideshow; Dojo use can be disabled on the configuration settings
+- New Delicious and Flickr plugins (in this beta it stil does not work)
+- Update photoblog; now it's possible to edit the galleries, to view jpeg EXIF informations
+  and to see the galleries usind Slide Show and presentation widget provided by Dojo
+- Support for both built-in captcha and LylaCaptcha
+- Anti spam feature for both comments and trackbacks based on a spam list created by the blogger
+- Importing wizards for WordPress and BlogCFC
+- SES url for posts, categories, days, months and cms pages with an option for rebuild all permalinks in the admin section
+- Wizard for DB to XML data conversion
+- Version checker for easy updates
+- New pods management
+- Google sitemap generator
+- New skins
+
+Version 1.06 - 01 February 2006
+
+- Now works effectively on Cfmx 6.1
+- Fixed bugs on comment management
+
+Version 1.05 - 28 January 2006
+
+- Enhanched XNL-RCP support; BlogJet and Flock now works well with AVBlog
+- Works under CFMX 6.1, BlueDragon (no GUI for administration in this case); should
+work with Railo too
+- Verity search bug fixed;
+- Enanched Library and Photoblog plugins;
+- Minor bugs fixed;
+
+--------------------------------
+
+Version 1.04 - 03 January 2006
+
+- Some bugs fixed; 
+- FckEditor 2.2 now included
+- Wizard for importing xml blog data to DB
+- XML posts now in .cfm 
+
+--------------------------------
+
+Version 1.0
+
+Unfortunately still no documentation is provided, i'm writing some docs
+but they are not ready.
+
+I decided to release AVBlog anyway; please be patient.
+
+AVBlog is released under GPL license.
+
+I provide in the storage/db/script folder some SQL scripts for MySql, Oracle
+and Postgres support, i not tested them so please let me know if you have
+problems.
+
+For any question please write me to: andrea@dinamica.it

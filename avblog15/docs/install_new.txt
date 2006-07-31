@@ -1,0 +1,19 @@
+To install AVBlog unzip the file you download directly in the folder you want to have the blog installed in.
+
+-	If you want to use XML files as storage system you do not need to do any other operation; 
+	your blog is already installed and you can access it with the browser.
+
+- 	If you want to use Database you have to create the DB first: if you have access an empty db 
+	is already provided in the storage/db folder; otherwise some sql scripts are provided in the 
+	storage/db/scripts folder; please if you use access remember not to point your datasource in a 
+	folder accessible from the web server.
+	Once you have built your database, please insert a record in the users table (with role 'admin')
+	and then you can start the blog. At first the blog is configured to work using XML, so you have 
+	to log in (see later on how to do) and to change the storage system in the configuration settings.
+
+- 	To log into the administration section you simply had to add an url parameter, admin=1; so 
+	if you installed your blog in the yourblog folder under the yoursite domain you should type:
+	http://yoursite/yourblog/index.cfm?mode=admin
+	
+-	To upgrade the Lite version to the Full version simply download the full version and put the content of
+	the /external and /plugins folder into your Lite installation folder.

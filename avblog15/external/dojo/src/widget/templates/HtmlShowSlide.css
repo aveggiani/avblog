@@ -1,0 +1,11 @@
+.dojoShowSlideTitle {
+	visibility:hidden;
+	height:0px;
+}
+.dojoShowSlideTitle h1 {
+	visibility:hidden;
+	height:0px;
+}
+.dojoShowSlideBody {
+	padding: 0px;
+}

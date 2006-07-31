@@ -1,0 +1,41 @@
+@media screen {
+	.dojoShowNav {
+		padding:5px;
+		text-align: center;
+	}
+	.dojoShowNav input {
+		padding:5px;
+	}
+	.dojoShowHider {
+		visibility:hidden;
+		height:0px;
+	}
+	.dojoShowPrint {
+		position: absolute;
+	}
+	h1
+		{
+			visibility:hidden;
+			height:0px;
+		}
+}
+@media print {
+	.dojoShow {
+		display: none !important;
+	}
+	.dojoShowPrint {
+		display: block !important;
+	}
+	.dojoShowPrintSlide {
+		border: 1px solid #aaa;
+		padding: 10px;
+		margin-bottom: 15px;
+	}
+	.dojoShowPrintSlide, ul {
+	page-break-inside: avoid;
+	}
+	h1 {
+		margin-top: 0;
+		page-break-after: avoid;
+	}
+}

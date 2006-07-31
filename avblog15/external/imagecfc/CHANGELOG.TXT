@@ -1,0 +1,13 @@
+2.00b1
+- first beta
+
+2.00b2
+- fixed stuff
+- added watermarking
+- added throwOnError option to throw an exception rather than return
+  a friendly struct containing errorCode and errorMessage.
+
+2.00b3
+- permission denied errors and directory path issues no longer cause
+  untrapped exceptions during file write operations.
+
