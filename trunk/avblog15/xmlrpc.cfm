@@ -110,18 +110,16 @@
 									myResponse[1] = structnew();
 									myResponse[1].dateCreated="(dateTime.iso8601)#createdatetime(left(date,4),mid(date,5,2),right(date,2),listgetat(post.time,1,':'),listgetat(post.time,2,':'),0)#";
 									myResponse[1].postid="(string)" & "#post.id#";
-									myResponse[1].description ="#post.description#";
-									myResponse[1].title ="#post.title#";
-									myResponse[1].link ="#request.appMapping#index.cfm?mode=viewEntry&id=#post.id#";
-									myResponse[1].permaLink ="#request.appMapping#permalinks/#left(post.date,4)#/#mid(post.date,5,2)#/#right(post.date,2)#/#replace(post.menuitem,' ','-','ALL')#";
-									myResponse[1].mt_excerpt ="#post.excerpt#";
-									/*
+									myResponse[1].description ="(string)" & "#post.description#";
+									myResponse[1].title ="(string)" & "#post.title#";
+									myResponse[1].link ="(string)" & "#request.appMapping#index.cfm?mode=viewEntry&id=#post.id#";
+									myResponse[1].permaLink ="(string)" & "#request.appMapping#permalinks/#left(post.date,4)#/#mid(post.date,5,2)#/#right(post.date,2)#/#replace(post.menuitem,' ','-','ALL')#";
+									myResponse[1].mt_excerpt ="(string)" & "#post.excerpt#";
 									myResponse[1].mt_text_more ="";
 									myResponse[1].mt_allow_comments ="(int)" & "1";
 									myResponse[1].mt_allow_pings ="(int)" & "1";
-									myResponse[1].mt_convert_breaks ="mt_text_more";
-									myResponse[1].mt_keywords ="mt_text_more";
-									*/
+									myResponse[1].mt_convert_breaks ="";
+									myResponse[1].mt_keywords ="";
 									result = xmlparse(objXmlrpc.CFML2XMLRPC(myResponse,'response'));
 								}
 							else
@@ -177,9 +175,9 @@
 												{
 													myResponse[1][j] = structnew();
 													myResponse[1][j]["dateCreated"]="(dateTime.iso8601) #createdatetime(left(date,4),mid(date,5,2),right(date,2),listgetat(arrayShow[k].time,1,':'),listgetat(arrayShow[k].time,2,':'),0)#";
-													myResponse[1][j]["userid"]="(string)" & "#arrayShow[k].author#";
-													myResponse[1][j]["postid"]="(string)" & "#arrayShow[k].id#";
-													myResponse[1][j]["description"]="(string)" & "#REReplaceNoCase(arrayShow[k].description,"<[^>]*>","","ALL")#";
+													myResponse[1][j]["userid"]="(string) #arrayShow[k].author#";
+													myResponse[1][j]["postid"]="(string) #arrayShow[k].id#";
+													myResponse[1][j]["description"]="(string) #REReplaceNoCase(arrayShow[k].description,"<[^>]*>","","ALL")#";
 													myResponse[1][j]["title"]="(string) #arrayShow[k].title#";
 													myResponse[1][j]["link"] ="(string) #request.appMapping#index.cfm?mode=viewEntry&id=#arrayShow[k].id#";
 													myResponse[1][j]["permaLink"] ="(string) #request.appMapping#permalinks/#left(date,4)#/#mid(date,5,2)#/#right(date,2)#/#replace(arrayShow[k].menuitem,' ','-','ALL')#";
