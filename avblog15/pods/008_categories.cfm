@@ -23,9 +23,10 @@
 				</cfloop>
 			</div>
 		</cfoutput>
-		<div class="catList">
-			<span class="catListTitle"><a href="<cfoutput>#request.appMapping#</cfoutput>index.cfm?mode=showallcategory"><cfoutput>#application.language.language.showall.xmltext#</cfoutput></a><br /></span>
-		</div>
+		<vb:pod>
+			<div class="catList">
+				<span class="catListTitle"><a href="<cfoutput>#request.appMapping#</cfoutput>index.cfm?mode=showallcategory"><cfoutput>#application.language.language.showall.xmltext#</cfoutput></a><br /></span>
+			</div>
+		</vb:pod>
 	</vb:cache>
-	<hr />
 </cfif>
