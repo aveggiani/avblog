@@ -31,7 +31,7 @@
 						<span class="catListTitle">#application.cms.category#</span>
 						<br />
 						<cfoutput>
-							&nbsp;<a href="#request.appmapping#permalinks/cms/#application.cms.name#">#application.cms.name#</a>
+							&nbsp;<a href="#request.appmapping#permalinks/cms/#replace(application.cms.name,'&','&amp;','ALL')#">#application.cms.name#</a>
 							<br />
 						</cfoutput>
 					</cfoutput>

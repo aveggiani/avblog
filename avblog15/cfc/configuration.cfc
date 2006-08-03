@@ -60,6 +60,9 @@
 		<cflock name="plugins" type="EXCLUSIVE" timeout="10">
 			<cfdirectory name="plugins" directory="#request.appPath#/plugins" sort="name">
 		</cflock>
+		<cfquery name="plugins" dbtype="query">
+			select * from plugins where name <> '.svn'
+		</cfquery>
 
 		<cfreturn plugins>
 	</cffunction>
