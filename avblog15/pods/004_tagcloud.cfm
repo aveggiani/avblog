@@ -20,30 +20,31 @@
 			</cfif>
 		</cfloop>
 		<cfif listcategories is not "">
-			<cfset ArrdistributionforTagCloud = ListToArray(distributionforTagCloud)>
-			<cfset max = ArrayMax(ArrdistributionforTagCloud)>
-			<cfset min = ArrayMin(ArrdistributionforTagCloud)>
-			<cfset diff = max - min>
-			<cfset distribution = diff / 3>
-			<cfoutput>
-				<div class="tagcloud">
-					<cfloop index="i" from="1" to="#listlen(listcategories)#">
-					<cfif listgetat(distributionforTagCloud,i) EQ min>
-						<cfset class="smallestTag">
-					<cfelseif listgetat(distributionforTagCloud,i) EQ max>
-						<cfset class="largestTag">
-					<cfelseif listgetat(distributionforTagCloud,i) GT (min + (distribution*2))>
-						<cfset class="largeTag">
-					<cfelseif listgetat(distributionforTagCloud,i) GT (min + distribution)>
-						<cfset class="mediumTag">
-					<cfelse>
-						<cfset class="smallTag">
-					</cfif>
-					<a href="#request.appmapping#permalinks/categories/#listrest(listgetat(listcategories,i),'_')#" class="#class#">#listrest(listgetat(listcategories,i),'_')# (#listgetat(distributionforTagCloud,i)#)</a>
-					</cfloop>
-				</div>
-			</cfoutput>
+			<vb:pod>
+				<cfset ArrdistributionforTagCloud = ListToArray(distributionforTagCloud)>
+				<cfset max = ArrayMax(ArrdistributionforTagCloud)>
+				<cfset min = ArrayMin(ArrdistributionforTagCloud)>
+				<cfset diff = max - min>
+				<cfset distribution = diff / 3>
+				<cfoutput>
+					<div class="tagcloud">
+						<cfloop index="i" from="1" to="#listlen(listcategories)#">
+						<cfif listgetat(distributionforTagCloud,i) EQ min>
+							<cfset class="smallestTag">
+						<cfelseif listgetat(distributionforTagCloud,i) EQ max>
+							<cfset class="largestTag">
+						<cfelseif listgetat(distributionforTagCloud,i) GT (min + (distribution*2))>
+							<cfset class="largeTag">
+						<cfelseif listgetat(distributionforTagCloud,i) GT (min + distribution)>
+							<cfset class="mediumTag">
+						<cfelse>
+							<cfset class="smallTag">
+						</cfif>
+						<a href="#request.appmapping#permalinks/categories/#listrest(listgetat(listcategories,i),'_')#" class="#class#">#listrest(listgetat(listcategories,i),'_')# (#listgetat(distributionforTagCloud,i)#)</a>
+						</cfloop>
+					</div>
+				</cfoutput>
+			</vb:pod>
 		</cfif>	
 	</vb:cache>
-	<hr />
 </cfif>

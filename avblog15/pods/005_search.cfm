@@ -1,6 +1,8 @@
+<cfsilent>
+	<cfimport taglib="../customtags/" prefix="vb">
+</cfsilent>
 <cfif application.configuration.config.options.search.xmltext>
-	<div class="pod_top"></div>
-	<div class="pod">
+	<vb:pod>
 		<cfoutput>
 			<div class="catList">
 				<form action="#request.appmapping#index.cfm">
@@ -11,6 +13,5 @@
 				</form>
 			</div>
 		</cfoutput>
-	</div>
-	<div class="pod_bottom"></div>
+	</vb:pod>
 </cfif>
