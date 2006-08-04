@@ -66,7 +66,21 @@
 
 		<cfreturn plugins>
 	</cffunction>
-
+	
+	<cffunction name="loadlayoutthemeplugins" output="false" returntype="query">
+		<cfargument name="layout" type="string" required="yes">
+		<cfscript>
+			var plugins = '';
+		</cfscript>
+		<cflock name="plugins" type="EXCLUSIVE" timeout="10">
+			<cfdirectory name="plugins" directory="#request.appPath#/skins/#arguments.layout#/plugins" sort="name">
+		</cflock>
+		<cfquery name="plugins" dbtype="query">
+			select * from plugins where name <> '.svn'
+		</cfquery>
+		<cfreturn plugins>
+	</cffunction>
+	
 	<cffunction name="loadpluginsconfiguration" output="false" returntype="struct">
 		<cfargument name="plugins" type="query" required="no">
 
