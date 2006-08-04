@@ -1,8 +1,19 @@
 <cfswitch expression="#attributes.type#">
+
+	<cfcase value="admin">
+		<!--- if i'm logged see if we can show the admin section --->
+		<cfif GetAuthUser() is not "">
+			<cfif isuserinrole('admin')>
+				<span class="catListTitle"><cfoutput>#application.pluginslanguage.flickr.language.flickrmanager.xmltext#</cfoutput></span>
+				<br />
+				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=login&amp;plugin=flickr"><cfoutput>#application.pluginslanguage.flickr.language.login.xmltext#</cfoutput></a> ]
+				<br />
+				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=showall&amp;plugin=flickr"><cfoutput>#application.pluginslanguage.flickr.language.myflickr.xmltext#</cfoutput></a> ]
+			</cfif>
+		</cfif>
+	</cfcase>
 	
 	<cfcase value="side">
-	
-		<!---
 	
 		<cfimport taglib="../../../customtags/" prefix="vb">
 		<cfif trim(application.pluginsconfiguration.flickr.plugin.apikey.xmltext) is not 0>
@@ -26,8 +37,31 @@
 			--->
 		</cfif>
 		
-		--->
-		
 	</cfcase>
 	
+	<cfcase value="login">
+		<cflocation url="#application.flickrObj.createLoginUrl('write')#" addtoken="no">
+	</cfcase>
+
+	<cfcase value="showall">
+		<cfif not application.flickrObj.islogged() and not isdefined('url.frob')>
+			<cfoutput>
+				<a href="#application.flickrObj.createLoginUrl('write')#">#application.flickrObj.createLoginUrl('write')#</a>
+			</cfoutput>
+		<cfelse>
+			<cfscript>
+				if (isdefined('url.frob') and not application.flickrObj.islogged())
+					application.flickrObj.createToken(url.frob);
+				photosGetNotInSet = application.flickrObj.photosGetNotInSet();
+				myphotos = xmlsearch(photosGetNotInSet,'//photo');
+			</cfscript>
+			<cfloop index="i" from="1" to="#arraylen(myphotos)#">
+				<cfoutput>
+					<img src="http://static.flickr.com/#myphotos[i].xmlattributes.server#/#myphotos[i].xmlattributes.id#_#myphotos[i].xmlattributes.secret#_s.jpg" />
+					<br />
+				</cfoutput>
+			</cfloop>
+		</cfif>
+	</cfcase>
+
 </cfswitch>

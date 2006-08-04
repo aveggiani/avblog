@@ -20,24 +20,25 @@
 		<cfimport taglib="../../../customtags/" prefix="vb">
 		<cfif application.photoblog.recordcount is not 0 or isuserinrole('admin')>
 			<vb:cache action="#request.caching#" name="side_photoblog" timeout="#request.cachetimeout#">		
-				<div class="functionMenu">
-					<span class="catListTitle"><a href="<cfoutput>#request.appmapping#index.cfm</cfoutput>?mode=plugin&amp;pluginmode=view&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.name.xmltext#</cfoutput></a></span>
-					<br />
-					<cfoutput query="application.photoblog" group="category">
-						&nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=view&amp;category=#application.photoblog.category#">#application.photoblog.category#</a>
+				<vb:pod>
+					<div class="functionMenu">
+						<span class="catListTitle"><a href="<cfoutput>#request.appmapping#index.cfm</cfoutput>?mode=plugin&amp;pluginmode=view&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.name.xmltext#</cfoutput></a></span>
 						<br />
-						<cfoutput>
-							&nbsp; &nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=view&amp;id=#listgetat(application.photoblog.id,1,'.')#">#application.photoblog.name#</a>
+						<cfoutput query="application.photoblog" group="category">
+							&nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=view&amp;category=#application.photoblog.category#">#application.photoblog.category#</a>
 							<br />
+							<cfoutput>
+								&nbsp; &nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=view&amp;id=#listgetat(application.photoblog.id,1,'.')#">#application.photoblog.name#</a>
+								<br />
+							</cfoutput>
 						</cfoutput>
-					</cfoutput>
-					<cfif application.photoblog.recordcount is 0>
-						<cfoutput>
-							<div class="blogText">&nbsp; #application.pluginslanguage.photoblog.language.emptyarchive.xmltext#</div>
-						</cfoutput>
-					</cfif>
-				</div>
-				<hr />
+						<cfif application.photoblog.recordcount is 0>
+							<cfoutput>
+								<div class="blogText">&nbsp; #application.pluginslanguage.photoblog.language.emptyarchive.xmltext#</div>
+							</cfoutput>
+						</cfif>
+					</div>
+				</vb:pod>
 			</vb:cache>
 		</cfif>
 	</cfcase>
@@ -296,6 +297,24 @@
 												<br />
 												<br />
 												<img src="#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#" />
+												<cfif application.flickrObj.islogged()>
+													<br />
+													<div dojoType="ContentPane" layoutAlign="client" id="flickr#idimage#" executeScripts="true">
+														<input type="button" value="post to Flickr" onclick="postToFlickr#idimage#('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#','#myphotoblogimages.name#')" />
+													</div>
+													<cfsavecontent variable="dojoAjax">
+														<cfoutput>
+															<script language="JavaScript" type="text/javascript">
+																function postToFlickr#idimage#(target,title)
+																	{
+																		var MainPane = dojo.widget.byId("flickr#idimage#");
+																		MainPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=flickr&pluginmode=upload&file='+target+'&title='+title+'&when='+Date());
+																	}
+															</script>
+														</cfoutput>		
+													</cfsavecontent>
+													<cfhtmlhead text="#dojoAjax#">
+												</cfif>
 											</td>
 										</tr>
 										<tr>

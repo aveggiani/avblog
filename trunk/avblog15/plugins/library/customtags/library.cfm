@@ -19,24 +19,25 @@
 		<cfimport taglib="../../../customtags/" prefix="vb">
 		<cfif application.library.recordcount is not 0 or isuserinrole('admin')>
 			<vb:cache action="#request.caching#" name="side_library" timeout="#request.cachetimeout#">		
-				<div class="functionMenu">
-					<span class="catListTitle"><a href="<cfoutput>#cgi.script_name#</cfoutput>?mode=plugin&amp;pluginmode=view&amp;plugin=library"><cfoutput>#application.pluginslanguage.library.language.name.xmltext#</cfoutput></a></span>
-					<br />
-					<cfoutput query="application.Library" group="category">
-						&nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=library&amp;pluginmode=view&amp;category=#application.library.category#">#application.library.category#</a>
+				<vb:pod>
+					<div class="functionMenu">
+						<span class="catListTitle"><a href="<cfoutput>#cgi.script_name#</cfoutput>?mode=plugin&amp;pluginmode=view&amp;plugin=library"><cfoutput>#application.pluginslanguage.library.language.name.xmltext#</cfoutput></a></span>
 						<br />
-						<cfoutput>
-							&nbsp; &nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=library&amp;pluginmode=view&amp;id=#listgetat(application.library.id,1,'.')#">#application.library.name#</a>
+						<cfoutput query="application.Library" group="category">
+							&nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=library&amp;pluginmode=view&amp;category=#application.library.category#">#application.library.category#</a>
 							<br />
+							<cfoutput>
+								&nbsp; &nbsp; <a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=library&amp;pluginmode=view&amp;id=#listgetat(application.library.id,1,'.')#">#application.library.name#</a>
+								<br />
+							</cfoutput>
 						</cfoutput>
-					</cfoutput>
-					<cfif application.Library.recordcount is 0>
-						<cfoutput>
-							<div class="blogText">&nbsp; #application.pluginslanguage.library.language.emptyarchive.xmltext#</div>
-						</cfoutput>
-					</cfif>
-				</div>
-				<hr />
+						<cfif application.Library.recordcount is 0>
+							<cfoutput>
+								<div class="blogText">&nbsp; #application.pluginslanguage.library.language.emptyarchive.xmltext#</div>
+							</cfoutput>
+						</cfif>
+					</div>
+				</vb:pod>
 			</vb:cache>
 		</cfif>
 	</cfcase>

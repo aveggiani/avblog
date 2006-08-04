@@ -2,6 +2,7 @@
 	<!--- flash form section for this plugin configuration parameters --->
 	<cfformgroup type="vbox" width="100%" height="100%">
 		<cfinput name="plugin_flickr_apikey" size="18" type="text" label="#application.pluginslanguage.flickr.language.apikey.xmltext#" value="#application.pluginsconfiguration.flickr.plugin.apikey.xmltext#">
+		<cfinput name="plugin_flickr_secret" size="18" type="text" label="#application.pluginslanguage.flickr.language.secret.xmltext#" value="#application.pluginsconfiguration.flickr.plugin.secret.xmltext#">
 		<cfselect name="plugin_flickr_photonumber" label="#application.pluginslanguage.flickr.language.photonumber.xmltext#">
 			<cfoutput>
 				<cfloop index="i" from="1" to="10">
@@ -16,6 +17,7 @@
 		<cfoutput>
 			<plugin>
 				<apikey><![CDATA[#attributes.structForm.plugin_flickr_apikey#]]></apikey>
+				<secret><![CDATA[#attributes.structForm.plugin_flickr_secret#]]></secret>
 				<photonumber>#attributes.structForm.plugin_flickr_photonumber#</photonumber>
 			</plugin>
 		</cfoutput>

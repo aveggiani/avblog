@@ -3,35 +3,35 @@
 <cfswitch expression="#attributes.type#">
 	
 	<cfcase value="side">
-		<cfhtmlhead text="<link href=""#request.appMapping#skins/#application.configuration.config.layout.theme.xmltext#/plugins/delicious.css"" rel=""stylesheet"" type=""text/css"" />">
 		<cfif trim(application.pluginsconfiguration.delicious.plugin.username.xmltext) is not ''>
 			<vb:cache action="#request.caching#" name="side_delicious" timeout="#request.cachetimeout#">	
-				<cfoutput>
-					<cfscript>
-						recentPosts = application.deliciousObj.getRecentPosts();
-						if (arraylen(xmlsearch(recentPosts,'/error')) is 0)
-							mylinks = xmlsearch(recentPosts,'//post');
-						if (application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
-							limit = arraylen(mylinks);
-						else
-							limit = application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext;
-					</cfscript>
-					<cfif isdefined('mylinks')>
-						<div class="pluginDeliciousSide">
-							<div class="pluginDeliciousSideTitle">#application.pluginslanguage.delicious.language.title.xmltext#</div>
-							<cfloop index="i" from="1" to="#limit#">
-								<div class="pluginDeliciousSideText">
-									<a href="#mylinks[i].xmlattributes.href#" target="_blank">#mylinks[i].xmlattributes.description#</a>
-									<br />
-									tags: #mylinks[i].xmlattributes.tag#
-									<br />
-								</div>
-							</cfloop>
-							<div class="pluginDeliciousSideTitle"><a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=delicious&amp;pluginmode=showall">#application.pluginslanguage.delicious.language.showall.xmltext#</a></div>
-						</div>
-					</cfif>
-					<hr />
-				</cfoutput>
+				<vb:pod>
+					<cfoutput>
+						<cfscript>
+							recentPosts = application.deliciousObj.getRecentPosts();
+							if (arraylen(xmlsearch(recentPosts,'/error')) is 0)
+								mylinks = xmlsearch(recentPosts,'//post');
+							if (application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
+								limit = arraylen(mylinks);
+							else
+								limit = application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext;
+						</cfscript>
+						<cfif isdefined('mylinks')>
+							<div class="pluginDeliciousSide">
+								<div class="pluginDeliciousSideTitle"><img src="#request.appmapping#images/ico/delicious.png" align="absmiddle" border="1" /> #application.pluginslanguage.delicious.language.title.xmltext#</div>
+								<cfloop index="i" from="1" to="#limit#">
+									<div class="pluginDeliciousSideText">
+										<a href="#mylinks[i].xmlattributes.href#" target="_blank">#mylinks[i].xmlattributes.description#</a>
+										<br />
+										tags: #mylinks[i].xmlattributes.tag#
+										<br />
+									</div>
+								</cfloop>
+								<div class="pluginDeliciousSideTitle"><a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=delicious&amp;pluginmode=showall">#application.pluginslanguage.delicious.language.showall.xmltext#</a></div>
+							</div>
+						</cfif>
+					</cfoutput>
+				</vb:pod>
 			</vb:cache>
 		</cfif>
 	</cfcase>

@@ -21,27 +21,28 @@
 	<cfcase value="side">
 		<cfimport taglib="../../../customtags/" prefix="vb">
 		<cfif application.cms.recordcount is not 0 or isuserinrole('admin')>
-			<vb:cache action="#request.caching#" name="side_cms" timeout="#request.cachetimeout#">		
-				<div class="functionMenu">
-					<cfif isuserinrole('admin')>
-						<span class="catListTitle"><cfoutput>#application.pluginslanguage.cms.language.name.xmltext#</cfoutput></span>
-						<br />
-					</cfif>
-					<cfoutput query="application.cms" group="category">
-						<span class="catListTitle">#application.cms.category#</span>
-						<br />
-						<cfoutput>
-							&nbsp;<a href="#request.appmapping#permalinks/cms/#replace(application.cms.name,'&','&amp;','ALL')#">#application.cms.name#</a>
+			<vb:cache action="#request.caching#" name="side_cms" timeout="#request.cachetimeout#">	
+				<vb:pod>	
+					<div class="functionMenu">
+						<cfif isuserinrole('admin')>
+							<span class="catListTitle"><cfoutput>#application.pluginslanguage.cms.language.name.xmltext#</cfoutput></span>
 							<br />
+						</cfif>
+						<cfoutput query="application.cms" group="category">
+							<span class="catListTitle">#application.cms.category#</span>
+							<br />
+							<cfoutput>
+								&nbsp;<a href="#request.appmapping#permalinks/cms/#replace(application.cms.name,'&','&amp;','ALL')#">#application.cms.name#</a>
+								<br />
+							</cfoutput>
 						</cfoutput>
-					</cfoutput>
-					<cfif application.cms.recordcount is 0>
-						<cfoutput>
-							<div class="blogText">&nbsp; #application.pluginslanguage.cms.language.emptyarchive.xmltext#</div>
-						</cfoutput>
-					</cfif>
-				</div>
-				<hr />
+						<cfif application.cms.recordcount is 0>
+							<cfoutput>
+								<div class="blogText">&nbsp; #application.pluginslanguage.cms.language.emptyarchive.xmltext#</div>
+							</cfoutput>
+						</cfif>
+					</div>
+				</vb:pod>
 			</vb:cache>
 		</cfif>
 	</cfcase>
