@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language id="it">
 	<apikey>API Key</apikey>
+	<secret>Shared Secret</secret>
 	<photonumber>Numero di foto da visualizzare</photonumber>
 	<title>Le mie foto su Flickr</title>
 	<manager>Flickr manager</manager>
 	<adminmessage>settaggi in Configurazione</adminmessage>
+	<login>login</login>
+	<myflickr>myflicrk</myflickr>
+	<flickrmanager>Flickr Manager</flickrmanager>
 </language>
 	
