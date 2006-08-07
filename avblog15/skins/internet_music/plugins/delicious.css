@@ -1,0 +1,55 @@
+.pluginDeliciousSide {
+	padding-left: 15px;
+	padding-bottom: 10px;
+	color: #000;
+}
+
+.pluginDeliciousSideTitle {
+	padding-bottom: 15px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #FEE1D5;
+}
+
+.pluginDeliciousSideText {
+	padding-left: 15px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: #000;
+}
+
+.pluginDeliciousTitle {
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #666;
+	font-weight: bold;
+}
+
+.pluginDeliciousShow {
+	padding: 4px;
+}
+
+.pluginDeliciousText {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #666;
+	padding-bottom:4px;
+}
+
+.pluginDeliciousTagCloud
+	{
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		padding: 4px;
+		border:1px solid #C6C6C6;
+		background-color: #F6F6F6;
+		margin-left: 2px;
+	}
+	
+.pluginDelicioussmallestTag { font-size: 9pt; }
+.pluginDelicioussmallTag { font-size: 11pt; }
+.pluginDeliciousmediumTag { font-size: 13pt; }
+.pluginDeliciouslargeTag { font-size: 15pt; }
+.pluginDeliciouslargestTag { font-size: 17pt; }
+
