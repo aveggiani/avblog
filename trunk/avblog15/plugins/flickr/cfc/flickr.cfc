@@ -53,9 +53,14 @@
 
 		<cfscript>
 			var returnValue = '';
+		</cfscript>
+		<cfdump var="#arguments#">
+		<cfscript>
 			api_sig = lcase(hash("#this.sharedSecret#api_key#this.apikey#async#arguments.async#auth_token#this.token#description#arguments.description#is_family#arguments.is_family#is_friend#arguments.is_friend#is_public#arguments.is_public#tags#arguments.tags#title#arguments.title#"));
 			returnValue = callFlickr(flickrmethod='upload',flickrarguments='api_key=#this.apikey#&async=#arguments.async#&auth_token=#this.token#&description=#arguments.description#&is_family=#arguments.is_family#&is_friend=#arguments.is_friend#&is_public=#arguments.is_public#&tags=#arguments.tags#&title=#arguments.title#&api_sig=#api_sig#',filepath='#arguments.filepath#');
 		</cfscript>
+		<cfdump var="#arguments#">
+
 		<cfreturn returnValue>
 	</cffunction>
 
