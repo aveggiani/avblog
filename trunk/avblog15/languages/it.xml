@@ -209,6 +209,7 @@
 	<imports>Importazione data</imports>
 	<from>da</from>
 	<subscriptions>Abbonamento al blog</subscriptions>
+	<emailtitlecontent>Invia il titolo del post agli abbonati</emailtitlecontent>
 	<emailpostcontent>Invia il contenuto del post agli abbonati</emailpostcontent>
 	<tagcloud>TagCloud</tagcloud>
 	<recentcomments>Commenti recenti</recentcomments>
