@@ -35,6 +35,11 @@
 							application.configuration.config.options.xmlChildren[incrementvalue(arraylen(application.configuration.config.options.xmlChildren))] = xmlelemnew(application.configuration,'emailpostcontent');
 							application.configuration.config.options.emailpostcontent.xmltext = 'true';
 						}
+					if (not (structkeyexists(application.configuration.config.options,'emailtitlecontent')))
+						{
+							application.configuration.config.options.xmlChildren[incrementvalue(arraylen(application.configuration.config.options.xmlChildren))] = xmlelemnew(application.configuration,'emailtitlecontent');
+							application.configuration.config.options.emailtitlecontent.xmltext = 'true';
+						}
 					if (not (structkeyexists(application.configuration.config.options,'search')))
 						{
 							application.configuration.config.options.xmlChildren[incrementvalue(arraylen(application.configuration.config.options.xmlChildren))] = xmlelemnew(application.configuration,'search');
