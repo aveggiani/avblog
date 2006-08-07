@@ -164,6 +164,7 @@
 					application.configuration.config.options.privateblog.xmltext					= pform.privateblog;
 					application.configuration.config.options.subscriptions.xmltext					= pform.subscriptions;
 					application.configuration.config.options.emailpostcontent.xmltext				= pform.emailpostcontent;
+					application.configuration.config.options.emailtitlecontent.xmltext				= pform.emailtitlecontent;
 					application.configuration.config.options.sendemail.xmltext						= pform.sendemail;
 					application.configuration.config.options.maxbloginhomepage.xmltext				= pform.maxbloginhomepage;
 					application.configuration.config.options.search.xmltext							= pform.search;
@@ -278,6 +279,7 @@
 					<options>
 						<privateblog>#application.configuration.config.options.privateblog.xmltext#</privateblog>
 						<subscriptions>#application.configuration.config.options.subscriptions.xmltext#</subscriptions>
+						<emailtitlecontent>#application.configuration.config.options.emailtitlecontent.xmltext#</emailtitlecontent>
 						<emailpostcontent>#application.configuration.config.options.emailpostcontent.xmltext#</emailpostcontent>
 						<sendemail>#application.configuration.config.options.sendemail.xmltext#</sendemail>
 						<maxbloginhomepage>#application.configuration.config.options.maxbloginhomepage.xmltext#</maxbloginhomepage>

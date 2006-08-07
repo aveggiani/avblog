@@ -58,7 +58,12 @@
 				if (arguments.blogid is 'blog')
 					{
 						subjectText = '#application.configuration.config.headers.title.xmltext# - #application.language.language.subscribersnewpost.xmltext#';
-						Text		= '#arguments.commentText#<br /><br /><a href="http://#cgi.SERVER_NAME#/#permalink#">http://#cgi.SERVER_NAME#/#permalink#</a>';
+						if (application.configuration.config.options.emailtitlecontent.xmltext)
+							Text		=  '<a href="http://#cgi.SERVER_NAME#/#permalink#">#post.title#</a><br /><br />';
+						if (application.configuration.config.options.emailpostcontent.xmltext)
+							Text		=  Text & '#post.description#<br /><br />';
+						if (not application.configuration.config.options.emailtitlecontent.xmltext)
+							Text		=  Text & '<a href="http://#cgi.SERVER_NAME#/#permalink#">http://#cgi.SERVER_NAME#/#permalink#</a>';
 					}
 				else
 					{
