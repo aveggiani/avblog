@@ -209,7 +209,8 @@
 	<imports>Imports</imports>
 	<from>from</from>
 	<subscriptions>blog subscription</subscriptions>
-	<emailpostcontent>post email content upon reader advise</emailpostcontent>
+	<emailtitlecontent>email post title upon reader advise</emailtitlecontent>
+	<emailpostcontent>email post content upon reader advise</emailpostcontent>
 	<tagcloud>TagCloud</tagcloud>
 	<recentcomments>recent comments</recentcomments>
 	<recentposts>recent posts</recentposts>
