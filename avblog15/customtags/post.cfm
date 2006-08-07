@@ -1,35 +1,42 @@
+<cfsilent>
+	<cfimport taglib="../customtags/" prefix="vb">
+	<cfparam name="request.indexBlog" default="1">
+</cfsilent>
 <cfinclude template="../include/functions.cfm">
-<cfparam name="request.indexBlog" default="1">
 
 <cfswitch expression="#attributes.type#">
 
 	<cfcase value="captchaFailed">
 		<cfoutput>
-			<div class="blogBody">
-				<div class="blogTitle">#application.language.language.captchanotitle.xmltext#</div>
-				<div class="blogText">
-					<br />
-					<br />
-					#application.language.language.captchanotext.xmltext#
-					<br />
-					<br />
+			<vb:content>
+				<div class="blogBody">
+					<div class="blogTitle">#application.language.language.captchanotitle.xmltext#</div>
+					<div class="blogText">
+						<br />
+						<br />
+						#application.language.language.captchanotext.xmltext#
+						<br />
+						<br />
+					</div>
 				</div>
-			</div>
+			</vb:content>
 		</cfoutput>
 	</cfcase>
 
 	<cfcase value="spamFailed">
 		<cfoutput>
-			<div class="blogBody">
-				<div class="blogTitle">#application.language.language.spamnotitle.xmltext#</div>
-				<div class="blogText">
-					<br />
-					<br />
-					#application.language.language.spamnotext.xmltext#
-					<br />
-					<br />
+			<vb:content>
+				<div class="blogBody">
+					<div class="blogTitle">#application.language.language.spamnotitle.xmltext#</div>
+					<div class="blogText">
+						<br />
+						<br />
+						#application.language.language.spamnotext.xmltext#
+						<br />
+						<br />
+					</div>
 				</div>
-			</div>
+			</vb:content>
 		</cfoutput>
 	</cfcase>
 
@@ -126,6 +133,7 @@
 							</cfoutput>
 						</cfif>
 		
+						<vb:content>
 						<cfoutput>
 		
 							<!--
@@ -237,38 +245,33 @@
 									<a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
 								</div>
 								<div class="blogCommands">
-									| 
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/permalink.png" alt="icon permalink"  align="middle" />
 									</cfif>	
 									<a href="#permalink#">permalink</a>
 									<cfif qryEnclosures.recordcount gt 0>
-										|
 										<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 											<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/enclosure.png" alt="icon enclosure"  align="middle" />
 										</cfif>	
 										<a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
 									</cfif>
-									|
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/comment.png" alt="icon comment"  align="middle" />
 									</cfif>	
 									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
 									<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
-										|
 										<a href="#request.appmapping#index.cfm?mode=viewcomment&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanycomments# #iif(howmanycomments EQ 1, DE(application.language.language.comment.xmltext), DE(application.language.language.comments.xmltext))#
 										<cfif privateComments gt 0>
 											(#privateComments# <cfif privatecomments is 1>#application.language.language.privatecomment.xmltext#<cfelse>#application.language.language.privatecomments.xmltext#</cfif>)
 										</cfif>
 										</a>
 									</cfif>
-									| 
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/trackback.png" alt="icon trackback"  align="middle" />
 									</cfif>	
 									<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
 									<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
-										| <a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
+										<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
 									</cfif>
 								</div>
 								<cfif isuserinrole('admin') or (isuserinrole('blogger') and arrayShow[i].author is listgetat(GetAuthUser(),1))>
@@ -299,6 +302,8 @@
 						<cfif isdefined('url.mode') and url.mode is 'viewtrackback' and isdefined('trackbacks')>
 							<cf_trackback mode ="show" trackbacks="#trackbacks#" blogid="#arrayShow[i].id#">
 						</cfif>
+						
+						</vb:content>
 		
 					</cf_cache>
 					
@@ -339,353 +344,355 @@
 		 
 		<cfhtmlhead text="<script src=""js/dynamic_enclosures.js""></script>">
 
-		<div class="editorBody">
-			<cfoutput>
-				<div class="editorTitle"><cfif attributes.type is "update">#application.language.language.edit.xmltext#<cfelse>#application.language.language.add.xmltext#</cfif> blog</div>
-
-				<div class="editorForm">
-					<table width="100%">
-						<cfform name="theForm" action="#cgi.script_name#?mode=entry" method="post" onsubmit="return submitHandler(this);" enctype="multipart/form-data">
-							<cfscript>
-								to_data="#dateformat(nowoffset(now()),'dd/mm/yyyy')#";
-								to_ora="#timeformat(nowoffset(now()),'HH:mm:ss')#";
-								
-								if (attributes.type is 'update')
-									{
-										mydate				= createdatetime(left(date,4),mid(date,5,2),right(date,2),listgetat(time,1,':'),listgetat(time,2,':'),listgetat(time,3,':'));
-										datevalue			= "#right(date,2)#/#mid(date,5,2)#/#left(date,4)#";
-										intdatevalue		= "#mid(date,5,2)#/#right(date,2)#/#left(date,4)#";
-										timevalue			= time;
-										menuitemvalue		= menuitem;
-									}
-								else
-									{
-										mydate				= createdatetime(year(now()),month(now()),day(now()),hour(now()),minute(now()),second(now()));
-										datevalue			= "#to_data#";
-										intdatevalue		= "#dateformat(nowoffset(now()),'mm/dd/yyyy')#";
-										timevalue			= "#to_ora#";
-										menuitemvalue		= "";
-									}
-								locdatevalue			= application.objLocale.dateLocaleFormat(mydate,"long");
-								loctimevalue			= application.objLocale.timeLocaleFormat(mydate,"short");
-							</cfscript>
-					
-							<tr><td align="right">#application.language.language.published.xmltext#</td>		
-								<td><input name="published" type="checkbox" <cfif isdefined('published') and published>checked</cfif> /></td>
-							</tr>
-							<tr><td align="right">#application.language.language.subscribersnewpostalert.xmltext#</td>		
-								<td><input name="subscriberAdvise" type="checkbox" /></td>
-							</tr>
-							<cfif directoryexists('#request.apppath#/external/jscalendar')>
-								<tr><td align="right">#application.language.language.blog_date.xmltext#:</td>		
-									<td>
-										<input type="hidden" name="date" id="date" value="#datevalue#" />
-										<p><span id="show"><strong>#locdatevalue#</strong></span> <button type="reset" id="f_trigger">...</button></p>
-										<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
-									</td>
+		<vb:content>
+			<div class="editorBody">
+				<cfoutput>
+					<div class="editorTitle"><cfif attributes.type is "update">#application.language.language.edit.xmltext#<cfelse>#application.language.language.add.xmltext#</cfif> blog</div>
+	
+					<div class="editorForm">
+						<table width="100%">
+							<cfform name="theForm" action="#cgi.script_name#?mode=entry" method="post" onsubmit="return submitHandler(this);" enctype="multipart/form-data">
+								<cfscript>
+									to_data="#dateformat(nowoffset(now()),'dd/mm/yyyy')#";
+									to_ora="#timeformat(nowoffset(now()),'HH:mm:ss')#";
+									
+									if (attributes.type is 'update')
+										{
+											mydate				= createdatetime(left(date,4),mid(date,5,2),right(date,2),listgetat(time,1,':'),listgetat(time,2,':'),listgetat(time,3,':'));
+											datevalue			= "#right(date,2)#/#mid(date,5,2)#/#left(date,4)#";
+											intdatevalue		= "#mid(date,5,2)#/#right(date,2)#/#left(date,4)#";
+											timevalue			= time;
+											menuitemvalue		= menuitem;
+										}
+									else
+										{
+											mydate				= createdatetime(year(now()),month(now()),day(now()),hour(now()),minute(now()),second(now()));
+											datevalue			= "#to_data#";
+											intdatevalue		= "#dateformat(nowoffset(now()),'mm/dd/yyyy')#";
+											timevalue			= "#to_ora#";
+											menuitemvalue		= "";
+										}
+									locdatevalue			= application.objLocale.dateLocaleFormat(mydate,"long");
+									loctimevalue			= application.objLocale.timeLocaleFormat(mydate,"short");
+								</cfscript>
+						
+								<tr><td align="right">#application.language.language.published.xmltext#</td>		
+									<td><input name="published" type="checkbox" <cfif isdefined('published') and published>checked</cfif> /></td>
 								</tr>
-							<cfelse>
-								<tr><td align="right">#application.language.language.blog_date.xmltext# #application.language.language.intdateformat.xmltext#:</td>		
-									<td>
-										<cfinput type="text" name="date" validate="date" message="#application.language.language.addblogdatealert.xmltext#" size="10" maxlength="10" class="editorForm" value="#intdatevalue#" />
-										<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
-									</td>
+								<tr><td align="right">#application.language.language.subscribersnewpostalert.xmltext#</td>		
+									<td><input name="subscriberAdvise" type="checkbox" /></td>
 								</tr>
-							</cfif>
-							<tr><td align="right">#application.language.language.blog_time.xmltext#:</td>		
-								<td><cfinput type="text" required="yes" name="time" message="#application.language.language.timealert.xmltext#" validate="time" class="editorForm" size="10" maxlength="10" value="#timevalue#" /></td>
-							</tr>
-							<tr>
-								<td align="right">#application.language.language.category.xmltext#:</td>		
-								<td>
-									<select name="category" size="4" multiple>
-										<!--- <option value="-1">#application.language.language.category_select.xmltext#</option> --->
-										<cfloop query="qryCategories">
-											<cfoutput>
-												<option value="#qryCategories.name#" <cfif isdefined('listMyCategories') and listfind(listMyCategories,qryCategories.name)>selected</cfif>>#listrest(qryCategories.name,'_')#</option>
-											</cfoutput>
-										</cfloop>
-									</select>
-									<input type="hidden" name="category" value="">
-								</td>
-							</tr>
-							<tr>
-								<td align="right">#application.language.language.author.xmltext#:</td>
-								<td><input type="text" size="50" name="author" <cfif attributes.type is 'update'>value="#author#"<cfelse>value="#listgetat(GetAuthUser(),1)#"</cfif> class="editorForm"/></td>
-							</tr>
-							<tr>
-								<td align="right">#application.language.language.email.xmltext#:</td>		
-								<td align="left"><input type="Text" name="email" size="50" <cfif attributes.type is 'update'>value="#email#"<cfelse>value="#trim(listgetat(GetAuthUser(),2))#"</cfif> class="editorForm"/></td>
-							</tr>
-							<tr>
-								<td align="right">#application.language.language.menu_item.xmltext#:</td>
-								<td><cfinput required="yes" message="#application.language.language.addblogmenualert.xmltext#" type="text" size="50" name="menuitem" value="#menuitemvalue#" class="editorForm"/></td>
-							</tr>
-							<tr>
-								<td align="right">#application.language.language.title.xmltext#:</td>		
-								<td align="left"><input type="Text" name="title" size="50" <cfif attributes.type is 'update'>value="#title#"</cfif> class="editorForm"/></td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr />
-									<strong>#application.language.language.except.xmltext#</strong>
-								</td>
-							</tr>
-							<tr>
-								<td align="center" colspan="2">
-									<cfif attributes.type is 'update'>
-										<cfset valore=excerpt>
-									<cfelse>
-										<cfset valore=" ">
-									</cfif>
-									<cf_externaleditor
-										whicheditor = "#application.configuration.config.options.whichricheditor.xmltext#"
-										name		= "fckexcerpt"
-										valore		= "#valore#"
-										width		= "100%"
-										height		= "150"
-									>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr />
-									<strong>#application.language.language.fulltext.xmltext#</strong>
-								</td>
-							</tr>
-							<tr>
-								<td align="center" colspan="2">
-									<cfif attributes.type is 'update'>
-										<cfset valore=description>
-									<cfelse>
-										<cfset valore=" ">
-									</cfif>
-									<cf_externaleditor
-										whicheditor = "#application.configuration.config.options.whichricheditor.xmltext#"
-										name		= "fckdescription"
-										valore		= "#valore#"
-										width		= "100%"
-										height		= "300"
-									>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<table id="theTable" width="100%%">
-										<thead>
-											<tr>
-												<td colspan="3">
-													<hr />
-												</td>
-											</tr>
-											<tr id="row_0">
-												<th align="left">#application.language.language.enclosures.xmltext#</th>
-												<cfif HTTP_USER_AGENT contains 'MSIE'>
-													<th onclick="appendRow(0);" colspan="2" align="right">
-														<img src="images/add.gif" alt="<cfoutput>#application.language.language.insertRow.xmltext#</cfoutput>" />
-													</th>
-												</cfif>
-											</tr>
-										</thead>
-										<tbody>
-											 <cfif attributes.type is 'update' and qryEnclosures.recordcount is not 0>
-												<cfloop query="qryEnclosures">
-													<tr id="row_#qryEnclosures.currentrow#">
-														<td>
-															<input type="file" name="enclosure_#qryEnclosures.currentrow#" size="50" />
-															<br />
-															#qryEnclosures.name#(#qryEnclosures.length# - #qryEnclosures.type#)
-														</td>
-														<cfif HTTP_USER_AGENT contains 'MSIE'>
-															<td onclick="appendRow(#qryEnclosures.currentrow#);" width="16" align="center">
-																<img src="images/add.gif" alt="Insert one row below this row"/>
-															</td>
-														</cfif>
-														<td onclick="deleteRow(#qryEnclosures.currentrow#);" width="16" align="center">
-															<img src="images/del.gif" alt="Delete this row"/>
-														</td>
-													</tr>
-												</cfloop>
-												<cfif HTTP_USER_AGENT does not contain 'MSIE'>
-													<cfscript>
-														howmanyEnclosures=qryEnclosures.recordcount;
-														howmanyEmptyEnclosures=howmanyEnclosures+4;
-													</cfscript>
-													<cfloop index="i" from="#incrementvalue(howmanyEnclosures)#" to="#howmanyEmptyEnclosures#">
-														<tr id="row_#i#">
-															<td><input type="file" name="enclosure_#i#" size="50" /></td>
-														</tr>
-													</cfloop>
-												</cfif>
-												<cfloop query="qryEnclosures">
-													<input type="hidden" name="enclosurehidden_#qryEnclosures.currentrow#" value="#qryEnclosures.name#,#qryEnclosures.length#,#qryEnclosures.type#" />
-												</cfloop>
-											 <cfelse>
-												<tr id="row_1">
-													<td><input type="file" name="enclosure_1" size="50" /></td>
-													<cfif HTTP_USER_AGENT contains 'MSIE'>
-														<td onclick="appendRow(1);" width="16" align="center">
-															<img src="images/add.gif" alt="Insert one row below this row"/>
-														</td>
-														<td onclick="deleteRow(1);" width="16" align="center">
-															<!---
-															<img src="images/del.gif" alt="Delete this row"/>
-															--->
-														</td>
-													</cfif>
-												</tr>
-												<tr id="row_2">
-													<td><input type="file" name="enclosure_2" size="50" /></td>
-													<cfif HTTP_USER_AGENT contains 'MSIE'>
-														<td onclick="appendRow(2);" width="16" align="center">
-															<img src="images/add.gif" alt="Insert one row below this row"/>
-														</td>
-														<td onclick="deleteRow(2);" width="16" align="center">
-															<img src="images/del.gif" alt="Delete this row"/>
-														</td>
-													</cfif>
-												</tr>
-												<tr id="row_3">
-													<td><input type="file" name="enclosure_3" size="50" /></td>
-													<cfif HTTP_USER_AGENT contains 'MSIE'>
-														<td onclick="appendRow(3);" width="16" align="center">
-															<img src="images/add.gif" alt="Insert one row below this row"/>
-														</td>
-														<td onclick="deleteRow(3);" width="16" align="center">
-															<img src="images/del.gif" alt="Delete this row"/>
-														</td>
-													</cfif>
-												</tr>
-												<tr id="row_4">
-													<td><input type="file" name="enclosure_4" size="50" /></td>
-													<cfif HTTP_USER_AGENT contains 'MSIE'>
-														<td onclick="appendRow(4);" width="16" align="center">
-															<img src="images/add.gif" alt="Insert one row below this row"/>
-														</td>
-														<td onclick="deleteRow(4);" width="16" align="center">
-															<img src="images/del.gif" alt="Delete this row"/>
-														</td>
-													</cfif>
-												</tr>
-											</cfif>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr />
-									<strong>#application.language.language.authoping.xmltext#</strong>
-								</td>
-							</tr>
-							<tr>
-								<td align="left" colspan="2">
-									<cfset arrayping = xmlsearch(application.authoping,'//address')>
-									<cfloop index="i" from="1" to="#arraylen(arrayping)#">
-										<input name="authoping" type="checkbox" value="#arrayping[i].xmlattributes.url#" /> #arrayping[i].xmltext#<br  />
-									</cfloop>
-								</td>
-							</tr>
-							<cfif isdefined('qryAuthoPings') and qryAuthoPings.recordcount gt 0>
+								<cfif directoryexists('#request.apppath#/external/jscalendar')>
+									<tr><td align="right">#application.language.language.blog_date.xmltext#:</td>		
+										<td>
+											<input type="hidden" name="date" id="date" value="#datevalue#" />
+											<p><span id="show"><strong>#locdatevalue#</strong></span> <button type="reset" id="f_trigger">...</button></p>
+											<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
+										</td>
+									</tr>
+								<cfelse>
+									<tr><td align="right">#application.language.language.blog_date.xmltext# #application.language.language.intdateformat.xmltext#:</td>		
+										<td>
+											<cfinput type="text" name="date" validate="date" message="#application.language.language.addblogdatealert.xmltext#" size="10" maxlength="10" class="editorForm" value="#intdatevalue#" />
+											<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
+										</td>
+									</tr>
+								</cfif>
+								<tr><td align="right">#application.language.language.blog_time.xmltext#:</td>		
+									<td><cfinput type="text" required="yes" name="time" message="#application.language.language.timealert.xmltext#" validate="time" class="editorForm" size="10" maxlength="10" value="#timevalue#" /></td>
+								</tr>
 								<tr>
-									<td colspan="2">
-										<div class="trackbackPingBox">
-											<div align="center">
-												#application.language.language.authopingstilnow.xmltext#
-											</div>
-											<br />
-											<cfloop query="qryAuthoPings">
-												<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
-												<cftry>
-													<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
-													<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
-													<div class="trackbackPing">
-														<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
-														<br />
-														<a href="#structValue.url#" target="_blank">#structValue.url#</a>
-														<br />
-														<strong>flerror:</strong> #flerror[1].xmltext#
-														<br />
-														<strong>message:</strong> #message[1].xmltext#
-													</div>
-													<cfcatch>
-														<div class="trackbackPing">
-															<strong>#structValue.url#</strong>
-															<br />
-															<br />
-															#structValue.authopingresult#
-														</div>
-													</cfcatch>
-												</cftry>
+									<td align="right">#application.language.language.category.xmltext#:</td>		
+									<td>
+										<select name="category" size="4" multiple>
+											<!--- <option value="-1">#application.language.language.category_select.xmltext#</option> --->
+											<cfloop query="qryCategories">
+												<cfoutput>
+													<option value="#qryCategories.name#" <cfif isdefined('listMyCategories') and listfind(listMyCategories,qryCategories.name)>selected</cfif>>#listrest(qryCategories.name,'_')#</option>
+												</cfoutput>
 											</cfloop>
-										</div>
+										</select>
+										<input type="hidden" name="category" value="">
 									</td>
 								</tr>
-							</cfif>
-							<cfif application.configuration.config.options.trackbacks.xmltext>
+								<tr>
+									<td align="right">#application.language.language.author.xmltext#:</td>
+									<td><input type="text" size="50" name="author" <cfif attributes.type is 'update'>value="#author#"<cfelse>value="#listgetat(GetAuthUser(),1)#"</cfif> class="editorForm"/></td>
+								</tr>
+								<tr>
+									<td align="right">#application.language.language.email.xmltext#:</td>		
+									<td align="left"><input type="Text" name="email" size="50" <cfif attributes.type is 'update'>value="#email#"<cfelse>value="#trim(listgetat(GetAuthUser(),2))#"</cfif> class="editorForm"/></td>
+								</tr>
+								<tr>
+									<td align="right">#application.language.language.menu_item.xmltext#:</td>
+									<td><cfinput required="yes" message="#application.language.language.addblogmenualert.xmltext#" type="text" size="50" name="menuitem" value="#menuitemvalue#" class="editorForm"/></td>
+								</tr>
+								<tr>
+									<td align="right">#application.language.language.title.xmltext#:</td>		
+									<td align="left"><input type="Text" name="title" size="50" <cfif attributes.type is 'update'>value="#title#"</cfif> class="editorForm"/></td>
+								</tr>
 								<tr>
 									<td colspan="2">
 										<hr />
-										<strong>#application.language.language.trackbacks.xmltext#</strong>
+										<strong>#application.language.language.except.xmltext#</strong>
 									</td>
 								</tr>
 								<tr>
-									<td align="right">#application.language.language.trackbackto.xmltext#:</td>		
-									<td align="left"><input type="Text" name="pingTrackBack" size="50" class="editorForm"/></td>
+									<td align="center" colspan="2">
+										<cfif attributes.type is 'update'>
+											<cfset valore=excerpt>
+										<cfelse>
+											<cfset valore=" ">
+										</cfif>
+										<cf_externaleditor
+											whicheditor = "#application.configuration.config.options.whichricheditor.xmltext#"
+											name		= "fckexcerpt"
+											valore		= "#valore#"
+											width		= "100%"
+											height		= "150"
+										>
+									</td>
 								</tr>
-								<cfif attributes.type is 'update' and qryPingTrackBacks.recordcount gt 0>
+								<tr>
+									<td colspan="2">
+										<hr />
+										<strong>#application.language.language.fulltext.xmltext#</strong>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" colspan="2">
+										<cfif attributes.type is 'update'>
+											<cfset valore=description>
+										<cfelse>
+											<cfset valore=" ">
+										</cfif>
+										<cf_externaleditor
+											whicheditor = "#application.configuration.config.options.whichricheditor.xmltext#"
+											name		= "fckdescription"
+											valore		= "#valore#"
+											width		= "100%"
+											height		= "300"
+										>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table id="theTable" width="100%%">
+											<thead>
+												<tr>
+													<td colspan="3">
+														<hr />
+													</td>
+												</tr>
+												<tr id="row_0">
+													<th align="left">#application.language.language.enclosures.xmltext#</th>
+													<cfif HTTP_USER_AGENT contains 'MSIE'>
+														<th onclick="appendRow(0);" colspan="2" align="right">
+															<img src="images/add.gif" alt="<cfoutput>#application.language.language.insertRow.xmltext#</cfoutput>" />
+														</th>
+													</cfif>
+												</tr>
+											</thead>
+											<tbody>
+												 <cfif attributes.type is 'update' and qryEnclosures.recordcount is not 0>
+													<cfloop query="qryEnclosures">
+														<tr id="row_#qryEnclosures.currentrow#">
+															<td>
+																<input type="file" name="enclosure_#qryEnclosures.currentrow#" size="50" />
+																<br />
+																#qryEnclosures.name#(#qryEnclosures.length# - #qryEnclosures.type#)
+															</td>
+															<cfif HTTP_USER_AGENT contains 'MSIE'>
+																<td onclick="appendRow(#qryEnclosures.currentrow#);" width="16" align="center">
+																	<img src="images/add.gif" alt="Insert one row below this row"/>
+																</td>
+															</cfif>
+															<td onclick="deleteRow(#qryEnclosures.currentrow#);" width="16" align="center">
+																<img src="images/del.gif" alt="Delete this row"/>
+															</td>
+														</tr>
+													</cfloop>
+													<cfif HTTP_USER_AGENT does not contain 'MSIE'>
+														<cfscript>
+															howmanyEnclosures=qryEnclosures.recordcount;
+															howmanyEmptyEnclosures=howmanyEnclosures+4;
+														</cfscript>
+														<cfloop index="i" from="#incrementvalue(howmanyEnclosures)#" to="#howmanyEmptyEnclosures#">
+															<tr id="row_#i#">
+																<td><input type="file" name="enclosure_#i#" size="50" /></td>
+															</tr>
+														</cfloop>
+													</cfif>
+													<cfloop query="qryEnclosures">
+														<input type="hidden" name="enclosurehidden_#qryEnclosures.currentrow#" value="#qryEnclosures.name#,#qryEnclosures.length#,#qryEnclosures.type#" />
+													</cfloop>
+												 <cfelse>
+													<tr id="row_1">
+														<td><input type="file" name="enclosure_1" size="50" /></td>
+														<cfif HTTP_USER_AGENT contains 'MSIE'>
+															<td onclick="appendRow(1);" width="16" align="center">
+																<img src="images/add.gif" alt="Insert one row below this row"/>
+															</td>
+															<td onclick="deleteRow(1);" width="16" align="center">
+																<!---
+																<img src="images/del.gif" alt="Delete this row"/>
+																--->
+															</td>
+														</cfif>
+													</tr>
+													<tr id="row_2">
+														<td><input type="file" name="enclosure_2" size="50" /></td>
+														<cfif HTTP_USER_AGENT contains 'MSIE'>
+															<td onclick="appendRow(2);" width="16" align="center">
+																<img src="images/add.gif" alt="Insert one row below this row"/>
+															</td>
+															<td onclick="deleteRow(2);" width="16" align="center">
+																<img src="images/del.gif" alt="Delete this row"/>
+															</td>
+														</cfif>
+													</tr>
+													<tr id="row_3">
+														<td><input type="file" name="enclosure_3" size="50" /></td>
+														<cfif HTTP_USER_AGENT contains 'MSIE'>
+															<td onclick="appendRow(3);" width="16" align="center">
+																<img src="images/add.gif" alt="Insert one row below this row"/>
+															</td>
+															<td onclick="deleteRow(3);" width="16" align="center">
+																<img src="images/del.gif" alt="Delete this row"/>
+															</td>
+														</cfif>
+													</tr>
+													<tr id="row_4">
+														<td><input type="file" name="enclosure_4" size="50" /></td>
+														<cfif HTTP_USER_AGENT contains 'MSIE'>
+															<td onclick="appendRow(4);" width="16" align="center">
+																<img src="images/add.gif" alt="Insert one row below this row"/>
+															</td>
+															<td onclick="deleteRow(4);" width="16" align="center">
+																<img src="images/del.gif" alt="Delete this row"/>
+															</td>
+														</cfif>
+													</tr>
+												</cfif>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<hr />
+										<strong>#application.language.language.authoping.xmltext#</strong>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" colspan="2">
+										<cfset arrayping = xmlsearch(application.authoping,'//address')>
+										<cfloop index="i" from="1" to="#arraylen(arrayping)#">
+											<input name="authoping" type="checkbox" value="#arrayping[i].xmlattributes.url#" /> #arrayping[i].xmltext#<br  />
+										</cfloop>
+									</td>
+								</tr>
+								<cfif isdefined('qryAuthoPings') and qryAuthoPings.recordcount gt 0>
 									<tr>
 										<td colspan="2">
 											<div class="trackbackPingBox">
 												<div align="center">
-													#application.language.language.trackbackpingstilnow.xmltext#
+													#application.language.language.authopingstilnow.xmltext#
 												</div>
 												<br />
-												<cfloop query="qryPingTrackBacks">
-													<cfwddx action="wddx2cfml" input="#qryPingTrackBacks.svalue#" output="structValue">
-													<div class="trackbackPing">
-														<strong>#right(qryPingTrackBacks.date,2)# #lsdateformat(createdate(2000,(val(mid(qryPingTrackBacks.date,5,2))),1),'mmmm')# #left(qryPingTrackBacks.date,4)# #qrypingtrackbacks.time#</strong>
-														<br />
-														<a href="#structValue.url#" target="_blank">#structValue.url#</a>
-														<br />
-														<strong>response:</strong> #htmleditformat(structValue.trackbackresult)#
-													</div>
+												<cfloop query="qryAuthoPings">
+													<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
+													<cftry>
+														<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
+														<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
+														<div class="trackbackPing">
+															<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
+															<br />
+															<a href="#structValue.url#" target="_blank">#structValue.url#</a>
+															<br />
+															<strong>flerror:</strong> #flerror[1].xmltext#
+															<br />
+															<strong>message:</strong> #message[1].xmltext#
+														</div>
+														<cfcatch>
+															<div class="trackbackPing">
+																<strong>#structValue.url#</strong>
+																<br />
+																<br />
+																#structValue.authopingresult#
+															</div>
+														</cfcatch>
+													</cftry>
 												</cfloop>
 											</div>
 										</td>
 									</tr>
 								</cfif>
+								<cfif application.configuration.config.options.trackbacks.xmltext>
+									<tr>
+										<td colspan="2">
+											<hr />
+											<strong>#application.language.language.trackbacks.xmltext#</strong>
+										</td>
+									</tr>
+									<tr>
+										<td align="right">#application.language.language.trackbackto.xmltext#:</td>		
+										<td align="left"><input type="Text" name="pingTrackBack" size="50" class="editorForm"/></td>
+									</tr>
+									<cfif attributes.type is 'update' and qryPingTrackBacks.recordcount gt 0>
+										<tr>
+											<td colspan="2">
+												<div class="trackbackPingBox">
+													<div align="center">
+														#application.language.language.trackbackpingstilnow.xmltext#
+													</div>
+													<br />
+													<cfloop query="qryPingTrackBacks">
+														<cfwddx action="wddx2cfml" input="#qryPingTrackBacks.svalue#" output="structValue">
+														<div class="trackbackPing">
+															<strong>#right(qryPingTrackBacks.date,2)# #lsdateformat(createdate(2000,(val(mid(qryPingTrackBacks.date,5,2))),1),'mmmm')# #left(qryPingTrackBacks.date,4)# #qrypingtrackbacks.time#</strong>
+															<br />
+															<a href="#structValue.url#" target="_blank">#structValue.url#</a>
+															<br />
+															<strong>response:</strong> #htmleditformat(structValue.trackbackresult)#
+														</div>
+													</cfloop>
+												</div>
+											</td>
+										</tr>
+									</cfif>
+								</cfif>
+								<tr>
+									<td align="center" colspan="2">
+										<input type="button" value="#application.language.language.clear.xmltext#" onClick="if(confirm('#JSStringFormat(application.language.language.cancelaction.xmltext)#')) { history.back() }">
+										<cfif attributes.type is 'update'>
+											<input type="hidden" name="id" value="#id#">
+											<input type="submit" name="okModBlog" value="#application.language.language.confirm.xmltext#" />
+										<cfelse>					
+											<input type="submit" name="okBlog" value="#application.language.language.insertblog.xmltext#" />
+										</cfif><br /><br />
+									</td>
+								</tr>
+							</cfform>
+							<cfif directoryexists('#request.apppath#/external/jscalendar')>
+								<script type="text/javascript">
+									myDate = new Date(#year(mydate)#,#decrementvalue(month(mydate))#,#day(mydate)#);
+									Calendar.setup({
+										date			:	myDate,
+										inputField     	:    "date",     // id of the input field
+										ifFormat       	:    "%d/%m/%Y",     // format of the input field (even if hidden, this format will be honored)
+										displayArea    	:    "show",       // ID of the span where the date is to be shown
+										daFormat       	:    "%e %B %Y",// format of the displayed date
+										button         	:    "f_trigger",  // trigger button (well, IMG in our case)
+										align          	:    "Tl",           // alignment (defaults to "Bl")
+										singleClick    	:    true
+									});
+								</script>
 							</cfif>
-							<tr>
-								<td align="center" colspan="2">
-									<input type="button" value="#application.language.language.clear.xmltext#" onClick="if(confirm('#JSStringFormat(application.language.language.cancelaction.xmltext)#')) { history.back() }">
-									<cfif attributes.type is 'update'>
-										<input type="hidden" name="id" value="#id#">
-										<input type="submit" name="okModBlog" value="#application.language.language.confirm.xmltext#" />
-									<cfelse>					
-										<input type="submit" name="okBlog" value="#application.language.language.insertblog.xmltext#" />
-									</cfif><br /><br />
-								</td>
-							</tr>
-						</cfform>
-						<cfif directoryexists('#request.apppath#/external/jscalendar')>
-							<script type="text/javascript">
-								myDate = new Date(#year(mydate)#,#decrementvalue(month(mydate))#,#day(mydate)#);
-								Calendar.setup({
-									date			:	myDate,
-									inputField     	:    "date",     // id of the input field
-									ifFormat       	:    "%d/%m/%Y",     // format of the input field (even if hidden, this format will be honored)
-									displayArea    	:    "show",       // ID of the span where the date is to be shown
-									daFormat       	:    "%e %B %Y",// format of the displayed date
-									button         	:    "f_trigger",  // trigger button (well, IMG in our case)
-									align          	:    "Tl",           // alignment (defaults to "Bl")
-									singleClick    	:    true
-								});
-							</script>
-						</cfif>
-					</table>
-				</div>
-			</cfoutput>
-		</div>
+						</table>
+					</div>
+				</cfoutput>
+			</div>
+		</vb:content>
 	</cfdefaultcase>
 </cfswitch>

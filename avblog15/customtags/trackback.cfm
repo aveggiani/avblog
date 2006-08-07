@@ -1,3 +1,4 @@
+<cfimport taglib="../customtags/" prefix="vb">
 <cfswitch expression="#attributes.mode#">
 	<cfcase value="showall">
 		<cfinclude template="../include/functions.cfm">
@@ -5,53 +6,55 @@
 		<cfparam name="start" default="1">
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
-			<cfscript>
-				trackbacks = arrayOfStructuresToQuery(request.trackbacks.get());
-			</cfscript>
-			<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=alltrackbacks" id="theForm" name="theForm" method="post"> 
-				<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
-				<cfif useAjax()>
-					<input type="hidden" name="deleteTrackbacks" value="savePingList" />
-					<input type="button" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
-				<cfelse>
-					<input type="submit" name="deleteTrackbacks" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
-				</cfif>
-				<hr />
-				<div align="right" class="commentText"><cfoutput>#trackbacks.recordcount# #application.language.language.trackbacks.xmltext#</cfoutput></div>
-				<cf_pages style="trackbackText" from="#from#" steps="10" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
-				<cfloop query="trackbacks" startrow="#start#" endrow="#end#">
-					<cfscript>
-						post = request.blog.get(trackbacks.blogid);
-					</cfscript>
-					<div class="trackbackNotPublished">
-						<div class="trackbackBody">
-							<input type="checkbox" name="id" value="<cfoutput>#trackbacks.id#</cfoutput>" /><cfoutput><cfif isdefined('post.date')><a href="#getPermalink(post.date,post.menuitem)#"></cfif><span class="trackbackText">#post.title#</span><cfif isdefined('post.date')></a></cfif></cfoutput>
-							<cfset date=trackbacks.date>
-							<cfoutput>
-							<div class="trackbackDate">#right(date,2)# #lsdateformat(createdate(2000,mid(date,5,2),1),'mmmm')# #left(date,4)# #trackbacks.time#
-								<cfif isuserinrole('admin')>
-									[<a href="#request.linkadmin#?mode=deletetrackback&idtrackback=#urlencodedformat(trackbacks.id)#&id=#urlEncodedFormat(trackbacks.blogid)#');">#application.language.language.delete.xmltext#</a>]
-									[<a href="#request.linkadmin#?mode=viewtrackback&idtrackback=#urlencodedformat(trackbacks.id)#&id=#urlEncodedFormat(trackbacks.blogid)#&publish=#trackbacks.published#');"><cfif trackbacks.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></a>]
-								</cfif>
+			<vb:content>
+				<cfscript>
+					trackbacks = arrayOfStructuresToQuery(request.trackbacks.get());
+				</cfscript>
+				<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=alltrackbacks" id="theForm" name="theForm" method="post"> 
+					<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
+					<cfif useAjax()>
+						<input type="hidden" name="deleteTrackbacks" value="savePingList" />
+						<input type="button" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
+					<cfelse>
+						<input type="submit" name="deleteTrackbacks" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
+					</cfif>
+					<hr />
+					<div align="right" class="commentText"><cfoutput>#trackbacks.recordcount# #application.language.language.trackbacks.xmltext#</cfoutput></div>
+					<cf_pages style="trackbackText" from="#from#" steps="10" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
+					<cfloop query="trackbacks" startrow="#start#" endrow="#end#">
+						<cfscript>
+							post = request.blog.get(trackbacks.blogid);
+						</cfscript>
+						<div class="trackbackNotPublished">
+							<div class="trackbackBody">
+								<input type="checkbox" name="id" value="<cfoutput>#trackbacks.id#</cfoutput>" /><cfoutput><cfif isdefined('post.date')><a href="#getPermalink(post.date,post.menuitem)#"></cfif><span class="trackbackText">#post.title#</span><cfif isdefined('post.date')></a></cfif></cfoutput>
+								<cfset date=trackbacks.date>
+								<cfoutput>
+								<div class="trackbackDate">#right(date,2)# #lsdateformat(createdate(2000,mid(date,5,2),1),'mmmm')# #left(date,4)# #trackbacks.time#
+									<cfif isuserinrole('admin')>
+										[<a href="#request.linkadmin#?mode=deletetrackback&idtrackback=#urlencodedformat(trackbacks.id)#&id=#urlEncodedFormat(trackbacks.blogid)#');">#application.language.language.delete.xmltext#</a>]
+										[<a href="#request.linkadmin#?mode=viewtrackback&idtrackback=#urlencodedformat(trackbacks.id)#&id=#urlEncodedFormat(trackbacks.blogid)#&publish=#trackbacks.published#');"><cfif trackbacks.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></a>]
+									</cfif>
+								</div>
+								<div class="trackbackText">
+									#trackbacks.blog_name#
+									<br />
+									<br />
+									#trackbacks.url#
+									<br  />
+									<br  />
+									#trackbacks.title#
+									<br />
+									<br />
+									#trackbacks.excerpt#
+								</div>
+								</cfoutput>
 							</div>
-							<div class="trackbackText">
-								#trackbacks.blog_name#
-								<br />
-								<br />
-								#trackbacks.url#
-								<br  />
-								<br  />
-								#trackbacks.title#
-								<br />
-								<br />
-								#trackbacks.excerpt#
-							</div>
-							</cfoutput>
 						</div>
-					</div>
-				</cfloop>
-			</form>
-			</cf_pages>
+					</cfloop>
+				</form>
+				</cf_pages>
+			</vb:content>
 		</cfif>
 	</cfcase>
 	<cfcase value="show">
