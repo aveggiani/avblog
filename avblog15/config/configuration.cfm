@@ -23,6 +23,7 @@
 					<options>
 						<privateblog>false</privateblog>
 						<subscriptions>true</subscriptions>
+						<emailtitlecontent>false</emailtitlecontent>
 						<emailpostcontent>false</emailpostcontent>
 						<sendemail>true</sendemail>
 						<maxbloginhomepage>10</maxbloginhomepage>
@@ -112,8 +113,8 @@
 						</blogstorage>
 					</options>
 					<layout>
-						<theme>default</theme>
-						<layout>justified</layout>
+						<theme>internet_music</theme>
+						<layout>centered</layout>
 						<useiconset>silk</useiconset>
 						<usesocialbuttons>true</usesocialbuttons>
 					</layout>
