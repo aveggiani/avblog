@@ -1,33 +1,28 @@
 #main
 {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
+	padding: 5px;
+	width: 768px;
 }
 
 #entries
 {
-	margin-right: -1px;
-	padding-right: 0px;
+	width:500px;
+	max-width:500px;
+	padding-right: 5px;
 	padding-left: 5px;
-	border-right: 1px solid #003344;
 	float:left;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	color: #003344;
-	text-decoration: none;
-	text-align:left;
 }
 
 #side
 {
-	width: 250px;
-	border-left: 1px solid #003344;
+	width:250px;
 	float:left;
 	color: #003344;
 	text-align:left;
 	padding-right:0px;
-	padding-left:5px;
+	padding-left:0px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin-right:0px;
@@ -35,14 +30,12 @@
 
 .sidelogo
 	{
-		padding: 4px;
-		width:168px;
 		text-align:center;
 	}
 	
 #header 
 {
-	background-color: #003344;
+	background-color: #ffffff;
 	height:70px;
 	text-align:left;
 	padding-top: 5px;
@@ -50,142 +43,121 @@
 	padding-right:10px;
 	padding-bottom:5px;
 	margin-right:0px;
-	border-top: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
 }
 
 #headerlogo
 {
 	height:70px;
-	background-color: #003344;
+	background-color: #ffffff;
 	float:left;
 }
 
 #headertext
 {
-	background-color: #003344;
+
+	text-align: right;
+	background: #FFF url(images/dot.gif) repeat-x bottom;
+	color: #444;
 	text-align:right; 
 	padding-right:10px;
 	margin-top:25px;
-	height:45px;
-	font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
-	color: #FFFFFF
+	height:25px;
+	font-size: 1.4em;
+	color: #C85E35;
 }
+
 #headertext a
 {
-	color: #FFFFFF;
+	color: #C85E35;
 }
 
 
-#footer 
-{
+#footer { 
+	clear: both; 
+	text-align: center;
+	line-height: 1.8em;
+	color: #808080;
+	background: #FFF url(images/dot.gif) repeat-x;
+	padding: 8px 0;
+}
 
-	background-color: #A7BCD6;
-	font-family: Georgia, serif;
-	font-size: 9pt;	
-	padding: 5px;
-	color: #003344;
-	border-top: 1px solid #003344;
-	border-left: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
-	border-right: 1px solid #999999;
-	clear:both;
+#footer a {
+	color: #C3593C;
+	background: inherit;
 }
 
 
-body { background-color: White; margin: 0px; padding:0px; cursor: default;}
+body { 
+	background-color: White; 
+	margin: 0px; 
+	padding:0px; 
+	cursor: default;
+	font: 0.74em Arial, Helvetica, sans-serif; 
+	line-height: 1.5em;
+	color: #454545; 
+}
 
-.logoText { font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  color: #C5C5C5; }
+.logoText { font: bold 1em;  color: #C5C5C5; }
 
 input, textarea, select {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0.9em;
 	padding: 2px;
 }
 
 a
 {
-	color: #003344;
-	text-decoration: none;
+	color: #ffffff;
+	text-decoration: underline;
 }
 a:hover {
-	color: #333;
+	color: #666666;
 	text-decoration: underline;
 }
 
 hr {
-color: #FFFFFF;
-  background-color: #FFFFFF;
-  height: 1px;
-  width: 100%;
-  border: outset #5F7C9A 1px;}
-
-
-.pod_bottom {
-	width: 245px;
-	background: #C85E35 url(images/rb.gif) no-repeat bottom;
-	padding: 0px;	
-	margin-bottom: 5px;
-	height: 7px;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	height: 0px;
+	width: 100%;
+	border-bottom: dotted 1px;
 }
-.pod {
-	font-size: 0.9em;
-	width: 245px;
-	background: #C85E35;
-	color: #FEE1D5;
-	padding: 0px;	
-	margin: 0px;
-
-}
-.pod_top {
-	width: 245px;
-	background: #C85E35 url(images/rt.gif) no-repeat;
-	height: 7px;
-	padding: 0px;	
-	margin: 0px;
-}
-		
 
 .login {
   top : 0px;
   padding : 20px;
   text-align: center;
-  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  font-size: 7.5pt;
 }
 
 .catList {
-	width:190px;
 	overflow:hidden;
-	padding-left: 5px;
-	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-
+	padding-left: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
 }
 .catListTitle {
 	padding-bottom: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 9pt;
+	font-size: 1.2em;
 	font-weight: bold;
 	color: #FEE1D5;
 }
+
+.catListTitle a {
+	color: #FEE1D5;
+}
+
 .catListElement {
-	color: #666;
+	color: #FEE1D5;
 	padding-left: 5px;
 }
 
 .Links {
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
 
 }
 .LinksTitle {
 	padding-bottom: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 9pt;
+	font-size: 1.2em;
 	color: #666;
 	font-weight: bold;
 	color: #4592CA;
@@ -193,13 +165,10 @@ color: #FFFFFF;
 .LinksElement {
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
 }
 
 select.monthArchive {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0.8em;
 	color: #003344;
  	width:180px;
 	background-color: #FFF; 
@@ -207,11 +176,9 @@ select.monthArchive {
 }
 
 .functionMenu {
-	padding-left: 5px;
-	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	color: #333;
+	width:245px;
+	padding-left:15px;
+	text-align:left;
 }
 
 .blogNotPublished {
@@ -236,48 +203,39 @@ select.monthArchive {
 }
 
 .blogDate {
-	background-color: #A7BCD6;
-	font-family: Georgia, serif;
-	font-size: 9pt;	
+	text-align:left;
+	font-size: 1.3em;	
+	font-weight:bold;
 	padding: 5px;
-	color: #003344;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
+	padding-top: 0px;
+	color: #000000;
 }
 
 .blogTitle {
-	font-family:Georgia, serif;
-	font-size: 14pt;
-	color:  #5F7C9A;;
+	font-size: 1.5em;
+	font-weight: bold;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 7px;
 	letter-spacing: -0.05em;
 }
 .blogText {
-	font-family: Georgia, serif;
-	font-size: 10pt;	
-	color: #666;
 	padding-left: 15px;
 	padding-right: 5px;
+	color: #ffffff;
 }
 .blogMore { 
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
-	color: #666;
 	text-align: right;
 	padding-top: 20px;
 	padding-bottom: 10px;
 	padding-right: 5px;
+	color:  #ffffff;
 }
 
 .blogAuthor { 
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
-	color: #666;
 	text-align: right;
 	padding-right: 5px;
+	color:  #ffffff;
 }
 
 .blogAuthor a {
@@ -287,28 +245,24 @@ select.monthArchive {
 .blogCommands { 
 	border-top: 1px dashed #ccc;
 	padding-top: 4px;
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
-	color: #666;
+	font-size: 1em;	
+	color:  #ffffff;
 	text-align: right;
 	padding-right: 5px;
 }
 
 .blogCommands a {
-	color: #333333;
 }
 
 .blogAdmin {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	color: #666;
+	font-size: 1.1em;
+	font-weight: bold;
 	padding-left: 5px;
 	padding-bottom: 5px;
 }
 
 .statisticsMenu {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0,9em;
 	color: #666;
 	padding-left: 5px;
 	padding-bottom: 5px;
@@ -319,14 +273,12 @@ select.monthArchive {
 
 .trackbackPingBox {
 	border: 1px solid red;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 12pt;	
+	font-size: 0,9em;
 	color: #666;
 	padding: 5px;
 }
 .trackbackPing {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
+	font-size: 0,9em;
 	color: #666;
 	padding: 5px;
 	border-bottom: 1px dashed;
@@ -350,20 +302,15 @@ select.monthArchive {
 	border-bottom: 1px dashed #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0,9em;
 	padding: 5px;
 	color: #003344;
 }
 .commentText {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	color: #666;
+	font-size: 0,9em;
 }
 .commentAuthor {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	color: #666;
+	font-size: 0,9em;
 	text-align: left;
 	font-weight: bold;
 }
@@ -379,38 +326,33 @@ select.monthArchive {
 	border-bottom: 1px dashed #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0,9em;
 	padding: 5px;
 	color: #003344;
 }
 .trackbackText {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
+	font-size: 0,9em;
 	color: #666;
 }
 
 .editorBody {
-	margin-top: 0px;
-	background-color: #eee;
+	text-align:center;
+	margin: 5px;
 	padding: 0px;
-	width: 100%;
+	width: 95%;
 	overflow-x: hidden;
 	margin-bottom: 15px;
-	border-bottom: 1px solid #003344;
 }
 .editorTitle {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
-	background-color: #A7BCD6;
+	text-align:left;
+	font-size: 1,1em;
 	padding: 5px;
-	color: #003344;
+	background-color: #999999;
 	font-weight: bold;
 }
 .editorList {
-	font-family: Georgia, serif;
-	font-size: 10pt;
-	color: #666;
+	text-align:left;
+	font-size: 0,9em;
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;	
@@ -418,20 +360,18 @@ select.monthArchive {
 	margin-bottom: 10px;	
 }
 .editorForm {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	color: #666;
+	text-align:left;
+	font-size: 0,9em;
+	color: #ffffff;
 }
 input.editorForm {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
+	font-size: 0,9em;
 	border: 1px solid #666;
 	background-color: White;
 }
 
 .text {
-	font-family: Georgia, serif;
-	font-size: 10pt;	
+	font-size: 0,9em;
 	color: #666;
 	padding-left: 15px;
 	padding-right: 5px;
@@ -466,11 +406,11 @@ input.editorForm {
 
 .tagcloud
 	{
-		width: 180px;
-		padding: 4px;
-		border:1px solid #888888;
-		background-color: #cccccc;
-		margin-left: 2px;
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 	
 .smallestTag { font-size: xx-small; }
@@ -496,26 +436,14 @@ input.editorForm {
 }
 
 .blogSocial { 
-	font-variant: small-caps; 
-	font-family: Georgia, serif;
-	font-size: 8pt;	
-	background-color: #eeeeee;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	border-right: 1px solid #999999;
-	border-bottom: 1px solid #999999;
-	color: #333;
+	font-size: 0.9em;	
+	color: #ffffff;
 	text-align: left;
-	padding: 5px;
-	margin: 10px;
-	width: 60%;
+	margin: 5px;
 }
 
 .blogCategories { 
-	font-variant: small-caps; 
-	font-family: Georgia, serif;
-	font-size: 8pt;	
-	color: #333;
+	font-size: 1.1em;	
 	text-align: left;
 	padding-left: 5px;
 	padding-top:5px;
@@ -523,6 +451,89 @@ input.editorForm {
 }
 
 .blogCategories a {
-	color: #D0420A;
 }
 
+.pod_bottom {
+	width: 245px;
+	background: #C85E35 url(images/rb.gif) no-repeat bottom;
+	padding: 0px;	
+	margin-bottom: 5px;
+	height: 7px;
+}
+
+.pod {
+	font-size: 0.9em;
+	width: 245px;
+	background: #C85E35;
+	color: #FEE1D5;
+	padding: 0px;	
+	margin: 0px;
+}
+
+.pod a {
+	color: #FEE1D5;
+	text-decoration:underline;
+}
+
+.pod_top {
+	width: 245px;
+	background: #C85E35 url(images/rt.gif) no-repeat;
+	height: 7px;
+	padding: 0px;	
+	margin: 0px;
+}
+		
+.content_bottom {
+	width: 490px;
+	background: #6E6E6E url(images/lb.gif) no-repeat bottom;
+	padding: 0px;	
+	margin-left: 5px;
+	margin-bottom: 5px;
+	height: 7px;
+}
+.content {
+	font-size: 0.9em;
+	width: 490px;
+	background: #6E6E6E;
+	color: #FEE1D5;
+	padding: 0px;	
+	margin: 0px;
+	margin-left: 5px;
+	text-align:left;
+}
+
+.content_inner {
+	padding: 5px;	
+}
+
+.content a {
+	color: #FFFCD1;
+	text-decoration:underline;
+}
+
+.content_top {
+	width: 490px;
+	background: #6E6E6E url(images/lt.gif) no-repeat;
+	height: 7px;
+	padding: 0px;	
+	margin: 0px;
+	margin-left: 5px;
+	color: #ffffff;
+	font-size: 1.1em;
+}
+
+.adminMenu {
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+	clear: both;
+	margin: 3px 0 10px 0;
+	padding: 8px;
+	background: #f4f4f4;
+	color: #808080;
+	border-bottom: 1px solid #ccc;
+}
