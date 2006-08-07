@@ -18,6 +18,9 @@
 			<link href="#request.appmapping#css/layout_#application.configuration.config.layout.layout.xmltext#.css" rel="stylesheet" type="text/css" />
 			<link href="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/main.css" rel="stylesheet" type="text/css" />
 			<link href="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/calendar.css" rel="stylesheet" type="text/css" />
+			<cfloop query="application.layoutthemeplugins">
+				<link href="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/plugins/#name#" rel="stylesheet" type="text/css" />
+			</cfloop>
 			<link type="application/rss+xml" rel="alternate" title="#application.configuration.config.headers.title.xmltext# - RSS" href="http://#cgi.SERVER_NAME#/#request.appmapping#feed/rss.cfm" />
 			<link type="application/atom+xml" rel="alternate" title="#application.configuration.config.headers.title.xmltext# - Atom" href="http://#cgi.SERVER_NAME#/#request.appmapping#feed/atom.cfm" />
 			<link rel="shortcut icon" href="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/images/favicon.ico" />
