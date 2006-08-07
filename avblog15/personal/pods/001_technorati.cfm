@@ -1,10 +1,12 @@
-﻿<cfif not isuserinrole('admin')>
-	<div id="functionMenu">
+﻿<cfsilent>
+	<cfimport taglib="../../customtags/" prefix="vb">
+</cfsilent>
+<cfif not isuserinrole('admin')>
+	<!--- your technorati string here
+	<vb:pod>
 		<span class="catListElement">
-			<!--- your technorati string here
 			<script type="text/javascript" src="http://technorati.com/embed/xxxxxx.js"> </script>
-			--->
 		</span>
-	</div>		
-	<hr />
+	</vb:pod>
+	--->
 </cfif>
