@@ -102,7 +102,7 @@
 			</cfif>
 		</cfcase>
 		<cfcase value="subscribeBlog">
-			<cfif isdefined('form.email') and isEmail(form.email)>
+			<cfif isdefined('form.email') and isEmail(form.email) and cgi.HTTP_REFERER contains 'index.cfm'>
 				<cfscript>
 					request.subscriptions.save('blog','',form.email);
 				</cfscript>
@@ -451,7 +451,7 @@
 						textMailPost = form.title & '<br /><br />' & form.fckdescription;
 					else
 						textMailPost = '';
-					request.subscriptions.check('blog',application.language.language.author.xmltext,textMailPost,id);
+					request.subscriptions.check('blog',application.language.language.author.xmltext,'',id);
 				</cfscript>
 			</cfif>
 			<!--- Ping trackback if present --->
