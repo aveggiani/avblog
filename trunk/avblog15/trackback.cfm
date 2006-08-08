@@ -2,21 +2,21 @@
 	<cfsetting enablecfoutputonly="yes">
 	<cfsetting showdebugoutput="no">
 	<cfscript>
-		if not (StructKeyExists(form, 'title'))
-			structTrackback.title 		= '';
-		if not (StructKeyExists(form, 'excerpt'))
+		if (not StructKeyExists(form, 'title'))
+			form.title 		= '';
+		if (not StructKeyExists(form, 'excerpt'))
 			form.excerpt 	= '';
-		if not (StructKeyExists(form, 'blog_name'))
+		if (not StructKeyExists(form, 'blog_name'))
 			form.blog_name 	= '';
 	</cfscript>
 	<cfif isdefined('form')>
 		<cfif structkeyexists(form,'blog_name') 
 			and 
-			request.trackbacks.filterspam(form.blog_name)
+			request.trackbacks.filterspam(trim(form.blog_name))
 			and
-			request.trackbacks.filterspam(form.title)
+			request.trackbacks.filterspam(trim(form.title))
 			and
-			request.trackbacks.filterspam(form.excerpt)
+			request.trackbacks.filterspam(trim(form.excerpt))
 			>
 			<cfif structkeyexists(form,'url')>
 				<cfif structkeyexists(url,'id')>
