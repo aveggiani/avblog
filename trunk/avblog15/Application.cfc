@@ -1,7 +1,7 @@
 <cfcomponent output="false">
 
 	<cfscript>
-		this.name 							= "AVBlog15_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
+		this.name 							= "AVBlog151_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
 		this.applicationTimeout 			= createTimeSpan(0,2,0,0);
 
 		this.sessionManagement 				= true;
@@ -349,6 +349,9 @@
 			request.xmlFilesExtension		 	= "cfm";
 			request.appMapping				 	= initRequestappMapping();
 			request.appPath					 	= initRequestappPath(request.appMapping);
+			request.cfcMapping					= replace(request.appMapping,'/','.','ALL');
+			if (left(request.cfcMapping,1) is '.')
+				request.cfcMapping = right(request.cfcMapping,decrementvalue(len(request.cfcMapping)));
 			if (isuserinrole('admin') or isuserinrole('blogger'))
 				request.caching					= 'none';
 			else
@@ -532,6 +535,7 @@
 			application.plugins 				= application.configurationCFC.loadplugins();
 			application.pluginsconfiguration	= application.configurationCFC.loadpluginsconfiguration(application.plugins);
 			application.pluginslanguage			= application.configurationCFC.loadpluginslanguage(application.plugins);
+			application.layoutthemeplugins		= application.configurationCFC.loadlayoutthemeplugins(application.configuration.config.layout.theme.xmltext);
 
 			request.links					= createobject("component","cfc.links");
 			request.users					= createobject("component","cfc.users");
@@ -549,6 +553,15 @@
 		<cfif directoryexists('#request.apppath#/external/javaloader')>
 			<cfscript>
 				application.JavaLoader = createObject("component", "external.javaloader.JavaLoader");
+			</cfscript>
+		</cfif>
+		<cfif directoryexists('#request.apppath#/external/flickr/CFlickr')>
+			<cfscript>
+				application.Flickr = createObject("component", "external.flickr.CFlickr.Flickr");
+				application.AbstractContext = createObject("component", "external.flickr.CFlickr.AbstractContext");
+				application.AbstractInterface = createObject("component", "external.flickr.CFlickr.AbstractInterface");
+				application.AbstractList = createObject("component", "external.flickr.CFlickr.AbstractList");
+				application.Response = createObject("component", "external.flickr.CFlickr.Response");
 			</cfscript>
 		</cfif>
 
