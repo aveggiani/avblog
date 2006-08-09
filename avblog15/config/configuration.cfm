@@ -6,12 +6,12 @@
 						<charset>UTF-8</charset>
 					</headers>
 					<labels>
-						<header><![CDATA[<a href="index.cfm?mode=admin">Administration</a>&nbsp;|&nbsp;<a href="http://www.avblog.org/index.cfm">AVBlog project</a>]]></header>
+						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;">Andrea Veggiani</div><a href="index.cfm?mode=admin">Administration</a>&nbsp;|&nbsp;<a href="http://www.avblog.org/index.cfm">AVBlog project</a>]]></header>
 						<footer>Copyright 2006 - Your name here</footer>
 					</labels>
 					<owner>
 						<author>Blog Owner</author>
-						<email>email Owner</email>
+						<email>andrea@dinamica.it</email>
 						<blogurl>url Owner</blogurl>
 					</owner>
 					<internationalization>

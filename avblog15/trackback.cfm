@@ -17,6 +17,8 @@
 			request.trackbacks.filterspam(trim(form.title))
 			and
 			request.trackbacks.filterspam(trim(form.excerpt))
+			and
+			request.trackbacks.filterspam(trim(form.url))
 			>
 			<cfif structkeyexists(form,'url')>
 				<cfif structkeyexists(url,'id')>

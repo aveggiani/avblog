@@ -74,18 +74,20 @@
 					arrayshow[i].published>
 			
 					<cfif isdefined('form.addcomment')>
-						<cfoutput>
-							<div align="center" class="blogText">
-								<hr />
-								#application.language.language.commentadded.xmltext#
-								<cfif application.configuration.config.options.comment.commentmoderate.xmltext>
-									<br />
-									<br />
-									#application.language.language.commentaddedonmoderation.xmltext#
-								</cfif>
-								<hr />
-							</div>
-						</cfoutput>
+						<vb:content>
+							<cfoutput>
+								<div align="center" class="blogText">
+									<hr />
+									#application.language.language.commentadded.xmltext#
+									<cfif application.configuration.config.options.comment.commentmoderate.xmltext>
+										<br />
+										<br />
+										#application.language.language.commentaddedonmoderation.xmltext#
+									</cfif>
+									<hr />
+								</div>
+							</cfoutput>
+						</vb:content>
 					</cfif>
 					
 					<!--- no cache if comment or trackback mode --->
@@ -235,28 +237,28 @@
 								</cfif>
 								<div class="blogAuthor">
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/date.png" alt="icon date" align="middle" />
+										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/date.png" alt="icon date" align="middle" />
 									</cfif>	
 									#arrayShow[i].time#
 									|
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/author.png" alt="icon author"  align="middle" />
+										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/author.png" alt="icon author"  align="middle" />
 									</cfif>	
 									<a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
 								</div>
 								<div class="blogCommands">
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/permalink.png" alt="icon permalink"  align="middle" />
+										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/permalink.png" alt="icon permalink"  align="middle" />
 									</cfif>	
 									<a href="#permalink#">permalink</a>
 									<cfif qryEnclosures.recordcount gt 0>
 										<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-											<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/enclosure.png" alt="icon enclosure"  align="middle" />
+											<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/enclosure.png" alt="icon enclosure"  align="middle" />
 										</cfif>	
 										<a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
 									</cfif>
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/comment.png" alt="icon comment"  align="middle" />
+										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/comment.png" alt="icon comment"  align="middle" />
 									</cfif>	
 									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
 									<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
@@ -267,7 +269,7 @@
 										</a>
 									</cfif>
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/trackback.png" alt="icon trackback"  align="middle" />
+										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/trackback.png" alt="icon trackback"  align="middle" />
 									</cfif>	
 									<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
 									<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>

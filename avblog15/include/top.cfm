@@ -8,5 +8,5 @@
 			#application.configuration.config.labels.header.xmltext#
 		</div>
 	</div>
-	<div id="headerBottom">ciao</div>
+	<div id="headerBottom"></div>
 </cfoutput>

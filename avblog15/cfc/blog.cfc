@@ -180,6 +180,11 @@
 		<cfargument name="id" 			required="no" 	type="string" default="#createuuid()#">
 		
 		<cfscript>
+			arguments.description = replace(arguments.description,'&lt;code&gt;','<div class="code">','ALL');
+			arguments.description = replace(arguments.description,'<code>','<div class="code">','ALL');
+			arguments.description = replace(arguments.description,'&lt;/code&gt;','</div>','ALL');
+			arguments.description = replace(arguments.description,'</code>','</div>','ALL');
+
 			if (listlen(arguments.time,':') is 2)
 				arguments.time = listappend(arguments.time,'00',':');
 			if (len(listfirst(arguments.time,':')) is 1)

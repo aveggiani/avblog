@@ -3,7 +3,6 @@
 #main
 {
 	padding: 0px;
-	margin: 0px;
 	width: 800px;
 	background:#ffffff url(images/body_bg.jpg) repeat-y;
 }
@@ -246,6 +245,7 @@ select.monthArchive {
 
 .blogDate {
 	border-top: 1px solid #9e281e;
+	border-bottom: 1px solid #9e281e;
 	font-family:  Verdana;
 	font-size: 13pt;	
 	padding-top: 5px;
@@ -257,7 +257,6 @@ select.monthArchive {
 }
 
 .blogTitle {
-	border-top: 1px solid #9e281e;
 	font-family: Verdana;
 	font-size: 11pt;
 	font-weight: bold;
@@ -531,4 +530,53 @@ input.editorForm {
 	padding: 15px;
 
 }
+
+.pod_bottom {
+	border-bottom: 1px dotted #003344;
+	margin-bottom: 5px;
+}
+
+.pod {
+}
+
+.pod a {
+}
+
+.pod_top {
+}
+		
+.content_bottom {
+}
+.content {
+padding: 5px;
+}
+
+.content_inner {
+}
+
+.content a {
+}
+
+.content_top {
+}
+
+.adminMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
+}
+
+
 

@@ -60,9 +60,10 @@
 	color: #444;
 	text-align:right; 
 	padding-right:10px;
+	padding-bottom:2px;
 	margin-top:25px;
 	height:25px;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	color: #C85E35;
 }
 
@@ -92,7 +93,7 @@ body {
 	margin: 0px; 
 	padding:0px; 
 	cursor: default;
-	font: 0.74em Arial, Helvetica, sans-serif; 
+	font: 0.90em Arial, Helvetica, sans-serif; 
 	line-height: 1.5em;
 	color: #454545; 
 }
@@ -102,6 +103,7 @@ body {
 input, textarea, select {
 	font-size: 0.9em;
 	padding: 2px;
+	color: #000000;
 }
 
 a
@@ -204,10 +206,11 @@ select.monthArchive {
 
 .blogDate {
 	text-align:left;
-	font-size: 1.3em;	
+	font-size: 1.5em;	
 	font-weight:bold;
-	padding: 5px;
+	padding-left: 5px;
 	padding-top: 0px;
+	padding-bottom: 10px;
 	color: #000000;
 }
 
@@ -362,7 +365,6 @@ select.monthArchive {
 .editorForm {
 	text-align:left;
 	font-size: 0,9em;
-	color: #ffffff;
 }
 input.editorForm {
 	font-size: 0,9em;
@@ -394,14 +396,15 @@ input.editorForm {
 	
 .code
 	{
-		border:1px solid #888888;
-		background-color: #cccccc;
-		padding: 6px;
+		border:1px solid #555555;
+		background-color: #999999;
+		padding: 5px;
+		margin-right: 5px;
 		font-family:"Courier New", Courier, monospace;
 		font-size:12px;
 		overflow: auto;
-		max-height: 200px;
-		width:510px;
+		max-height: 400px;
+		width:450px;
 	}
 
 .tagcloud
@@ -439,7 +442,7 @@ input.editorForm {
 	font-size: 0.9em;	
 	color: #ffffff;
 	text-align: left;
-	margin: 5px;
+	margin: 10px;
 }
 
 .blogCategories { 
@@ -503,7 +506,7 @@ input.editorForm {
 }
 
 .content_inner {
-	padding: 5px;	
+	padding: 2px;	
 }
 
 .content a {
@@ -536,4 +539,10 @@ input.editorForm {
 	background: #f4f4f4;
 	color: #808080;
 	border-bottom: 1px solid #ccc;
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
 }

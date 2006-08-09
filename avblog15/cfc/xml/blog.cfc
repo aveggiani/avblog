@@ -13,8 +13,6 @@
 			application.fileSystem.createDirectory('#request.appPath#/#request.xmlstoragepath#','entries');
 		if (not directoryexists('#request.appPath#/#request.xmlstoragepath#/links'))
 			application.fileSystem.createDirectory('#request.appPath#/#request.xmlstoragepath#','links');
-		if (not fileexists('#request.appPath#/#request.xmlstoragepath#/links/links.cfm'))
-			initLinks();
 		if (not directoryexists('#request.appPath#/#request.xmlstoragepath#/logs'))
 			application.fileSystem.createDirectory('#request.appPath#/#request.xmlstoragepath#','logs');
 		if (not directoryexists('#request.appPath#/#request.xmlstoragepath#/spamlist'))
@@ -25,14 +23,7 @@
 			application.fileSystem.createDirectory('#request.appPath#/#request.xmlstoragepath#','trackbacks');
 		if (not directoryexists('#request.appPath#/#request.xmlstoragepath#/users'))
 			application.fileSystem.createDirectory('#request.appPath#/#request.xmlstoragepath#','users');
-		if (not fileexists('#request.appPath#/#request.xmlstoragepath#/links/users.cfm'))
-			initUsers();
 	</cfscript>
-
-	<cffunction name="initLinks" access="private" output="false" returntype="void">
-	</cffunction>
-	<cffunction name="initUsers" access="private" output="false" returntype="void">
-	</cffunction>
 
 	<cffunction name="loaddates" output="false" returntype="string">
 
