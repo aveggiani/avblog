@@ -172,19 +172,19 @@
 		<cfif len(cfhttp.ErrorDetail) is not 0>
 			<cfxml variable="returnValue">
 				<cfoutput>
-					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.queryType# error: #cfhttp.ErrorDetail#]]></error>
+					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.flickrmethod# error: #cfhttp.ErrorDetail#]]></error>
 				</cfoutput>
 			</cfxml>
 		<cfelseif len(cfhttp.FileContent) is 0>
 			<cfxml variable="returnValue">
 				<cfoutput>
-					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.queryType# error: no data returned in query]]></error>
+					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.flickrmethod# error: no data returned in query]]></error>
 				</cfoutput>
 			</cfxml>
 		<cfelseif cfhttp.Statuscode is not "200 OK">
 			<cfxml variable="returnValue">
 				<cfoutput>
-					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.queryType# error: statuscode returned #cfhttp.Statuscode#]]></error>
+					<?xml version="1.0" encoding="#request.charset#"?><error><![CDATA[#arguments.flickrmethod# error: statuscode returned #cfhttp.Statuscode#]]></error>
 				</cfoutput>
 			</cfxml>
 		<cfelse>

@@ -234,7 +234,6 @@
 		</div>
 		<cfsavecontent variable="coCommentCode">
 		<script type="text/javascript">
-			 <![cdata[ 
 				var blogTool               = "AVblog";
 				var blogURL                = "http://#cgi.SERVER_NAME##cgi.SCRIPT_NAME#";
 				var blogTitle              = "#application.configuration.config.headers.title.xmltext#";
@@ -250,7 +249,6 @@
 				var commentFormID          = "commentform";
 				var commentTextFieldName   = "comment";
 				var commentButtonName      = "submit";
-			 ]]> 
 		</script>
 		</cfsavecontent>
 		<cfhtmlhead text="#coCommentCode#">

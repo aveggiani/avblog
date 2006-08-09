@@ -6,25 +6,24 @@
 
 .pluginDeliciousSideTitle {
 	padding-bottom: 15px;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	font-weight: bold;
 	color: #FEE1D5;
 }
 
 .pluginDeliciousSideText {
-	padding-left: 15px;
+	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 0.8em;
+	font-size: 1.1em;
 	color: #000;
 }
 
 .pluginDeliciousTitle {
 	padding-bottom: 10px;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 12pt;
-	color: #666;
+	font-size: 1.5em;
+	color: #FFFFFF;
 	font-weight: bold;
+	padding-left: 5px;
 }
 
 .pluginDeliciousShow {
@@ -32,24 +31,21 @@
 }
 
 .pluginDeliciousText {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #666;
+	font-size: 1.0em;
+	color: #FFFFFF;
 	padding-bottom:4px;
 }
 
 .pluginDeliciousTagCloud
 	{
-		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 		padding: 4px;
-		border:1px solid #C6C6C6;
-		background-color: #F6F6F6;
 		margin-left: 2px;
+		line-height: 1.8em;
 	}
 	
-.pluginDelicioussmallestTag { font-size: 9pt; }
-.pluginDelicioussmallTag { font-size: 11pt; }
-.pluginDeliciousmediumTag { font-size: 13pt; }
-.pluginDeliciouslargeTag { font-size: 15pt; }
-.pluginDeliciouslargestTag { font-size: 17pt; }
+.pluginDelicioussmallestTag { font-size: 1.1em; }
+.pluginDelicioussmallTag { font-size: 1.4em; }
+.pluginDeliciousmediumTag { font-size: 1.9em; }
+.pluginDeliciouslargeTag { font-size: 2.0em; }
+.pluginDeliciouslargestTag { font-size: 2.3em; }
 

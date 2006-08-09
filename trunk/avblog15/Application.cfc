@@ -379,7 +379,7 @@
 			var i = 0;
 			var found = 0;
 			var path_translated = replace(cgi.PATH_TRANSLATED,'\','/','ALL');
-			var firstlevelfolders = 'cache,cfc,config,css,customtags,external,feed,gateway,images,include,js,languages,personal,plugins,pods,skins,storage,user';
+			var firstlevelfolders = '.svn,cache,cfc,config,css,customtags,external,feed,gateway,images,include,js,languages,personal,plugins,pods,skins,storage,user';
 		</cfscript>
 		<cfoutput>#replace(cgi.PATH_TRANSLATED,'\','/','ALL')#</cfoutput>
 		<br>
@@ -436,7 +436,7 @@
 			var k = 0;
 			var found = false;
 			var appMapping = '';
-			var firstlevelfolders = 'cache,cfc,config,css,customtags,external,feed,gateway,images,include,js,languages,personal,plugins,pods,skins,storage,user';
+			var firstlevelfolders = '.svn,cache,cfc,config,css,customtags,external,feed,gateway,images,include,js,languages,personal,plugins,pods,skins,storage,user';
 			
 			if (cgi.script_name contains 'permalinks/')
 				{
