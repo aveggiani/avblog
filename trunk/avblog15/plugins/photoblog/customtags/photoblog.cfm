@@ -278,6 +278,10 @@
 										<input type="hidden" name="photoid#idimage#" value="#myphotoblogimages.id#" />
 										<table width="100%">
 											<tr>
+												<td align="right">#application.pluginslanguage.photoblog.language.imageorder.xmltext#:</td>		
+												<td><input name="photoname#idimage#" type="text" value="#myphotoblogimages.imageorder#"></td>
+											</tr>
+											<tr>
 												<td align="right">#application.pluginslanguage.photoblog.language.photoname.xmltext#:</td>		
 												<td><input name="photoname#idimage#" type="text" value="#myphotoblogimages.name#"></td>
 											</tr>
@@ -301,7 +305,7 @@
 													<br />
 													<br />
 													<img src="#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#" />
-													<cfif application.flickrObj.islogged()>
+													<cfif useajax() and application.flickrObj.islogged()>
 														<br />
 														<div dojoType="ContentPane" layoutAlign="client" id="flickr#idimage#" executeScripts="true">
 															<input type="button" value="post to Flickr" onclick="postToFlickr#idimage#('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#','#myphotoblogimages.name#')" />

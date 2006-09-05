@@ -32,9 +32,9 @@
 		</cfscript>
 		
 		<cfquery name="qryGet" datasource="#request.db#">
-			select id,name,sfile,description,sdate from photoblog 
+			select id,name,sfile,description,sdate,imageorder from photoblog 
 				where id_gallery = '#arguments.id#'
-				order by sdate desc, name
+				order by imageorder, sdate desc, name
 		</cfquery>
 
 		<cfscript>
@@ -68,6 +68,7 @@
 		<cfargument name="name" 		required="yes" 	type="string">
 		<cfargument name="description"	required="yes" 	type="string">
 		<cfargument name="galleryid" 	required="yes" 	type="string">
+		<cfargument name="imageorder" 	required="yes" 	type="string">
 
 		<cfset var qryImage = "">
 		
@@ -83,7 +84,8 @@
 					'#arguments.name#',
 					'#arguments.file#',
 					'#arguments.description#',
-					'#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#'
+					'#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#',
+					'#arguments.imageorder#'
 					)
 			</cfquery>
 		<cfelse>
@@ -93,7 +95,8 @@
 					name = '#arguments.name#',
 					sfile = '#arguments.file#',
 					description = '#arguments.description#',
-					sdate = '#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#'
+					sdate = '#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#',
+					imageorder = '#arguments.imageorder#'
 				where id = '#arguments.id#
 			</cfquery>
 		</cfif>
