@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
 			<allowfile>
-				<type allow="true">all files</type>
-				<type allow="true" mime="application/msword">.doc</type>
-				<type allow="true" mime="application/x-zip-compressed">.zip</type>
-				<type allow="true" mime="text/plain">.txt</type>
-				<type allow="true" mime="application/pdf">.pdf</type>
-				<type allow="true" mime="image/jpeg">.jpg</type>
-				<type allow="true" mime="image/gif">.gif</type>
+				<type allow="false">all files</type>
+				<type allow="false" mime="application/msword">.doc</type>
+				<type allow="false" mime="application/x-zip-compressed">.zip</type>
+				<type allow="false" mime="text/plain">.txt</type>
+				<type allow="false" mime="application/pdf">.pdf</type>
+				<type allow="false" mime="image/jpeg">.jpg</type>
+				<type allow="false" mime="image/gif">.gif</type>
 			</allowfile>
 		</plugin>

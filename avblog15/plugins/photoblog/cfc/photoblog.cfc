@@ -116,7 +116,7 @@
 							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
 						}
 					//
-					xmlImage = xmlImage & objStoragephotoblog.saveImage(createuuid(),filesextracted.name,'',listgetat(filesextracted.name,1,'.'),galleryid);
+					xmlImage = xmlImage & objStoragephotoblog.saveImage(createuuid(),filesextracted.name,listgetat(filesextracted.name,1,'.'),'',galleryid,filesextracted.currentrow);
 				</cfscript>
 			</cfloop>
 			<cfscript>
@@ -163,6 +163,7 @@
 						imageName = evaluate('arguments.structForm.photoname#replace(imageId,'-','_','ALL')#');
 						imageDescription = evaluate('arguments.structForm.photodescription#replace(imageId,'-','_','ALL')#');
 						imageGalleryId = arguments.structForm.galleryid;
+						imageOrder = evaluate('arguments.structForm.imageorder#replace(imageId,'-','_','ALL')#');
 						thumbwidth = evaluate('arguments.structForm.thumbwidth#replace(imageId,'-','_','ALL')#');
 						bigwidth = evaluate('arguments.structForm.bigwidth#replace(imageId,'-','_','ALL')#');
 					</cfscript>

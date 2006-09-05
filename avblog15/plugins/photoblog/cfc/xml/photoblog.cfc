@@ -41,7 +41,7 @@
 		<cfargument name="id" required="yes" type="string">
 	
 		<cfscript>
-			var qryGet 			= querynew("id,name,file,sfile,description,sdate");
+			var qryGet 			= querynew("id,name,file,sfile,description,sdate,imageorder");
 			var getDirectory 	= '';
 			var filter 			= '';
 			var xmlContent 		= '';
@@ -66,11 +66,15 @@
 					querysetcell(qryGet,'sfile',xmlContentArray[i].xmlattributes.file,i);
 					querysetcell(qryGet,'description',xmlContentArray[i].xmltext,i);
 					querysetcell(qryGet,'sdate',xmlContentArray[i].xmlattributes.date,i);
+					if (structkeyexists(xmlContentArray[i].xmlattributes,'imageorder'))
+						querysetcell(qryGet,'imageorder',xmlContentArray[i].xmlattributes.imageorder,i);
+					else
+						querysetcell(qryGet,'imageorder',i,i);
 				</cfscript>
 			</cfloop>
 	
 			<cfquery name="get" dbtype="query">
-				select * from qryGet order by sdate desc,name
+				select * from qryGet order by imageorder, sdate desc,name
 			</cfquery>
 		</cfif>
 
@@ -98,12 +102,13 @@
 		<cfargument name="name" 		required="yes" 	type="string">
 		<cfargument name="description" 	required="yes" 	type="string">
 		<cfargument name="galleryid" 	required="yes" 	type="string">
+		<cfargument name="imageorder" 	required="yes" 	type="string">
 		
 		<cfset var tmpImage = "">
 		
 		<cfsavecontent variable="tmpImage">
 			<cfoutput>
-				<image date="#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#" id="#arguments.id#" file="#arguments.file#" name="#arguments.name#"><![CDATA[#arguments.description#]]></image>
+				<image imageorder="#arguments.imageorder#" date="#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#" id="#arguments.id#" file="#arguments.file#" name="#arguments.name#"><![CDATA[#arguments.description#]]></image>
 			</cfoutput>
 		</cfsavecontent>
 
