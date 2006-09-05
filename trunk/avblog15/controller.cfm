@@ -160,7 +160,7 @@
 		</cfcase>
 		<cfcase value="viewComment">
 			<cfif isdefined('form.addComment')>
-				<cfif session.captchatext is form.captcha>
+				<cfif isuserinrole('admin') or isuserinrole('blogger') or (isdefined('form.captcha') and session.captchatext is form.captcha)>
 					<cfif cgi.HTTP_REFERER contains 'index.cfm?mode=addComment&id=#urlencodedformat(form.id)#'
 						and 
 						request.trackbacks.filterspam(form.author)
@@ -170,7 +170,6 @@
 						request.trackbacks.filterspam(form.description)
 						>
 						<cfscript>
-							// save only if capctha is ok
 							if (isdefined('form.emailvisible'))
 								emailvisible = 'true';
 							else
@@ -184,7 +183,7 @@
 							request.blog.saveCommentEntry(form.id,form.author,form.email,form.description,emailvisible,private,published);
 						</cfscript>
 						<!--- delete the capthca image --->
-						<cfif fileexists('#request.appPath#/#form.captchaImage#')>
+						<cfif isdefined('form.captcha') and fileexists('#request.appPath#/#form.captchaImage#')>
 							<cffile action="delete" file="#request.appPath#/#form.captchaImage#">
 						</cfif>
 					
@@ -259,6 +258,7 @@
 				<cfelse>
 					<cfset request.captchaFailed = true>
 				</cfif>
+				<cflocation url="#cgi.script_name#?mode=viewcomment&id=#form.id#&addedcomment=1&cache=1" addtoken="no">
 			</cfif>
 			<cfif isdefined('url.publish') and isuserinrole('admin')>
 				<cfscript>

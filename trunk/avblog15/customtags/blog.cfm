@@ -185,7 +185,11 @@
 		</cfcase>
 		<cfcase value="config">
 			<cfif isuserinrole('admin')>
-				<vb:config>
+				<cfif useajax()>
+					<vb:configajax>
+				<cfelse>
+					<vb:config>
+				</cfif>
 			</cfif>
 		</cfcase>
 		<cfcase value="statistics">

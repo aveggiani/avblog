@@ -93,7 +93,7 @@ body {
 	margin: 0px; 
 	padding:0px; 
 	cursor: default;
-	font: 0.90em Arial, Helvetica, sans-serif; 
+	font: 0.90em Verdana, Arial, Helvetica, sans-serif; 
 	line-height: 1.5em;
 	color: #454545; 
 }
@@ -106,7 +106,7 @@ input, textarea, select {
 	color: #000000;
 }
 
-a
+a:link
 {
 	color: #ffffff;
 	text-decoration: underline;
@@ -115,6 +115,18 @@ a:hover {
 	color: #666666;
 	text-decoration: underline;
 }
+
+a:visited
+	{
+		color: #ffffff;
+		text-decoration: underline;
+	}
+
+a:active
+	{
+		color: #ffffff;
+		text-decoration: underline;
+	}
 
 hr {
 	color: #FFFFFF;
@@ -340,11 +352,12 @@ select.monthArchive {
 
 .editorBody {
 	text-align:center;
-	margin: 5px;
-	padding: 0px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
 	width: 95%;
 	overflow-x: hidden;
-	margin-bottom: 15px;
 }
 .editorTitle {
 	text-align:left;
@@ -364,7 +377,7 @@ select.monthArchive {
 }
 .editorForm {
 	text-align:left;
-	font-size: 0,9em;
+	font-size: 0,8em;
 }
 input.editorForm {
 	font-size: 0,9em;
@@ -544,5 +557,14 @@ input.editorForm {
 .littleIcon {
 	padding-left: 5px;
 	padding-right:0px;
+	padding-bottom: 5px;
+}
+
+.dojoTabLabels {
+	width:20px;
+}
+
+.configLabels {
+	margin-bottom: 5px;
 	padding-bottom: 5px;
 }

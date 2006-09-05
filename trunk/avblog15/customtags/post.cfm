@@ -73,7 +73,7 @@
 					or
 					arrayshow[i].published>
 			
-					<cfif isdefined('form.addcomment')>
+					<cfif isdefined('url.addedcomment')>
 						<vb:content>
 							<cfoutput>
 								<div align="center" class="blogText">
@@ -213,7 +213,7 @@
 									<div class="blogCategories">
 										#application.language.language.categories.xmltext#:
 										<cfloop index="item" list="#myCategories#">
-											<a href="#request.appmapping#index.cfm?mode=showcategory&amp;name=#item#">#listrest(item,'_')#</a>
+											<a href="#request.appmapping#permalinks/categories/#listrest(item,'_')#">#listrest(item,'_')#</a>
 											<cfif item is not listlast(myCategories)>,</cfif>
 										</cfloop>
 									</div>

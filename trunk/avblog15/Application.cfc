@@ -1,9 +1,9 @@
 <cfcomponent output="false">
 
 	<cfscript>
-		this.name 							= "AVBlog151_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
+		this.name 							= "AVBlog153_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
 		this.applicationTimeout 			= createTimeSpan(0,2,0,0);
-
+		this.loginStorage					= 'session';
 		this.sessionManagement 				= true;
 		this.sessionTimeout 				= createTimeSpan(0,0,20,0);
 	</cfscript>
@@ -153,8 +153,7 @@
 							<cfloginuser name="#qryUser.fullname#, #qryUser.email#, #cflogin.name#" Password="#qryUser.pwd#" roles="#qryUser.role#">
 						<cfelse>
 							<cfscript>
-								url.mode	= 'login';
-								url.cache	= 1;
+								request.loginfailed	= true;
 							</cfscript>
 						</cfif>
 						<cfif application.configuration.config.log.login.xmltext>

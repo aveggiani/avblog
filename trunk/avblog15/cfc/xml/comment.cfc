@@ -132,8 +132,8 @@
 			if (arguments.idcomment is '')
 				{
 					commentid 		= createuuid();
-					arguments.date 	= dateformat(now(),'yyyymmdd');
-					arguments.time	= timeformat(now(),'HH:mm:ss');
+					arguments.date 	= dateformat(nowoffset(now()),'yyyymmdd');
+					arguments.time	= timeformat(nowoffset(now()),'HH:mm:ss');
 				}
 			else
 				{
@@ -217,6 +217,11 @@
 			</cfscript>
 		</cfif>		
 
+	</cffunction>
+
+	<cffunction name="nowoffset" returntype="date" access="private">
+		<cfargument name="data" required="yes">
+		<cfreturn dateadd('h',application.configuration.config.internationalization.timeoffset.xmltext,data)>
 	</cffunction>
 
 </cfcomponent>

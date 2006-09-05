@@ -1,7 +1,7 @@
+<cfinclude template="../include/functions.cfm">
 <cfimport taglib="../customtags/" prefix="vb">
 <cfswitch expression="#attributes.mode#">
 	<cfcase value="showall">
-		<cfinclude template="../include/functions.cfm">
 		<cfparam name="url.start" default="1">
 		<cfparam name="start" default="1">
 		<cfparam name="from" default="1">
@@ -43,8 +43,8 @@
 								<cfset date=comments.date>
 								<cfoutput>
 								<div class="commentDate">#right(date,2)# #lsdateformat(createdate(2000,mid(date,5,2),1),'mmmm')# #left(date,4)# #comments.time#
-									[<a href="#request.linkadmin#?mode=deletecomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&allcomments=1&start=#url.start#');">#application.language.language.delete.xmltext#</a>]
-									[<a href="#request.linkadmin#?mode=viewcomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;publish=#comments.published#&allcomments=1&start=#url.start#');"><cfif comments.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></a>]
+									[<a href="#request.linkadmin#?mode=deletecomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;allcomments=1&amp;start=#url.start#&amp;now=#GetTickCount()#');">#application.language.language.delete.xmltext#</a>]
+									[<a href="#request.linkadmin#?mode=viewcomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;publish=#comments.published#&amp;allcomments=1&start=#url.start#&amp;now=#GetTickCount()#');"><cfif comments.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></a>]
 								</div>
 								<div class="commentText">#comments.description#</div>
 								<div class="commentAuthor">
@@ -127,6 +127,61 @@
 		<cfset captchaImage = "images/captcha/#createuuid()#.jpg">
 		<cf_captcha file="#expandPath('#captchaImage#')#" result="session.captchatext" />
 	
+		<cfif useajax()>
+			<vb:dojo>
+		</cfif>
+		<script language="javascript">
+
+				function verifySubmit()
+					{
+						<cfif not (isuserinrole('admin') or isuserinrole('blogger')) and useajax()>
+							if (_CF_checkaddcomment(window.document.addcomment))
+								{
+									dojo.io.bind({
+										url: "<cfoutput>#request.appmapping#</cfoutput>ajax.cfm?mode=verifyCaptcha&text=" + window.document.addcomment.captcha.value,
+										load: 
+			
+											function(type, data, evt)
+												{
+													if (type == 'error')
+														  alert('Error when retrieving data from the server!');
+													else
+														{
+															if (data=='true')
+																window.document.addcomment.submit();
+															else
+																{
+																	alert('<cfoutput>#replace(application.language.language.captchanotext.xmltext,"'","\'","all")#</cfoutput>');
+																}
+														}
+												},
+										mimetype:'text/html'
+									});
+								}
+							return false;
+						<cfelse>
+							if (_CF_checkaddcomment(window.document.addcomment))
+								{
+									window.document.addcomment.submit();
+								}
+						</cfif>
+					}
+
+			<!---
+			function verifyCaptcha()
+				{
+					returnValue = true;
+					<cfif useajax()>
+						<cfoutput>
+							var TagPane = dojo.widget.byId("TagPane");
+							TagPane.setUrl('#request.appmapping#ajax.cfm?mode=verifyCaptcha&text='+window.document.addcomment.captcha.value);
+						</cfoutput>
+					</cfif>
+					return returnValue;
+				}
+			--->
+		</script>
+	
 		<div class="editorBody">
 			<div class="editorTitle"><cfoutput>#application.language.language.addcomment.xmltext#</cfoutput></div>
 				<div class="editorForm">
@@ -181,15 +236,17 @@
 										</cfif>
 									</td>
 								</tr>
-								<tr>
-									<td align="right">
-										#application.language.language.captcha.xmltext#
-									</td>
-									<td valign="middle">
-										<cfinput required="yes" message="#application.language.language.captcharequired.xmltext#" type="text" name="captcha" size="10" class="editorForm">&nbsp;<img src="#captchaImage#" border="1" align="absmiddle" />
-										<input type="hidden" name="captchaImage" value="#captchaImage#" />
-									</td>
-								</tr>
+								<cfif not (isuserinrole('admin') or isuserinrole('blogger'))>
+									<tr>
+										<td align="right">
+											#application.language.language.captcha.xmltext#
+										</td>
+										<td valign="middle">
+											<cfinput required="yes" message="#application.language.language.captcharequired.xmltext#" type="text" name="captcha" size="10" class="editorForm">&nbsp;<img src="#captchaImage#" border="1" align="absmiddle" />
+											<input type="hidden" name="captchaImage" value="#captchaImage#" />
+										</td>
+									</tr>
+								</cfif>
 								<tr>
 									<td align="right">
 										#application.language.language.showemailonlytoblogger.xmltext#
@@ -224,7 +281,8 @@
 										<hr />
 										<input type="button" value="#application.language.language.clear.xmltext#" 
 											onClick="if(confirm('#JSStringFormat(application.language.language.cancelaction.xmltext)#')) { history.back() }"> 
-										<input type="submit" name="addComment" value="#application.language.language.insertcomment.xmltext#" />
+										<input type="hidden" name="addComment">
+										<input type="button" onclick="verifySubmit();" value="#application.language.language.insertcomment.xmltext#" />
 									</td>
 								</tr>	
 						</cfoutput>

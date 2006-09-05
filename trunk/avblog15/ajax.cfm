@@ -1,10 +1,18 @@
 <cfsetting enablecfoutputonly="no">
+<cfsetting showdebugoutput="no">
 
 <cfimport taglib="customtags" prefix="vb">
 
 <cfset request.linkAdmin = "javascript:viewAdminLink('#request.appmapping#ajax.cfm">
 
 <cfswitch expression="#url.mode#">
+	<cfcase value="verifyCaptcha">
+		<cfif url.text is session.captchatext>
+			<cfcontent type="text/plain">true<cfabort>
+		<cfelse>
+			<cfcontent type="text/plain">false<cfabort>
+		</cfif>
+	</cfcase>
 	<cfcase value="config">
 		<cfif isuserinrole('admin')>
 			<vb:config>
