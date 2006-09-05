@@ -223,4 +223,5 @@
 	<spamnotext>Your comment has been rejected as one or more words included in the author Spam List where found!</spamnotext>
 	<intdateformat>(mm/dd/yyyy)</intdateformat>
 	<eurodateformat>(dd/mm/yyyy)</eurodateformat>
+	<loginfailed>username or password are not correct!</loginfailed>
 </language>

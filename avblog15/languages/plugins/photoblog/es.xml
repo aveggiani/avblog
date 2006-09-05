@@ -22,4 +22,5 @@
 	<gallerydescription>description</gallerydescription>
 	<photoname>photo name</photoname>
 	<originalExifData>Original Image Exif Data</originalExifData>
+	<imageorder>order</imageorder>
 </language>

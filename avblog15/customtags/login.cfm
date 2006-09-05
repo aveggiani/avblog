@@ -14,6 +14,17 @@
 					<td align="right">Password:</td>
 					<td><input type="password" name="j_password"  class="editorForm"></td>
 				</tr>
+				<cfif isdefined('request.loginfailed')>
+					<tr>
+						<td colspan="2">
+							<hr />
+							<cfoutput>
+								#application.language.language.loginfailed.xmltext#
+							</cfoutput>
+							<hr />
+						</td>
+					</tr>
+				</cfif>
 				<tr>
 					<td colspan="2" align="center">
 						<br />

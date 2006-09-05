@@ -3,6 +3,7 @@
 <cfdirectory action="LIST" directory="#request.appPath#/languages" name="languages" filter="*.xml" sort="name">
 <cfdirectory action="LIST" directory="#request.appPath#/images/iconsets" name="iconsets" filter="" sort="name">
 <cfdirectory action="LIST" directory="#request.appPath#/external/captcha" name="captcha" filter="" sort="name">
+
 <vb:content>
 	<div class="editorBody">
 		<div class="editorTitle"><cfoutput>#application.language.language.titleconfig.xmltext#</cfoutput></div>

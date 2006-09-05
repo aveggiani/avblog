@@ -69,7 +69,7 @@
 		</cfscript>
 
 		<cfquery name="qryComments" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-			select * from Comments order by sdate desc, stime desc
+			select * from comments order by sdate desc, stime desc
 		</cfquery>
 		<cfscript>
 			rowDate = listtoarray(valuelist(qryComments.sdate));
@@ -119,8 +119,8 @@
 			if (arguments.idcomment is '')
 				{
 					commentid 		= createuuid();
-					arguments.date 	= dateformat(now(),'yyyymmdd');
-					arguments.time	= timeformat(now(),'HH:mm:ss');
+					arguments.date 	= dateformat(nowoffset(now()),'yyyymmdd');
+					arguments.time	= timeformat(nowoffset(now()),'HH:mm:ss');
 				}
 			else
 				{
@@ -178,6 +178,11 @@
 			update comments set published = '#arguments.published#' where id = '#arguments.id#'
 		</cfquery>
 
+	</cffunction>
+
+	<cffunction name="nowoffset" returntype="date" access="private">
+		<cfargument name="data" required="yes">
+		<cfreturn dateadd('h',application.configuration.config.internationalization.timeoffset.xmltext,data)>
 	</cffunction>
 
 </cfcomponent>

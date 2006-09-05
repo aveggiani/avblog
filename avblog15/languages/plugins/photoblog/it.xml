@@ -23,5 +23,6 @@
 	<photoname>nome foto</photoname>
 	<discardchanges>annulla cambimenti</discardchanges>
 	<originalExifData>Dati Exif immagine originale</originalExifData>
+	<imageorder>ordine</imageorder>
 </language>
 	

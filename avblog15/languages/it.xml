@@ -223,6 +223,7 @@
 	<spamnotext>Il tuo commento è stato rifiutato in quanto sono state rilevate parole presenti nella Spam List dell'autore</spamnotext>
 	<intdateformat>(mm/gg/aaaa)</intdateformat>
 	<eurodateformat>(gg/mm/aaaa)</eurodateformat>
+	<loginfailed>username o password errati!</loginfailed>
 </language>
 
 
