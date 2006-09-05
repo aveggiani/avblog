@@ -3,16 +3,29 @@
 
 <cfswitch expression="#attributes.type#">
 	
+	<cfcase value="admin">
+		<!--- if i'm logged see if we can show the admin section --->
+		<cfif GetAuthUser() is not "">
+			<cfif isuserinrole('admin')>
+				<span class="catListTitle"><cfoutput>#application.pluginslanguage.delicious.language.manager.xmltext#</cfoutput></span>
+				<br />
+				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=showall&amp;plugin=delicious"><cfoutput>#application.pluginslanguage.delicious.language.showall.xmltext#</cfoutput></a> ]
+			</cfif>
+		</cfif>
+	</cfcase>
+	
 	<cfcase value="side">
 		<cfif trim(application.pluginsconfiguration.delicious.plugin.username.xmltext) is not ''>
 			<cfscript>
 				recentPosts = application.deliciousObj.getRecentPosts();
 				if (arraylen(xmlsearch(recentPosts,'/error')) is 0)
-					mylinks = xmlsearch(recentPosts,'//post');
-				if (isarray('mylinks') and arraylen(mylinks) gt 0 and application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
-					limit = arraylen(mylinks);
-				else
-					limit = application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext;
+					{
+						mylinks = xmlsearch(recentPosts,'//post');
+						if (isarray('mylinks') and arraylen(mylinks) gt 0 and application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
+							limit = arraylen(mylinks);
+						else
+							limit = application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext;
+					}
 			</cfscript>
 			<cfif isdefined('mylinks')>
 				<vb:cache action="#request.caching#" name="side_delicious" timeout="#request.cachetimeout#">	
@@ -23,8 +36,10 @@
 								<cfloop index="i" from="1" to="#limit#">
 									<div class="pluginDeliciousSideText">
 										<a href="#mylinks[i].xmlattributes.href#" target="_blank">#mylinks[i].xmlattributes.description#</a>
+										<!---
 										<br />
 										tags: #mylinks[i].xmlattributes.tag#
+										--->
 										<br />
 									</div>
 								</cfloop>
