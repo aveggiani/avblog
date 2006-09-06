@@ -254,7 +254,7 @@
 											</div>
 											<div class="configLabels">
 												<cfinput type="text" name="smtppassword" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.password.xmltext#">
-												#application.language.language.configsmtpsettingspwd.xmltex#
+												#application.language.language.configsmtpsettingspwd.xmltext#
 											</div>
 										</cfoutput>
 									</div>
@@ -496,11 +496,13 @@
 							<div id="lhtabs3" dojoType="TabContainer" labelPosition="right-h" style="width: 95%; height: 450px;" selectedTab="tab1">
 								<cfoutput>
 									<cfloop query="application.plugins">
-										<div id="lhtab3#application.plugins#" dojoType="ContentPane" label="#application.plugins.name#">
-											<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
-												<cfinclude template="#request.appMapping#plugins/#application.plugins.name#/customtags/configajax.cfm">
+											<div id="lhtab3#application.plugins.currentrow#" dojoType="ContentPane" label="#application.plugins.name#">
+												<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
+													<cfif fileexists('#request.apppath#/plugins/#application.plugins.name#/customtags/confgajax.cfm')>
+														<cfinclude template="#request.appMapping#plugins/#application.plugins.name#/customtags/configajax.cfm">
+													</cfif>
+												</div>
 											</div>
-										</div>
 									</cfloop>
 								</div>
 							</cfoutput>
@@ -559,7 +561,7 @@
 								</div>
 								<div class="configLabels">
 									<cfinput	type="checkbox" name="logdownload" checked="#application.configuration.config.log.download.xmltext#">
-									application.language.language.logdownload.xmltext#
+									#application.language.language.logdownload.xmltext#
 								</div>
 							</cfoutput>
 						</div>
