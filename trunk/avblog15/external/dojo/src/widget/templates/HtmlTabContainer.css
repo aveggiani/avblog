@@ -26,10 +26,12 @@
 }
 
 .dojoTabPaneTab {
+	text-align: left;
 	position : relative;
 	float : left;
 	border-bottom : 1px solid #000000;
 	border-left : 1px solid #000000;
+	border-right : 1px solid #000000;
 	cursor: pointer;
 	width: 80px;
 }
@@ -113,6 +115,7 @@
 /* right-h tabs */
 
 .dojoTabLabels-right-h {
+	text-align: left;
 	position : absolute;
 	top : 0px;
 	right : 0px;
@@ -123,8 +126,7 @@
 
 .dojoTabLabels-right-h .dojoTabPaneTab {
 	padding-left : 0;
-	border-left :  1px solid #000000;
-	border-bottom : 0;
+	border-right :  1px solid #000000;
 	float : none;
 }
 
@@ -133,13 +135,13 @@
 }
 
 .dojoTabLabels-right-h .dojoTabPaneTab.current {
-	border-left :  0;
 	border-bottom :  1px solid #000000;
 }
 
 /* left-h tabs */
 
 .dojoTabLabels-left-h {
+	text-align: left;
 	position : absolute;
 	top : 0px;
 	left : 0px;
