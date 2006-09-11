@@ -15,17 +15,17 @@
 				<cfif isuserinrole('admin')>
 					<cfif structkeyexists(server.ColdFusion,'productversion')>
 						<cfif left(server.ColdFusion.productversion,1) is 7>
-							[ <a href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</a> ]
+								[ <vb:wa href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</vb:wa> ]
 							<br />
 						</cfif>
 					</cfif>
-					[ <a href="#request.linkadmin#?mode=ping');">#application.language.language.authoping.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=ping">#application.language.language.authoping.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=category');">#application.language.language.categories.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=category">#application.language.language.categories.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=links');">#application.language.language.links.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=links">#application.language.language.links.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=users');">#application.language.language.users.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=users">#application.language.language.users.xmltext#</vb:wa> ]
 					<br />
 				</cfif>
 				<cfif isuserinrole('admin') or isuserinrole('blogger')>
@@ -35,22 +35,17 @@
 				</cfif>
 				<cfif isuserinrole('admin')>
 					<br />
-					[ <a href="#request.linkadmin#?mode=checkpermalinks');">#application.language.language.checkpermalinks.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=checkpermalinks">#application.language.language.checkpermalinks.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=spam');">#application.language.language.spamlist.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=spam">#application.language.language.spamlist.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=blogsubscriptions');">#application.language.language.subscriptions.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=blogsubscriptions">#application.language.language.subscriptions.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=allcomments');">#application.language.language.comments.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=allcomments">#application.language.language.comments.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=alltrackbacks');">#application.language.language.trackbacks.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=alltrackbacks">#application.language.language.trackbacks.xmltext#</vb:wa> ]
 					<br />
-					[ <a href="#request.linkadmin#?mode=statistics');">#application.language.language.statistics.xmltext#</a> ]
-				</cfif>
-				<cfif isuserinrole('user')>
-					<span class="catListTitle">#application.language.language.greeting.xmltext# #GetAuthUser()#</span>
-					<br />
-					[ <a href="#request.appmapping#index.cfm?nuovo=1">#application.language.language.addblog.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=statistics">#application.language.language.statistics.xmltext#</vb:wa> ]
 				</cfif>
 				<br />
 				<br />

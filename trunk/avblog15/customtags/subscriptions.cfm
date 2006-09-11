@@ -11,6 +11,7 @@
 				<cfscript>
 					qrySubscriptions = request.subscriptions.getBlogsubscriptions();
 				</cfscript>
+				<div class="editorTitle"><cfoutput>#application.language.language.subscriptions.xmltext#</cfoutput></div>
 				<cf_pages style="commentText" from="#from#" steps="5" start="#start#" query="qrySubscriptions" howmanyrecords="#qrySubscriptions.recordcount#" querystring="mode=#url.mode#">
 					<form id="theForm" name="theForm" action="<cfoutput>#cgi.script_name#</cfoutput>?mode=blogsubscriptions" method="post">
 						<cfif useAjax()>

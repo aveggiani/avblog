@@ -1,4 +1,6 @@
 <cfinclude template="#request.appmapping#include/functions.cfm">
+<cfimport taglib="../customtags/" prefix="vb">
+
 <cffunction name="canViewPost" returntype="boolean">
 	<cfif
 		application.configuration.config.options.privateblog.xmltext and (isuserinrole('blogger') or isuserinrole('admin') )
@@ -12,18 +14,16 @@
 	<cfreturn returnvalue>
 </cffunction>
 
-<cfif useAjax()>
-	<div dojoType="ContentPane" layoutAlign="client" id="MainPane" executeScripts="true">
-</cfif>
+<vb:wcontentpane id="MainPane">
 
-<cfsilent>
+	<cfsilent>
 	<cfimport taglib="." prefix="vb">
 	<cfif not isdefined('url.date')>
 		<cfset request.lastblogs=1>
 	</cfif>
-</cfsilent>
-
-<cfif not isdefined('url.logout')>
+	</cfsilent>
+	
+	<cfif not isdefined('url.logout')>
 	<cfswitch expression="#url.mode#">
 		<cfcase value="checkpermalinks">
 			<cfif isuserinrole('admin')>
@@ -225,12 +225,10 @@
 			</cfif>
 		</cfdefaultcase>
 	</cfswitch>
-<cfelse>
+	<cfelse>
 	<script>
 		window.location.href='index.cfm?cache=1';	
 	</script>
-</cfif>
+	</cfif>
 
-<cfif useAjax()>
-	</div>
-</cfif>
+</vb:wcontentpane>

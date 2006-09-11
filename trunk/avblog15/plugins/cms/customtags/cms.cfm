@@ -208,3 +208,14 @@
 	</cfcase>
 
 </cfswitch>
+
+	<cffunction name="stripNotAlphaForm" access="private" returntype="string" output="false">
+		<cfargument name="param">
+		
+		<cfscript>
+			var returnvalue = '';
+			returnvalue = rereplace(replace(param,' ','_','ALL'),'[^A-Za-z0-9_-]*','','ALL')	;
+		</cfscript>
+		
+		<cfreturn returnvalue>
+	</cffunction>

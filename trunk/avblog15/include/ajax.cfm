@@ -38,6 +38,7 @@
 		</cfsavecontent>
 		<cfhtmlhead text="#dojoAjax#">
 		<cfhtmlhead text="<script src=""js/dynamic_table.js""></script>">
+		<!---
 		<cfset request.linkAdmin = "javascript:viewAdminLink('#request.appmapping#ajax.cfm">
 		<cfsavecontent variable="dojoAjax">
 			<cfoutput>
@@ -51,6 +52,7 @@
 			</cfoutput>		
 		</cfsavecontent>
 		<cfhtmlhead text="#dojoAjax#">
+		--->
 	<cfelse>
 		<cfsavecontent variable="nodojoAjax">
 			<cfoutput>

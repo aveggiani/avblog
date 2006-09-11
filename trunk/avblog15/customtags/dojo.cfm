@@ -1,4 +1,4 @@
-<cfif not isdefined('request.dojo')>
+<cfif not isdefined('request.structdojo')>
 	<cfsavecontent variable="dojo">
 		<cfoutput>
 			<!---
@@ -10,20 +10,25 @@
 			<script language="JavaScript" type="text/javascript">
 				dojo.require("dojo.event.*");
 				dojo.require("dojo.io.*");
-	            dojo.require("dojo.widget.*");
-				dojo.require("dojo.widget.LayoutContainer");
-				dojo.require("dojo.widget.SlideShow");
-				dojo.require("dojo.widget.LinkPane");
-				dojo.require("dojo.widget.ContentPane");
-	            dojo.require("dojo.widget.Button");
-				dojo.require("dojo.widget.TabContainer");
-				dojo.require("dojo.xml.*");
-				dojo.require("dojo.widget.Show");
-				dojo.require("dojo.widget.ShowSlide");
-				dojo.require("dojo.widget.ShowAction");
 			</script>
 		</cfoutput>		
 	</cfsavecontent>
 	<cfhtmlhead text="#dojo#">
-	<cfset request.dojo = 1>
+	<cfscript>
+		request.structdojo = structnew();
+	</cfscript>
+<cfelseif isdefined('attributes.use')>
+	<cfif not StructKeyExists(request.structdojo,attributes.use)>
+		<cfsavecontent variable="dojo">
+			<cfoutput>
+				<script language="JavaScript" type="text/javascript">
+					dojo.require("dojo.widget.#attributes.use#");
+				</script>
+			</cfoutput>		
+		</cfsavecontent>
+		<cfhtmlhead text="#dojo#">
+		<cfscript>
+			structinsert(request.structdojo,attributes.use,1);
+		</cfscript>
+	</cfif>
 </cfif>

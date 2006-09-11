@@ -67,7 +67,7 @@
 	padding-right:10px;
 	margin-top:25px;
 	height:45px;
-	font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	font: bold 16px;  
 	color: #FFFFFF
 }
 #headertext a
@@ -80,7 +80,6 @@
 {
 
 	background-color: #A7BCD6;
-	font-family: Georgia, serif;
 	font-size: 9pt;	
 	padding: 5px;
 	color: #003344;
@@ -92,12 +91,17 @@
 }
 
 
-body { background-color: White; margin: 0px; padding:0px; cursor: default;}
+body { 
+	background-color: White; 
+	margin: 0px; 
+	padding:0px; 
+	cursor: default;
+	font: 0.90em Verdana, Arial, Helvetica, sans-serif; 
+}
 
-.logoText { font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  color: #C5C5C5; }
+.logoText { font: bold 16px; color: #C5C5C5; }
 
 input, textarea, select {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	padding: 2px;
 }
@@ -124,7 +128,6 @@ color: #FFFFFF;
   top : 0px;
   padding : 20px;
   text-align: center;
-  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
   font-size: 7.5pt;
 }
 
@@ -133,13 +136,11 @@ color: #FFFFFF;
 	overflow:hidden;
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 
 }
 .catListTitle {
 	padding-bottom: 10px;
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	color: #666;
 	font-weight: bold;
@@ -153,13 +154,11 @@ color: #FFFFFF;
 .Links {
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 
 }
 .LinksTitle {
 	padding-bottom: 10px;
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	color: #666;
 	font-weight: bold;
@@ -168,12 +167,10 @@ color: #FFFFFF;
 .LinksElement {
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 }
 
 select.monthArchive {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #003344;
  	width:180px;
@@ -184,7 +181,6 @@ select.monthArchive {
 .functionMenu {
 	padding-left: 5px;
 	padding-bottom: 10px;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #333;
 }
@@ -212,7 +208,6 @@ select.monthArchive {
 
 .blogDate {
 	background-color: #A7BCD6;
-	font-family: Georgia, serif;
 	font-size: 9pt;	
 	padding: 5px;
 	color: #003344;
@@ -222,7 +217,6 @@ select.monthArchive {
 }
 
 .blogTitle {
-	font-family:Georgia, serif;
 	font-size: 14pt;
 	color:  #5F7C9A;;
 	padding-top: 5px;
@@ -230,15 +224,14 @@ select.monthArchive {
 	padding-left: 7px;
 	letter-spacing: -0.05em;
 }
+
 .blogText {
-	font-family: Georgia, serif;
 	font-size: 10pt;	
 	color: #666;
 	padding-left: 15px;
 	padding-right: 5px;
 }
 .blogMore { 
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;	
 	color: #666;
 	text-align: right;
@@ -248,7 +241,6 @@ select.monthArchive {
 }
 
 .blogAuthor { 
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;	
 	color: #666;
 	text-align: right;
@@ -262,7 +254,6 @@ select.monthArchive {
 .blogCommands { 
 	border-top: 1px dashed #ccc;
 	padding-top: 4px;
-	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;	
 	color: #666;
 	text-align: right;
@@ -274,7 +265,6 @@ select.monthArchive {
 }
 
 .blogAdmin {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #666;
 	padding-left: 5px;
@@ -282,7 +272,6 @@ select.monthArchive {
 }
 
 .statisticsMenu {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #666;
 	padding-left: 5px;
@@ -294,13 +283,11 @@ select.monthArchive {
 
 .trackbackPingBox {
 	border: 1px solid red;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 12pt;	
 	color: #666;
 	padding: 5px;
 }
 .trackbackPing {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;	
 	color: #666;
 	padding: 5px;
@@ -325,18 +312,15 @@ select.monthArchive {
 	border-bottom: 1px dashed #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	padding: 5px;
 	color: #003344;
 }
 .commentText {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #666;
 }
 .commentAuthor {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #666;
 	text-align: left;
@@ -354,13 +338,11 @@ select.monthArchive {
 	border-bottom: 1px dashed #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	padding: 5px;
 	color: #003344;
 }
 .trackbackText {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	color: #666;
 }
@@ -372,18 +354,16 @@ select.monthArchive {
 	width: 100%;
 	overflow-x: hidden;
 	margin-bottom: 15px;
-	border-bottom: 1px solid #003344;
 }
 .editorTitle {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 8pt;	
+	font-weight: bold;
 	background-color: #A7BCD6;
 	padding: 5px;
 	color: #003344;
 	font-weight: bold;
+	margin-bottom: 5px;
 }
 .editorList {
-	font-family: Georgia, serif;
 	font-size: 10pt;
 	color: #666;
 	padding-left: 10px;
@@ -393,19 +373,17 @@ select.monthArchive {
 	margin-bottom: 10px;	
 }
 .editorForm {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
+	padding-left: 5px;
 	color: #666;
 }
 input.editorForm {
-	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 8pt;	
 	border: 1px solid #666;
 	background-color: White;
 }
 
 .text {
-	font-family: Georgia, serif;
 	font-size: 10pt;	
 	color: #666;
 	padding-left: 15px;
@@ -488,7 +466,6 @@ input.editorForm {
 
 .blogCategories { 
 	font-variant: small-caps; 
-	font-family: Georgia, serif;
 	font-size: 8pt;	
 	color: #333;
 	text-align: left;
@@ -518,9 +495,15 @@ input.editorForm {
 .content_bottom {
 }
 .content {
+	background-color:#EDEDE7;
+	border-left: 1px solid #D8DDDD;
+	border-top: 1px solid #D8DDDD;
+	border-bottom: 1px solid #D8DDDD;
+	margin-bottom: 5px;
 }
 
 .content_inner {
+	padding: 5px;
 }
 
 .content a {
@@ -530,7 +513,6 @@ input.editorForm {
 }
 
 .adminMenu {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	padding-left: 5px;
 	padding-top: 5px;
@@ -548,3 +530,22 @@ input.editorForm {
 	padding-bottom: 5px;
 }
 
+.dojoTabLabels {
+	width:20px;
+}
+
+.configLabels {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+
+.formlabel {
+}
+
+.editorFormPost {
+	text-align:left;
+	font-size: 0,8em;
+	border-left: 1px solid #A7BCD6;
+	border-bottom: 1px solid #A7BCD6;
+	padding: 5px;
+}

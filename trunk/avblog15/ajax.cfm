@@ -6,6 +6,11 @@
 <cfset request.linkAdmin = "javascript:viewAdminLink('#request.appmapping#ajax.cfm">
 
 <cfswitch expression="#url.mode#">
+	<cfcase value="addEntry">
+		<cfif isuserinrole('admin') or isuserinrole('blogger')>
+			<vb:post type="add">
+		</cfif>
+	</cfcase>
 	<cfcase value="verifyCaptcha">
 		<cfif url.text is session.captchatext>
 			<cfcontent type="text/plain">true<cfabort>
@@ -15,7 +20,7 @@
 	</cfcase>
 	<cfcase value="config">
 		<cfif isuserinrole('admin')>
-			<vb:config>
+			<vb:configajax>
 		</cfif>
 	</cfcase>
 	<cfcase value="statistics">
@@ -31,6 +36,11 @@
 	<cfcase value="users">
 		<cfif isuserinrole('admin')>
 			<vb:user>
+		</cfif>
+	</cfcase>
+	<cfcase value="categoryfrompost">
+		<cfif isuserinrole('admin')>
+			<vb:category type="categoryfrompost">
 		</cfif>
 	</cfcase>
 	<cfcase value="category">

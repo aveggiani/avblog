@@ -74,11 +74,14 @@
 	</cffunction>
 
 	<cffunction name="photosSearch" access="public" returntype="any">
-		<cfargument name="user_id" required="no" default="me">
+		<cfargument name="myTag" required="no">
 		<cfscript>
 			var returnValue = '';
-			api_sig = lcase(hash("#this.sharedSecret#api_key#this.apikey#auth_token#this.token#methodflickr.photos.search"));
-			returnValue = callFlickr('flickr.photos.search','api_key=#this.apikey#&auth_token=#this.token#&api_sig=#api_sig#');
+			var params = '';
+			if (isdefined('arguments.myTag'))
+				params = 'tags=#arguments.myTag#&';
+			params = params & 'user_id=#this.nsid#';
+			returnValue = callFlickr('flickr.photos.search','api_key=#this.apikey#&#params#');
 		</cfscript>
 		<cfreturn returnValue>
 	</cffunction>
@@ -103,11 +106,36 @@
 		<cfreturn returnValue>
 	</cffunction>
 
+	<cffunction name="tagsList" access="public" returntype="any">
+		<cfscript>
+			var returnValue = '';
+			returnValue = callFlickr('flickr.tags.getListUser','api_key=#this.apikey#&user_id=#this.nsid#');
+		</cfscript>
+		<cfreturn returnValue>
+	</cffunction>
+
+	<cffunction name="tagsListPopular" access="public" returntype="any">
+		<cfscript>
+			var returnValue = '';
+			returnValue = callFlickr('flickr.tags.getListUserPopular','api_key=#this.apikey#&count=100&user_id=#this.nsid#');
+		</cfscript>
+		<cfreturn returnValue>
+	</cffunction>
+
 	<cffunction name="photosetsGetList" access="public" returntype="any">
 		<cfargument name="per_page" required="no" default="100">
 		<cfscript>
 			var returnValue = '';
 			returnValue = callFlickr('flickr.photosets.getList','api_key=#this.apikey#&user_id=#this.nsid#');
+		</cfscript>
+		<cfreturn returnValue>
+	</cffunction>
+
+	<cffunction name="photosetsGetPhotos" access="public" returntype="any">
+		<cfargument name="set_id" required="no" default="100">
+		<cfscript>
+			var returnValue = '';
+			returnValue = callFlickr('flickr.photosets.getPhotos','api_key=#this.apikey#&photoset_id=#arguments.set_id#');
 		</cfscript>
 		<cfreturn returnValue>
 	</cffunction>
@@ -125,7 +153,7 @@
 		<cfargument name="count" required="no" default="100">
 		<cfscript>
 			var returnValue = '';
-			returnValue = callFlickr('flickr.photos.getContactsPhotos','count=#arguments.count#&include_self=1');
+			returnValue = callFlickr('flickr.photos.getContactsPhotos','api_key=#this.apikey#&count=#arguments.count#&include_self=1');
 		</cfscript>
 		<cfreturn returnValue>
 	</cffunction>
@@ -134,7 +162,7 @@
 		<cfargument name="photo_id" required="no" default="100">
 		<cfscript>
 			var returnValue = '';
-			returnValue = callFlickr('flickr.photos.getInfo','photo_id=#arguments.photo_id#');
+			returnValue = callFlickr('flickr.photos.getInfo','api_key=#this.apikey#&photo_id=#arguments.photo_id#');
 		</cfscript>
 		<cfreturn returnValue>
 	</cffunction>

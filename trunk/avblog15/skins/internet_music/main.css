@@ -375,10 +375,12 @@ select.monthArchive {
 	border-bottom: 1px dashed #FBC3AE;
 	margin-bottom: 10px;	
 }
+
 .editorForm {
 	text-align:left;
 	font-size: 0,8em;
 }
+
 input.editorForm {
 	font-size: 0,9em;
 	border: 1px solid #666;
@@ -551,7 +553,7 @@ input.editorForm {
 	padding: 8px;
 	background: #f4f4f4;
 	color: #808080;
-	border-bottom: 1px solid #ccc;
+	border: 1px solid #ccc;
 }
 
 .littleIcon {
@@ -567,4 +569,16 @@ input.editorForm {
 .configLabels {
 	margin-bottom: 5px;
 	padding-bottom: 5px;
+}
+
+.formlabel {
+}
+
+editorFormPost {
+	text-align:left;
+	font-size: 0,8em;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	padding: 5px;
 }
