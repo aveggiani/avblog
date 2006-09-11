@@ -136,7 +136,7 @@
 		
 		<cfscript>
 			var configuration = '';
-			
+		
 			if (isdefined('arguments.pform'))
 				{
 					if (not (structkeyexists(application.configuration.config.internationalization,'timeoffsetGMT')))
@@ -161,33 +161,113 @@
 					
 					application.configuration.config.internationalization.timeoffsetGMT.xmltext		= pform.offsetGMT;
 		
-					application.configuration.config.options.privateblog.xmltext					= pform.privateblog;
-					application.configuration.config.options.subscriptions.xmltext					= pform.subscriptions;
-					application.configuration.config.options.emailpostcontent.xmltext				= pform.emailpostcontent;
-					application.configuration.config.options.emailtitlecontent.xmltext				= pform.emailtitlecontent;
-					application.configuration.config.options.sendemail.xmltext						= pform.sendemail;
+					if (isdefined('pform.privateblog'))
+						application.configuration.config.options.privateblog.xmltext				= 'true';
+					else
+						application.configuration.config.options.privateblog.xmltext				= 'false';
+
+					if (isdefined('pform.subscriptions'))
+						application.configuration.config.options.subscriptions.xmltext				= 'true';
+					else
+						application.configuration.config.options.subscriptions.xmltext				= 'false';
+
+					if (isdefined('pform.emailpostcontent'))
+						application.configuration.config.options.emailpostcontent.xmltext			= 'true';
+					else
+						application.configuration.config.options.emailpostcontent.xmltext			= 'false';
+
+					if (isdefined('pform.emailtitlecontent'))
+						application.configuration.config.options.emailtitlecontent.xmltext			= 'true';
+					else
+						application.configuration.config.options.emailtitlecontent.xmltext			= 'false';
+
+					if (isdefined('pform.sendemail'))
+						application.configuration.config.options.sendemail.xmltext					= 'true';
+					else
+						application.configuration.config.options.sendemail.xmltext					= 'false';
+
 					application.configuration.config.options.maxbloginhomepage.xmltext				= pform.maxbloginhomepage;
-					application.configuration.config.options.search.xmltext							= pform.search;
-					application.configuration.config.options.permalinks.xmltext						= pform.permalinks;
-					application.configuration.config.options.trackbacks.xmltext						= pform.trackbacks;
-					application.configuration.config.options.trackbacksmoderate.xmltext				= pform.trackbacksmoderate;
-					application.configuration.config.options.richeditortrackbacks.xmltext			= pform.richeditortrackbacks;
-					application.configuration.config.options.richeditor.xmltext						= pform.richeditor;
-					application.configuration.config.options.whichricheditor.xmltext				= pform.whichricheditor;
-					application.configuration.config.options.fckeditor.toolbarset.xmltext			= pform.fckeditortoolbarset;
-					application.configuration.config.options.xmppgatewayname.xmltext				= pform.xmppgatewayname;
-					application.configuration.config.options.wichcaptcha.xmltext					= pform.wichcaptcha;
-					application.configuration.config.options.useajax.xmltext						= pform.useajax;
 					
-					application.configuration.config.options.pods.tagcloud.xmltext					= pform.tagcloud;
-					application.configuration.config.options.pods.recentcomments.xmltext			= pform.recentcomments;
-					application.configuration.config.options.pods.recentposts.xmltext				= pform.recentposts;
-					application.configuration.config.options.pods.archivemonths.xmltext				= pform.archivemonths;
-					application.configuration.config.options.pods.links.xmltext						= pform.links;
-					application.configuration.config.options.pods.categories.xmltext				= pform.categories;
-					application.configuration.config.options.pods.rss.xmltext						= pform.rss;
-		
-					application.configuration.config.options.smtp.active.xmltext					= pform.smtp;
+					if (isdefined('pform.search'))
+						application.configuration.config.options.search.xmltext						= 'true';
+					else
+						application.configuration.config.options.search.xmltext						= 'false';
+	
+					if (isdefined('pform.permalinks'))
+						application.configuration.config.options.permalinks.xmltext					= 'true';
+					else
+						application.configuration.config.options.permalinks.xmltext					= 'false';
+	
+					if (isdefined('pform.trackbacks'))
+						application.configuration.config.options.trackbacks.xmltext					= 'true';
+					else
+						application.configuration.config.options.trackbacks.xmltext					= 'false';
+	
+					if (isdefined('pform.trackbacksmoderate'))
+						application.configuration.config.options.trackbacksmoderate.xmltext			= 'true';
+					else
+						application.configuration.config.options.trackbacksmoderate.xmltext			= 'false';
+	
+					if (isdefined('pform.richeditortrackbacks'))
+						application.configuration.config.options.richeditortrackbacks.xmltext		= 'true';
+					else
+						application.configuration.config.options.richeditortrackbacks.xmltext		= 'false';
+	
+					if (isdefined('pform.richeditor'))
+						application.configuration.config.options.richeditor.xmltext					= 'true';
+					else
+						application.configuration.config.options.richeditor.xmltext					= 'false';
+	
+					application.configuration.config.options.whichricheditor.xmltext			= pform.whichricheditor;
+					application.configuration.config.options.fckeditor.toolbarset.xmltext		= pform.fckeditortoolbarset;
+					application.configuration.config.options.xmppgatewayname.xmltext			= pform.xmppgatewayname;
+					application.configuration.config.options.wichcaptcha.xmltext				= pform.wichcaptcha;
+	
+					if (isdefined('pform.useajax'))
+						application.configuration.config.options.useajax.xmltext					= 'true';
+					else
+						application.configuration.config.options.useajax.xmltext					= 'false';
+	
+					if (isdefined('pform.tagcloud'))
+						application.configuration.config.options.pods.tagcloud.xmltext				= 'true';
+					else
+						application.configuration.config.options.pods.tagcloud.xmltext				= 'false';
+	
+					if (isdefined('pform.recentcomments'))
+						application.configuration.config.options.pods.recentcomments.xmltext		= 'true';
+					else
+						application.configuration.config.options.pods.recentcomments.xmltext		= 'false';
+	
+					if (isdefined('pform.recentposts'))
+						application.configuration.config.options.pods.recentposts.xmltext			= 'true';
+					else
+						application.configuration.config.options.pods.recentposts.xmltext			= 'false';
+	
+					if (isdefined('pform.archivemonths'))
+						application.configuration.config.options.pods.archivemonths.xmltext			= 'true';
+					else
+						application.configuration.config.options.pods.archivemonths.xmltext			= 'false';
+	
+					if (isdefined('pform.links'))
+						application.configuration.config.options.pods.links.xmltext					= 'true';
+					else
+						application.configuration.config.options.pods.links.xmltext					= 'false';
+	
+					if (isdefined('pform.categories'))
+						application.configuration.config.options.pods.categories.xmltext			= 'true';
+					else
+						application.configuration.config.options.pods.categories.xmltext			= 'false';
+	
+					if (isdefined('pform.rss'))
+						application.configuration.config.options.pods.rss.xmltext					= 'true';
+					else
+						application.configuration.config.options.pods.rss.xmltext					= 'false';
+	
+					if (isdefined('pform.smtp'))
+						application.configuration.config.options.smtp.active.xmltext				= 'true';
+					else
+						application.configuration.config.options.smtp.active.xmltext				= 'false';
+
 					application.configuration.config.options.smtp.server.xmltext					= pform.smtpserver;
 					application.configuration.config.options.smtp.port.xmltext						= pform.smtpport;
 					application.configuration.config.options.smtp.user.xmltext						= pform.smtpuser;
@@ -195,10 +275,18 @@
 		
 					application.configuration.config.options.im.gtalk.accountuser.xmltext			= pform.imgoogleaccount;
 		
-					application.configuration.config.options.feed.api.active.xmltext				= pform.feedapi;
+					if (isdefined('pform.feedapi'))
+						application.configuration.config.options.feed.api.active.xmltext			= 'true';
+					else
+						application.configuration.config.options.feed.api.active.xmltext			= 'false';
+					
 					application.configuration.config.options.feed.api.type.xmltext					= pform.feedapitype;
 		
-					application.configuration.config.options.feed.email.active.xmltext				= pform.feedemail;
+					if (isdefined('pform.feedemail'))
+						application.configuration.config.options.feed.email.active.xmltext			= 'true';
+					else
+						application.configuration.config.options.feed.email.active.xmltext			= 'false';
+					
 					application.configuration.config.options.feed.email.scheduleinterval.xmltext	= pform.feedemailschedule;
 					application.configuration.config.options.feed.email.subjectkey.xmltext			= pform.feedmailkey;
 					application.configuration.config.options.feed.email.pop3.xmltext				= pform.feedemailpop3;
@@ -206,19 +294,46 @@
 					application.configuration.config.options.feed.email.user.xmltext				= pform.feedemailuser;
 					application.configuration.config.options.feed.email.password.xmltext			= pform.feedemailpwd;
 		
-					application.configuration.config.options.feed.im.active.xmltext					= pform.feedim;
+					if (isdefined('pform.feedim'))
+						application.configuration.config.options.feed.im.active.xmltext				= 'true';
+					else
+						application.configuration.config.options.feed.im.active.xmltext				= 'false';
+
 					application.configuration.config.options.feed.im.type.xmltext					= pform.feedimtype;
 					application.configuration.config.options.feed.im.gtalk.accountuser.xmltext		= pform.feedimgoogleaccount;
 					application.configuration.config.options.feed.im.gtalk.accountpwd.xmltext		= pform.feedimgooglepassword;
 		
-					application.configuration.config.options.feed.flashlite.active.xmltext			= pform.feedflashlite;
+					if (isdefined('pform.feedflashlite'))
+						application.configuration.config.options.feed.flashlite.active.xmltext		= 'true';
+					else
+						application.configuration.config.options.feed.flashlite.active.xmltext		= 'false';
 		
-					application.configuration.config.options.comment.commentmoderate.xmltext		= pform.commentmoderate;
-					application.configuration.config.options.comment.richeditor.xmltext				= pform.commentricheditor;
-					application.configuration.config.options.comment.emailspamprotection.xmltext	= pform.commentemailspamprotection;
+					if (isdefined('pform.commentmoderate'))
+						application.configuration.config.options.comment.commentmoderate.xmltext	= 'true';
+					else
+						application.configuration.config.options.comment.commentmoderate.xmltext	= 'false';
+
+					if (isdefined('pform.commentricheditor'))
+						application.configuration.config.options.comment.richeditor.xmltext			= 'true';
+					else
+						application.configuration.config.options.comment.richeditor.xmltext			= 'false';
+
+					if (isdefined('pform.commentemailspamprotection'))
+						application.configuration.config.options.comment.emailspamprotection.xmltext= 'true';
+					else
+						application.configuration.config.options.comment.emailspamprotection.xmltext= 'false';
+
 					application.configuration.config.options.comment.emailspamprotectiontext.xmltext= pform.commentemailspamprotectiontext;
-					application.configuration.config.options.comment.subscription.xmltext			= pform.commentsubscription;
-					application.configuration.config.options.comment.allowprivatecomment.xmltext	= pform.commentallowprivate;
+
+					if (isdefined('pform.commentsubscription'))
+						application.configuration.config.options.comment.subscription.xmltext		= 'true';
+					else
+						application.configuration.config.options.comment.subscription.xmltext		= 'false';
+
+					if (isdefined('pform.commentallowprivate'))
+						application.configuration.config.options.comment.allowprivatecomment.xmltext= 'true';
+					else
+						application.configuration.config.options.comment.allowprivatecomment.xmltext= 'false';
 		
 					application.configuration.config.options.blogstorage.storage.xmltext			= pform.blogstorage;
 		
@@ -235,21 +350,62 @@
 					application.configuration.config.layout.theme.xmltext							= pform.theme;
 					application.configuration.config.layout.layout.xmltext							= pform.layout;
 					application.configuration.config.layout.useiconset.xmltext						= pform.useiconset;
-					application.configuration.config.layout.usesocialbuttons.xmltext				= pform.usesocialbuttons;
+					if (isdefined('pform.usesocialbuttons'))
+						application.configuration.config.layout.usesocialbuttons.xmltext			= 'true';
+					else
+						application.configuration.config.layout.usesocialbuttons.xmltext			= 'false';
 		
-					application.configuration.config.log.sessionstart.xmltext						= pform.logsessionstart;
-					application.configuration.config.log.sessionend.xmltext							= pform.logsessionend;
-					application.configuration.config.log.applicationstart.xmltext					= pform.logapplicationstart;
-					application.configuration.config.log.applicationend.xmltext						= pform.logapplicationend;
-					application.configuration.config.log.postview.xmltext							= pform.logpostview;
-					application.configuration.config.log.postadd.xmltext							= pform.logpostadd;
-					application.configuration.config.log.postmodify.xmltext							= pform.logpostmodify;
-					application.configuration.config.log.commentadd.xmltext							= pform.logcommentadd;
-					application.configuration.config.log.trackbackadd.xmltext						= pform.logtrackbackadd;
-					application.configuration.config.log.login.xmltext								= pform.loglogin;
-					application.configuration.config.log.logout.xmltext								= pform.loglogout;
-					application.configuration.config.log.pageview.xmltext							= pform.logpageview;
-					application.configuration.config.log.download.xmltext							= pform.logdownload;
+					if (isdefined('pform.logsessionstart'))
+						application.configuration.config.log.sessionstart.xmltext					= 'true';
+						application.configuration.config.log.sessionstart.xmltext					= 'false';
+	
+					if (isdefined('pform.logsessionend'))
+						application.configuration.config.log.sessionend.xmltext						= 'true';
+						application.configuration.config.log.sessionend.xmltext						= 'false';
+	
+					if (isdefined('pform.logapplicationstart'))
+						application.configuration.config.log.applicationstart.xmltext				= 'true';
+						application.configuration.config.log.applicationstart.xmltext				= 'false';
+	
+					if (isdefined('pform.logapplicationend'))
+						application.configuration.config.log.applicationend.xmltext					= 'true';
+						application.configuration.config.log.applicationend.xmltext					= 'false';
+	
+					if (isdefined('pform.logpostview'))
+						application.configuration.config.log.postview.xmltext						= 'true';
+						application.configuration.config.log.postview.xmltext						= 'false';
+	
+					if (isdefined('pform.logpostadd'))
+						application.configuration.config.log.postadd.xmltext						= 'true';
+						application.configuration.config.log.postadd.xmltext						= 'false';
+	
+					if (isdefined('pform.logpostmodify'))
+						application.configuration.config.log.postmodify.xmltext						= 'true';
+						application.configuration.config.log.postmodify.xmltext						= 'false';
+	
+					if (isdefined('pform.logcommentadd'))
+						application.configuration.config.log.commentadd.xmltext						= 'true';
+						application.configuration.config.log.commentadd.xmltext						= 'false';
+	
+					if (isdefined('pform.logtrackbackadd'))
+						application.configuration.config.log.trackbackadd.xmltext					= 'true';
+						application.configuration.config.log.trackbackadd.xmltext					= 'false';
+	
+					if (isdefined('pform.loglogin'))
+						application.configuration.config.log.login.xmltext							= 'true';
+						application.configuration.config.log.login.xmltext							= 'false';
+	
+					if (isdefined('pform.loglogout'))
+						application.configuration.config.log.logout.xmltext							= 'true';
+						application.configuration.config.log.logout.xmltext							= 'false';
+	
+					if (isdefined('pform.logpageview'))
+						application.configuration.config.log.pageview.xmltext						= 'true';
+						application.configuration.config.log.pageview.xmltext						= 'false';
+	
+					if (isdefined('pform.usesocialbuttons'))
+						application.configuration.config.log.download.xmltext						= 'true';
+						application.configuration.config.log.download.xmltext						= 'false';
 				}
 		</cfscript>
 		

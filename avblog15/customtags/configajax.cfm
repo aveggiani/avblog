@@ -8,9 +8,9 @@
 	<div class="editorBody">
 		<div class="editorTitle"><cfoutput>#application.language.language.titleconfig.xmltext#</cfoutput></div>
 		<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-			<cfform action="#cgi.script_name#?mode=config" width="100%" height="600">
-				<div id="lhtabs" dojoType="TabContainer" style="width:100%; height:600px;" selectedTab="tab1">
-					<div id="lhtab1" dojoType="ContentPane" label="Headers">
+			<cfform action="#cgi.script_name#?mode=config">
+				<vb:wtab id="lhtabs" style="width: 98%; height: 600px;" selectedTab="tab1">
+					<vb:wcontentpane id="lhtab1" label="Headers">
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
@@ -18,7 +18,7 @@
 									#application.language.language.sitetitle.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:204px; height:200px;" name="description"><cfoutput>#application.configuration.config.headers.description.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:200px; height:200px;" name="description"><cfoutput>#application.configuration.config.headers.description.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.description.xmltext#
 								</div>
 								<div class="configLabels">
@@ -27,40 +27,40 @@
 								</div>
 							</cfoutput>
 						</div>
-					</div>
-					<div id="lhtab2" dojoType="ContentPane" label="labels">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab2" label="labels">
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
-									<cftextarea style="width:204px; height:200px;" name="header"><cfoutput>#application.configuration.config.labels.header.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:300px; height:200px;" name="header"><cfoutput>#application.configuration.config.labels.header.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.header.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:204px; height:200px;" name="footer"><cfoutput>#application.configuration.config.labels.footer.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:300px; height:200px;" name="footer"><cfoutput>#application.configuration.config.labels.footer.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.footer.xmltext#
 								</div>
 							</cfoutput>
 						</div>
-					</div>
-					<div id="lhtab3" dojoType="ContentPane" label="owner">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab3" label="owner">
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
-									<cftextarea style="width:200px;" name="author"><cfoutput>#application.configuration.config.owner.author.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:300px; height:200px;" name="author"><cfoutput>#application.configuration.config.owner.author.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.author.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:200px;" name="email"><cfoutput>#application.configuration.config.owner.email.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:300px; height:200px;" name="email"><cfoutput>#application.configuration.config.owner.email.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.email.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:200px;" name="blogurl"><cfoutput>#application.configuration.config.owner.blogurl.xmltext#</cfoutput></cftextarea> 
+									<cftextarea style="width:300px; height:200px;" name="blogurl"><cfoutput>#application.configuration.config.owner.blogurl.xmltext#</cfoutput></cftextarea> 
 									#application.language.language.linksito.xmltext#
 								</div>
 							</cfoutput>
 						</div>
-					</div>
-					<div id="lhtab4" dojoType="ContentPane" label="intern.">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab4" label="intern.">
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<div class="configLabels">
 								<cfselect name="language" style="width:200px;">
@@ -110,11 +110,11 @@
 								</cfoutput>
 							</div>
 						</div>
-					</div>
-					<div id="lhtab5" dojoType="ContentPane" label="options">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab5" label="options">
 						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-							<div id="lhtabs1" dojoType="TabContainer" labelPosition="left-h" style="width: 95%; height: 500px;" selectedTab="tab1">
-								<div id="lhtab11" dojoType="ContentPane" label="general">
+							<vb:wtab id="lhtabs1" labelPosition="right-h" style="width: 95%; height: 500px;" selectedTab="tab1">
+								<vb:wcontentPane id="lhtab11" label="general">
 									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 									<cfoutput>
 										<div class="configLabels">
@@ -139,7 +139,7 @@
 										</div>
 									</cfoutput>
 										<div class="configLabels">
-											<cfselect name="maxbloginhomepage" style="width:200px;">
+											<cfselect name="maxbloginhomepage" style="width:50px;">
 												<cfloop index="i" from="1" to="20">
 													<cfoutput>
 														<option value="#i#" <cfif application.configuration.config.options.maxbloginhomepage.xmltext is i>selected</cfif>>#i#</option>
@@ -176,12 +176,12 @@
 											#application.language.language.configricheditrointrackback.xmltext#
 										</div>
 										<div class="configLabels">
-											<cfinput type="text" name="xmppgatewayname"	value="#application.configuration.config.options.xmppgatewayname.xmltext#" >
+											<cfinput type="text" style="width:120px;" name="xmppgatewayname"	value="#application.configuration.config.options.xmppgatewayname.xmltext#" >
 											#application.language.language.configxmppgatewayname.xmltext#
 										</div>
 									</cfoutput>
 										<div class="configLabels">
-											<cfselect name="wichcaptcha" style="width:200px;">
+											<cfselect name="wichcaptcha" style="width:120px;">
 												<option value="builtin" <cfif application.configuration.config.options.wichcaptcha.xmltext is 'builtin'>selected</cfif>>builtin</option>
 												<cfloop query="captcha">
 													<cfoutput>
@@ -200,9 +200,9 @@
 										</div>
 									</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab12" dojoType="ContentPane" label="pods">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentPane>
+								<vb:wcontentPane id="lhtab12" label="pods">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" name="tagcloud" checked="#application.configuration.config.options.pods.tagcloud.xmltext#">
@@ -232,45 +232,45 @@
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab13" dojoType="ContentPane" label="Smtp settings">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentPane>
+								<vb:wcontentPane id="lhtab13" label="Smtp settings">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" 	name="smtp" checked="#application.configuration.config.options.smtp.active.xmltext#">
 												#application.language.language.configsmtpsettings.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="smtpserver" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.server.xmltext#">
+												<cfinput type="text" style="width:200px;" name="smtpserver" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.server.xmltext#">
 												#application.language.language.configsmtpsettingssmtp.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="smtpport" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.port.xmltext#">
+												<cfinput type="text" style="width:200px;" name="smtpport" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.port.xmltext#">
 												#application.language.language.configsmtpsettingsport.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="smtpuser" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.user.xmltext#">
+												<cfinput type="text" style="width:200px;" name="smtpuser" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.user.xmltext#">
 												#application.language.language.configsmtpsettingsuser.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="smtppassword" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.password.xmltext#">
+												<cfinput type="text" style="width:200px;" name="smtppassword" enabled="{smtp.selected}" value="#application.configuration.config.options.smtp.password.xmltext#">
 												#application.language.language.configsmtpsettingspwd.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab14" dojoType="ContentPane" label="Gtalk account">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentPane>
+								<vb:wcontentPane id="lhtab14" label="Gtalk account">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
-												<cfinput name="imgoogleaccount" value="#application.configuration.config.options.im.gtalk.accountuser.xmltext#"></cfinput> 
+												<cfinput name="imgoogleaccount" style="width:200px;" value="#application.configuration.config.options.im.gtalk.accountuser.xmltext#"></cfinput> 
 												#application.language.language.configauthorgoogleaccount.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab15" dojoType="ContentPane" label="Comments">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentPane>
+								<vb:wcontentPane id="lhtab15" label="Comments">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" name="commentmoderate" checked="#application.configuration.config.options.comment.commentmoderate.xmltext#">
@@ -285,7 +285,7 @@
 												#application.language.language.configspamprotectionincomments.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="commentemailspamprotectiontext" enabled="{commentemailspamprotection.selected}" value="#application.configuration.config.options.comment.emailspamprotectiontext.xmltext#">
+												<cfinput type="text" style="width:100px;" name="commentemailspamprotectiontext" enabled="{commentemailspamprotection.selected}" value="#application.configuration.config.options.comment.emailspamprotectiontext.xmltext#">
 												#application.language.language.configspamprotectionincommenttext.xmltext#
 											</div>
 											<div class="configLabels">
@@ -298,94 +298,126 @@
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab16" dojoType="ContentPane" label="RichEditor">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentPane>
+								<vb:wcontentPane id="lhtab16" label="RichEditor">
+									<script language="javascript">
+										<!--
+										function changeAccordion(whichricheditor)
+											{
+												var myAccordionPane = dojo.widget.byId(whichricheditor);
+												dojo.widget.byId('textarea').collapse();
+												dojo.widget.byId('fckeditor').collapse();
+												dojo.widget.byId('tinyMCE').collapse();
+												myAccordionPane.expand();
+											}
+										-->
+									</script>
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
-												<cfselect name="whichricheditor">
+												<select name="whichricheditor" style="width:100px;" onchange="javascript:changeAccordion(this.options[this.selectedIndex].value);">
 													<option value="textarea"	<cfif application.configuration.config.options.whichricheditor.xmltext is 'textarea'>selected</cfif>>textarea</option>
 													<option value="fckeditor"	<cfif application.configuration.config.options.whichricheditor.xmltext is 'fckeditor'>selected</cfif>>fckeditor</option>
 													<option value="tinyMCE"		<cfif application.configuration.config.options.whichricheditor.xmltext is 'tinyMCE'>selected</cfif>>tinyMCE</option>
-												</cfselect>
+												</select>
 												#application.language.language.configwichricheditor.xmltext#
 											</div>
-											<div class="configLabels">
-												<cfselect name="fckeditortoolbarset">
-													<option value="Basic"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'basic'>selected</cfif>>basic</option>
-													<option value="Default"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'default'>selected</cfif>>default</option>
-													<option value="Avblog"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'avblog'>selected</cfif>>avblog</option>
-												</cfselect>
-												#application.language.language.configwichtfckeditortoolbar.xmltext#
-											</div>
+											<vb:waccordion labelNodeClass="dojopAccordionlabel" containerNodeClass="dojopAccordionContainer" style="width:80%; height:200px" id="main">
+												<cfset open=false>
+												<cfif application.configuration.config.options.whichricheditor.xmltext is 'textarea'>
+													<cfset open = true>
+												</cfif>
+												<vb:waccordionPane id="textarea" label="Textarea" class="dojopaccordionpane" open="#open#">
+												</vb:waccordionPane>
+												<cfset open=false>
+												<cfif application.configuration.config.options.whichricheditor.xmltext is 'fckeditor'>
+													<cfset open = true>
+												</cfif>
+												<vb:waccordionPane id="fckeditor" label="FCKEditor" open="#open#" class="dojopaccordionpane">
+													<div class="configLabels">
+														<cfselect name="fckeditortoolbarset" style="width:200px;">
+															<option value="Basic"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'basic'>selected</cfif>>basic</option>
+															<option value="Default"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'default'>selected</cfif>>default</option>
+															<option value="Avblog"	<cfif application.configuration.config.options.fckeditor.toolbarset.xmltext is 'avblog'>selected</cfif>>avblog</option>
+														</cfselect>
+														#application.language.language.configwichtfckeditortoolbar.xmltext#
+													</div>
+												</vb:waccordionPane>
+												<cfset open=false>
+												<cfif application.configuration.config.options.whichricheditor.xmltext is 'tinyMCE'>
+													<cfset open = true>
+												</cfif>
+												<vb:waccordionPane id="tinyMCE" label="tinyMCE" open="#open#" class="dojopaccordionpane">
+												</vb:waccordionPane>
+											</vb:waccordion>
 										</cfoutput>
 									</div>
-								</div>
-							</div>
+								</vb:wcontentPane>
+							</vb:wtab>
 						</div>
-					</div>
-					<div id="lhtab6" dojoType="ContentPane" label="feed">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab6" label="feed">
 						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-							<div id="lhtabs2" dojoType="TabContainer" labelPosition="left-h" style="width: 100%; height: 600px;" selectedTab="tab1">
-								<div id="lhtab21" dojoType="ContentPane" label="Blog API">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+							<vb:wtab id="lhtabs2" labelPosition="right-h" style="width: 95%; height: 450px;" selectedTab="tab1">
+								<vb:wcontentpane id="lhtab21" label="Blog API">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" name="feedapi" checked="#application.configuration.config.options.feed.api.active.xmltext#" >
 												#application.language.language.configfeedapi.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfselect width="200" name="feedapitype" enabled="{feedapi.selected}">
+												<cfselect style="width:200px;" name="feedapitype" enabled="{feedapi.selected}">
 													<option value="MovableType" <cfif application.configuration.config.options.feed.api.type.xmltext is 'MovableType'>selected</cfif>>MovableType</option>
 												</cfselect>
 												#application.language.language.configfeedapittype.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab22" dojoType="ContentPane" label="Email">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentpane>
+								<vb:wcontentpane id="lhtab22" label="Email">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" name="feedemail" checked="#application.configuration.config.options.feed.email.active.xmltext#">
 												#application.language.language.configfeedemail.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" validate="integer" message="#application.language.language.configfeedemailscheduleerror.xmltext#" range="5,60" name="feedemailschedule" value="#application.configuration.config.options.feed.email.scheduleinterval.xmltext#">
+												<cfinput type="text" style="width:150px;" validate="integer" message="#application.language.language.configfeedemailscheduleerror.xmltext#" range="5,60" name="feedemailschedule" value="#application.configuration.config.options.feed.email.scheduleinterval.xmltext#">
 												#application.language.language.configfeedemailschedule.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" required="yes" name="feedmailkey" value="#application.configuration.config.options.feed.email.subjectkey.xmltext#">
+												<cfinput type="text" style="width:150px;" required="yes" name="feedmailkey" value="#application.configuration.config.options.feed.email.subjectkey.xmltext#">
 												#application.language.language.configfeedemailsubject.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="feedemailpop3" value="#application.configuration.config.options.feed.email.pop3.xmltext#">
+												<cfinput type="text" style="width:150px;" name="feedemailpop3" value="#application.configuration.config.options.feed.email.pop3.xmltext#">
 												#application.language.language.configfeedemailpop3.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="feedemailport" value="#application.configuration.config.options.feed.email.port.xmltext#">
+												<cfinput type="text" style="width:150px;" name="feedemailport" value="#application.configuration.config.options.feed.email.port.xmltext#">
 												#application.language.language.configfeedemailport.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="feedemailuser" value="#application.configuration.config.options.feed.email.user.xmltext#">
+												<cfinput type="text" style="width:150px;" name="feedemailuser" value="#application.configuration.config.options.feed.email.user.xmltext#">
 												#application.language.language.configfeedemailuser.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" name="feedemailpwd" value="#application.configuration.config.options.feed.email.password.xmltext#">
+												<cfinput type="text" style="width:150px;" name="feedemailpwd" value="#application.configuration.config.options.feed.email.password.xmltext#">
 												#application.language.language.configfeedemailpwd.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab23" dojoType="ContentPane" label="IM Xmpp (GoogleTalk)">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentpane>
+								<vb:wcontentpane id="lhtab23" label="IM Xmpp (GoogleTalk)">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
 												<cfinput type="checkbox" name="feedim" checked="#application.configuration.config.options.feed.im.active.xmltext#">
 												#application.language.language.configfeedim.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfselect width="200" name="feedimtype"  enabled="{feedim.selected}">
+												<cfselect style="width:150px;" name="feedimtype"  enabled="{feedim.selected}">
 													<cfoutput>
 														<option value="#application.configuration.config.options.feed.im.type.xmltext#">#application.configuration.config.options.feed.im.type.xmltext#</option>
 													</cfoutput>
@@ -393,66 +425,91 @@
 												#application.language.language.configfeedimtype.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput name="feedimgoogleaccount" value="#application.configuration.config.options.feed.im.gtalk.accountuser.xmltext#"></cfinput> 
+												<cfinput name="feedimgoogleaccount" style="width:150px;" value="#application.configuration.config.options.feed.im.gtalk.accountuser.xmltext#"></cfinput> 
 												#application.language.language.configfeedimgoogleaccount.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput name="feedimgooglepassword" value="#application.configuration.config.options.feed.im.gtalk.accountpwd.xmltext#"></cfinput> 
+												<cfinput name="feedimgooglepassword" style="width:150px;" value="#application.configuration.config.options.feed.im.gtalk.accountpwd.xmltext#"></cfinput> 
 												#application.language.language.configfeedimgooglepwd.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
-								<div id="lhtab24" dojoType="ContentPane" label="FlashLite">
-									<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+								</vb:wcontentpane>
+								<vb:wcontentpane id="lhtab24" label="FlashLite">
+									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
-												<cfinput type="checkbox"	name="feedflashlite" 	checked="#application.configuration.config.options.feed.flashlite.active.xmltext#" label="#application.language.language.configfeedflashlite.xmltext#">
+												<cfinput type="checkbox"	name="feedflashlite" 	checked="#application.configuration.config.options.feed.flashlite.active.xmltext#">
+												#application.language.language.configfeedflashlite.xmltext#
 											</div>
 										</cfoutput>
 									</div>
-								</div>
+								</vb:wcontentpane>
 							</div>
 						</div>
-					</div>
-					<div id="lhtab7" dojoType="ContentPane" label="storage">
-						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-							<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-								<cfoutput>
-									<div class="configLabels">
-										<cfselect name="blogstorage" label="storage" selectedindex="{blogstorageaccordion.selectedIndex}">
-											<option value="xml" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'xml'>selected</cfif>>xml</option>
-											<option value="db" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'db'>selected</cfif>>db</option>
-											<!---
-											<option value="email" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'email'>selected</cfif>>email</option>
-											--->
-										</cfselect>
-									</div>
-									<div class="configLabels">
-										<cfinput name="blogstoragexmlfolder" value="#application.configuration.config.options.blogstorage.xml.folder.xmltext#"></cfinput> 
-										storage Path
-									</div>
-									<div class="configLabels">
-										<cfinput name="blogstoragedbdatasource" value="#application.configuration.config.options.blogstorage.db.datasource.xmltext#"></cfinput> 
-										datasource
-									</div>
-									<div class="configLabels">
-										<cfinput name="blogstoragedbdsuser" value="#application.configuration.config.options.blogstorage.db.dsuser.xmltext#"></cfinput> 
-										#application.language.language.configstoragedatasourceusername.xmltext#
-									</div>
-									<div class="configLabels">
-										<cfinput name="blogstoragedbdspwd" value="#application.configuration.config.options.blogstorage.db.dspwd.xmltext#"></cfinput> 
-										#application.language.language.configstoragedatasourcepwd.xmltext#
-									</div>
-								</cfoutput>
-							</div>
-						</div>
-					</div>
-					<div id="lhtab8" dojoType="ContentPane" label="layout">
-						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab7" label="storage">
+						<div class="editorForm" style="position:relative; text-align:left; padding-top:5px;">
+							<script language="javascript">
+								<!--
+								function changeAccordionStorage(wichstorage)
+									{
+										var myAccordionPane = dojo.widget.byId(wichstorage);
+										dojo.widget.byId('xml').collapse();
+										dojo.widget.byId('db').collapse();
+										myAccordionPane.expand();
+									}
+								-->
+							</script>
 							<cfoutput>
 								<div class="configLabels">
-									<cfselect width="200" name="theme">
+									<select name="blogstorage" onchange="javascript: changeAccordionStorage(this.options[this.selectedIndex].value);">
+										<option value="xml" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'xml'>selected</cfif>>xml</option>
+										<option value="db" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'db'>selected</cfif>>db</option>
+										<!---
+										<option value="email" <cfif application.configuration.config.options.blogstorage.storage.xmltext is 'email'>selected</cfif>>email</option>
+										--->
+									</select>
+									storage
+								</div>
+								<vb:waccordion labelNodeClass="dojopAccordionlabel" containerNodeClass="dojopAccordionContainer" style="width:80%; height:200px;" id="main">
+									<cfset open=false>
+									<cfif application.configuration.config.options.blogstorage.storage.xmltext is 'xml'>
+										<cfset open = true>
+									</cfif>
+									<vb:waccordionPane id="xml" label="XML" class="dojopaccordionpane" open="#open#">
+										<div class="configLabels">
+											<cfinput name="blogstoragexmlfolder" style="width:200px;" value="#application.configuration.config.options.blogstorage.xml.folder.xmltext#"></cfinput> 
+											storage Path
+										</div>
+									</vb:waccordionPane>
+									<cfset open=false>
+									<cfif application.configuration.config.options.blogstorage.storage.xmltext is 'db'>
+										<cfset open = true>
+									</cfif>
+									<vb:waccordionPane id="db" label="Database" class="dojopaccordionpane" open="#open#">
+										<div class="configLabels">
+											<cfinput name="blogstoragedbdatasource" style="width:200px;" value="#application.configuration.config.options.blogstorage.db.datasource.xmltext#"></cfinput> 
+											datasource
+										</div>
+										<div class="configLabels">
+											<cfinput name="blogstoragedbdsuser" style="width:200px;" value="#application.configuration.config.options.blogstorage.db.dsuser.xmltext#"></cfinput> 
+											#application.language.language.configstoragedatasourceusername.xmltext#
+										</div>
+										<div class="configLabels">
+											<cfinput name="blogstoragedbdspwd" style="width:200px;" value="#application.configuration.config.options.blogstorage.db.dspwd.xmltext#"></cfinput> 
+											#application.language.language.configstoragedatasourcepwd.xmltext#
+										</div>
+									</vb:waccordionPane>
+								</vb:waccordion>
+							</cfoutput>
+						</div>
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab8" label="layout">
+						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
+							<cfoutput>
+								<div class="configLabels">
+									<cfselect style="width:200px;" name="theme">
 										<cfloop query="themes">
 											<cfoutput>
 												<option value="#listgetat(themes.name,1,'.')#"  <cfif application.configuration.config.layout.theme.xmltext is listgetat(themes.name,1,'.')>selected</cfif>>#listgetat(themes.name,1,'.')#</option>
@@ -462,7 +519,7 @@
 									#application.language.language.visualthemes.xmltext#
 								</div>
 								<div class="configLabels">
-									<cfselect width="200" name="layout">
+									<cfselect style="width:200px;" name="layout">
 										<cfoutput>
 											<option value="justified" #Iif(application.configuration.config.layout.layout.xmltext EQ 'justified', DE('selected'), DE(''))#>#application.language.language.layoutjustified.xmltext#</option>
 											<option value="fixleft" #Iif(application.configuration.config.layout.layout.xmltext EQ 'fixleft', DE('selected'), DE(''))#>#application.language.language.layoutfixleft.xmltext#</option>
@@ -472,7 +529,7 @@
 									#application.language.language.layout.xmltext#
 								</div>
 								<div class="configLabels">
-									<cfselect width="200" name="useiconset">
+									<cfselect style="width:200px;" name="useiconset">
 										<cfoutput>
 											<option value="none" <cfif isdefined('application.configuration.config.layout.useiconset.xmltext') and application.configuration.config.layout.useiconset.xmltext is 'none'>selected</cfif>>#application.language.language.notuseiconsets.xmltext#</option>
 										</cfoutput>
@@ -490,26 +547,26 @@
 								</div>
 							</cfoutput>
 						</div>
-					</div>
-					<div id="lhtab9" dojoType="ContentPane" label="plugin">
-						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-							<div id="lhtabs3" dojoType="TabContainer" labelPosition="right-h" style="width: 95%; height: 450px;" selectedTab="tab1">
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab9" label="plugin">
+						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
+							<vb:wtab id="lhtabs3" labelPosition="right-h" style="width: 95%; height: 450px;" selectedTab="tab1">
 								<cfoutput>
 									<cfloop query="application.plugins">
-											<div id="lhtab3#application.plugins.currentrow#" dojoType="ContentPane" label="#application.plugins.name#">
+											<vb:wcontentpane id="lhtab3#application.plugins.currentrow#" label="#application.plugins.name#">
 												<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
-													<cfif fileexists('#request.apppath#/plugins/#application.plugins.name#/customtags/confgajax.cfm')>
+													<cfif fileexists('#request.apppath#/plugins/#application.plugins.name#/customtags/configajax.cfm')>
 														<cfinclude template="#request.appMapping#plugins/#application.plugins.name#/customtags/configajax.cfm">
 													</cfif>
 												</div>
-											</div>
+											</vb:wcontentpane>
 									</cfloop>
 								</div>
 							</cfoutput>
-						</div>
-					</div>
-					<div id="lhtab10" dojoType="ContentPane" label="log">
-						<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
+						</vb:wtab>
+					</vb:wcontentpane>
+					<vb:wcontentpane id="lhtab10" label="log">
+						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
 									<cfinput	type="checkbox" name="logsessionstart" checked="#application.configuration.config.log.sessionstart.xmltext#">
@@ -565,8 +622,8 @@
 								</div>
 							</cfoutput>
 						</div>
-					</div>
-				</div>
+					</vb:wcontentpane>
+				</vb:wtab>
 				<cfinput type="submit" name="okConfig" value="#application.language.language.changeconfig.xmltext#">
 			</cfform>
 		</div>

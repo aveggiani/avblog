@@ -7,6 +7,7 @@
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>
+				<div class="editorTitle"><cfoutput>#application.language.language.comments.xmltext#</cfoutput></div>
 				<cfscript>
 					comments = request.blog.getRecentComments(1000000,isuserinrole('admin'));
 				</cfscript>

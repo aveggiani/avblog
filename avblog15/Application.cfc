@@ -1,9 +1,8 @@
 <cfcomponent output="false">
 
 	<cfscript>
-		this.name 							= "AVBlog153_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
+		this.name 							= "AVBlog154_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
 		this.applicationTimeout 			= createTimeSpan(0,2,0,0);
-		this.loginStorage					= 'session';
 		this.sessionManagement 				= true;
 		this.sessionTimeout 				= createTimeSpan(0,0,20,0);
 	</cfscript>
@@ -81,7 +80,7 @@
 		<cfscript>
 			if (not StructKeyExists(application, 'configuration')) init();
 
-			// init();
+			//init();
 
 			initRequest();
 			initRequestStorage();

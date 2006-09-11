@@ -1,0 +1,302 @@
+/* CSS Document */
+
+/* Accordion */
+
+.dojopAccordionlabel {
+	background-color: #999999;
+	color: #fff;
+	font-weight: bold;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	width:100%; 
+	text-align: left;
+	padding-left: 5px;
+}
+
+.dojopAccordionlabel :hover {
+	cursor: pointer;
+}
+
+
+.dojopAccordionContainer {
+	width:100%; 
+	height:200px;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	background-color:#cccccc; 
+	border-bottom: 1px solid #999999;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+.dojopaccordionpane {
+	background-color:#cccccc; 
+	width:100%; 
+	height:100%; 
+}
+
+/* Wizard */
+
+.WizardContainer {
+	padding: 8px;
+	background: #f4f4f4;
+	color: #808080;
+	border: 1px solid #ccc;
+}
+
+.WizardTitle {
+	color: #003366;
+	padding: 8px 5px 15px 2px;
+	font-weight: bold;
+	font-size: x-small;
+	font-style: normal;
+	font-family: Verdana, Arial, Helvetica;
+	text-align: left;
+}
+
+.WizardText {
+	color: #000033;
+	font-weight: normal;
+	font-size: xx-small;
+	font-family: Verdana, Arial, Helvetica;
+	padding: 2 50; text-align: justify;
+}
+
+.WizardLightText {
+	color: #666666;
+	font-weight: normal;
+	font-size: xx-small;
+	font-family: verdana, arial, helvetica;
+	padding: 2px 50px;
+	text-align: justify;
+}
+
+.WizardButtonHolder {
+	text-align: right;
+}
+
+.WizardButton {
+	color: #ffffff;
+	background: #a4a4a4;
+	font-size: xx-small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-weight:bold;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	border-left: #666666 1px solid;
+	border-top: #666666 1px solid;
+	padding: 4px;
+}
+
+.WizardButton:hover {
+	cursor: pointer;
+}
+
+.WizardButtonDisabled {
+	color: #a4a4a4;
+	background: #848484;
+	font-size: xx-small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	border-right: #848484 1px solid;
+	border-bottom: #848484 1px solid;
+	border-left: #848484 1px solid;
+	border-top: #848484 1px solid;
+	padding: 4px;
+}
+
+
+/* tab */
+
+.dojoTabContainer {
+	position : relative;
+	padding: 5px;
+}
+
+.dojoTabPaneWrapper {
+	position : relative;
+	border : 1px solid #000000;
+	clear: both;
+}
+
+.dojoTabLabels-top {
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	overflow : visible;
+	margin-bottom : -1px;
+	width : 100%;
+	z-index: 2;	/* so the bottom of the tab label will cover up the border of dojoTabPaneWrapper */
+}
+.dojoTabLabels-top-noLayout {
+	overflow : visible;
+	margin-bottom : -1px;
+	width : 100%;
+	z-index: 2;
+}
+
+.dojoTabPaneTab {
+	text-align: left;
+	position : relative;
+	float : left;
+	border-bottom : 1px solid #000000;
+	border-left : 1px solid #000000;
+	border-right : 1px solid #000000;
+	cursor: pointer;
+	width: 85px;
+}
+
+.dojoTabPaneTab span {
+	display : block;
+	padding : 4px 15px 4px 6px;
+	color : #333;
+	font-size : 90%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.dojoTabPanePaneClose {
+	position : absolute;
+	bottom : 0px;
+	right : 6px;
+	height : 12px;
+	width : 12px;
+	background : url(../../../../dojo/src/widget/templates/images/tab_close.gif) no-repeat right top;
+}
+
+.dojoTabPanePaneCloseHover {
+	background-image : url(../../../../dojo/src/widget/templates/images/tab_close_h.gif);
+}
+
+.dojoTabPaneTabClose {
+	display : inline;
+	height : 12px;
+	width : 12px;
+	padding : 0 12px 0 0;
+	margin : 0 -10px 0 10px;
+	background : url(../../../../dojo/src/widget/templates/images/tab_close.gif) no-repeat right top;
+	cursor : default;
+}
+
+.dojoTabPaneTabCloseHover {
+	background-image : url(../../../../dojo/src/widget/templates/images/tab_close_h.gif);
+}
+
+.dojoTabPaneTab.current {
+	background-color: #999999;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.dojoTabPaneTab.current span {
+	padding-bottom : 5px;
+	margin-bottom : -1px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* bottom tabs */
+
+.dojoTabLabels-bottom {
+	position : absolute;
+	bottom : 0px;
+	left : 0px;
+	overflow : visible;
+	margin-top : -1px;
+	width : 100%;
+	z-index: 2;
+}
+
+.dojoTabLabels-bottom .dojoTabPaneTab {
+	border-top :  1px solid #6290d2;
+	border-bottom : 0;
+}
+
+.dojoTabLabels-bottom .dojoTabPaneTab span {
+}
+
+.dojoTabLabels-bottom .dojoTabPaneTab.current {
+	padding-top : 1px;
+	border-top : 0;
+}
+
+.dojoTabLabels-bottom .dojoTabPaneTab.current span {
+	padding-top : 5px;
+	margin-top : -1px;
+}
+
+/* right-h tabs */
+
+.dojoTabLabels-right-h {
+	text-align: left;
+	position : absolute;
+	top : 0px;
+	right : 0px;
+	overflow : visible;
+	margin-left : -1px;
+	z-index: 2;
+}
+
+.dojoTabLabels-right-h .dojoTabPaneTab {
+	padding-left : 0;
+	border-right :  1px solid #000000;
+	float : none;
+}
+
+.dojoTabLabels-right-h .dojoTabPaneTab span {
+	padding : 4px 15px 4px 15px;
+}
+
+.dojoTabLabels-right-h .dojoTabPaneTab.current {
+	border-bottom :  1px solid #000000;
+}
+
+/* left-h tabs */
+
+.dojoTabLabels-left-h {
+	text-align: left;
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	overflow : visible;
+	margin-right : -1px;
+	z-index: 2;
+}
+
+.dojoTabLabels-left-h .dojoTabPaneTab {
+	border-bottom : 0;
+	float : none;
+}
+
+.dojoTabLabels-left-h .dojoTabPaneTab.current {
+	border-right : 0;
+	border-bottom :  1px solid #000000;
+	padding-bottom : 0;
+}
+
+.dojoTabLabels-left-h .dojoTabPaneTab span {
+	background : 0;
+	border-bottom :  1px solid #000000;
+}
+
+/* title pane */
+
+.dojopTitlepanelabel {
+	text-align:left;
+	font-size: 1,1em;
+	padding: 5px;
+	margin-top: 5px;
+	background-color: #999999;
+	font-weight: bold;
+}
+
+.dojopTitlepanelabel :hover {
+	cursor: pointer;
+}
+
+
+.dojopTitlepaneContainer {
+	text-align:left;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	padding: 5px;
+}
+
+

@@ -135,7 +135,11 @@
 							<cfset "structTmp.#field#" = evaluate(field)>
 						</cfif>
 					</cfloop>
-					<cfmodule template="plugins/#application.plugins.name#/customtags/config.cfm" structForm="#structTmp#">
+					<cfif useajax()>
+						<cfmodule template="plugins/#application.plugins.name#/customtags/configajax.cfm" structForm="#structTmp#">
+					<cfelse>
+						<cfmodule template="plugins/#application.plugins.name#/customtags/config.cfm" structForm="#structTmp#">
+					</cfif>
 				</cfloop>
 				<!--- reload configuration --->
 				<cfscript>
@@ -347,6 +351,14 @@
 						url.publish = true;
 					request.trackbacks.publish(url.idtrackback,url.publish);
 				</cfscript>
+			</cfif>
+		</cfcase>
+		<cfcase value="categoryfrompost">
+			<cfif isdefined('url.category') and isuserinrole('admin')>
+				<cfscript>
+					request.blog.savecategory(url.category);
+				</cfscript>
+				<cflocation url="#request.appmapping#ajax.cfm?mode=categoryfrompost" addtoken="no">
 			</cfif>
 		</cfcase>
 		<cfcase value="category">

@@ -11,7 +11,7 @@
 					<width>800</width>
 				</big>
 				<layout>
-					<type>ajax presentation</type>
+					<type>ajax</type>
 					<orientation>vertical</orientation>
 				</layout>
 			</plugin>

@@ -13,6 +13,7 @@
 				<cfscript>
 					qryGetPings = request.ping.getPingList();
 				</cfscript>
+				<div class="editorTitle"><cfoutput>#application.language.language.authoping.xmltext#</cfoutput></div>
 				<div align="center">
 					<form id="theForm" name="theForm" action="<cfoutput>#request.appmapping##listlast(cgi.SCRIPT_NAME,'/')#</cfoutput>?mode=ping" method="post" onsubmit="return submitHandler(this);"/> 
 						<table id="theTable" width="60%">

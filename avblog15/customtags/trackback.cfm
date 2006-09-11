@@ -7,6 +7,7 @@
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>
+				<div class="editorTitle"><cfoutput>#application.language.language.trackbacks.xmltext#</cfoutput></div>
 				<cfscript>
 					trackbacks = arrayOfStructuresToQuery(request.trackbacks.get());
 				</cfscript>

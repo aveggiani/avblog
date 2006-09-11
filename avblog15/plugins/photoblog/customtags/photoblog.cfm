@@ -204,67 +204,63 @@
 	
 			<div class="editorBody">
 				<form action="<cfoutput>#cgi.script_name#?#cgi.query_string#</cfoutput>" method="post" enctype="multipart/form-data" name="editgallery" id="editgallery">
-			
 				<cfoutput><div class="editorTitle">#application.pluginslanguage.photoblog.language.editgallery.xmltext#</div></cfoutput>
-				
 				<br />
-				
-				<div id="lhtabs" dojoType="TabContainer" labelPosition="left-h" style="width: 100%; height: 600px;" selectedTab="tab1" closeButton="tab">
-					<div id="lhtab1" dojoType="ContentPane" label="Gallery">
-				
+				<vb:wtab id="lhtabs" style="width: 100%; height: 600px;" selectedTab="tab1" labelPosition="left-h" closeButton="tab">
+					<vb:wcontentpane id="lhtab1" label="Gallery">
 						<div class="editorForm" style="position:relative;">
 							<cfoutput>
-									<input type="hidden" name="galleryid" value="#myphotoblog.id#" />
-									<table width="100%">
-										<cfscript>
-											date = myphotoblog.date;
-											to_data				="#dateformat(nowoffset(now()),'dd/mm/yyyy')#";
-											mydate				= createdate(left(date,4),mid(date,5,2),right(date,2));
-											datevalue			= "#right(date,2)#/#mid(date,5,2)#/#left(date,4)#";
-											locdatevalue		= application.objLocale.dateLocaleFormat(mydate,"long");
-										</cfscript>
-										<tr>
-											<td align="right">#application.pluginslanguage.photoblog.language.gallerycategory.xmltext#:</td>		
-											<td><input name="category" type="text" value="#myphotoblog.category#"></td>
-										</tr>
-										<tr>
-											<td align="right">#application.pluginslanguage.photoblog.language.galleryname.xmltext#:</td>		
+								<input type="hidden" name="galleryid" value="#myphotoblog.id#" />
+								<table width="100%">
+									<cfscript>
+										date = myphotoblog.date;
+										to_data				="#dateformat(nowoffset(now()),'dd/mm/yyyy')#";
+										mydate				= createdate(left(date,4),mid(date,5,2),right(date,2));
+										datevalue			= "#right(date,2)#/#mid(date,5,2)#/#left(date,4)#";
+										locdatevalue		= application.objLocale.dateLocaleFormat(mydate,"long");
+									</cfscript>
+									<tr>
+										<td align="right">#application.pluginslanguage.photoblog.language.gallerycategory.xmltext#:</td>		
+										<td><input name="category" type="text" value="#myphotoblog.category#"></td>
+									</tr>
+									<tr>
+										<td align="right">#application.pluginslanguage.photoblog.language.galleryname.xmltext#:</td>		
+										<td>
+											<input name="nameDisabled" type="text" value="#myphotoblog.name#" disabled="disabled">
+											<input name="name" type="hidden" value="#myphotoblog.name#">
+										</td>
+									</tr>
+									<cfif directoryexists('#request.apppath#/external/jscalendar')>
+										<tr><td align="right">#application.pluginslanguage.photoblog.language.gallerydate.xmltext#:</td>		
 											<td>
-												<input name="nameDisabled" type="text" value="#myphotoblog.name#" disabled="disabled">
-												<input name="name" type="hidden" value="#myphotoblog.name#">
-											</td>
+												<input type="hidden" name="date" id="date" value="#datevalue#" />
+												<p><span id="show"><strong>#locdatevalue#</strong></span> <button type="reset" id="f_trigger">...</button></p>
+												<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
 										</tr>
-										<cfif directoryexists('#request.apppath#/external/jscalendar')>
-											<tr><td align="right">#application.pluginslanguage.photoblog.language.gallerydate.xmltext#:</td>		
-												<td>
-													<input type="hidden" name="date" id="date" value="#datevalue#" />
-													<p><span id="show"><strong>#locdatevalue#</strong></span> <button type="reset" id="f_trigger">...</button></p>
-													<input type="hidden" name="old_date"  <cfif attributes.type is 'update'>value="#right(date,2)#/#mid(date,5,2)#/#left(date,4)#"<cfelse>value=""</cfif>>
-											</tr>
-										<cfelse>
-											<input type="hidden" name="date" id="date" value="#datevalue#" />
-										</cfif>
-										<tr>
-											<td colspan="2">
-												<hr />
-												<strong>#application.pluginslanguage.photoblog.language.gallerydescription.xmltext#:</strong>
-											</td>
-										</tr>
-										<tr>
-											<td align="center" colspan="2">
-												<cfset valore=myphotoblog.description>
-												<vb:externaleditor
-													whicheditor = "textarea"
-													name		= "description"
-													valore		= "#valore#"
-													width		= "90%"
-													height		= "250">
-											</td>
-										</tr>
-									</table>
-								</cfoutput>
-							</div>
+									<cfelse>
+										<input type="hidden" name="date" id="date" value="#datevalue#" />
+									</cfif>
+									<tr>
+										<td colspan="2">
+											<hr />
+											<strong>#application.pluginslanguage.photoblog.language.gallerydescription.xmltext#:</strong>
+										</td>
+									</tr>
+									<tr>
+										<td align="center" colspan="2">
+											<cfset valore=myphotoblog.description>
+											<vb:externaleditor
+												whicheditor = "textarea"
+												name		= "description"
+												valore		= "#valore#"
+												width		= "90%"
+												height		= "250">
+										</td>
+									</tr>
+								</table>
+							</cfoutput>
 						</div>
+					</vb:wcontentpane>
 	
 						<cfloop query="myphotoblogimages">
 							<cfscript>
@@ -273,7 +269,7 @@
 								bigwidth = trim(application.photoblogObj.getImageSize('#request.apppath#/user/photoblog/galleries/#myphotoblog.name#/big/#myphotoblogimages.file#').width);
 							</cfscript>
 							<cfoutput>
-								<div id="lhtab#myphotoblogimages.currentrow#" dojoType="ContentPane" label="img #right('00'&myphotoblogimages.currentrow,2)#" onClose="testClose">
+								<vb:wcontentpane id="lhtab#myphotoblogimages.currentrow#" label="img #right('00'&myphotoblogimages.currentrow,2)#">
 									<div class="editorForm" style="position:relative;">
 										<input type="hidden" name="photoid#idimage#" value="#myphotoblogimages.id#" />
 										<table width="100%">
@@ -360,55 +356,56 @@
 											</table>
 										</cfif>
 									</div>
-								</cfoutput>
-							</div>
+								</vb:wcontentpane>
+							</cfoutput>
 						</cfloop>
 	
-							<cfscript>
-								idimage =  replace(createuuid(),'-','_','ALL');
-								thumbwidth = application.pluginsconfiguration.photoblog.plugin.thumbnail.width.xmltext;
-								bigwidth = application.pluginsconfiguration.photoblog.plugin.big.width.xmltext;
-							</cfscript>
-							<cfoutput>
-								<div id="lhtab#incrementvalue(myphotoblogimages.recordcount)#" dojoType="ContentPane" label="img +" onClose="testClose">
-									<div class="editorForm" style="position:relative;">
-										<input type="hidden" name="newId" value="#idimage#" />
-										<table width="100%">
-											<tr>
-												<td align="right">#application.pluginslanguage.photoblog.language.photoname.xmltext#:</td>		
-												<td><input name="photoname#idimage#" type="text" value=""></td>
-											</tr>
-											<tr>
-												<td align="right">#application.pluginslanguage.photoblog.language.gallerydescription.xmltext#:</td>
-												<td>
-													<cfset valore=myphotoblogimages.description>
-													<vb:externaleditor
-														whicheditor = "textarea"
-														name		= "photodescription#idimage#"
-														valore		= "#valore#"
-														width		= "90%"
-														height		= "100">
-												</td>
-											</tr>
-											<tr>
-												<td></td>
-												<td>
-													<input type="file" size="50" name="photofile#idimage#" />
-													<input type="hidden" size="50" name="photooldfile#idimage#" value="" />
-												</td>
-											</tr>
-											<tr>
-												<td align="right">#application.pluginslanguage.photoblog.language.thumbwidth.xmltext#:</td>		
-												<td><input name="thumbwidth#idimage#" type="text" value="#thumbwidth#" /></td>
-											</tr>
-											<tr>
-												<td align="right">#application.pluginslanguage.photoblog.language.bigwidth.xmltext#:</td>		
-												<td><input name="bigwidth#idimage#" type="text" value="#bigwidth#" /></td>
-											</tr>
-										</table>
-									</div>
-								</cfoutput>
-							</div>
+						<cfscript>
+							idimage =  replace(createuuid(),'-','_','ALL');
+							thumbwidth = application.pluginsconfiguration.photoblog.plugin.thumbnail.width.xmltext;
+							bigwidth = application.pluginsconfiguration.photoblog.plugin.big.width.xmltext;
+						</cfscript>
+						<cfoutput>
+							<vb:wcontentpane id="lhtab#incrementvalue(myphotoblogimages.recordcount)#" label="img +">
+								<div class="editorForm" style="position:relative;">
+									<input type="hidden" name="newId" value="#idimage#" />
+									<table width="100%">
+										<tr>
+											<td align="right">#application.pluginslanguage.photoblog.language.photoname.xmltext#:</td>		
+											<td><input name="photoname#idimage#" type="text" value=""></td>
+										</tr>
+										<tr>
+											<td align="right">#application.pluginslanguage.photoblog.language.gallerydescription.xmltext#:</td>
+											<td>
+												<cfset valore=myphotoblogimages.description>
+												<vb:externaleditor
+													whicheditor = "textarea"
+													name		= "photodescription#idimage#"
+													valore		= "#valore#"
+													width		= "90%"
+													height		= "100">
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<input type="file" size="50" name="photofile#idimage#" />
+												<input type="hidden" size="50" name="photooldfile#idimage#" value="" />
+											</td>
+										</tr>
+										<tr>
+											<td align="right">#application.pluginslanguage.photoblog.language.thumbwidth.xmltext#:</td>		
+											<td><input name="thumbwidth#idimage#" type="text" value="#thumbwidth#" /></td>
+										</tr>
+										<tr>
+											<td align="right">#application.pluginslanguage.photoblog.language.bigwidth.xmltext#:</td>		
+											<td><input name="bigwidth#idimage#" type="text" value="#bigwidth#" /></td>
+										</tr>
+									</table>
+								</div>
+							</vb:wcontentpane>
+						</cfoutput>
+					</vb:wtab>
 					</div>
 					<br />
 					<div align="center">

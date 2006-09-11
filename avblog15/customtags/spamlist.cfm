@@ -12,6 +12,7 @@
 				<cfscript>
 					qrySpamList = request.spam.getTrackBackSpamList();
 				</cfscript>
+				<div class="editorTitle"><cfoutput>#application.language.language.spamlist.xmltext#</cfoutput></div>
 				<div align="center">
 					<form id="theForm" name="theForm" action="<cfoutput>#request.appmapping##listlast(cgi.SCRIPT_NAME,'/')#</cfoutput>?mode=spam" method="post" onsubmit="return submitHandler(this);"/> 
 						<table id="theTable" width="60%">

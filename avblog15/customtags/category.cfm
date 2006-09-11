@@ -2,6 +2,17 @@
 <cfimport taglib="." prefix="vb">
 
 <cfswitch expression="#attributes.type#">
+	<cfcase value="categoryfrompost">
+		<cfscript>
+			qryCategories = request.blog.getCategories();
+		</cfscript>
+		<input type="hidden" name="category" value="">
+		<cfloop query="qryCategories">
+			<cfoutput>
+				<input type="checkbox" name="category" value="#qryCategories.name#" <cfif isdefined('listMyCategories') and listfind(listMyCategories,qryCategories.name)>checked</cfif>>#listrest(qryCategories.name,'_')#
+			</cfoutput>
+		</cfloop>
+	</cfcase>
 	<cfcase value="manage">
 		<cfscript>
 			qryCategories = request.blog.getCategories();
