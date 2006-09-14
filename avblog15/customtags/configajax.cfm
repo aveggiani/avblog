@@ -18,7 +18,7 @@
 									#application.language.language.sitetitle.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:200px; height:200px;" name="description"><cfoutput>#application.configuration.config.headers.description.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:200px; height:200px;" name="description"><cfoutput>#application.configuration.config.headers.description.xmltext#</cfoutput></textarea> 
 									#application.language.language.description.xmltext#
 								</div>
 								<div class="configLabels">
@@ -32,11 +32,11 @@
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
-									<cftextarea style="width:300px; height:200px;" name="header"><cfoutput>#application.configuration.config.labels.header.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:300px; height:200px;" name="header"><cfoutput>#application.configuration.config.labels.header.xmltext#</cfoutput></textarea> 
 									#application.language.language.header.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:300px; height:200px;" name="footer"><cfoutput>#application.configuration.config.labels.footer.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:300px; height:200px;" name="footer"><cfoutput>#application.configuration.config.labels.footer.xmltext#</cfoutput></textarea> 
 									#application.language.language.footer.xmltext#
 								</div>
 							</cfoutput>
@@ -46,15 +46,15 @@
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 							<cfoutput>
 								<div class="configLabels">
-									<cftextarea style="width:300px; height:200px;" name="author"><cfoutput>#application.configuration.config.owner.author.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:300px; height:150px;" name="author"><cfoutput>#application.configuration.config.owner.author.xmltext#</cfoutput></textarea> 
 									#application.language.language.author.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:300px; height:200px;" name="email"><cfoutput>#application.configuration.config.owner.email.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:300px; height:150px;" name="email"><cfoutput>#application.configuration.config.owner.email.xmltext#</cfoutput></textarea> 
 									#application.language.language.email.xmltext#
 								</div>
 								<div class="configLabels">
-									<cftextarea style="width:300px; height:200px;" name="blogurl"><cfoutput>#application.configuration.config.owner.blogurl.xmltext#</cfoutput></cftextarea> 
+									<textarea style="width:300px; height:150px;" name="blogurl"><cfoutput>#application.configuration.config.owner.blogurl.xmltext#</cfoutput></textarea> 
 									#application.language.language.linksito.xmltext#
 								</div>
 							</cfoutput>
@@ -367,7 +367,7 @@
 												#application.language.language.configfeedapi.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfselect style="width:200px;" name="feedapitype" enabled="{feedapi.selected}">
+												<cfselect style="width:200px;" name="feedapitype">
 													<option value="MovableType" <cfif application.configuration.config.options.feed.api.type.xmltext is 'MovableType'>selected</cfif>>MovableType</option>
 												</cfselect>
 												#application.language.language.configfeedapittype.xmltext#
@@ -417,7 +417,7 @@
 												#application.language.language.configfeedim.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfselect style="width:150px;" name="feedimtype"  enabled="{feedim.selected}">
+												<cfselect style="width:150px;" name="feedimtype">
 													<cfoutput>
 														<option value="#application.configuration.config.options.feed.im.type.xmltext#">#application.configuration.config.options.feed.im.type.xmltext#</option>
 													</cfoutput>
@@ -624,7 +624,7 @@
 						</div>
 					</vb:wcontentpane>
 				</vb:wtab>
-				<cfinput type="submit" name="okConfig" value="#application.language.language.changeconfig.xmltext#">
+				<input type="submit" name="okConfig" value="#application.language.language.changeconfig.xmltext#">
 			</cfform>
 		</div>
 	</div>

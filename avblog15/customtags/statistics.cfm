@@ -348,55 +348,55 @@
 				<div class="statisticsMenu">
 					|
 					<cfif application.configuration.config.log.login.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=login');">login</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=login">login</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.logout.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=logout');">logout</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=logout">logout</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.sessionstart.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=sessionstart');">sessionstart</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=sessionstart">sessionstart</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.sessionend.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=sessionend');">sessionend</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=sessionend">sessionend</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.applicationstart.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=applicationstart');">applicationstart</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=applicationstart">applicationstart</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.applicationend.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=applicationend');">applicationend</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=applicationend">applicationend</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.pageview.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=pageview');">pageview</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=pageview">pageview</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.download.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=download');">download</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=download">download</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.postview.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=postview');">postview</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=postview">postview</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.postadd.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=postadd');">postadd</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=postadd">postadd</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.postmodify.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=postmodify');">postmodify</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=postmodify">postmodify</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.commentadd.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=commentadd');">commentadd</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=commentadd">commentadd</vb:wa>
 						|
 					</cfif>
 					<cfif application.configuration.config.log.trackbackadd.xmltext>
-						<a href="#request.linkadmin#?mode=statistics&amp;type=trackback');">trackback</a>
+						<vb:wa href="#request.appmapping#index.cfm?mode=statistics&amp;type=trackback">trackback</vb:wa>
 						|
 					</cfif>
 				</div>

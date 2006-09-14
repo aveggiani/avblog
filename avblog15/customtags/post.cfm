@@ -457,7 +457,7 @@
 												function postNewCategory(category)
 													{
 														var MainPane = dojo.widget.byId("myTagPane");
-														MainPane.setUrl('#request.appmapping#ajax.cfm?mode=categoryfrompost&amp;category='+category+'&amp;when='+Date());
+														MainPane.setUrl('#request.appmapping#ajax.cfm?mode=categoryfrompost&category='+category+'&when='+Date());
 														document.theForm.insertCategory.value = '';
 													}
 											</script>

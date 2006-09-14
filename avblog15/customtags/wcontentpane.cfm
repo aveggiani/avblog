@@ -8,6 +8,7 @@
 			<cfif thistag.executionmode is 'start'>
 				<div dojoType="ContentPane" 
 					<cfif isdefined('attributes.id')>id="#attributes.id#"</cfif>
+					<cfif isdefined('attributes.href')>href="#attributes.href#"</cfif>
 					<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
 					<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
 					<cfif isdefined('attributes.open')>open="#attributes.open#"</cfif>
