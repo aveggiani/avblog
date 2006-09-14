@@ -13,12 +13,8 @@
 					<br />
 				</cfif>
 				<cfif isuserinrole('admin')>
-					<cfif structkeyexists(server.ColdFusion,'productversion')>
-						<cfif left(server.ColdFusion.productversion,1) is 7>
-								[ <vb:wa href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</vb:wa> ]
-							<br />
-						</cfif>
-					</cfif>
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</vb:wa> ]
+					<br />
 					[ <vb:wa href="#request.appmapping#index.cfm?mode=ping">#application.language.language.authoping.xmltext#</vb:wa> ]
 					<br />
 					[ <vb:wa href="#request.appmapping#index.cfm?mode=category">#application.language.language.categories.xmltext#</vb:wa> ]

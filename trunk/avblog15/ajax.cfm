@@ -3,8 +3,6 @@
 
 <cfimport taglib="customtags" prefix="vb">
 
-<cfset request.linkAdmin = "javascript:viewAdminLink('#request.appmapping#ajax.cfm">
-
 <cfswitch expression="#url.mode#">
 	<cfcase value="addEntry">
 		<cfif isuserinrole('admin') or isuserinrole('blogger')>

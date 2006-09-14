@@ -12,8 +12,8 @@
 								<tr id="idrecord_#replace(application.links.id,'-','_','ALL')#">
 									<td width="14" onClick="rowUp(this, 'movableTable');" style="cursor: pointer"><input type="hidden" name="id_#application.links.currentrow#" value="#replace(application.links.id,'-','_','ALL')#"><img src="images/freccsu.gif" border="0"></td>
 									<td width="14" onCLick="rowDown(this, 'movableTable');" style="cursor: pointer"><img src="images/freccgiu.gif" border="0"></a></td>
-									<td>&nbsp;[<a href="#request.linkadmin#?mode=links&updateLink=#application.links.id#');">#application.language.language.edit.xmltext#</a>]
-									[<a href="#request.linkadmin#?mode=links&deleteLink=#application.links.id#');">#application.language.language.delete.xmltext#</a>] #application.links.name#</td>
+									<td>&nbsp;[<vb:wa href="#request.appmapping#index.cfm?mode=links&updateLink=#application.links.id#">#application.language.language.edit.xmltext#</vb:wa>]
+									[<vb:wa href="#request.appmapping#index.cfm?mode=links&deleteLink=#application.links.id#">#application.language.language.delete.xmltext#</vb:wa>] #application.links.name#</td>
 								</tr>
 							</cfoutput>
 						</cfloop>

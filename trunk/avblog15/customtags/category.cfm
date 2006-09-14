@@ -31,8 +31,8 @@
 											<tr id="idrecord_#qryCategories.currentrow#">
 												<td width="14" onClick="rowUp(this, 'movableTable');" style="cursor:pointer"><input type="hidden" name="id_#qryCategories.currentrow#" value="#listrest(qryCategories.name,'_')#"><img src="images/freccsu.gif" border="0"></td>
 												<td width="14" onCLick="rowDown(this, 'movableTable');" style="cursor:pointer"><img src="images/freccgiu.gif" border="0"></a></td>
-												<td>&nbsp;[<a href="#request.linkadmin#?mode=category&amp;modifycategory=#qryCategories.name#');">#application.language.language.edit.xmltext#</a>]
-												[<a href="#request.linkadmin#?mode=category&deletecategory=#qryCategories.name#');">#application.language.language.delete.xmltext#</a>] #listrest(qryCategories.name,'_')#</td>
+												<td>&nbsp;[<vb:wa href="#request.appmapping#index.cfm?mode=category&amp;modifycategory=#qryCategories.name#">#application.language.language.edit.xmltext#</vb:wa>]
+												[<vb:wa href="#request.appmapping#index.cfm?mode=category&deletecategory=#qryCategories.name#">#application.language.language.delete.xmltext#</vb:wa>] #listrest(qryCategories.name,'_')#</td>
 											</tr>
 										</cfoutput>
 									</cfif>

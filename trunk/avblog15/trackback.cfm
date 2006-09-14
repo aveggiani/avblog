@@ -111,6 +111,6 @@
 		</cfscript>
 	</cfif>
 </cfsilent>
-<cfcontent type="text/xml"><cfoutput>#xmlResult#</cfoutput><cfabort>
+<cfcontent type="text/xml"><cfif isdefined('xmlResult')><cfoutput>#xmlResult#</cfoutput></cfif><cfabort>
 
 

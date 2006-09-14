@@ -7,56 +7,58 @@
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>
-				<div class="editorTitle"><cfoutput>#application.language.language.comments.xmltext#</cfoutput></div>
-				<cfscript>
-					comments = request.blog.getRecentComments(1000000,isuserinrole('admin'));
-				</cfscript>
-				<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=allcomments" id="theForm" name="theForm" method="post">
-					<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
-					<cfif useAjax()>
-						<input type="hidden" name="deleteComments" value="deleteComments" />
-						<input type="button" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
-					<cfelse>
-						<input type="submit" name="deleteComments" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
-					</cfif>
-					<hr />
-					<div align="right" class="commentText"><cfoutput>#comments.recordcount# #application.language.language.comments.xmltext#</cfoutput></div>
-					<cf_pages style="commentText" from="#from#" steps="10" start="#start#" query="comments" howmanyrecords="#comments.recordcount#" querystring="mode=#url.mode#">
-					<cfloop query="comments" startrow="#start#" endrow="#end#">
-						<cfscript>
-							post = request.blog.get(comments.blogid);
-						</cfscript>
-						<cfif not comments.published>
-							<div class="commentNotPublished">
+				<div class="editorBody">
+					<div class="editorTitle"><cfoutput>#application.language.language.comments.xmltext#</cfoutput></div>
+					<cfscript>
+						comments = request.blog.getRecentComments(1000000,isuserinrole('admin'));
+					</cfscript>
+					<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=allcomments" id="theForm" name="theForm" method="post">
+						<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
+						<cfif useAjax()>
+							<input type="hidden" name="deleteComments" value="deleteComments" />
+							<input type="button" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
+						<cfelse>
+							<input type="submit" name="deleteComments" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
 						</cfif>
-							<div <cfif comments.private is 'false'>class="commentBody"<cfelse>class="commentBodyPrivate"</cfif>>
-								<input type="checkbox" name="id" value="<cfoutput>#comments.id#</cfoutput>" /><cfoutput><a href="#getPermalink(post.date,post.menuitem)#">#post.title#</a></cfoutput>
-								<!--- verify if the email has to be showed --->
-								<cfif comments.emailvisible is 'false' or (comments.emailvisible is 'true' and (isuserinrole('admin') or isuserinrole('blogger')))>
-									<cfset email=comments.email>
-								<cfelse>
-									<cfset email = "">
-								</cfif>
-								<!--- verify the nospam protection --->
-								<cfif email is not "" and application.configuration.config.options.comment.emailspamprotection.xmltext is 'true'>
-									<cfset email = replace(email,'@',application.configuration.config.options.comment.emailspamprotectiontext.xmltext,'ALL')>
-								</cfif>
-								<cfset date=comments.date>
-								<cfoutput>
-								<div class="commentDate">#right(date,2)# #lsdateformat(createdate(2000,mid(date,5,2),1),'mmmm')# #left(date,4)# #comments.time#
-									[<a href="#request.linkadmin#?mode=deletecomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;allcomments=1&amp;start=#url.start#&amp;now=#GetTickCount()#');">#application.language.language.delete.xmltext#</a>]
-									[<a href="#request.linkadmin#?mode=viewcomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;publish=#comments.published#&amp;allcomments=1&start=#url.start#&amp;now=#GetTickCount()#');"><cfif comments.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></a>]
+						<hr />
+						<div align="right" class="commentText"><cfoutput>#comments.recordcount# #application.language.language.comments.xmltext#</cfoutput></div>
+						<cf_pages style="commentText" from="#from#" steps="10" start="#start#" query="comments" howmanyrecords="#comments.recordcount#" querystring="mode=#url.mode#">
+						<cfloop query="comments" startrow="#start#" endrow="#end#">
+							<cfscript>
+								post = request.blog.get(comments.blogid);
+							</cfscript>
+							<cfif not comments.published>
+								<div class="commentNotPublished">
+							</cfif>
+								<div <cfif comments.private is 'false'>class="commentBody"<cfelse>class="commentBodyPrivate"</cfif>>
+									<input type="checkbox" name="id" value="<cfoutput>#comments.id#</cfoutput>" /><cfoutput><a href="#getPermalink(post.date,post.menuitem)#">#post.title#</a></cfoutput>
+									<!--- verify if the email has to be showed --->
+									<cfif comments.emailvisible is 'false' or (comments.emailvisible is 'true' and (isuserinrole('admin') or isuserinrole('blogger')))>
+										<cfset email=comments.email>
+									<cfelse>
+										<cfset email = "">
+									</cfif>
+									<!--- verify the nospam protection --->
+									<cfif email is not "" and application.configuration.config.options.comment.emailspamprotection.xmltext is 'true'>
+										<cfset email = replace(email,'@',application.configuration.config.options.comment.emailspamprotectiontext.xmltext,'ALL')>
+									</cfif>
+									<cfset date=comments.date>
+									<cfoutput>
+									<div class="commentDate">#right(date,2)# #lsdateformat(createdate(2000,mid(date,5,2),1),'mmmm')# #left(date,4)# #comments.time#
+										[<vb:wa href="#request.appmapping#index.cfm?mode=deletecomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;allcomments=1&amp;start=#url.start#&amp;now=#GetTickCount()#">#application.language.language.delete.xmltext#</vb:wa>]
+										[<vb:wa href="#request.appmapping#index.cfm?mode=viewcomment&amp;idcomment=#urlencodedformat(comments.id)#&amp;id=#urlEncodedFormat(comments.blogid)#&amp;publish=#comments.published#&amp;allcomments=1&start=#url.start#&amp;now=#GetTickCount()#"><cfif comments.published>#application.language.language.notpublished.xmltext#<cfelse>#application.language.language.published.xmltext#</cfif></vb:wa>]
+									</div>
+									<div class="commentText">#comments.description#</div>
+									<div class="commentAuthor">
+										#application.language.language.commentsentby.xmltext# <cfif email is not ""><a href="mailto:#email#"></cfif>#comments.author#<cfif email is not ""></a></cfif>
+									</div>
+									</cfoutput>
 								</div>
-								<div class="commentText">#comments.description#</div>
-								<div class="commentAuthor">
-									#application.language.language.commentsentby.xmltext# <cfif email is not ""><a href="mailto:#email#"></cfif>#comments.author#<cfif email is not ""></a></cfif>
-								</div>
-								</cfoutput>
 							</div>
-						</div>
-					</cfloop>
-				</form>
-				</cf_pages>
+						</cfloop>
+					</form>
+					</cf_pages>
+				</div>
 			</vb:content>
 		</cfif>
 	</cfcase>

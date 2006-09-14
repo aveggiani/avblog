@@ -9,7 +9,7 @@
 					<cfloop query="application.users">
 						<cfoutput>
 							<tr>
-								<td>&nbsp;[<a href="#request.linkadmin#?mode=users&amp;updateuser=#application.users.id#');">#application.language.language.edit.xmltext#</a>] [<a href="index.cfm?mode=users&deleteuser=#application.users.id#">#application.language.language.delete.xmltext#</a>] #application.users.fullname#</td>
+								<td>&nbsp;[<vb:wa href="#request.appmapping#index.cfm?mode=users&amp;updateuser=#application.users.id#">#application.language.language.edit.xmltext#</a>] [<a href="index.cfm?mode=users&deleteuser=#application.users.id#">#application.language.language.delete.xmltext#</a>] #application.users.fullname#</td>
 							</tr>
 						</cfoutput>
 					</cfloop>

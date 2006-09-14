@@ -7,6 +7,7 @@
 			<cfoutput>
 				<div dojoType="WizardPane" 
 					<cfif isdefined('attributes.doneFunction')>doneFunction="#attributes.doneFunction#"</cfif>
+					<cfif isdefined('attributes.href')>href="#attributes.href#"</cfif>
 					<cfif isdefined('attributes.canGoBack')>canGoBack="#attributes.canGoBack#"</cfif>
 					<cfif isdefined('attributes.label')>label="#attributes.label#"</cfif>
 					<cfif isdefined('attributes.passFunction')>passFunction="#attributes.passFunction#"</cfif>
