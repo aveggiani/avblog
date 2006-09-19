@@ -13,8 +13,10 @@
 					<br />
 				</cfif>
 				<cfif isuserinrole('admin')>
-					[ <vb:wa href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</vb:wa> ]
-					<br />
+					<cfif useajax() or request.cfmx7>
+						[ <vb:wa href="#request.appmapping#index.cfm?mode=config">#application.language.language.titleconfig.xmltext#</vb:wa> ]
+						<br />
+					</cfif>
 					[ <vb:wa href="#request.appmapping#index.cfm?mode=ping">#application.language.language.authoping.xmltext#</vb:wa> ]
 					<br />
 					[ <vb:wa href="#request.appmapping#index.cfm?mode=category">#application.language.language.categories.xmltext#</vb:wa> ]
