@@ -9,7 +9,8 @@
 		<cfinput name="plugin_photoblog_bigwidth" type="text" label="#application.pluginslanguage.photoblog.language.bigwidth.xmltext#" value="#application.pluginsconfiguration.photoblog.plugin.big.width.xmltext#">
 		<cfformitem type="hrule" width="100%"></cfformitem>
 		<cfselect name="plugin_photoblog_layouttype" label="#application.pluginslanguage.photoblog.language.layouttype.xmltext#">
-			<option value="ajax" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>selected</cfif>>ajax</option>
+			<option value="ajax" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>selected</cfif>>ajax slide show</option>
+			<option value="ajaxpresentation" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajaxpresentation'>selected</cfif>>ajax presentation</option>
 			<option value="css" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'css'>selected</cfif>>css</option>
 		</cfselect>
 		<cfselect name="plugin_photoblog_layoutorientation" label="#application.pluginslanguage.photoblog.language.layoutorientation.xmltext#">

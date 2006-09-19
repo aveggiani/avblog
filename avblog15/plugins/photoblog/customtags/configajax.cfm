@@ -19,14 +19,15 @@
 			#application.pluginslanguage.photoblog.language.bigwidth.xmltext#
 		</div>
 		<div class="configLabels">
-			<cfselect name="plugin_photoblog_layouttype">
-				<option value="ajax" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>selected</cfif>>ajax</option>
+			<cfselect style="width:200px" name="plugin_photoblog_layouttype">
+				<option value="ajax" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>selected</cfif>>ajax slide show</option>
+				<option value="ajaxpresentation" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajaxpresentation'>selected</cfif>>ajax presentation</option>
 				<option value="css" <cfif application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'css'>selected</cfif>>css</option>
 			</cfselect>
 			#application.pluginslanguage.photoblog.language.layouttype.xmltext#
 		</div>
 		<div class="configLabels">
-			<cfselect name="plugin_photoblog_layoutorientation">
+			<cfselect style="width:200px" name="plugin_photoblog_layoutorientation">
 				<option value="horizontal" <cfif application.pluginsconfiguration.photoblog.plugin.layout.orientation.xmltext is 'horizontal'>selected</cfif>>horizontal</option>
 				<option value="vertical" <cfif application.pluginsconfiguration.photoblog.plugin.layout.orientation.xmltext is 'vertical'>selected</cfif>>vertical</option>
 			</cfselect>
