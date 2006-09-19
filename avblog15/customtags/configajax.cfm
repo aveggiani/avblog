@@ -624,7 +624,9 @@
 						</div>
 					</vb:wcontentpane>
 				</vb:wtab>
-				<input type="submit" name="okConfig" value="#application.language.language.changeconfig.xmltext#">
+				<cfoutput>
+					<input type="submit" name="okConfig" value="#application.language.language.changeconfig.xmltext#">
+				</cfoutput>
 			</cfform>
 		</div>
 	</div>

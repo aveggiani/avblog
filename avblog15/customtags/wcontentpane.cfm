@@ -1,4 +1,11 @@
-<cfparam name="attributes.whichLibrary" default="dojo">
+<cfif thistag.executionmode is 'start'>
+	<cfinclude template="../include/functions.cfm">
+	<cfif useajax()>
+		<cfparam name="attributes.whichLibrary" default="dojo">
+	<cfelse>
+		<cfset attributes.whichLibrary="noajax">
+	</cfif>
+</cfif>
 <cfparam name="attributes.label" default="nolabel">
 
 <cfswitch expression="#attributes.whichLibrary#">
@@ -22,6 +29,15 @@
 				</div>
 			</cfif>
 		</cfoutput>	
+	</cfcase>
+	<cfcase value="noajax">
+		<cfoutput>
+			<cfif thistag.executionmode is 'start'>
+				<div>
+			<cfelse>
+				</div>
+			</cfif>
+		</cfoutput>
 	</cfcase>
 </cfswitch>
 

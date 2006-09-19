@@ -22,7 +22,7 @@
 						</cfif>
 						<hr />
 						<div align="right" class="commentText"><cfoutput>#trackbacks.recordcount# #application.language.language.trackbacks.xmltext#</cfoutput></div>
-						<cf_pages style="trackbackText" from="#from#" steps="10" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
+						<cf_pages style="trackbackText" from="#from#" steps="50" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
 						<cfloop query="trackbacks" startrow="#start#" endrow="#end#">
 							<cfscript>
 								post = request.blog.get(trackbacks.blogid);

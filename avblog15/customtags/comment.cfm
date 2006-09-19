@@ -22,7 +22,7 @@
 						</cfif>
 						<hr />
 						<div align="right" class="commentText"><cfoutput>#comments.recordcount# #application.language.language.comments.xmltext#</cfoutput></div>
-						<cf_pages style="commentText" from="#from#" steps="10" start="#start#" query="comments" howmanyrecords="#comments.recordcount#" querystring="mode=#url.mode#">
+						<cf_pages style="commentText" from="#from#" steps="50" start="#start#" query="comments" howmanyrecords="#comments.recordcount#" querystring="mode=#url.mode#">
 						<cfloop query="comments" startrow="#start#" endrow="#end#">
 							<cfscript>
 								post = request.blog.get(comments.blogid);
