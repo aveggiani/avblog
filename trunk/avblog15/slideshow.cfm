@@ -18,7 +18,7 @@
 					arraySlide		= arraynew(1);
 					dimension		= application.photoblogObj.getImageSize('#request.apppath#/user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#');
 				</cfscript>
-				<cfif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax slide show'>
+				<cfif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>
 					<vb:dojo>
 					<cfoutput>
 						<div class="slideshowView">
@@ -40,7 +40,7 @@
 							imgWidth="#dimension.width#" imgHeight="#dimension.height#" />
 						</div>
 					</cfoutput>
-				<cfelseif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax presentation'>
+				<cfelseif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajaxpresentation'>
 					<cfoutput>
 						<vb:dojo>
 						<div class="slideshowView">
