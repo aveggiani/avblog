@@ -51,16 +51,23 @@
 
 	<cffunction name="onRequestStart" returnType="boolean" output="false">
 		<cfargument name="thePage" type="string" required="yes">
-		
+
 		<cfscript>
+			if (not StructKeyExists(application, 'configuration')) init();
+
+			//init();
+
+			initRequest();
+			initRequestStorage();
+
 			if (not isdefined('session.id'))
 				onSessionStart();
+
 			if (StructKeyExists(url, 'reinit')) init();
 		</cfscript>
 
 		<!--- logout section --->
 		<cfif isdefined('url.logout')>
-			<!---
 			<cfif application.configuration.config.log.logout.xmltext>
 				<cfscript>
 					structLogValue  				= structnew();
@@ -72,20 +79,10 @@
 					application.logs.save('logout',LogValue,session.id);
 				</cfscript>
 			</cfif>
-			--->
 			<cflogout>
 		</cfif>
 
 		<!--- exclude all the stuff for cfm FckEditor pages --->
-		<cfscript>
-			if (not StructKeyExists(application, 'configuration')) init();
-
-			//init();
-
-			initRequest();
-			initRequestStorage();
-		</cfscript>
-
 		<cfif cgi.script_name does not contain '/external/FCKEditor'>
 					
 			<cfsilent>
@@ -169,6 +166,16 @@
 						</cfif>
 					</cfif>
 				</cflogin>
+				
+				<!--- caching settings, after login as the logged --->
+				<cfscript>
+					if (isuserinrole('admin') or isuserinrole('blogger'))
+						request.caching					= 'none';
+					else
+						request.caching					= 'cache';
+					request.cachetimeout				= createtimespan(0,2,0,0);
+				</cfscript>
+				
 			</cfsilent>
 		</cfif>
 		<cfif directoryexists('#request.apppath#/external/FCKeditor')>
@@ -180,10 +187,10 @@
 		<cfreturn true>
 	</cffunction>
 
-	<cffunction name="onRequestEnd" output="false" returntype="boolean">
-		<cfargument name="thePage" type="string" required="yes">
+	<cffunction name="onRequestEnd" returntype="boolean" output="true">
+		<cfargument name="thePage" type="string" required="true">
 
-		<cfreturn true>
+		<cfreturn true />
 	</cffunction>
 
 	<cffunction name="onSessionStart" output="false">
@@ -350,11 +357,6 @@
 			request.cfcMapping					= replace(request.appMapping,'/','.','ALL');
 			if (left(request.cfcMapping,1) is '.')
 				request.cfcMapping = right(request.cfcMapping,decrementvalue(len(request.cfcMapping)));
-			if (isuserinrole('admin') or isuserinrole('blogger'))
-				request.caching					= 'none';
-			else
-				request.caching					= 'cache';
-			request.cachetimeout				= createtimespan(0,2,0,0);
 		</cfscript>
 	</cffunction>
 
