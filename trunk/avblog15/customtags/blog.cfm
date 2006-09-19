@@ -187,7 +187,7 @@
 			<cfif isuserinrole('admin')>
 				<cfif useajax()>
 					<vb:configajax>
-				<cfelse>
+				<cfelseif request.cfmx7>
 					<vb:config>
 				</cfif>
 			</cfif>

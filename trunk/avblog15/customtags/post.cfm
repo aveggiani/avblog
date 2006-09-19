@@ -443,14 +443,18 @@
 									<input type="hidden" name="category" value="">
 									<cfloop query="qryCategories">
 										<cfoutput>
-											<input type="checkbox" name="category" value="#qryCategories.name#" <cfif isdefined('listMyCategories') and listfind(listMyCategories,qryCategories.name)>checked</cfif>>#listrest(qryCategories.name,'_')#
+											<div style="float:left;">
+												<input type="checkbox" name="category" value="#qryCategories.name#" <cfif isdefined('listMyCategories') and listfind(listMyCategories,qryCategories.name)>checked</cfif>>#listrest(qryCategories.name,'_')#
+											</div>
 										</cfoutput>
 									</cfloop>
 								</vb:wcontentpane>
-								<hr />
-								<input type="text" style="width:200px;" name="insertCategory" />
-								<input type="button" value="#application.language.language.insertcategory.xmltext#" onclick="postNewCategory(document.theForm.insertCategory.value)" />
+								<div style="clear:both;">
+								</div>
 								<cfif useajax()>
+									<hr />
+									<input type="text" style="width:200px;" name="insertCategory" />
+									<input type="button" value="#application.language.language.insertcategory.xmltext#" onclick="postNewCategory(document.theForm.insertCategory.value)" />
 									<cfsavecontent variable="dojoAjax">
 										<cfoutput>
 											<script language="JavaScript" type="text/javascript">

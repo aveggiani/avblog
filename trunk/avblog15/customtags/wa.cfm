@@ -1,4 +1,11 @@
-<cfparam name="attributes.whichLibrary" default="dojo">
+<cfif thistag.executionmode is 'start'>
+	<cfinclude template="../include/functions.cfm">
+	<cfif useajax()>
+		<cfparam name="attributes.whichLibrary" default="dojo">
+	<cfelse>
+		<cfset attributes.whichLibrary="noajax">
+	</cfif>
+</cfif>
 <cfparam name="attributes.target" default="MainPane">
 
 <cfswitch expression="#attributes.whichLibrary#">
@@ -21,20 +28,11 @@
 				<cfset request.viewWApane = 1>
 			</cfif>
 			<cfif thistag.executionmode is 'start'>
-				<cfinclude template="../include/functions.cfm">
-				<cfif useajax()>
-					<a
-						href="javascript:viewWApane('#attributes.target#','#replace(attributes.href,'index.cfm','ajax.cfm')#')"
-						<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
-						<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
-						>
-				<cfelse>
-					<a
-						href="#attributes.href#"
-						<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
-						<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
-						>
-				</cfif>
+				<a
+					href="javascript:viewWApane('#attributes.target#','#replace(attributes.href,'index.cfm','ajax.cfm')#')"
+					<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
+					<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
+					>
 			<cfelse>
 				</a>
 			</cfif>
