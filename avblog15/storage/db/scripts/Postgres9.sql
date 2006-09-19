@@ -60,7 +60,7 @@ Create table "library"
 	"name" Char(50),
 	"category" Char(50),
 	"description" Text,
-	"file" Char(50),
+	"sfile" Char(50),
 	"sdate" Char(50),
  primary key ("id")
 ) With Oids;

@@ -194,7 +194,7 @@ CREATE TABLE [dbo].[library] (
 
 	[description] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
-	[file] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[sfile] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
 	[sdate] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
 
