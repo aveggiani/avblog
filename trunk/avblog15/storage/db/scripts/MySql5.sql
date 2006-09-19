@@ -50,7 +50,7 @@ Create table library (
 	name Char(50),
 	category Char(50),
 	description Text,
-	file Char(50),
+	sfile Char(50),
 	sdate Char(50),
  Primary Key (id)) ENGINE = MyISAM;
 
@@ -126,7 +126,7 @@ Create table users (
  Primary Key (id)) ENGINE = MyISAM;
 
 Create table spamlist (
-	item Char(200) ENGINE = MyISAM;
+    item Char(200)) ENGINE = MyISAM;
 
 Create table enclosures (
 	id Char(50) NOT NULL,
