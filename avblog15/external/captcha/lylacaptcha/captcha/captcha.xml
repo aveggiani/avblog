@@ -53,19 +53,19 @@ Shameless Begging:
 		<config name="jpegQuality" value="0.90"/>
 		<config name="jpegUseBaseline" value="true"/>
 		<config name="useAntiAlias" value="true"/>
-		<config name="randStrType" value="alpha"/>
-		<config name="randStrLen" value="6"/>
+		<config name="randStrType" value="alphaLcase"/>
+		<config name="randStrLen" value="3"/>
 		<config name="width" value="250"/>
 		<config name="height" value="75"/>
 		<config name="fontsize" value="30"/>
 		<config name="leftOffset" value="20"/>
 		<config name="shearXRange" value="25"/>
 		<config name="shearYRange" value="25"/>
-		<config name="fontColor" value="light"/>
-		<config name="backgroundColor" value="dark"/>
-		<config name="useGradientBackground" value="true"/>
-		<config name="backgroundColorUseCyclic" value="true"/>
-		<config name="useOvals" value="true"/>
+		<config name="fontColor" value="dark"/>
+		<config name="backgroundColor" value="light"/>
+		<config name="useGradientBackground" value="false"/>
+		<config name="backgroundColorUseCyclic" value="false"/>
+		<config name="useOvals" value="false"/>
 		<config name="ovalColor" value="medium"/>
 		<config name="ovalUseTransparency" value="true"/>
 		<config name="minOvals" value="15"/>
