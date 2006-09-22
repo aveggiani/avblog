@@ -260,14 +260,14 @@
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/comment.png" alt="icon comment"  align="middle" />
 									</cfif>	
-									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
 									<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
 										<a href="#request.appmapping#index.cfm?mode=viewcomment&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanycomments# #iif(howmanycomments EQ 1, DE(application.language.language.comment.xmltext), DE(application.language.language.comments.xmltext))#
 										<cfif privateComments gt 0>
 											(#privateComments# <cfif privatecomments is 1>#application.language.language.privatecomment.xmltext#<cfelse>#application.language.language.privatecomments.xmltext#</cfif>)
 										</cfif>
-										</a>
+										</a> -
 									</cfif>
+									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
 									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
 										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/trackback.png" alt="icon trackback"  align="middle" />
 									</cfif>	

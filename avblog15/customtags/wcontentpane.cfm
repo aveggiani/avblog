@@ -23,7 +23,8 @@
 					<cfif isdefined('attributes.onload')>onload="#attributes.onload#"</cfif>
 					<cfif isdefined('attributes.onshow')>onshow="#attributes.onshow#"</cfif>
 					<cfif isdefined('attributes.refreshOnShow')>refreshOnShow="#attributes.refreshOnShow#"</cfif>
-					label="#attributes.label#"
+ 					<cfif isdefined('attributes.executeScripts')>executeScripts="#attributes.executeScripts#"</cfif>
+ 					label="#attributes.label#"
 					>
 			<cfelse>
 				</div>

@@ -304,14 +304,13 @@ select.monthArchive {
 	margin-left: 20px;
 	padding: 5px;
 	overflow-x: hidden;
-	color: #666;
+	color: #aaaaaa;
 }
 .commentBody {
 	margin-top: 5px;
 	margin-left: 20px;
 	padding: 5px;
 	overflow-x: hidden;
-	color: #666;
 }
 .commentDate {
 	border-bottom: 1px dashed #ccc;
@@ -319,7 +318,6 @@ select.monthArchive {
 	text-align: right;
 	font-size: 0,9em;
 	padding: 5px;
-	color: #003344;
 }
 .commentText {
 	font-size: 0,9em;
@@ -351,7 +349,7 @@ select.monthArchive {
 }
 
 .editorBody {
-	text-align:center;
+	text-align:left;
 	margin-left: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;

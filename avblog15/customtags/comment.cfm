@@ -13,7 +13,7 @@
 						comments = request.blog.getRecentComments(1000000,isuserinrole('admin'));
 					</cfscript>
 					<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=allcomments" id="theForm" name="theForm" method="post">
-						<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
+						<input type="button" onclick="javascript: checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
 						<cfif useAjax()>
 							<input type="hidden" name="deleteComments" value="deleteComments" />
 							<input type="button" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
@@ -31,7 +31,7 @@
 								<div class="commentNotPublished">
 							</cfif>
 								<div <cfif comments.private is 'false'>class="commentBody"<cfelse>class="commentBodyPrivate"</cfif>>
-									<input type="checkbox" name="id" value="<cfoutput>#comments.id#</cfoutput>" /><cfoutput><a href="#getPermalink(post.date,post.menuitem)#">#post.title#</a></cfoutput>
+									<input type="checkbox" id="id" name="id" value="<cfoutput>#comments.id#</cfoutput>" /><cfoutput><a href="#getPermalink(post.date,post.menuitem)#">#post.title#</a></cfoutput>
 									<!--- verify if the email has to be showed --->
 									<cfif comments.emailvisible is 'false' or (comments.emailvisible is 'true' and (isuserinrole('admin') or isuserinrole('blogger')))>
 										<cfset email=comments.email>
