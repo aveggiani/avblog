@@ -12,7 +12,7 @@
 					<br />
 					[ <a href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=edit&amp;plugin=cms">#application.pluginslanguage.cms.language.addcms.xmltext#</a> ]
 					<br />
-					[ <a href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=order&amp;plugin=cms">#application.pluginslanguage.cms.language.ordercms.xmltext#</a> ]
+					[ <vb:wa href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=order&amp;plugin=cms">#application.pluginslanguage.cms.language.ordercms.xmltext#</vb:wa> ]
 				</cfoutput>
 			</cfif>
 		</cfif>
