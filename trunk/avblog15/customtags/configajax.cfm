@@ -299,7 +299,7 @@
 										</cfoutput>
 									</div>
 								</vb:wcontentPane>
-								<vb:wcontentPane id="lhtab16" label="RichEditor">
+								<vb:wcontentPane id="lhtab16" label="RichEditor" executescripts="true">
 									<script language="javascript">
 										<!--
 										function changeAccordion(whichricheditor)
@@ -448,7 +448,7 @@
 							</div>
 						</div>
 					</vb:wcontentpane>
-					<vb:wcontentpane id="lhtab7" label="storage">
+					<vb:wcontentpane id="lhtab7" label="storage" executescripts="true">
 						<div class="editorForm" style="position:relative; text-align:left; padding-top:5px;">
 							<script language="javascript">
 								<!--

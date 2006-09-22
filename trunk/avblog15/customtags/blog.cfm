@@ -14,7 +14,7 @@
 	<cfreturn returnvalue>
 </cffunction>
 
-<vb:wcontentpane id="MainPane">
+<vb:wcontentpane id="MainPane" executeScripts="true">
 
 	<cfsilent>
 	<cfimport taglib="." prefix="vb">

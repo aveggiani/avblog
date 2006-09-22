@@ -72,7 +72,10 @@
 				<cfscript>
 					structLogValue  				= structnew();
 					structLogValue.date				= now();
-					structLogValue.user				= listgetat(GetAuthUser(),3);
+					if (listlen(GetAuthUser()) is 3)
+						structLogValue.user				= listgetat(GetAuthUser(),3);
+					else
+						structLogValue.user				= GetAuthUser();
 				</cfscript>
 				<cfwddx action="cfml2wddx" input="#structLogValue#" output="LogValue">
 				<cfscript>
