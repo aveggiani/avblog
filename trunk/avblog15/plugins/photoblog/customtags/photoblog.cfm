@@ -9,9 +9,9 @@
 			<cfif isuserinrole('admin')>
 				<span class="catListTitle"><cfoutput>#application.pluginslanguage.photoblog.language.photoblogmanager.xmltext#</cfoutput></span>
 				<br />
-				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=add&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.addgallery.xmltext#</cfoutput></a> ]
+				[ <vb:wa href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=add&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.addgallery.xmltext#</cfoutput></vb:wa> ]
 				<br />
-				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=view&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.editgallery.xmltext#</cfoutput></a> ]
+				[ <vb:wa href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=view&amp;plugin=photoblog"><cfoutput>#application.pluginslanguage.photoblog.language.editgallery.xmltext#</cfoutput></vb:wa> ]
 			</cfif>
 		</cfif>
 	</cfcase>
