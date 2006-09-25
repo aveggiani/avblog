@@ -1,10 +1,9 @@
 .slideshowDate
 	{
-		background-color: #FBC3AE;
-		font-family: Georgia, serif;
+		background-color: #6E6E6E;
 		font-size: 9pt;	
 		padding: 5px;
-		color: #003344;
+		color: #ffffff;
 	}
 
 .slideshowView 
@@ -15,7 +14,6 @@
 		margin-bottom: 0px;
 		padding-bottom: 10px;
 		padding-top: 10px;
-		border-bottom: 1px solid #003344;
 		overflow-x: hidden;
 	}
 .slideshowImageborder
@@ -24,32 +22,34 @@
 	}
 .slideshowText
 	{
-		font-family: Georgia, serif;
 		font-size: 10pt;	
 		color: #ffffff;
 	}
 	
 .slideshowTitle
 	{
-		width: 68%;
+		width: 50%;
 		float:left;
-		font-family:Georgia, serif;
 		font-size: 14pt;
-		color:  #D0420A;
+		color:  #C85E35;
 		padding: 5px;
 		letter-spacing: -0.05em;
 	}
 	
 .slideshowControls
 	{
-		width: 28%;
+		width: 46%;
 		float:left;
 		text-align:right;
-		font-family:Georgia, serif;
 		font-size: 13pt;
 		color:  #FBC3AE;;
 		padding: 5px;
 		letter-spacing: -0.05em;
+	}
+	
+.slideshowControls a
+	{
+		color:  #FBC3AE;;
 	}
 	
 .slideshowImage
@@ -72,7 +72,7 @@
 		margin-left:  0px;
 		margin-right: 0px;
 		padding: 0px;
-		background-color:#5F7C9A;
+		background-color:#6E6E6E;
 	}
 	
 #photoBlogViewImagesBothSingle
@@ -90,7 +90,7 @@
 		margin-left:  0px;
 		margin-right: 0px;
 		padding: 0px;
-		background-color:#D0420A;
+		background-color:#6E6E6E;
 		overflow:auto;
 		font-family: Georgia, serif;
 		font-size: 10pt;	
@@ -104,7 +104,7 @@
 		margin-left:  0px;
 		margin-right: 0px;
 		padding: 0px;
-		background-color:#D0420A;
+		background-color:#6E6E6E;
 		overflow:auto;
 		font-family: Georgia, serif;
 		font-size: 10pt;	

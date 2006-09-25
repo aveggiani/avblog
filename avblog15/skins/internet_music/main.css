@@ -31,6 +31,7 @@
 .sidelogo
 	{
 		text-align:center;
+		padding: 5px;
 	}
 	
 #header 
@@ -165,20 +166,20 @@ hr {
 }
 
 .Links {
-	padding-left: 5px;
-	padding-bottom: 10px;
+	overflow:hidden;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
 
 }
 .LinksTitle {
 	padding-bottom: 10px;
 	font-size: 1.2em;
-	color: #666;
 	font-weight: bold;
-	color: #4592CA;
 }
 .LinksElement {
 	padding-left: 5px;
-	padding-bottom: 10px;
+	color: #FEE1D5;
 }
 
 select.monthArchive {
@@ -422,18 +423,17 @@ input.editorForm {
 
 .tagcloud
 	{
-		width: 100%;
 		padding-left: 15px;
 		padding-right: 15px;
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
 	
-.smallestTag { font-size: xx-small; }
-.smallTag { font-size: small; }
-.mediumTag { font-size: medium; }
-.largeTag { font-size: large; }
-.largestTag { font-size: xx-large; }
+.smallestTag { font-size: 0.7em; }
+.smallTag { font-size: 0.9em; }
+.mediumTag { font-size: 1.1em; }
+.largeTag { font-size: 1.3em; }
+.largestTag { font-size: 1.5em; }
 
 .enclosures {
 
@@ -546,12 +546,19 @@ input.editorForm {
 }
 
 #headerBottom {
+	font-size:0.8em;
 	clear: both;
+	line-height: 16px;
 	margin: 3px 0 10px 0;
-	padding: 8px;
+	padding: 5px;
 	background: #f4f4f4;
 	color: #808080;
 	border: 1px solid #ccc;
+	text-align:left;
+}
+
+#headerBottom a {
+	color: #808080;
 }
 
 .littleIcon {
