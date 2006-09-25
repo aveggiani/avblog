@@ -300,3 +300,11 @@
 }
 
 
+/* dialog for modal */
+
+.dojoDialog {
+	background : #eee;
+	textalign:center;
+	border : 1px solid #999;
+	-moz-border-radius : 5px;
+	padding : 4px;
