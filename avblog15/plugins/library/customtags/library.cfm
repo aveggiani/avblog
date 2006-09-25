@@ -8,9 +8,9 @@
 				<cfoutput>
 					<span class="catListTitle">#application.pluginslanguage.library.language.librarymanager.xmltext#</span>
 					<br />
-					[ <vb:wa href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=edit&amp;plugin=library">#application.pluginslanguage.library.language.addlibrary.xmltext#</vb:wa> ]
+					[ <a href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=edit&amp;plugin=library">#application.pluginslanguage.library.language.addlibrary.xmltext#</a> ]
 					<br />
-					[ <vb:wa href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=view&amp;plugin=library">#application.pluginslanguage.library.language.modifylibrary.xmltext#</vb:wa> ]
+					[ <a href="#request.appmapping#index.cfm?mode=plugin&amp;pluginmode=view&amp;plugin=library">#application.pluginslanguage.library.language.modifylibrary.xmltext#</a> ]
 				</cfoutput>
 			</cfif>
 		</cfif>
