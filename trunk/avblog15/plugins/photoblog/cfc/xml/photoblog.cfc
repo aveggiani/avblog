@@ -74,11 +74,11 @@
 			</cfloop>
 	
 			<cfquery name="get" dbtype="query">
-				select * from qryGet order by imageorder, sdate desc,name
+				select * from qryGet order by imageorder,sdate desc,name
 			</cfquery>
 		</cfif>
-
-		<cfreturn qryGet>
+		
+		<cfreturn get>
 	</cffunction>
 
 	<cffunction name="getCategory" access="public">
@@ -96,7 +96,7 @@
 		<cfreturn qryGet>
 	</cffunction>
 
-	<cffunction name="saveImage" access="public" returntype="string">
+	<cffunction name="saveImage" output="false" access="public" returntype="string">
 		<cfargument name="id" 			required="yes" 	type="string">
 		<cfargument name="file" 		required="yes" 	type="string">
 		<cfargument name="name" 		required="yes" 	type="string">
@@ -111,7 +111,7 @@
 				<image imageorder="#arguments.imageorder#" date="#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#" id="#arguments.id#" file="#arguments.file#" name="#arguments.name#"><![CDATA[#arguments.description#]]></image>
 			</cfoutput>
 		</cfsavecontent>
-
+		
 		<cfreturn tmpImage>
 
 	</cffunction>

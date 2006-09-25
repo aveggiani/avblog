@@ -136,7 +136,7 @@
 
 	</cffunction>
 	
-	<cffunction name="saveEditGallery" output="true">
+	<cffunction name="saveEditGallery" output="false">
 		<cfargument name="structForm" type="struct">
 		
 		<cfscript>
@@ -147,6 +147,13 @@
 			var objImage = createobject('component','image');
 			var	doneNew = false;
 			var goOn = true;
+			var imageId = '';
+			var imageFile = '';
+			var imageName = '';
+			var imageDescription = '';
+			var imageorder = '';
+			var thumbwidth = '';
+			var bigwidth = '';
 		</cfscript>
 		
 		<cfloop query="galleryimages">
@@ -209,7 +216,7 @@
 			</cfloop>
 			<cfif found>
 				<cfscript>
-					xmlimage = xmlimage & objStoragephotoblog.saveImage(imageId,imageFile,imageName,imageDescription,imageGalleryId);
+					xmlimage = xmlimage & objStoragephotoblog.saveImage(imageId,imageFile,imageName,imageDescription,imageGalleryId,imageOrder);
 				</cfscript>
 			<cfelse>
 				<cfscript>
@@ -224,6 +231,7 @@
 				imageFile = '';
 				file = '-';
 				imageName = evaluate('arguments.structForm.photoname#replace(imageId,'-','_','ALL')#');
+				imageOrder = evaluate('arguments.structForm.imageorder#replace(imageId,'-','_','ALL')#');
 				imageDescription = evaluate('arguments.structForm.photodescription#replace(imageId,'-','_','ALL')#');
 				imageGalleryId = arguments.structForm.galleryid;
 				thumbwidth = evaluate('arguments.structForm.thumbwidth#replace(imageId,'-','_','ALL')#');
@@ -256,7 +264,7 @@
 							// create the big image
 							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.structForm.name#/original/#imagefile#','#request.appPath#/user/photoblog/galleries/#arguments.structForm.name#/big/#imagefile#',bigwidth);
 						}
-					xmlimage = xmlimage & objStoragephotoblog.saveImage(imageId,imageFile,imageName,imageDescription,imageGalleryId);
+					xmlimage = xmlimage & objStoragephotoblog.saveImage(imageId,imageFile,imageName,imageDescription,imageGalleryId,imageOrder);
 				</cfscript>
 			</cfif>
 		</cfif>
@@ -264,7 +272,7 @@
 		<cfscript>
 			objStoragephotoblog.saveGallery(arguments.structForm.galleryid,arguments.structForm.name,arguments.structForm.category,arguments.structForm.description,xmlImage);
 		</cfscript>
-
+		
 		<cfreturn true>
 	
 	</cffunction>
