@@ -54,35 +54,35 @@
 	
 	<cfcase value="showall">
 
-		<vb:cache action="#request.caching#" name="delicious" timeout="#request.cachetimeout#">	
-			<cfif useajax()>
-				<cfsavecontent variable="dojo">
-					<cfoutput>
-						<script language="JavaScript" type="text/javascript">
-							function viewTagPosts(tag)
-								{
-									var TagPane = dojo.widget.byId("TagPane");
-									TagPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=delicious&pluginmode=showall&tag='+tag);
-								}
-						</script>
-					</cfoutput>		
-				</cfsavecontent>
-				<cfhtmlhead text="#dojo#">
-				<vb:dojo>
-			<cfelse>
-				<cfsavecontent variable="nodojo">
-					<cfoutput>
-						<script language="JavaScript" type="text/javascript">
-							function viewTagPosts(tag)
-								{
-									window.location.href=('#request.appmapping#index.cfm?mode=plugin&plugin=delicious&pluginmode=showall&tag='+tag);
-								}
-						</script>
-					</cfoutput>		
-				</cfsavecontent>
-				<cfhtmlhead text="#nodojo#">
-			</cfif>
+		<cfif useajax()>
+			<cfsavecontent variable="dojo">
+				<cfoutput>
+					<script language="JavaScript" type="text/javascript">
+						function viewTagPosts(tag)
+							{
+								var TagPane = dojo.widget.byId("TagPane");
+								TagPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=delicious&pluginmode=showall&tag='+tag);
+							}
+					</script>
+				</cfoutput>		
+			</cfsavecontent>
+			<cfhtmlhead text="#dojo#">
+			<vb:dojo>
+		<cfelse>
+			<cfsavecontent variable="nodojo">
+				<cfoutput>
+					<script language="JavaScript" type="text/javascript">
+						function viewTagPosts(tag)
+							{
+								window.location.href=('#request.appmapping#index.cfm?mode=plugin&plugin=delicious&pluginmode=showall&tag='+tag);
+							}
+					</script>
+				</cfoutput>		
+			</cfsavecontent>
+			<cfhtmlhead text="#nodojo#">
+		</cfif>
 
+		<vb:cache action="#request.caching#" name="delicious" timeout="#request.cachetimeout#">	
 			<cfoutput>
 				<vb:content>
 					<cfscript>
