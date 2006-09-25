@@ -96,8 +96,8 @@
 			<div class="editorBody">
 				<cfoutput><div class="editorTitle">#application.pluginslanguage.cms.language.ordercms.xmltext#</div></cfoutput>
 				<div class="editorForm">
-					<table width="100%" cellpadding="4" cellspacing="4">
-						<form action="<cfoutput>#cgi.script_name#?#cgi.query_string#</cfoutput>" method="post" name="addblog" id="addblog">
+					<form action="<cfoutput>#cgi.script_name#?#cgi.query_string#</cfoutput>" method="post" name="theForm" id="theForm">
+						<table width="100%" cellpadding="4" cellspacing="4">
 							<cfoutput query="mycms" group="category">
 								<tr>
 									<td>
@@ -117,12 +117,17 @@
 							<tr>
 								<td align="center">
 									<cfoutput>
-										<input type="submit" name="okModcms" value="#application.pluginslanguage.cms.language.modify.xmltext#" />
+										<cfif useAjax()>
+											<input type="hidden" name="okModcms" value="#application.pluginslanguage.cms.language.modify.xmltext#" />
+											<input type="button" value="<cfoutput>#application.pluginslanguage.cms.language.modify.xmltext#</cfoutput>" onclick="submitAjaxForm();"/>
+										<cfelse>
+											<input type="submit" name="okModcms" value="#application.pluginslanguage.cms.language.modify.xmltext#" />
+										</cfif>
 									</cfoutput>
 								</td>
 							</tr>
-						</form>
-					</table>
+						</table>
+					</form>
 				</div>
 			</div>
 		</vb:content>
