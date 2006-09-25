@@ -60,7 +60,7 @@ FCKConfig.FormatIndentator	= '    ' ;
 
 FCKConfig.ForceStrongEm = true ;
 FCKConfig.GeckoUseSPAN	= false ;
-FCKConfig.StartupFocus	= false ;
+FCKConfig.StartupFocus	= true ;
 FCKConfig.ForcePasteAsPlainText	= false ;
 FCKConfig.AutoDetectPasteFromWord = true ;	// IE only.
 FCKConfig.ForceSimpleAmpersand	= false ;

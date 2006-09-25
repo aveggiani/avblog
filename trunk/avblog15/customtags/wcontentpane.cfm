@@ -1,10 +1,10 @@
 <cfif thistag.executionmode is 'start'>
 	<cfinclude template="../include/functions.cfm">
-	<cfif useajax()>
-		<cfparam name="attributes.whichLibrary" default="dojo">
-	<cfelse>
-		<cfset attributes.whichLibrary="noajax">
-	</cfif>
+</cfif>
+<cfif useajax()>
+	<cfparam name="attributes.whichLibrary" default="dojo">
+<cfelse>
+	<cfset attributes.whichLibrary="noajax">
 </cfif>
 <cfparam name="attributes.label" default="nolabel">
 

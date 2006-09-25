@@ -14,8 +14,7 @@
 					<cfif left(listgetat(application.days,i),4) is not yearsave or mid(listgetat(application.days,i),5,2) is not monthsave>
 						<span class="catListElement">
 							<cfoutput>
-								<br />
-								<a href="#request.appmapping#permalinks/#left(listgetat(application.days,i),4)#/#mid(listgetat(application.days,i),5,2)#">#lsdateformat(createdate(2000,mid(listgetat(application.days,i),5,2),1),'mmmm')# #left(listgetat(application.days,i),4)#</a>
+								<a href="#request.appmapping#permalinks/#left(listgetat(application.days,i),4)#/#mid(listgetat(application.days,i),5,2)#">#lsdateformat(createdate(2000,mid(listgetat(application.days,i),5,2),1),'mmmm')# #left(listgetat(application.days,i),4)#</a><br />
 							</cfoutput>
 						</span>
 						<cfhtmlhead text="<link rel='archives' title='#lsdateformat(createdate(2000,mid(listgetat(application.days,i),5,2),1),'mmmm')# #left(listgetat(application.days,i),4)#' href='http://#cgi.SERVER_NAME#/#request.appmapping#index.cfm?mode=show&amp;month=#left(listgetat(application.days,i),6)#' />">

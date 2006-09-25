@@ -1,6 +1,5 @@
 <cfhtmlhead text="<link href=""#request.appMapping#skins/#application.configuration.config.layout.theme.xmltext#/plugins/photoblog.css"" rel=""stylesheet"" type=""text/css"" />">
 
-<cfinclude template="include/header.cfm">
 <cfinclude template="#request.appmapping#include/functions.cfm">
 <cfimport taglib="customtags/" prefix="vb">
 
@@ -19,6 +18,10 @@
 					dimension		= application.photoblogObj.getImageSize('#request.apppath#/user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#');
 				</cfscript>
 				<cfif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>
+					<cfset imgUrls="">
+					<cfloop query="qryImages">
+						<cfset imgUrls = imgUrls & ";#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#">
+					</cfloop>
 					<vb:dojo>
 					<cfoutput>
 						<div class="slideshowView">
@@ -29,15 +32,12 @@
 								<a href="index.cfm?mode=plugin&plugin=photoblog&pluginmode=view&id=#url.gallery#">index</a>
 								]
 							</div>
-							<img dojoType="SlideShow" 
-							imgUrls="
-							<cfloop query="qryImages">
-									#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#;
-							</cfloop>"
-							transitionInterval="700"
-							delay="4000" 
-							src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#"
-							imgWidth="#dimension.width#" imgHeight="#dimension.height#" />
+							<vb:wslideshow
+								imgUrls="#imgurls#"
+								transitionInterval="700"
+								delay="4000" 
+								src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#"
+								imgWidth="#dimension.width#" imgHeight="#dimension.height#" />
 						</div>
 					</cfoutput>
 				<cfelseif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajaxpresentation'>
@@ -46,15 +46,15 @@
 						<div class="slideshowView">
 							<div class="slideshowDate">#lsdateformat(createdate(left(qryGallery.date,4),mid(qryGallery.date,5,2),right(qryGallery.date,2)),'dd mmmm yyyy')#</div>
 							<div class="slideshowTitle">#qryGallery.name#</div>
-							<div dojoType="show">
+							<vb:wshow>
 								<cfloop query="qryImages">
-									<div dojoType="showslide" title="#qryImages.name#">
+									<vb:wshowslide title="#qryImages.name#">
 										<img class="slideshowImageborder" src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#">
 										<br />
 										#qryImages.Description#
-									</div>
+									</vb:wshowslide>
 								</cfloop>
-							</div>
+							</vb:wshow>
 						</div>
 					</cfoutput>
 				<cfelse>
@@ -109,6 +109,7 @@
 								<br />
 								<div class="slideshowImage">
 									#currentDescription#
+									<br />
 									<img class="slideshowImageborder" src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#currentImage#">
 								</div>
 							</div>
@@ -116,6 +117,7 @@
 					</cfoutput>
 				</cfif>
 			</cfif>
+			<cfinclude template="include/bottom.cfm">
 		</div>
 		<cfinclude template="include/footer.cfm">
 	</body>

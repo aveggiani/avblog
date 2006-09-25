@@ -1,10 +1,5 @@
-<div style="padding: 0px; margin: 0px; border:1px solid red;">
-		<div dojoAttachPoint="controlsContainer">
-			<input type="button" value="pause" 
-				dojoAttachPoint="startStopButton"
-				dojoAttachEvent="onClick: togglePaused;">
-		</div>
-		<div style="position: relative; width: 800px; height: 400px;"
+<div style="padding: 0px; margin-top: 30px;">
+		<div style="position: relative; width: 800px; height: 600px; border: 1px solid #D0420A;"
 			dojoAttachPoint="imagesContainer"
 			dojoAttachEvent="onClick: togglePaused;">
 			<img dojoAttachPoint="img1" class="slideShowImg" 
@@ -12,4 +7,9 @@
 			<img dojoAttachPoint="img2" class="slideShowImg" 
 				style="z-index: 0;" />
 		</div>	
+		<div dojoAttachPoint="controlsContainer" align="center">
+			<input type="button" value="pause" 
+				dojoAttachPoint="startStopButton"
+				dojoAttachEvent="onClick: togglePaused;">
+		</div>
 </div>

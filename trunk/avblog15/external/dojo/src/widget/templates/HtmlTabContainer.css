@@ -1,11 +1,10 @@
 .dojoTabContainer {
 	position : relative;
-	padding: 5px;
 }
 
 .dojoTabPaneWrapper {
 	position : relative;
-	border : 1px solid #000000;
+	border : 1px solid #6290d2;
 	clear: both;
 }
 
@@ -26,14 +25,11 @@
 }
 
 .dojoTabPaneTab {
-	text-align: left;
 	position : relative;
 	float : left;
-	border-bottom : 1px solid #000000;
-	border-left : 1px solid #000000;
-	border-right : 1px solid #000000;
+	padding-left : 9px;
+	border-bottom : 1px solid #6290d2;
 	cursor: pointer;
-	width: 80px;
 }
 
 .dojoTabPaneTab span {
@@ -72,7 +68,8 @@
 }
 
 .dojoTabPaneTab.current {
-	background-color: #999999;
+	padding-bottom : 1px;
+	border-bottom : 0;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 }
 
@@ -115,7 +112,6 @@
 /* right-h tabs */
 
 .dojoTabLabels-right-h {
-	text-align: left;
 	position : absolute;
 	top : 0px;
 	right : 0px;
@@ -126,7 +122,8 @@
 
 .dojoTabLabels-right-h .dojoTabPaneTab {
 	padding-left : 0;
-	border-right :  1px solid #000000;
+	border-left :  1px solid #6290d2;
+	border-bottom : 0;
 	float : none;
 }
 
@@ -135,13 +132,13 @@
 }
 
 .dojoTabLabels-right-h .dojoTabPaneTab.current {
-	border-bottom :  1px solid #000000;
+	border-left :  0;
+	border-bottom :  1px solid #6290d2;
 }
 
 /* left-h tabs */
 
 .dojoTabLabels-left-h {
-	text-align: left;
 	position : absolute;
 	top : 0px;
 	left : 0px;
@@ -157,11 +154,11 @@
 
 .dojoTabLabels-left-h .dojoTabPaneTab.current {
 	border-right : 0;
-	border-bottom :  1px solid #000000;
+	border-bottom :  1px solid #6290d2;
 	padding-bottom : 0;
 }
 
 .dojoTabLabels-left-h .dojoTabPaneTab span {
 	background : 0;
-	border-bottom :  1px solid #000000;
+	border-bottom :  1px solid #6290d2;
 }

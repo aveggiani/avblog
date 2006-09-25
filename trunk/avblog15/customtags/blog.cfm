@@ -14,7 +14,13 @@
 	<cfreturn returnvalue>
 </cffunction>
 
-<vb:wcontentpane id="MainPane" executeScripts="true">
+<cfif useajax() and (isuserinrole('admin') or isuserinrole('blogger'))>
+	<cfset whichLibrary = "dojo">
+<cfelse>
+	<cfset whichLibrary = "noajax">
+</cfif>
+
+<vb:wcontentpane id="MainPane" executeScripts="true"  whichLibrary="#whichLibrary#">
 
 	<cfsilent>
 	<cfimport taglib="." prefix="vb">
@@ -232,3 +238,16 @@
 	</cfif>
 
 </vb:wcontentpane>
+
+<!--- modal window for permalinks repai --->
+<cfif useajax() and (isuserinrole('admin') or isuserinrole('blogger'))>
+	<vb:wmodal id="checkpermalinks" returnButton="closecheckpermalinks">
+		<vb:wcontentpane id="checkpermalinkscontent" style="width:300px; height=200px; text-align:center;">
+			<br /><br />
+			<br /><br />
+		</vb:wcontentpane>
+		<div align="center">
+			<input type="button" name="closecheckpermalinks" id="closecheckpermalinks" value="chiudi" />
+		</div>
+	</vb:wmodal>
+</cfif>

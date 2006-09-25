@@ -358,7 +358,7 @@
 			request.appMapping				 	= initRequestappMapping();
 			request.appPath					 	= initRequestappPath(request.appMapping);
 			request.cfcMapping					= replace(request.appMapping,'/','.','ALL');
-			if (left(request.cfcMapping,1) is '.')
+			if (left(request.cfcMapping,1) is '.' and len(request.cfcMapping) gt 1)
 				request.cfcMapping = right(request.cfcMapping,decrementvalue(len(request.cfcMapping)));
 		</cfscript>
 	</cffunction>

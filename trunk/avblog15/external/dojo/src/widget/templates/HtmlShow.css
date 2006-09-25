@@ -1,22 +1,17 @@
 @media screen {
 	.dojoShowNav {
-		padding:5px;
+		padding:0px;
 		text-align: center;
 	}
 	.dojoShowNav input {
-		padding:5px;
 	}
 	.dojoShowHider {
-		visibility:hidden;
-		height:0px;
 	}
 	.dojoShowPrint {
 		position: absolute;
 	}
 	h1
 		{
-			visibility:hidden;
-			height:0px;
 		}
 }
 @media print {
