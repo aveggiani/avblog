@@ -163,3 +163,19 @@ FCK.InsertElementAndGetIt = function( e )
 	}
 	return null ;
 }
+
+FCK.ForceDesignMode = function()
+{
+
+if(!document.all)
+{
+FCK.EditorDocument.designMode = "off" ;
+FCK.EditorDocument.designMode = "on" ;
+
+// Set the Focus.
+FCK.Focus() ;
+
+// Update the toolbar.
+FCKToolbarSet.RefreshItemsState() ;
+}
+}

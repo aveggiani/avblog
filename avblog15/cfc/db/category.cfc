@@ -40,7 +40,7 @@
 		</cfquery>
 		<cfif qryBlogs.recordcount gt 0>
 			<cfquery name="qryBlogs" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-				select id,sdate,stime,title as name from posts where id in (#quotedvaluelist(qryBlogs.blogid)#)
+				select id,sdate,stime,title as name,menuitem from posts where id in (#quotedvaluelist(qryBlogs.blogid)#)
 			</cfquery>
 			<cfscript>
 				rowDate = listtoarray(valuelist(qryBlogs.sdate));

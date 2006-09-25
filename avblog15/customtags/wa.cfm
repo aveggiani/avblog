@@ -29,7 +29,7 @@
 			</cfif>
 			<cfif thistag.executionmode is 'start'>
 				<a
-					href="javascript:viewWApane('#attributes.target#','#replace(attributes.href,'index.cfm','ajax.cfm')#&#GetTickCount()#')"
+					href="javascript:<cfif isdefined('attributes.modal')>#attributes.modal#dlg.show();</cfif>viewWApane('#attributes.target#','#replace(attributes.href,'index.cfm','ajax.cfm')#&#GetTickCount()#')"
 					<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
 					<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
 					>

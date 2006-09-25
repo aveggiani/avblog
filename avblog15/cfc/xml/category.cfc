@@ -24,7 +24,7 @@
 		<cfargument name="isAdmin" type="boolean" default="false">
 
 		<cfscript>
-			var qryBlogs			= querynew('id,name,date,time');
+			var qryBlogs			= querynew('id,name,menuitem,date,time');
 			var qryBlogsDirectory	= '';
 			var qryDirectory		= '';
 			qryDirectory = application.fileSystem.getDirectory('#request.appPath#/#request.xmlstoragepath#/categories/#arguments.category#','name','*.txt');
@@ -47,6 +47,7 @@
 						queryaddrow(qryBlogs);
 						querysetcell(qryBlogs,'id',xmlBlog.blogentry.guid.xmltext);
 						querysetcell(qryBlogs,'name',xmlBlog.blogentry.title.xmltext);
+						querysetcell(qryBlogs,'menuitem',xmlBlog.blogentry.menuitem.xmltext);
 						querysetcell(qryBlogs,'date',xmlBlog.blogentry.date.xmltext);
 						querysetcell(qryBlogs,'time',xmlBlog.blogentry.time.xmltext);
 					</cfscript>

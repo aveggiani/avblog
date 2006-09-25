@@ -357,54 +357,67 @@
 		
 					if (isdefined('pform.logsessionstart'))
 						application.configuration.config.log.sessionstart.xmltext					= 'true';
+					else
 						application.configuration.config.log.sessionstart.xmltext					= 'false';
 	
 					if (isdefined('pform.logsessionend'))
 						application.configuration.config.log.sessionend.xmltext						= 'true';
+					else
 						application.configuration.config.log.sessionend.xmltext						= 'false';
 	
 					if (isdefined('pform.logapplicationstart'))
 						application.configuration.config.log.applicationstart.xmltext				= 'true';
+					else
 						application.configuration.config.log.applicationstart.xmltext				= 'false';
 	
 					if (isdefined('pform.logapplicationend'))
 						application.configuration.config.log.applicationend.xmltext					= 'true';
+					else
 						application.configuration.config.log.applicationend.xmltext					= 'false';
 	
 					if (isdefined('pform.logpostview'))
 						application.configuration.config.log.postview.xmltext						= 'true';
+					else
 						application.configuration.config.log.postview.xmltext						= 'false';
 	
 					if (isdefined('pform.logpostadd'))
 						application.configuration.config.log.postadd.xmltext						= 'true';
+					else
 						application.configuration.config.log.postadd.xmltext						= 'false';
 	
 					if (isdefined('pform.logpostmodify'))
 						application.configuration.config.log.postmodify.xmltext						= 'true';
+					else
 						application.configuration.config.log.postmodify.xmltext						= 'false';
 	
 					if (isdefined('pform.logcommentadd'))
 						application.configuration.config.log.commentadd.xmltext						= 'true';
+					else
 						application.configuration.config.log.commentadd.xmltext						= 'false';
 	
 					if (isdefined('pform.logtrackbackadd'))
 						application.configuration.config.log.trackbackadd.xmltext					= 'true';
+					else
 						application.configuration.config.log.trackbackadd.xmltext					= 'false';
 	
 					if (isdefined('pform.loglogin'))
 						application.configuration.config.log.login.xmltext							= 'true';
+					else
 						application.configuration.config.log.login.xmltext							= 'false';
 	
 					if (isdefined('pform.loglogout'))
 						application.configuration.config.log.logout.xmltext							= 'true';
+					else
 						application.configuration.config.log.logout.xmltext							= 'false';
 	
 					if (isdefined('pform.logpageview'))
 						application.configuration.config.log.pageview.xmltext						= 'true';
+					else
 						application.configuration.config.log.pageview.xmltext						= 'false';
 	
 					if (isdefined('pform.usesocialbuttons'))
 						application.configuration.config.log.download.xmltext						= 'true';
+					else
 						application.configuration.config.log.download.xmltext						= 'false';
 				}
 		</cfscript>

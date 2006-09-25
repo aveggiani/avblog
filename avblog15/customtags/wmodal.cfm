@@ -2,37 +2,32 @@
 
 <cfswitch expression="#attributes.whichLibrary#">
 	<cfcase value="dojo">
-		<cf_dojo use="Dialog">
 		<cfoutput>
-			<cfsavecontent variable="headerDojo">
-				<script type="text/javascript">
-				var #attributes.id#dlg;
-				function init(e) {
-					dlg = dojo.widget.byId("#attributes.id#");
-					var btn = document.getElementById("#attributes.returnButton");
-					dlg.setCloseControl(btn);
-				}
-				dojo.addOnLoad(init);
-				
-				</script>
-			</cfsavecontent>
-			<cfheader value="#headerDojo#">
-			<cfset "caller.show#attributes.id#" = "#attributes.id#dlg.show()">
-			<!---
-			.dojoDialog {
-				background : #eee;
-				border : 1px solid #999;
-				-moz-border-radius : 5px;
-				padding : 4px;
-			}
-			--->
 			<cfif thistag.executionmode is 'start'>
+				<cf_dojo use="Dialog">
+				<cfsavecontent variable="headerDojo">
+					<script type="text/javascript">
+					var #attributes.id#dlg;
+					function init#attributes.id#(e) {
+						#attributes.id#dlg = dojo.widget.byId("#attributes.id#");
+						<cfif isdefined('attributes.returnButton')>
+							var btn = document.getElementById("#attributes.returnButton#");
+							#attributes.id#dlg.setCloseControl(btn);
+						</cfif>
+					}
+					dojo.addOnLoad(init#attributes.id#);
+					</script>
+				</cfsavecontent>
+				<cfhtmlhead text="#headerDojo#">
+				<cfset "caller.show#attributes.id#" = "javascript: #attributes.id#dlg.show()">
 				<div 
 					dojoType="dialog" 
-					<cfif isdefined('attributes.bgColor')>id="#attributes.bgColor#"</cfif>
+					<cfif isdefined('attributes.id')>id="#attributes.id#"</cfif>
+					<cfif isdefined('attributes.bgColor')>bgColor="#attributes.bgColor#"</cfif>
 					<cfif isdefined('attributes.bgOpacity')>bgOpacity="#attributes.bgOpacity#"</cfif>
-					<cfif isdefined('attributes.toggle')>id="#attributes.toggle#"</cfif>
-					<cfif isdefined('attributes.toggleDuration')>id="#attributes.toggleDuration#"</cfif>
+					<cfif isdefined('attributes.toggle')>toggle="#attributes.toggle#"</cfif>
+					<cfif isdefined('attributes.toggleDuration')>toggleDuration="#attributes.toggleDuration#"</cfif>
+					templateCssPath="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/dojo.css"
 					>
 			<cfelse>
 				</div>

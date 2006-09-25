@@ -606,7 +606,7 @@
 								</div>
 								<div class="configLabels">
 									<cfinput	type="checkbox" name="loglogin" checked="#application.configuration.config.log.login.xmltext#">
-									#application.language.language.loglogin.xmltext#">
+									#application.language.language.loglogin.xmltext#
 								</div>
 								<div class="configLabels">
 									<cfinput	type="checkbox" name="loglogout" checked="#application.configuration.config.log.logout.xmltext#">
