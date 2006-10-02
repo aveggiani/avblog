@@ -13,9 +13,8 @@
 	</cfpop>
 	
 	<!--- then filter the email in order to get only the messages for the blog --->
-	
 	<cfquery name="qryGetMessagesFiltered" dbtype="query">
-		select * from qryGetMessages where subject like '#application.configuration.config.options.feed.email.subjectkey.xmltext#%'
+		select * from qryGetMessages where subject like '#lcase(application.configuration.config.options.feed.email.subjectkey.xmltext)#@%'
 	</cfquery>
 	
 	<cfloop query="qryGetMessagesFiltered">

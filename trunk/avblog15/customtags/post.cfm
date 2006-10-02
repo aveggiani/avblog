@@ -236,30 +236,14 @@
 									</div>
 								</cfif>
 								<div class="blogAuthor">
-									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/date.png" alt="icon date" align="middle" />
-									</cfif>	
-									#arrayShow[i].time#
-									|
-									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/author.png" alt="icon author"  align="middle" />
-									</cfif>	
-									<a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
+									<vb:icon type="date"> #arrayShow[i].time# | <vb:icon type="author"> <a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
 								</div>
 								<div class="blogCommands">
-									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/permalink.png" alt="icon permalink"  align="middle" />
-									</cfif>	
-									<a href="#permalink#">permalink</a>
+									<vb:icon type="permalink"> <a href="#permalink#">permalink</a>
 									<cfif qryEnclosures.recordcount gt 0>
-										<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-											<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/enclosure.png" alt="icon enclosure"  align="middle" />
-										</cfif>	
-										<a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
+										<vb:icon type="enclosure"> <a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
 									</cfif>
-									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/comment.png" alt="icon comment"  align="middle" />
-									</cfif>	
+									<vb:icon type="comment">
 									<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
 										<a href="#request.appmapping#index.cfm?mode=viewcomment&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanycomments# #iif(howmanycomments EQ 1, DE(application.language.language.comment.xmltext), DE(application.language.language.comments.xmltext))#
 										<cfif privateComments gt 0>
@@ -268,9 +252,7 @@
 										</a> -
 									</cfif>
 									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
-									<cfif application.configuration.config.layout.useiconset.xmltext is not 'none'>
-										<img class="littleIcon" src="#request.appmapping#images/iconsets/#application.configuration.config.layout.useiconset.xmltext#/trackback.png" alt="icon trackback"  align="middle" />
-									</cfif>	
+									<vb:icon type="trackback">
 									<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
 									<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
 										<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>

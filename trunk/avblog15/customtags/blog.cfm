@@ -14,7 +14,7 @@
 	<cfreturn returnvalue>
 </cffunction>
 
-<cfif useajax() and (isuserinrole('admin') or isuserinrole('blogger'))>
+<cfif useajax() and (isuserinrole('admin') or isuserinrole('blogger')) or (isdefined('url.plugin') and url.plugin is 'delicious')>
 	<cfset whichLibrary = "dojo">
 <cfelse>
 	<cfset whichLibrary = "noajax">
