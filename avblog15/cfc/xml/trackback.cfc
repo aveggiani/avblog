@@ -20,22 +20,25 @@
 			<cfif qryVerify.recordcount gt 0>
 				<cfloop query="qryVerify">
 					<cfscript>
-						xmltrackback = application.fileSystem.readXml('#request.appPath#/#request.xmlstoragepath#/trackbacks/#qryVerify.name#');
-						xmltrackback = xmlParse(xmltrackback);
-						strGet.id				= xmltrackback.trackback.guid.xmltext;
-						strGet.date				= xmltrackback.trackback.date.xmltext;
-						strGet.time				= xmltrackback.trackback.time.xmltext;
-						strGet.blogid			= xmltrackback.trackback.xmlattributes.blogid;
-						strGet.url				= xmltrackback.trackback.url.xmltext;
-						strGet.blog_name		= xmltrackback.trackback.blog_name.xmltext;
-						strGet.excerpt			= xmltrackback.trackback.excerpt.xmltext;
-						strGet.title			= xmltrackback.trackback.title.xmltext;
-						if (isdefined('xmltrackback.trackback.published'))
-							strGet.published		= xmltrackback.trackback.published.xmltext;
-						else
-							strGet.published		= true;
+						if (fileexists('#request.appPath#/#request.xmlstoragepath#/trackbacks/#qryVerify.name#'))
+							{
+								xmltrackback = application.fileSystem.readXml('#request.appPath#/#request.xmlstoragepath#/trackbacks/#qryVerify.name#');
+								xmltrackback = xmlParse(xmltrackback);
+								strGet.id				= xmltrackback.trackback.guid.xmltext;
+								strGet.date				= xmltrackback.trackback.date.xmltext;
+								strGet.time				= xmltrackback.trackback.time.xmltext;
+								strGet.blogid			= xmltrackback.trackback.xmlattributes.blogid;
+								strGet.url				= xmltrackback.trackback.url.xmltext;
+								strGet.blog_name		= xmltrackback.trackback.blog_name.xmltext;
+								strGet.excerpt			= xmltrackback.trackback.excerpt.xmltext;
+								strGet.title			= xmltrackback.trackback.title.xmltext;
+								if (isdefined('xmltrackback.trackback.published'))
+									strGet.published		= xmltrackback.trackback.published.xmltext;
+								else
+									strGet.published		= true;
+								tmpArray[qryVerify.Currentrow] = structCopy(strGet);
+							}
 					</cfscript>
-					<cfset tmpArray[qryVerify.Currentrow] = structCopy(strGet)>
 				</cfloop>
 			</cfif>
         </cflock>

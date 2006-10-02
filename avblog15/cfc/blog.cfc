@@ -278,8 +278,8 @@
 					<description>#application.configuration.config.headers.description.xmltext#</description>
 					<language>#left(application.configuration.config.internationalization.language.xmltext,2)#</language>
 
-					<managingEditor>#application.language.language.author.xmltext#</managingEditor>
-					<webMaster>#application.language.language.author.xmltext#</webMaster>
+					<managingEditor>#application.configuration.config.owner.email.xmltext#</managingEditor>
+					<webMaster>#application.configuration.config.owner.email.xmltext#</webMaster>
 					<pubDate>@lastpubdate@</pubDate>
 					<lastBuildDate>@lastpubdate@</lastBuildDate>
 					<ttl>15</ttl>

@@ -41,15 +41,10 @@
 			var permalink		= '';
 			qrySubscribers 		= application.objSubscriptionsStorage.check(arguments.blogid);	
 			if (arguments.blogid is 'blog')
-				{
-					post				= request.blog.get(arguments.newpostId);	
-					permalink			= application.objPermalinks.getFullPostPermalink(post.date,post.menuitem);
-				}
+				post				= request.blog.get(arguments.newpostId);	
 			else
-				{
-					post				= request.blog.get(arguments.blogid);	
-					permalink			= application.objPermalinks.getFullPostPermalink(post.date,post.menuitem);
-				}
+				post				= request.blog.get(arguments.blogid);	
+			permalink			= application.objPermalinks.getFullPostPermalink(post.date,post.menuitem);
 		</cfscript>
 		
 		
