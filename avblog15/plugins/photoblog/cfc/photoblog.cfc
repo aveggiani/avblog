@@ -85,6 +85,7 @@
 			<cfif not directoryexists('#request.appPath#/user/photoblog/galleries/#arguments.name#')>
 				<cfdirectory action="create" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#">
 				<cfdirectory action="create" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
+				<cfdirectory action="create" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original/rotate">
 				<cfdirectory action="create" directory=	"#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb">
 				<cfdirectory action="create" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/big">
 				<cfdirectory action="create" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/metadata">
@@ -100,6 +101,17 @@
 			<cfdirectory action="list" name="filesextracted" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
 			<!--- loop over the list, resize the images and create the storage info --->
 			<cfloop query="filesextracted">
+				<cfscript>
+					exifTags = xmlsearch(exifReader('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#'),'//tag');
+				</cfscript>
+				<cfloop index="i" from="1" to="#arraylen(exifTags)#">
+					<cfif exifTags[i].name.xmltext is 'orientation' and left(exifTags[i].description.xmltext,3) is not 'top' and left(exifTags[i].description.xmltext,3) is not 'bot'>
+						<cfscript>
+							objImage = createobject('component','cfc.external.imagecfc.image');
+							objImage.rotate('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#',-90);
+						</cfscript>
+					</cfif>
+				</cfloop>
 				<cfscript>
 					if (application.pluginsconfiguration.photoblog.plugin.copyright.use.xmltext)
 						{
