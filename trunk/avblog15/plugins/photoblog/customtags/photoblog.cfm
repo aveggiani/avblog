@@ -194,7 +194,6 @@
 	<cfcase value="edit">
 	
 		<cfimport taglib="../../../customtags" prefix="vb">
-		<vb:dojo>
 		
 		<vb:content>
 			<cfscript>
@@ -261,7 +260,18 @@
 							</cfoutput>
 						</div>
 					</vb:wcontentpane>
-	
+						<cfsavecontent variable="dojoAjax">
+							<cfoutput>
+								<script language="JavaScript" type="text/javascript">
+									function rotate(webpath,path,file,pane,big,thumb,rotate)
+										{
+											var MainPane = dojo.widget.byId(pane);
+											MainPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=photoblog&pluginmode=rotate&webpath='+webpath+'&path='+path+'&file='+file+'&big='+big+'&thumb='+thumb+'&rotate='+rotate+'&when='+Date());
+										}
+								</script>
+							</cfoutput>
+						</cfsavecontent>
+						<cfhtmlhead text="#dojoAjax#">
 						<cfloop query="myphotoblogimages">
 							<cfscript>
 								idimage =  replace(myphotoblogimages.id,'-','_','ALL');
@@ -300,22 +310,26 @@
 													<input type="hidden" size="50" name="photooldfile#idimage#" value="#myphotoblogimages.file#" />
 													<br />
 													<br />
-													<img src="#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#" />
-													<cfif useajax() and application.flickrObj.islogged()>
+													<vb:wcontentpane id="imagerotate#myphotoblogimages.currentrow#" executeScripts="true">
+														<img src="#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#" align="absmiddle" />
+													</vb:wcontentpane>
+													<input type="button" value=" -180" onclick="javascript:rotate('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb','#request.apppath#/user/photoblog/galleries/#myphotoblog.name#','#myphotoblogimages.file#','imagerotate#myphotoblogimages.currentrow#','#bigwidth#','#thumbwidth#',-180)" />
+													<input type="button" value="  -90" onclick="javascript:rotate('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb','#request.apppath#/user/photoblog/galleries/#myphotoblog.name#','#myphotoblogimages.file#','imagerotate#myphotoblogimages.currentrow#','#bigwidth#','#thumbwidth#',-90)" />
+													<input type="button" value="   90" onclick="javascript:rotate('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb','#request.apppath#/user/photoblog/galleries/#myphotoblog.name#','#myphotoblogimages.file#','imagerotate#myphotoblogimages.currentrow#','#bigwidth#','#thumbwidth#',90)" />
+													<input type="button" value="  180" onclick="javascript:rotate('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb','#request.apppath#/user/photoblog/galleries/#myphotoblog.name#','#myphotoblogimages.file#','imagerotate#myphotoblogimages.currentrow#','#bigwidth#','#thumbwidth#',180)" />
+													<cfif  application.flickrObj.islogged()>
 														<br />
-														<div dojoType="ContentPane" layoutAlign="client" id="flickr#idimage#" executeScripts="true">
-															<input type="button" value="post to Flickr" onclick="postToFlickr#idimage#('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#','#myphotoblogimages.name#')" />
-														</div>
+														<vb:wcontentpane id="flickr#idimage#" executeScripts="true">
+															<input type="button" value="post to Flickr" onclick="javascript:postToFlickr#idimage#('#request.appmapping#user/photoblog/galleries/#myphotoblog.name#/thumb/#myphotoblogimages.file#','#myphotoblogimages.name#')" />
+														</vb:wcontentpane>
 														<cfsavecontent variable="dojoAjax">
-															<cfoutput>
-																<script language="JavaScript" type="text/javascript">
-																	function postToFlickr#idimage#(target,title)
-																		{
-																			var MainPane = dojo.widget.byId("flickr#idimage#");
-																			MainPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=flickr&pluginmode=upload&file='+target+'&title='+title+'&when='+Date());
-																		}
-																</script>
-															</cfoutput>		
+															<script language="JavaScript" type="text/javascript">
+																function postToFlickr#idimage#(target,title)
+																	{
+																		var MainPane = dojo.widget.byId("flickr#idimage#");
+																		MainPane.setUrl('#request.appmapping#ajax.cfm?mode=plugin&plugin=flickr&pluginmode=upload&file='+target+'&title='+title+'&when='+Date());
+																	}
+															</script>
 														</cfsavecontent>
 														<cfhtmlhead text="#dojoAjax#">
 													</cfif>
@@ -462,4 +476,9 @@
 		</cfif>
 	</cfcase>
 
+	<cfcase value="rotate">
+		<cfoutput>
+			<img src="#url.webpath#/#url.file#?uuid=#createuuid()#" align="absmiddle" />
+		</cfoutput>
+	</cfcase>
 </cfswitch>
