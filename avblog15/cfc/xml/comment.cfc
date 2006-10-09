@@ -48,43 +48,66 @@
 		<cfif qryVerify.recordcount gt 0>
 			<cfloop query="qryVerify">
 				<cfscript>
-					xmlComment = application.fileSystem.readXml('#request.appPath#/#request.xmlstoragepath#/comments/#qryVerify.name#');
-					xmlComment = xmlParse(xmlComment);
-					strGet.id				= xmlComment.comment.guid.xmltext;
-					strGet.date				= xmlComment.comment.date.xmltext;
-					strGet.time				= xmlComment.comment.time.xmltext;
-					strGet.author			= xmlComment.comment.author.xmltext;
-					strGet.email			= xmlComment.comment.email.xmltext;
-					strGet.description		= xmlComment.comment.description.xmltext;
-					strGet.emailvisible		= xmlComment.comment.emailvisible.xmltext;
-					strGet.private			= xmlComment.comment.private.xmltext;
-					if (isdefined('xmlComment.comment.published'))
-						strGet.published		= xmlComment.comment.published.xmltext;
-					else
-						strGet.published		= true;
+					if (qryVerify.name is not '' and fileexists('#request.appPath#/#request.xmlstoragepath#/comments/#qryVerify.name#'))
+						{
+							xmlComment = application.fileSystem.readXml('#request.appPath#/#request.xmlstoragepath#/comments/#qryVerify.name#');
+							xmlComment = xmlParse(xmlComment);
+							strGet.id				= xmlComment.comment.guid.xmltext;
+							strGet.date				= xmlComment.comment.date.xmltext;
+							strGet.time				= xmlComment.comment.time.xmltext;
+							strGet.author			= xmlComment.comment.author.xmltext;
+							strGet.email			= xmlComment.comment.email.xmltext;
+							strGet.description		= xmlComment.comment.description.xmltext;
+							strGet.emailvisible		= xmlComment.comment.emailvisible.xmltext;
+							strGet.private			= xmlComment.comment.private.xmltext;
+							if (isdefined('xmlComment.comment.published'))
+								strGet.published		= xmlComment.comment.published.xmltext;
+							else
+								strGet.published		= true;
+							tmpArray[qryVerify.Currentrow] = structCopy(strGet);
+						}
 				</cfscript>
-				<cfset tmpArray[qryVerify.Currentrow] = structCopy(strGet)>
 			</cfloop>
 		</cfif>
 		
 		<cfreturn tmpArray>
 	</cffunction>
 
+	<cffunction name="getAllCommentsCount" output="false" returntype="numeric">
+		<cfscript>
+			qryCommentsDirectory = application.fileSystem.getDirectoryxml('#request.appPath#/#request.xmlstoragepath#/comments','datelastmodified desc');
+		</cfscript>
+		<cfreturn qryCommentsDirectory.recordcount>
+	</cffunction>
+
 	<cffunction name="getRecent" output="false" returntype="query">
 		<cfargument name="howmany" required="yes" type="numeric">
 		<cfargument name="isAdmin" type="boolean" default="false">
+		<cfargument name="start"		required="no" 	type="string" default="1">
+		<cfargument name="steps"		required="no" 	type="string" default="10">
 
 		<cfscript>
 			var qryComments				= querynew('id,blogid,name,description,author,email,date,sdate,time,private,emailvisible,published');
 			var qryCommentsDirectory	= '';
 			var xmlComment				= '';
-		</cfscript>
+			var rstart = 1;
+			var rend = 1;
 
-		<cfscript>
 			qryCommentsDirectory = application.fileSystem.getDirectoryxml('#request.appPath#/#request.xmlstoragepath#/comments','datelastmodified desc');
+			if (val(arguments.start) is not 0 and val(arguments.steps) is not 0)
+				{
+					rstart = arguments.start;
+					rend = val(arguments.start) + val(arguments.steps) - 1;
+				}
+			else
+				{
+					rstart = 1;
+					rend = qryCommentsDirectory.recordcount;
+				}
 		</cfscript>
 		
-		<cfloop query="qryCommentsDirectory" startrow="1" endrow="#arguments.howmany#">
+		
+		<cfloop query="qryCommentsDirectory" startrow="#rstart#" endrow="#rend#">
 			<cfscript>
 				xmlComment = application.fileSystem.readXml('#request.appPath#/#request.xmlstoragepath#/comments/#qryCommentsDirectory.name#');
 				xmlComment = xmlparse(xmlComment);

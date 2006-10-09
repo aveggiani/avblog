@@ -139,11 +139,17 @@
 		<cfreturn application.objBlogStorage.getRecent(arguments.howmany,arguments.isAdmin)>
 	</cffunction>
 
+	<cffunction name="getAllCommentsCount" output="false" returntype="numeric">
+		<cfreturn application.objCommentStorage.getAllCommentsCount()>
+	</cffunction>
+
 	<cffunction name="getRecentComments" output="false" returntype="query">
 		<cfargument name="howmany" required="yes" type="numeric">
 		<cfargument name="isAdmin" type="boolean" default="false">
+		<cfargument name="start"		required="no" 	type="string" default="1">
+		<cfargument name="steps"		required="no" 	type="string" default="10">
 
-		<cfreturn application.objCommentStorage.getRecent(arguments.howmany,arguments.isAdmin)>
+		<cfreturn application.objCommentStorage.getRecent(arguments.howmany,arguments.isAdmin,arguments.start,arguments.steps)>
 	</cffunction>
 
 	<cffunction name="publishComment" output="false" returntype="void">
@@ -302,7 +308,7 @@
 							</cfscript>
 						<cfelse>
 							<cfscript>
-								timeOffsetGMT = right('0' & application.configuration.config.internationalization.timeoffsetGMT.xmltext & '00',4);
+								timeOffsetGMT = '+' & right('0' & application.configuration.config.internationalization.timeoffsetGMT.xmltext & '00',4);
 							</cfscript>
 						</cfif>
 						<cfloop index="i" from="1" to="#listlen(application.days)#">
@@ -327,7 +333,7 @@
 										<item>
 											<title><![CDATA[#arrayshow[j].title#]]></title>
 											<guid isPermaLink="true">http://#cgi.server_name##getPermalink(arrayShow[j].date,arrayShow[j].menuitem)#</guid>
-											<link><![CDATA[http://#cgi.server_name##request.appmapping#index.cfm?mode=viewentry&id=#arrayshow[j].id#]]></link>
+											<link><![CDATA[http://#cgi.server_name##getPermalink(arrayShow[j].date,arrayShow[j].menuitem)#]]></link>
 											<description><![CDATA[#description#]]></description>
 											<cfloop index="k" from="1" to="#listlen(mycategories)#">
 												<category><![CDATA[#listgetat(listgetat(mycategories,k),2,'_')#]]></category>

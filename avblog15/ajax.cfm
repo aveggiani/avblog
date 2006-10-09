@@ -85,7 +85,7 @@
 				<cfcase value="plugin">
 					<!--- plugin control --->
 					<cfif isdefined('url.plugin')>
-						<cfmodule template="plugins/#url.plugin#/customtags/#url.plugin#.cfm" type="#url.pluginmode#">
+						<cfmodule template="plugins/#url.plugin#/ajax.cfm" type="#url.pluginmode#">
 					</cfif>
 				</cfcase>
 			</cfswitch>

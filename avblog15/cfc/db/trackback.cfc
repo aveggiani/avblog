@@ -1,7 +1,16 @@
 <cfcomponent>
 
+	<cffunction name="getAllCount" output="false" returntype="numeric">
+		<cfquery name="qrytrackbacks" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
+			select count(*) as howmany from trackbacks 
+		</cfquery>
+		<cfreturn qrytrackbacks.howmany>
+	</cffunction>
+
 	<cffunction name="get" output="false" returntype="array">
 		<cfargument name="id"			required="no"	type="string">
+		<cfargument name="start"		required="no" 	type="string" default="">
+		<cfargument name="steps"		required="no" 	type="string" default="">
 		
 		<cfscript>
 			var strGet			= structnew();
@@ -15,8 +24,19 @@
 				</cfif>
 			order by sdate desc,stime desc
 		</cfquery>
-		
-		<cfloop query="qrytrackbacks">
+		<cfscript>		
+			if (val(arguments.start) is not 0 and val(arguments.steps) is not 0)
+				{
+					rstart = arguments.start;
+					rend = val(arguments.start) + val(arguments.steps) - 1;
+				}
+			else
+				{
+					rstart = 1;
+					rend = qrytrackbacks.recordcount;
+				}
+		</cfscript>
+		<cfloop query="qrytrackbacks" startrow="#rstart#" endrow="#rend#">
 			<cfscript>
 				strGet.id				= qrytrackbacks.id;
 				strGet.date				= qrytrackbacks.sdate;

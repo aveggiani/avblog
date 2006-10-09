@@ -128,16 +128,13 @@
 								}
 							mydate	= createdate(left(arrayShow[i].date,4),mid(arrayShow[i].date,5,2),right(arrayShow[i].date,2));
 						</cfscript>
-						
 						<cfif i is 1>
 							<cfoutput>
 								<div class="blogDate">#application.objLocale.dateLocaleFormat(mydate,"long")#</div>
 							</cfoutput>
 						</cfif>
-		
 						<vb:content>
 						<cfoutput>
-		
 							<!--
 								<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns##"
 										 xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -149,9 +146,7 @@
 									trackback:ping="http://#cgi.SERVER_NAME##request.appmapping#trackback.cfm?id=#arrayShow[i].id#" />
 								</rdf:RDF>
 							-->
-								
 							<a name="#arrayShow[i].id#"></a>
-							
 							<cfif (isuserinrole('admin') or isuserinrole('blogger')) and 
 								(
 									arrayShow[i].date gt dateformat(now(),'yyyymmdd') 
@@ -178,7 +173,7 @@
 							</cfif>
 							<div class="#blogClass#">
 								<div class="blogTitle">
-									<a href="#permalink#">#publishinformation# #arrayShow[i].title#</a>
+									<a href="#permalink#"><span id="post-title">#publishinformation# #arrayShow[i].title#</span></a>
 								</div>
 								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
 									<div class="blogText">
@@ -212,10 +207,11 @@
 								<cfif listlen(myCategories) gt 0>
 									<div class="blogCategories">
 										#application.language.language.categories.xmltext#:
+										<span id="post-category">
 										<cfloop index="item" list="#myCategories#">
 											<a href="#request.appmapping#permalinks/categories/#listrest(item,'_')#">#listrest(item,'_')#</a>
 											<cfif item is not listlast(myCategories)>,</cfif>
-										</cfloop>
+										</cfloop></span>
 									</div>
 								</cfif>
 								<cfif application.configuration.config.layout.usesocialbuttons.xmltext>

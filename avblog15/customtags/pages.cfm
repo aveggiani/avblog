@@ -1,4 +1,6 @@
-﻿<cfparam name="attributes.querystring" default="">
+﻿<cfimport taglib="." prefix="vb">
+
+<cfparam name="attributes.querystring" default="">
 <cfparam name="attributes.start" default="1">
 <cfparam name="attributes.from" default="1">
 <cfparam name="attributes.query" default="">
@@ -20,7 +22,7 @@
 			<cfif start gt (steps*10)>
 				<cfset paginainiziale=start-(steps*10)>
 				<cfset ad=from-10>
-				<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#paginainiziale#&from=#ad#"><<<<</a></cfoutput></vb:wa> 
+				<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#paginainiziale#&from=#ad#"><<<<</a></vb:wa></cfoutput>
 			</cfif>
 			</span>
 		</td>
@@ -34,7 +36,7 @@
 					<font color="red">1</font> |
 				</cfif>
 			<cfelseif start lte (steps*10)>
-				<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=1&from=#from#">1</cfoutput></vb:wa> |
+				<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=1&from=#from#">1</vb:wa></cfoutput> |
 			</cfif>
 			<cfif from gt 1 and int(start/steps) is from>
 				<cfset i=start-steps>
@@ -56,7 +58,7 @@
 					<cfoutput><span class="pageSelected">#i2#</span> |</cfoutput>
 				<cfelse>
 					<cfif i lte attributes.howmanyrecords>
-						<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#i#&from=#from#">#i2#</cfoutput></vb:wa> |
+						<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#i#&from=#from#">#i2#</vb:wa></cfoutput> |
 					</cfif>
 				</cfif>
 			</cfloop>
@@ -69,7 +71,7 @@
 				<cfset paginafinale=i+steps>
 				<cfset from1=int(paginafinale/steps)>
 				<cfif paginafinale lte attributes.howmanyrecords>
-					<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#paginafinale#&from=#from1#">>>>></a></cfoutput></vb:wa> 
+					<cfoutput><vb:wa href="#request.appmapping#index.cfm?#attributes.querystring#&start=#paginafinale#&from=#from1#">>>>></a></vb:wa></cfoutput> 
 				</cfif>
 			</cfif>
 			</span>

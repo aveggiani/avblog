@@ -9,8 +9,8 @@
 		<table>
 			<cfoutput query="qryBlogs">
 				<tr>
-					<td><a href="#getPermalink(qryBlogs.date,qryBlogs.name)#">#right(qryBlogs.date,2)# #lsdateformat(createdate(2000,(val(mid(qryBlogs.date,5,2))),1),'mmmm')# #left(qryBlogs.date,4)#</a> #lstimeformat(qryBlogs.time,'HH:mm:ss')#</td>
-					<td><a href="#getPermalink(qryBlogs.date,qryBlogs.name)#">#qryBlogs.name#</a></td>
+					<td><a href="#getPermalink(qryBlogs.date,qryBlogs.menuitem)#">#right(qryBlogs.date,2)# #lsdateformat(createdate(2000,(val(mid(qryBlogs.date,5,2))),1),'mmmm')# #left(qryBlogs.date,4)#</a> #lstimeformat(qryBlogs.time,'HH:mm:ss')#</td>
+					<td><a href="#getPermalink(qryBlogs.date,qryBlogs.menuitem)#">#qryBlogs.name#</a></td>
 				</tr>
 			</cfoutput>
 		</table>

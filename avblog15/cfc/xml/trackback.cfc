@@ -1,12 +1,23 @@
 <cfcomponent>
 
+	<cffunction name="getAllCount" output="false" returntype="numeric">
+		<cfscript>
+			qryVerify = application.fileSystem.getDirectoryxml('#request.appPath#/#request.xmlstoragepath#/trackbacks','name','*');
+		</cfscript>			
+		<cfreturn qryVerify.Recordcount>
+	</cffunction>
+
 	<cffunction name="get" output="false" returntype="array">
 		<cfargument name="id"			required="no"	type="string">
+		<cfargument name="start"		required="no" 	type="string" default="">
+		<cfargument name="steps"		required="no" 	type="string" default="">
 		
 		<cfscript>
 			var strGet		= structnew();
 			var tmpArray	= arraynew(1);
 			var xmltrackback = '';
+			var rstart = 1;
+			var rend = 1;
 		</cfscript>
 		
         <cflock timeout="10" throwontimeout="Yes" name="#arguments.id#" type="EXCLUSIVE">
@@ -16,9 +27,19 @@
 				else
 					filter = "*";
 				qryVerify = application.fileSystem.getDirectoryxml('#request.appPath#/#request.xmlstoragepath#/trackbacks','datelastmodified desc',filter);
+				if (val(arguments.start) is not 0 and val(arguments.steps) is not 0)
+					{
+						rstart = arguments.start;
+						rend = val(arguments.start) + val(arguments.steps) - 1;
+					}
+				else
+					{
+						rstart = 1;
+						rend = qryVerify.recordcount;
+					}
 			</cfscript>
 			<cfif qryVerify.recordcount gt 0>
-				<cfloop query="qryVerify">
+				<cfloop query="qryVerify" startrow="#rstart#" endrow="#rend#" >
 					<cfscript>
 						if (fileexists('#request.appPath#/#request.xmlstoragepath#/trackbacks/#qryVerify.name#'))
 							{
