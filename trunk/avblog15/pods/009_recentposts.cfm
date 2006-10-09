@@ -16,7 +16,7 @@
 						<cfloop query="qryBlogs">
 							<div class="catListElement">
 								<cfif not qryBlogs.published>(#application.language.language.publishedno.xmltext#)</cfif>
-								<a href="#getPermalink(qryBlogs.date,qryBlogs.name)#">#qryBlogs.name#</a>
+								<a href="#getPermalink(qryBlogs.date,qryBlogs.menuitem)#">#qryBlogs.name#</a>
 								<br />
 								(#right(qryBlogs.date,2)# #lsdateformat(createdate(2000,(val(mid(qryBlogs.date,5,2))),1),'mmm')# #left(qryBlogs.date,4)#
 								#qryBlogs.time#)
