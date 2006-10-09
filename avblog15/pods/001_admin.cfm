@@ -29,9 +29,9 @@
 				<cfif isuserinrole('admin') or isuserinrole('blogger')>
 					[ <a href="#request.appmapping#index.cfm?mode=addentry">#application.language.language.addblog.xmltext#</a> ]
 					<br />
-					[ <a href="#request.appmapping#index.cfm?reinit=1">#application.language.language.reset.xmltext#</a> ]
 				</cfif>
 				<cfif isuserinrole('admin')>
+					[ <a href="#request.appmapping#index.cfm?reinit=1">#application.language.language.reset.xmltext#</a> ]
 					<br />
 					[ <vb:wa href="#request.appmapping#index.cfm?mode=checkpermalinks" target="checkpermalinkscontent" modal="checkpermalinks">#application.language.language.checkpermalinks.xmltext#</vb:wa> ]
 					<br />
