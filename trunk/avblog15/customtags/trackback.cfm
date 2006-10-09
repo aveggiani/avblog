@@ -4,13 +4,15 @@
 		<cfinclude template="../include/functions.cfm">
 		<cfparam name="url.start" default="1">
 		<cfparam name="start" default="1">
+		<cfparam name="steps" default="20">
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>
 				<div class="editorBody">
 					<div class="editorTitle"><cfoutput>#application.language.language.trackbacks.xmltext#</cfoutput></div>
 					<cfscript>
-						trackbacks = arrayOfStructuresToQuery(request.trackbacks.get());
+						trackbacks = arrayOfStructuresToQuery(request.trackbacks.get(start=start,steps=steps));
+						howmanytrackbacks = request.trackbacks.getAllCount();
 					</cfscript>
 					<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=alltrackbacks" id="theForm" name="theForm" method="post"> 
 						<input type="button" onclick="checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
@@ -21,9 +23,9 @@
 							<input type="submit" name="deleteTrackbacks" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
 						</cfif>
 						<hr />
-						<div align="right" class="commentText"><cfoutput>#trackbacks.recordcount# #application.language.language.trackbacks.xmltext#</cfoutput></div>
-						<cf_pages style="trackbackText" from="#from#" steps="50" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
-						<cfloop query="trackbacks" startrow="#start#" endrow="#end#">
+						<div align="right" class="commentText"><cfoutput>#howmanytrackbacks# #application.language.language.trackbacks.xmltext#</cfoutput></div>
+						<cf_pages style="trackbackText" from="#from#" steps="#steps#" start="#start#" query="trackbacks" howmanyrecords="#trackbacks.recordcount#" querystring="mode=#url.mode#">
+						<cfloop query="trackbacks">
 							<cfscript>
 								post = request.blog.get(trackbacks.blogid);
 							</cfscript>

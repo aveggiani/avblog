@@ -4,13 +4,15 @@
 	<cfcase value="showall">
 		<cfparam name="url.start" default="1">
 		<cfparam name="start" default="1">
+		<cfparam name="steps" default="10">
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>
 				<div class="editorBody">
 					<div class="editorTitle"><cfoutput>#application.language.language.comments.xmltext#</cfoutput></div>
 					<cfscript>
-						comments = request.blog.getRecentComments(1000000,isuserinrole('admin'));
+						comments = request.blog.getRecentComments(1000000,isuserinrole('admin'),start,steps);
+						howmanycomments = request.blog.getAllCommentsCount();
 					</cfscript>
 					<form action="<cfoutput>#cgi.script_name#</cfoutput>?mode=allcomments" id="theForm" name="theForm" method="post">
 						<input type="button" onclick="javascript: checkAll(document.theForm.id);" name="selectAll" value="<cfoutput>#application.language.language.selectall.xmltext#</cfoutput>" />
@@ -21,9 +23,9 @@
 							<input type="submit" name="deleteComments" value="<cfoutput>#application.language.language.deleteSelected.xmltext#</cfoutput>" />
 						</cfif>
 						<hr />
-						<div align="right" class="commentText"><cfoutput>#comments.recordcount# #application.language.language.comments.xmltext#</cfoutput></div>
-						<cf_pages style="commentText" from="#from#" steps="50" start="#start#" query="comments" howmanyrecords="#comments.recordcount#" querystring="mode=#url.mode#">
-						<cfloop query="comments" startrow="#start#" endrow="#end#">
+						<div align="right" class="commentText"><cfoutput>#howmanycomments# #application.language.language.comments.xmltext#</cfoutput></div>
+						<cf_pages style="commentText" from="#from#" steps="#steps#" start="#start#" query="comments" howmanyrecords="#howmanycomments#" querystring="mode=#url.mode#">
+						<cfloop query="comments">
 							<cfscript>
 								post = request.blog.get(comments.blogid);
 							</cfscript>

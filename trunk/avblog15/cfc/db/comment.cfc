@@ -60,17 +60,40 @@
 		<cfreturn tmpArray>
 	</cffunction>
 
+	<cffunction name="getAllCommentsCount" output="false" returntype="numeric">
+		<cfquery name="qryComments" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
+			select count(*) as howmany from comments order by sdate desc, stime desc
+		</cfquery>
+		<cfreturn qryComments.howmany>
+	</cffunction>
+
 	<cffunction name="getRecent" output="false" returntype="query">
 		<cfargument name="howmany" required="yes" type="numeric">
 		<cfargument name="isAdmin" type="boolean" default="false">
+		<cfargument name="start"		required="no" 	type="string" default="1">
+		<cfargument name="steps"		required="no" 	type="string" default="10">
 		
 		<cfscript>
 			var qryCommentsReturn = '';
+			var rstart = 1;
+			var rend = 1;
 		</cfscript>
 
 		<cfquery name="qryComments" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
 			select * from comments order by sdate desc, stime desc
 		</cfquery>
+		<cfscript>		
+			if (val(arguments.start) is not 0 and val(arguments.steps) is not 0)
+				{
+					rstart = arguments.start;
+					rend = val(arguments.start) + val(arguments.steps) - 1;
+				}
+			else
+				{
+					rstart = 1;
+					rend = qryComments.recordcount;
+				}
+		</cfscript>
 		<cfscript>
 			rowDate = listtoarray(valuelist(qryComments.sdate));
 			queryAddColumn(qryComments,'date',rowDate);
@@ -79,7 +102,7 @@
 			qryCommentsReturn = querynew('id,sdate,stime,blogid,author,email,name,description,emailvisible,private,published,date,time');
 		</cfscript>
 				
-		<cfloop query="qryComments" startrow="1" endrow="#arguments.howmany#">
+		<cfloop query="qryComments" startrow="#rstart#" endrow="#rend#">
 			<cfscript>
 				queryAddRow(qryCommentsReturn,1);
 				querySetCell(qryCommentsReturn,'id',qryComments.id,qryComments.currentrow);
