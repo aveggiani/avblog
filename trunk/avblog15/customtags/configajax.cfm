@@ -1,3 +1,9 @@
+<cfhtmlhead text="
+<script>
+
+</script>	
+">
+
 <cfimport taglib="." prefix="vb">
 <cfdirectory action="LIST" directory="#request.appPath#/skins" name="themes" filter="" sort="name">
 <cfdirectory action="LIST" directory="#request.appPath#/languages" name="languages" filter="*.xml" sort="name">
@@ -300,18 +306,6 @@
 									</div>
 								</vb:wcontentPane>
 								<vb:wcontentPane id="lhtab16" label="RichEditor" executescripts="true">
-									<script language="javascript">
-										<!--
-										function changeAccordion(whichricheditor)
-											{
-												var myAccordionPane = dojo.widget.byId(whichricheditor);
-												dojo.widget.byId('textarea').collapse();
-												dojo.widget.byId('fckeditor').collapse();
-												dojo.widget.byId('tinyMCE').collapse();
-												myAccordionPane.expand();
-											}
-										-->
-									</script>
 									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
@@ -450,17 +444,6 @@
 					</vb:wcontentpane>
 					<vb:wcontentpane id="lhtab7" label="storage" executescripts="true">
 						<div class="editorForm" style="position:relative; text-align:left; padding-top:5px;">
-							<script language="javascript">
-								<!--
-								function changeAccordionStorage(wichstorage)
-									{
-										var myAccordionPane = dojo.widget.byId(wichstorage);
-										dojo.widget.byId('xml').collapse();
-										dojo.widget.byId('db').collapse();
-										myAccordionPane.expand();
-									}
-								-->
-							</script>
 							<cfoutput>
 								<div class="configLabels">
 									<select name="blogstorage" onchange="javascript: changeAccordionStorage(this.options[this.selectedIndex].value);">
