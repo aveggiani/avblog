@@ -186,11 +186,39 @@
 		<cfargument name="id" 			required="no" 	type="string" default="#createuuid()#">
 		
 		<cfscript>
-			arguments.description = replace(arguments.description,'&lt;code&gt;','<div class="code">','ALL');
-			arguments.description = replace(arguments.description,'<code>','<div class="code">','ALL');
-			arguments.description = replace(arguments.description,'&lt;/code&gt;','</div>','ALL');
-			arguments.description = replace(arguments.description,'</code>','</div>','ALL');
-
+			if (arguments.description contains '<code>' or arguments.description contains '&lt;code&gt;')
+				{
+					arguments.description = replace(arguments.description,'&lt;code&gt;','<code>','ALL');
+					arguments.description = replace(arguments.description,'&lt;/code&gt;','</code>','ALL');
+					arguments.description = replace(arguments.description,'&lt;','<','ALL');
+					arguments.description = replace(arguments.description,'&gt;','>','ALL');
+					arguments.description = replace(arguments.description,'&quot;','"','ALL');
+					arguments.description = replace(arguments.description,'&nbsp;&nbsp;&nbsp; ',chr(9),'ALL');
+					arguments.description = replace(arguments.description,'<br />','','ALL');
+					blockCode = '';
+					objTools = createobject('component','tools');
+					do
+						{
+							blockCode = findNoCase("<code>",arguments.description);
+							if (blockCode is not 0)
+								{
+									blockCodeEnd = findNoCase("</code>",arguments.description) + 6;
+									if (len(arguments.description)-blockCodeEnd gt 0 and right(arguments.description,len(arguments.description)-blockCodeEnd) gt 0)
+										textRight = right(arguments.description,len(arguments.description)-blockCodeEnd);
+									else
+										textRight = "";
+									if (blockCode gt 1)
+										textLeft = left(arguments.description,blockCode-1);
+									else
+										textLeft = "";
+									textCode = mid(arguments.description,blockCode,blockCodeEnd);
+									textCode = replace(textCode,'&lt;','<','ALL');
+									textCode = replace(textCode,'&gt;','>','ALL');
+									arguments.description = textLeft & objTools.coloredCode(textCode,'code') & textRight;
+								}
+						}
+					while (blockCode is not 0);	
+				}
 			if (listlen(arguments.time,':') is 2)
 				arguments.time = listappend(arguments.time,'00',':');
 			if (len(listfirst(arguments.time,':')) is 1)
