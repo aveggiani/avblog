@@ -174,6 +174,28 @@
 							else
 								postpublished=false;
 							id = request.blog.saveBlogEntry(postdate,postdate,posttime,'',qryUser.fullname,qryUser.email,structWork.params[4].title,structWork.params[4].title,structWork.params[4].description,'',postpublished,qryEnclosures);
+						</cfscript>
+						<cfif structkeyexists(structWork.params[4],'categories') and isarray(structWork.params[4].categories)>
+							<cfset categories=request.blog.getCategories()>
+							<cfset listCategories = "">
+							<cfloop query="categories">
+								<cfloop index="i" from="1" to="#arraylen(structWork.params[4].categories)#">
+									<cfscript>
+										if (
+												listgetat(categories.name,2,'_') is structWork.params[4].categories[i]
+												or
+												categories.name is structWork.params[4].categories[i]
+											)
+											listCategories=listappend(listCategories,categories.name);
+									</cfscript>
+								</cfloop>
+							</cfloop>
+							<cfscript>
+								if (listCategories is not '')
+									application.objCategoryStorage.saveBlogCategories(listCategories,id,structWork.params[4].title);
+							</cfscript>
+						</cfif>
+						<cfscript>
 							myResponse = arraynew(1);
 							myResponse[1]="$string" & id;
 							result = objXmlrpc.CFML2XMLRPC(myResponse,'response');
