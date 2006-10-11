@@ -117,3 +117,20 @@ function checkAll(field)
 for (i = 0; i < field.length; i++)
 	field[i].checked = true ;
 }
+
+function changeAccordion(whichricheditor)
+	{
+		var myAccordionPane = dojo.widget.byId(whichricheditor);
+		dojo.widget.byId('textarea').collapse();
+		dojo.widget.byId('fckeditor').collapse();
+		dojo.widget.byId('tinyMCE').collapse();
+		myAccordionPane.expand();
+	}
+
+function changeAccordionStorage(wichstorage)
+	{
+		var myAccordionPane = dojo.widget.byId(wichstorage);
+		dojo.widget.byId('xml').collapse();
+		dojo.widget.byId('db').collapse();
+		myAccordionPane.expand();
+	}
