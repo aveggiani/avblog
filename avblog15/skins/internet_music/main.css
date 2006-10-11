@@ -411,7 +411,8 @@ input.editorForm {
 .code
 	{
 		border:1px solid #555555;
-		background-color: #999999;
+		background-color: #ffffff;
+		color: #999999;
 		padding: 5px;
 		margin-right: 5px;
 		font-family:"Courier New", Courier, monospace;
@@ -419,6 +420,16 @@ input.editorForm {
 		overflow: auto;
 		max-height: 400px;
 		width:450px;
+	}
+
+.code a:link
+	{
+		color: #999999;
+	}
+	
+.code a:visited
+	{
+		color: #999999;
 	}
 
 .tagcloud
