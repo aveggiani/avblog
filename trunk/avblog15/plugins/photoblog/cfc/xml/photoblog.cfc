@@ -73,12 +73,12 @@
 				</cfscript>
 			</cfloop>
 	
-			<cfquery name="get" dbtype="query">
+			<cfquery name="qryGet" dbtype="query">
 				select * from qryGet order by imageorder,sdate desc,name
 			</cfquery>
 		</cfif>
 		
-		<cfreturn get>
+		<cfreturn qryGet>
 	</cffunction>
 
 	<cffunction name="getCategory" access="public">
