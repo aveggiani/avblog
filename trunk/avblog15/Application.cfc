@@ -91,8 +91,7 @@
 			<cfsilent>
 
 				<cfscript>
-					if (StructKeyExists(url, 'cache')) request.caching = 'flush';
-	
+
 					request.blog					= createobject("component","cfc.blog");
 					request.links					= createobject("component","cfc.links");
 					request.users					= createobject("component","cfc.users");
@@ -170,13 +169,15 @@
 					</cfif>
 				</cflogin>
 				
-				<!--- caching settings, after login as the logged --->
+				<!--- caching settings --->
 				<cfscript>
 					if (isuserinrole('admin') or isuserinrole('blogger'))
 						request.caching					= 'none';
 					else
 						request.caching					= 'cache';
 					request.cachetimeout				= createtimespan(0,2,0,0);
+
+					if (StructKeyExists(url, 'cache')) request.caching = 'flush';
 				</cfscript>
 				
 			</cfsilent>

@@ -27,12 +27,11 @@
 		
 			<cfinclude template="include/functions.cfm">
 			<cfscript>
-				if (structWork.method is 'blogger.deletePost')
-					qryUser = request.users.authenticate(structWork.params[3],structWork.params[4]);
-				else
+				if (structWork.method is not 'mt.supportedTextFilters')
 					{
-						if (structWork.method is not 'mt.supportedTextFilters')
-							qryUser = request.users.authenticate(structWork.params[2],structWork.params[3]);
+						qryUser = request.users.authenticate(structWork.params[2],structWork.params[3]);
+						if (qryUSer.recordcount is 0 and arraylen(structWork.params) gte 4)
+							qryUser = request.users.authenticate(structWork.params[3],structWork.params[4]);
 					}
 			</cfscript>
 			
@@ -79,6 +78,21 @@
 							request.blog.deleteentry(structWork.params[2]);
 							myResponse = arraynew(1);
 							myResponse[1]="$boolean" & "true";
+							result = objXmlrpc.CFML2XMLRPC(myResponse,'response');
+						</cfscript>
+					</cfcase>
+					<cfcase value="blogger.newPost">
+						<cfscript>
+							qryEnclosures 	= querynew('name,length,type');
+							postdate=dateformat(now(),'dd/mm/yyyy');
+							posttime=timeformat(now(),'HH:mm:ss');
+							if (structWork.params[6] is 'yes')
+								postpublished=true;
+							else
+								postpublished=false;
+							id = request.blog.saveBlogEntry(postdate,postdate,posttime,'',qryUser.fullname,qryUser.email,structWork.params[4].title,structWork.params[4].title,structWork.params[4].description,'',postpublished,qryEnclosures);
+							myResponse = arraynew(1);
+							myResponse[1]="$string" & id;
 							result = objXmlrpc.CFML2XMLRPC(myResponse,'response');
 						</cfscript>
 					</cfcase>
@@ -354,6 +368,7 @@
 							<cfloop index="i" from="1" to="#arraylen(structWork.params[4])#">
 								<cfscript>
 									if (categories.currentrow is structWork.params[4][i].categoryid)
+
 										listCategories=listappend(listCategories,categories.name);
 								</cfscript>
 							</cfloop>
