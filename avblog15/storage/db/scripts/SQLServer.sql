@@ -109,6 +109,11 @@ drop table [dbo].[spamlist]
 GO
 
 
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[enclosures]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+
+drop table [dbo].[enclosures]
+
+GO
 
 CREATE TABLE [dbo].[blogcategories] (
 
@@ -366,7 +371,7 @@ CREATE TABLE [dbo].[spamlist] (
 
 	[item] [nvarchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 
 GO
 
