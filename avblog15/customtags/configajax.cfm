@@ -1,9 +1,3 @@
-<cfhtmlhead text="
-<script>
-
-</script>	
-">
-
 <cfimport taglib="." prefix="vb">
 <cfdirectory action="LIST" directory="#request.appPath#/skins" name="themes" filter="" sort="name">
 <cfdirectory action="LIST" directory="#request.appPath#/languages" name="languages" filter="*.xml" sort="name">

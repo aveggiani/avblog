@@ -111,8 +111,14 @@
 		<cfreturn xmlresult>		
 	</cffunction>
 
+	<cffunction name="getAllCount" output="false" returntype="numeric">
+		<cfreturn application.objtrackbacksStorage.getAllCount()>
+	</cffunction>
+
 	<cffunction name="get" output="false" returntype="array">
 		<cfargument name="id" 			required="no" 	type="string">
+		<cfargument name="start"		required="no" 	type="string" default="">
+		<cfargument name="steps"		required="no" 	type="string" default="">
 		
 		<cfscript>
 			if (isdefined('arguments.id'))
@@ -120,7 +126,7 @@
 			else
 				filter = "*";
 			arraytrackbacks = arraynew(1);
-			arraytrackbacks = application.objtrackbacksStorage.get(filter);
+			arraytrackbacks = application.objtrackbacksStorage.get(filter,arguments.start,arguments.steps);
 		</cfscript>
 		
 		<cfreturn arraytrackbacks>

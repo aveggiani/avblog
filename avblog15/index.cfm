@@ -24,5 +24,3 @@
 		</body>
 	</html>
 </cfoutput>
-
-<cfsetting showdebugoutput="no">
