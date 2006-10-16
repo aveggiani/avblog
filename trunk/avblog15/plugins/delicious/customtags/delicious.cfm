@@ -21,13 +21,13 @@
 				if (arraylen(xmlsearch(recentPosts,'/error')) is 0)
 					{
 						mylinks = xmlsearch(recentPosts,'//post');
-						if (isarray('mylinks') and arraylen(mylinks) gt 0 and application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
+						if (isarray(mylinks) and arraylen(mylinks) gt 0 and application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext gt arraylen(mylinks))
 							limit = arraylen(mylinks);
 						else
 							limit = application.pluginsconfiguration.delicious.plugin.linksnumber.xmltext;
 					}
 			</cfscript>
-			<cfif isdefined('mylinks')>
+			<cfif isdefined('mylinks') and arraylen(mylinks) gt 0>
 				<vb:cache action="#request.caching#" name="side_delicious" timeout="#request.cachetimeout#">	
 					<vb:pod>
 						<cfoutput>
