@@ -464,11 +464,11 @@
 								<thead>
 									<tr id="row_0">
 										<th align="left"></th>
-										<cfif HTTP_USER_AGENT contains 'MSIE'>
+										<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 											<th onclick="appendRow(0);" colspan="2" align="right">
 												<img src="images/add.gif" alt="<cfoutput>#application.language.language.insertRow.xmltext#</cfoutput>" />
 											</th>
-										</cfif>
+										<!--- </cfif> --->
 									</tr>
 								</thead>
 								<tbody>
@@ -480,17 +480,17 @@
 													<br />
 													#qryEnclosures.name#(#qryEnclosures.length# - #qryEnclosures.type#)
 												</td>
-												<cfif HTTP_USER_AGENT contains 'MSIE'>
+												<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 													<td onclick="appendRow(#qryEnclosures.currentrow#);" width="16" align="center">
 														<img src="images/add.gif" alt="Insert one row below this row"/>
 													</td>
-												</cfif>
+												<!--- </cfif> --->
 												<td onclick="deleteRow(#qryEnclosures.currentrow#);" width="16" align="center">
 													<img src="images/del.gif" alt="Delete this row"/>
 												</td>
 											</tr>
 										</cfloop>
-										<cfif HTTP_USER_AGENT does not contain 'MSIE'>
+										<!--- <cfif HTTP_USER_AGENT does not contain 'MSIE'>
 											<cfscript>
 												howmanyEnclosures=qryEnclosures.recordcount;
 												howmanyEmptyEnclosures=howmanyEnclosures+4;
@@ -500,14 +500,14 @@
 													<td><input type="file" name="enclosure_#i#" size="50" /></td>
 												</tr>
 											</cfloop>
-										</cfif>
+										</cfif> --->
 										<cfloop query="qryEnclosures">
 											<input type="hidden" name="enclosurehidden_#qryEnclosures.currentrow#" value="#qryEnclosures.name#,#qryEnclosures.length#,#qryEnclosures.type#" />
 										</cfloop>
 									 <cfelse>
 										<tr id="row_1">
 											<td><input type="file" name="enclosure_1" size="50" /></td>
-											<cfif HTTP_USER_AGENT contains 'MSIE'>
+											<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 												<td onclick="appendRow(1);" width="16" align="center">
 													<img src="images/add.gif" alt="Insert one row below this row"/>
 												</td>
@@ -516,40 +516,40 @@
 													<img src="images/del.gif" alt="Delete this row"/>
 													--->
 												</td>
-											</cfif>
+											<!--- </cfif> --->
 										</tr>
 										<tr id="row_2">
 											<td><input type="file" name="enclosure_2" size="50" /></td>
-											<cfif HTTP_USER_AGENT contains 'MSIE'>
+											<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 												<td onclick="appendRow(2);" width="16" align="center">
 													<img src="images/add.gif" alt="Insert one row below this row"/>
 												</td>
 												<td onclick="deleteRow(2);" width="16" align="center">
 													<img src="images/del.gif" alt="Delete this row"/>
 												</td>
-											</cfif>
+											<!--- </cfif> --->
 										</tr>
 										<tr id="row_3">
 											<td><input type="file" name="enclosure_3" size="50" /></td>
-											<cfif HTTP_USER_AGENT contains 'MSIE'>
+											<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 												<td onclick="appendRow(3);" width="16" align="center">
 													<img src="images/add.gif" alt="Insert one row below this row"/>
 												</td>
 												<td onclick="deleteRow(3);" width="16" align="center">
 													<img src="images/del.gif" alt="Delete this row"/>
 												</td>
-											</cfif>
+											<!--- </cfif> --->
 										</tr>
 										<tr id="row_4">
 											<td><input type="file" name="enclosure_4" size="50" /></td>
-											<cfif HTTP_USER_AGENT contains 'MSIE'>
+											<!--- <cfif HTTP_USER_AGENT contains 'MSIE'> --->
 												<td onclick="appendRow(4);" width="16" align="center">
 													<img src="images/add.gif" alt="Insert one row below this row"/>
 												</td>
 												<td onclick="deleteRow(4);" width="16" align="center">
 													<img src="images/del.gif" alt="Delete this row"/>
 												</td>
-											</cfif>
+											<!--- </cfif> --->
 										</tr>
 									</cfif>
 								</tbody>

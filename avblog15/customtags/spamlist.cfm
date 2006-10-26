@@ -8,7 +8,7 @@
 					<cfif useAjax()>
 						<div dojoType="ContentPane" layoutAlign="client" id="MainPanePing" executeScripts="true">
 					<cfelse>
-						<cfhtmlhead text="<script src=""<cfoutput>#request.appmapping#</cfoutput>js/dynamic_spamlist.js""></script>">
+						<cfhtmlhead text="<script src=""#request.appmapping#js/dynamic_table.js""></script>">
 					</cfif>
 					<cfscript>
 						qrySpamList = request.spam.getTrackBackSpamList();
