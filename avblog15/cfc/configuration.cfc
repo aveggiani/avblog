@@ -565,7 +565,7 @@
 		<cfscript>
 			configuration = "<cfsilent>#tostring(configuration)#</cfsilent>";
 			initSchedule(application.configuration.config.options.feed.email.active.xmltext);
-			initFckEditorLanguage();
+			initFckEditor();
 
 			if (application.configuration.config.options.blogstorage.storage.xmltext is 'xml')
 				{
@@ -609,11 +609,17 @@ serverport=5222
 
 	</cffunction>
 
-	<cffunction name="initFckEditorLanguage" output="false" returnType="void">
+	<cffunction name="initFckEditor" output="false" returnType="void">
 
 <cfsavecontent variable="myfckconfig"><cfoutput>
 FCKConfig.AutoDetectLanguage = false ;
 FCKConfig.DefaultLanguage = '#application.configuration.config.internationalization.language.xmltext#' ;
+FCKConfig.LinkBrowserURL	= "#request.appmapping#external/cffm/cffm.cfm";
+FCKConfig.ImageBrowserURL	= "#request.appmapping#external/cffm/cffm.cfm";
+FCKConfig.FlashBrowserURL	= "#request.appmapping#external/cffm/cffm.cfm";
+FCKConfig.LinkUploadURL		= "#request.appmapping#external/cffm/upload.cfm";
+FCKConfig.ImageUploadURL	= "#request.appmapping#external/cffm/upload.cfm";
+FCKConfig.FlashUploadURL	= "#request.appmapping#external/cffm/upload.cfm";
 </cfoutput></cfsavecontent>		
 		<cflock type="exclusive" name="config" timeout="10">
 			<cffile charset="#request.charset#" action="write" file="#request.appPath#/user/fckeditor/myfckconfig.js" output="#myfckconfig#" nameconflict="overwrite">
