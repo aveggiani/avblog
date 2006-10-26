@@ -1,28 +1,33 @@
 #main
 {
-	padding: 5px;
-	width: 768px;
+	padding: 0px;
+	margin-right: 0px;
+	width: 100%;
 }
 
 #entries
 {
-	width:500px;
-	max-width:500px;
-	padding-right: 5px;
-	padding-left: 5px;
+	margin-right: -1px;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-right: 1px solid #ccc;
 	float:left;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #003344;
+	text-decoration: none;
+	text-align:left;
 }
 
 #side
 {
-	width:250px;
+	background-color: #f0f0f0;
+	width: 200px;
+	border-left: 1px solid #ccc;
 	float:left;
 	color: #003344;
 	text-align:left;
-	padding-right:0px;
-	padding-left:0px;
+	padding-left:5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	margin-right:0px;
@@ -30,13 +35,14 @@
 
 .sidelogo
 	{
+		padding: 4px;
+		width:200px;
 		text-align:center;
-		padding: 5px;
 	}
 	
 #header 
 {
-	background-color: #ffffff;
+	background-color: #00a3dd;
 	height:70px;
 	text-align:left;
 	padding-top: 5px;
@@ -44,146 +50,130 @@
 	padding-right:10px;
 	padding-bottom:5px;
 	margin-right:0px;
+	border-top: 0px solid #dddddd;
+	border-bottom: 0px solid #999999;
+	background-image:url(images/bg_top3.jpg);
 }
 
 #headerlogo
 {
 	height:70px;
-	background-color: #ffffff;
 	float:left;
 }
 
 #headertext
 {
-
-	text-align: right;
-	background: #FFF url(images/dot.gif) repeat-x bottom;
-	color: #444;
 	text-align:right; 
 	padding-right:10px;
-	padding-bottom:2px;
 	margin-top:25px;
-	height:25px;
-	font-size: 1.3em;
-	color: #C85E35;
+	height:45px;
+	font: bold 16px;  
+	color: #FFFFFF
 }
-
 #headertext a
 {
-	color: #C85E35;
+	color: #FFFFFF;
 }
 
 
-#footer { 
-	clear: both; 
-	text-align: center;
-	line-height: 1.8em;
-	color: #808080;
-	background: #FFF url(images/dot.gif) repeat-x;
-	padding: 8px 0;
-}
+#footer 
+{
 
-#footer a {
-	color: #C3593C;
-	background: inherit;
+	background-color: #00a3dd;
+	font-size: 9pt;	
+	padding: 15px;
+	color: #003344;
+	border-top: 1px solid #ccc;
+	border-left: 0px solid #dddddd;
+	border-bottom: 0px solid #999999;
+	border-right: 0px solid #999999;
+	clear:both;
 }
 
 
 body { 
-	background-color: White; 
+	background-color: #00a3dd; 
 	margin: 0px; 
 	padding:0px; 
 	cursor: default;
 	font: 0.90em Verdana, Arial, Helvetica, sans-serif; 
-	line-height: 1.5em;
-	color: #454545; 
 }
 
-.logoText { font: bold 1em;  color: #C5C5C5; }
+.logoText { font: bold 16px; color: #C5C5C5; }
 
 input, textarea, select {
-	font-size: 0.9em;
+	font-size: 8pt;
 	padding: 2px;
-	color: #000000;
 }
 
-a:link
+a
 {
-	color: #ffffff;
-	text-decoration: underline;
+	color: #00639d;
+	text-decoration: none;
 }
 a:hover {
-	color: #666666;
-	text-decoration: underline;
+	color: #c00;
+	text-decoration: none;
 }
-
-a:visited
-	{
-		color: #ffffff;
-		text-decoration: underline;
-	}
-
-a:active
-	{
-		color: #ffffff;
-		text-decoration: underline;
-	}
 
 hr {
-	color: #FFFFFF;
-	background-color: #FFFFFF;
-	height: 0px;
-	width: 100%;
-	border-bottom: dotted 1px;
-}
+color: #FFFFFF;
+  background-color: #FFFFFF;
+  height: 1px;
+  width: 100%;
+  border: outset #5F7C9A 1px;}
+
 
 .login {
   top : 0px;
   padding : 20px;
   text-align: center;
+  font-size: 7.5pt;
 }
 
 .catList {
+	width:190px;
 	overflow:hidden;
-	padding-left: 15px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
+	font-family:Tahoma, Verdana;
+	font-size:8pm;
 }
 .catListTitle {
 	padding-bottom: 10px;
-	font-size: 1.2em;
+	font-family: "Trebuchet MS", Verdana;
+	font-size: 12pt;
+	color: #666;
 	font-weight: bold;
-	color: #FEE1D5;
+	color: #4592CA;
 }
-
-.catListTitle a {
-	color: #FEE1D5;
-}
-
 .catListElement {
-	color: #FEE1D5;
+	color: #666;
 	padding-left: 5px;
 }
 
 .Links {
-	overflow:hidden;
-	padding-left: 15px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
 
 }
 .LinksTitle {
 	padding-bottom: 10px;
-	font-size: 1.2em;
+	font-size: 9pt;
+	color: #666;
 	font-weight: bold;
+	color: #4592CA;
 }
 .LinksElement {
 	padding-left: 5px;
-	color: #FEE1D5;
+	padding-bottom: 10px;
+	font-size: 8pt;
 }
 
 select.monthArchive {
-	font-size: 0.8em;
+	font-size: 8pt;
 	color: #003344;
  	width:180px;
 	background-color: #FFF; 
@@ -191,9 +181,10 @@ select.monthArchive {
 }
 
 .functionMenu {
-	width:245px;
-	padding-left:15px;
-	text-align:left;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
+	color: #333;
 }
 
 .blogNotPublished {
@@ -206,7 +197,9 @@ select.monthArchive {
 	margin-left: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 10px;
+	padding-left:0px;
 	overflow-x: hidden;
+
 }
 
 .blogBodyPostDate {
@@ -218,40 +211,51 @@ select.monthArchive {
 }
 
 .blogDate {
-	text-align:left;
-	font-size: 1.5em;	
-	font-weight:bold;
-	padding-left: 5px;
-	padding-top: 0px;
-	padding-bottom: 10px;
-	color: #000000;
+	background-color: #ccc;
+	font-family: Tahoma, Verdana;
+	font-size: 8pt;	
+	padding: 5px;
+	color: #003344;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-bottom: 1px solid #999999;
+	background-image:url(images/bg_02.jpg);
 }
 
 .blogTitle {
-	font-size: 1.5em;
-	font-weight: bold;
-	padding-top: 5px;
+	font-size: 16pt;
+	font-family:"Trebuchet MS", Verdana;
+	font-weight:bold;
+	color:  #c00;;
+	padding-top: 15px;
 	padding-bottom: 5px;
-	padding-left: 7px;
-	letter-spacing: -0.05em;
-}
-.blogText {
 	padding-left: 15px;
-	padding-right: 5px;
-	color: #ffffff;
+	letter-spacing: -0em;
+}
+
+.blogText {
+	font-size: 9pt;
+	line-height:12pt;
+	color: #666;
+	padding-left: 30px;
+	padding-right: 10px;
+	padding-top: 10px;
 }
 .blogMore { 
+	font-size: 8pt;	
+	color: #666;
 	text-align: right;
 	padding-top: 20px;
 	padding-bottom: 10px;
 	padding-right: 5px;
-	color:  #ffffff;
 }
 
-.blogAuthor { 
+.blogAuthor {
+	font-family:Tahoma, Verdana;
+	font-size: 8pt;	
+	color: #666;
 	text-align: right;
 	padding-right: 5px;
-	color:  #ffffff;
 }
 
 .blogAuthor a {
@@ -259,26 +263,31 @@ select.monthArchive {
 }
 
 .blogCommands { 
-	border-top: 1px dashed #ccc;
+	border-bottom: 1px solid #ccc;
 	padding-top: 4px;
-	font-size: 1em;	
-	color:  #ffffff;
+	font-family:Tahoma, Verdana;
+	font-size: 8pt;	
+	color: #666;
 	text-align: right;
 	padding-right: 5px;
+	background-color:#f0f0f0;
+	background-image:url(images/bg_03.jpg);
+	background-repeat:repeat-x;
 }
 
 .blogCommands a {
+	color: #333333;
 }
 
 .blogAdmin {
-	font-size: 1.1em;
-	font-weight: bold;
+	font-size: 8pt;
+	color: #666;
 	padding-left: 5px;
 	padding-bottom: 5px;
 }
 
 .statisticsMenu {
-	font-size: 0,9em;
+	font-size: 8pt;
 	color: #666;
 	padding-left: 5px;
 	padding-bottom: 5px;
@@ -289,15 +298,15 @@ select.monthArchive {
 
 .trackbackPingBox {
 	border: 1px solid red;
-	font-size: 0,9em;
+	font-size: 12pt;	
 	color: #666;
 	padding: 5px;
 }
 .trackbackPing {
-	font-size: 0,9em;
+	font-size: 8pt;	
 	color: #666;
 	padding: 5px;
-	border-bottom: 1px dashed;
+	border-bottom: 1px solid;
 }
 .commentBodyPrivate {
 	border: 1px solid red;
@@ -305,26 +314,30 @@ select.monthArchive {
 	margin-left: 20px;
 	padding: 5px;
 	overflow-x: hidden;
-	color: #aaaaaa;
+	color: #666;
 }
 .commentBody {
 	margin-top: 5px;
 	margin-left: 20px;
 	padding: 5px;
 	overflow-x: hidden;
+	color: #666;
 }
 .commentDate {
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1px solid #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-size: 0,9em;
+	font-size: 8pt;
 	padding: 5px;
+	color: #003344;
 }
 .commentText {
-	font-size: 0,9em;
+	font-size: 8pt;
+	color: #666;
 }
 .commentAuthor {
-	font-size: 0,9em;
+	font-size: 8pt;
+	color: #666;
 	text-align: left;
 	font-weight: bold;
 }
@@ -337,57 +350,56 @@ select.monthArchive {
 	color: #666;
 }
 .trackbackDate {
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1px solid #ccc;
 	margin-top: 5px;
 	text-align: right;
-	font-size: 0,9em;
+	font-size: 8pt;
 	padding: 5px;
 	color: #003344;
 }
 .trackbackText {
-	font-size: 0,9em;
+	font-size: 8pt;
 	color: #666;
 }
 
 .editorBody {
-	text-align:left;
-	margin-left: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding: 5px;
-	width: 95%;
+	margin-top: 0px;
+	background-color: #eee;
+	padding: 0px;
+	width: 100%;
 	overflow-x: hidden;
+	margin-bottom: 15px;
 }
 .editorTitle {
-	text-align:left;
-	font-size: 1,1em;
-	padding: 5px;
-	background-color: #999999;
 	font-weight: bold;
+	background-color: #A7BCD6;
+	padding: 5px;
+	color: #003344;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 .editorList {
-	text-align:left;
-	font-size: 0,9em;
+	font-size: 10pt;
+	color: #666;
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 10px;	
-	border-bottom: 1px dashed #FBC3AE;
+	border-bottom: 1px solid #FBC3AE;
 	margin-bottom: 10px;	
 }
-
 .editorForm {
-	text-align:left;
-	font-size: 0,8em;
+	font-size: 8pt;
+	padding-left: 5px;
+	color: #666;
 }
-
 input.editorForm {
-	font-size: 0,9em;
+	font-size: 8pt;	
 	border: 1px solid #666;
 	background-color: White;
 }
 
 .text {
-	font-size: 0,9em;
+	font-size: 10pt;	
 	color: #666;
 	padding-left: 15px;
 	padding-right: 5px;
@@ -410,30 +422,30 @@ input.editorForm {
 	
 .code
 	{
-		border:1px solid #555555;
-		background-color: #999999;
-		padding: 5px;
-		margin-right: 5px;
+		border:1px solid #ccc;
+		background-color: #f0f5f9;
+		padding: 6px;
 		font-family:"Courier New", Courier, monospace;
 		font-size:12px;
 		overflow: auto;
-		max-height: 400px;
-		width:450px;
+		max-height: 200px;
+		width:510px;
 	}
 
 .tagcloud
 	{
-		padding-left: 15px;
-		padding-right: 15px;
-		padding-top: 5px;
-		padding-bottom: 5px;
+		width: 180px;
+		padding: 4px;
+		border:1px solid #888888;
+		background-color: #cccccc;
+		margin-left: 2px;
 	}
 	
-.smallestTag { font-size: 0.7em; }
-.smallTag { font-size: 0.9em; }
-.mediumTag { font-size: 1.1em; }
-.largeTag { font-size: 1.3em; }
-.largestTag { font-size: 1.5em; }
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
 
 .enclosures {
 
@@ -452,14 +464,24 @@ input.editorForm {
 }
 
 .blogSocial { 
-	font-size: 0.9em;	
-	color: #ffffff;
+	font-family: Tahoma, Verdana;
+	font-size: 7pt;	
+	background-color: #fff;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: #333;
 	text-align: left;
+	padding: 5px;
 	margin: 10px;
+	width: 60%;
 }
 
 .blogCategories { 
-	font-size: 1.1em;	
+	font-variant: small-caps; 
+	font-size: 8pt;	
+	color: #333;
 	text-align: left;
 	padding-left: 5px;
 	padding-top:5px;
@@ -467,98 +489,53 @@ input.editorForm {
 }
 
 .blogCategories a {
+	color: #D0420A;
 }
 
 .pod_bottom {
-	width: 245px;
-	background: #C85E35 url(images/rb.gif) no-repeat bottom;
-	padding: 0px;	
+	border-bottom: 1px dotted black;
 	margin-bottom: 5px;
-	height: 7px;
 }
 
 .pod {
-	font-size: 0.9em;
-	width: 245px;
-	background: #C85E35;
-	color: #FEE1D5;
-	padding: 0px;	
-	margin: 0px;
 }
 
 .pod a {
-	color: #FEE1D5;
-	text-decoration:underline;
 }
 
 .pod_top {
-	width: 245px;
-	background: #C85E35 url(images/rt.gif) no-repeat;
-	height: 7px;
-	padding: 0px;	
-	margin: 0px;
 }
 		
 .content_bottom {
-	width: 490px;
-	background: #6E6E6E url(images/lb.gif) no-repeat bottom;
-	padding: 0px;	
-	margin-left: 5px;
-	margin-bottom: 5px;
-	height: 7px;
 }
 .content {
-	font-size: 0.9em;
-	width: 490px;
-	background: #6E6E6E;
-	color: #FEE1D5;
-	padding: 0px;	
-	margin: 0px;
-	margin-left: 5px;
-	text-align:left;
+	background-color:#fff;
+	border-left: 0px solid #D8DDDD;
+	border-top: 0px solid #D8DDDD;
+	border-bottom: 0px solid #D8DDDD;
+	margin-bottom: 0px;
 }
 
 .content_inner {
-	padding: 2px;	
+	padding: 0px;
 }
 
 .content a {
-	color: #FFFCD1;
-	text-decoration:underline;
 }
 
 .content_top {
-	width: 490px;
-	background: #6E6E6E url(images/lt.gif) no-repeat;
-	height: 7px;
-	padding: 0px;	
-	margin: 0px;
-	margin-left: 5px;
-	color: #ffffff;
-	font-size: 1.1em;
 }
 
 .adminMenu {
-	padding-left: 15px;
+	font-size: 9pt;
+	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	text-align:left;
 }
 
 #headerBottom {
-	font-size:0.8em;
-	clear: both;
-	line-height: 16px;
-	margin: 3px 0 10px 0;
-	padding: 5px;
-	background: #f4f4f4;
-	color: #808080;
-	border: 1px solid #ccc;
-	text-align:left;
-}
-
-#headerBottom a {
-	color: #808080;
+	border-bottom: 0px solid #ccc;
 }
 
 .littleIcon {
@@ -582,8 +559,7 @@ input.editorForm {
 .editorFormPost {
 	text-align:left;
 	font-size: 0,8em;
-	border-left: 1px solid #999999;
-	border-right: 1px solid #999999;
-	border-bottom: 1px solid #999999;
+	border-left: 1px solid #A7BCD6;
+	border-bottom: 1px solid #A7BCD6;
 	padding: 5px;
 }
