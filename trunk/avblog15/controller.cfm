@@ -145,8 +145,8 @@
 				<cfscript>
 					application.configuration 			= application.configurationCFC.loadconfiguration();
 					application.pluginsconfiguration	= application.configurationCFC.loadpluginsconfiguration(application.plugins);
+					application.language				= application.configurationCFC.loadlanguage();
 				</cfscript>
-				<cflocation url="#request.appMapping#index.cfm?mode=config" addtoken="no">
 			</cfif>
 		</cfcase>
 		<cfcase value="deleteComment">
