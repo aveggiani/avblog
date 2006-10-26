@@ -8,7 +8,7 @@
 	<div class="editorBody">
 		<div class="editorTitle"><cfoutput>#application.language.language.titleconfig.xmltext#</cfoutput></div>
 		<div class="editorForm" style="position:relative; text-align:center; padding-top:5px;">
-			<cfform action="#cgi.script_name#?mode=config">
+			<cfform action="#request.appmapping#index.cfm?mode=config">
 				<vb:wtab id="lhtabs" style="width: 98%; height: 600px;" selectedTab="tab1">
 					<vb:wcontentpane id="lhtab1" label="Headers">
 						<div class="editorForm" style="position:relative; text-align:left; padding:10px;">

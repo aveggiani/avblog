@@ -9,7 +9,7 @@
 					<cfif useAjax()>
 						<div dojoType="ContentPane" layoutAlign="client" id="MainPanePing" executeScripts="true">
 					<cfelse>
-						<cfhtmlhead text="<script src=""js/dynamic_table.js""></script>">
+						<cfhtmlhead text="<script src=""#request.appmapping#js/dynamic_table.js""></script>">
 					</cfif>
 					<cfscript>
 						qryGetPings = request.ping.getPingList();
