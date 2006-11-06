@@ -218,7 +218,7 @@
 		</cfscript>
 		
 		<cfquery name="qryDayFiles" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-			select id,sdate,stime,title as name,published from posts
+			select id,sdate,stime,title as name,menuitem,published from posts
 				<cfif not arguments.isAdmin>
 					where
 						(
@@ -242,7 +242,7 @@
 			queryAddColumn(qryDayFiles,'date',rowDate);
 			rowTime = listtoarray(valuelist(qryDayFiles.stime));
 			queryAddColumn(qryDayFiles,'time',rowTime);
-			qryDayReturn = querynew('id,sdate,stime,name,published,date,time');
+			qryDayReturn = querynew('id,sdate,stime,name,menuitem,published,date,time');
 		</cfscript>
 		
 		<cfloop query="qryDayFiles" startrow="1" endrow="#howmanyPosts#">
@@ -252,6 +252,7 @@
 				querySetCell(qryDayReturn,'sdate',qryDayFiles.sdate,qryDayFiles.currentrow);
 				querySetCell(qryDayReturn,'stime',qryDayFiles.stime,qryDayFiles.currentrow);
 				querySetCell(qryDayReturn,'name',qryDayFiles.name,qryDayFiles.currentrow);
+				querySetCell(qryDayReturn,'name',qryDayFiles.menuitem,qryDayFiles.currentrow);
 				querySetCell(qryDayReturn,'published',qryDayFiles.published,qryDayFiles.currentrow);
 				querySetCell(qryDayReturn,'date',qryDayFiles.date,qryDayFiles.currentrow);
 				querySetCell(qryDayReturn,'time',qryDayFiles.time,qryDayFiles.currentrow);

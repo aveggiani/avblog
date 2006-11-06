@@ -60,6 +60,7 @@
 			</cfscript>
 			<cfhtmlhead text="<meta name=""DC.title"" content=""#arrayShow[1].title#"" />">
 			<cfhtmlhead text="<title>#arrayShow[1].title#</title>">
+			<cfhtmlhead text="<link rel=""microsummary"" href=""#request.appmapping#microsummary.cfm?id=#attributes.id#"">">
 		</cfif>
 		
 		<cfloop index="i" from="1" to="#arraylen(arrayShow)#">
@@ -574,6 +575,10 @@
 											<cftry>
 												<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
 												<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
+												<cfif arraylen(message) is 0>
+													<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/')>
+													<cfset message[1] = message[2]>
+												</cfif>
 												<div class="trackbackPing">
 													<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
 													<br />

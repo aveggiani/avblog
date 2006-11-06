@@ -1,10 +1,11 @@
 #main
 {
 	padding: 0px;
-	margin-right: 0px;
-	margin-left: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
 	margin-bottom: 150px;	
 	width: 100%;
+	background-color: #f0f5f9;
 }
 
 #entries
@@ -24,13 +25,12 @@
 #side
 {
 	background-color: #f0f5f9;
-	width: 200px;
 	border-left: 1px solid #ccc;
 	float:left;
 	color: #003344;
 	text-align:left;
-	padding-left:0px;
-	padding-top: 0px;
+	padding-left:10px;
+	padding-top: 10px;
 	padding-bottom: 0px;
 	margin-right:0px;
 }

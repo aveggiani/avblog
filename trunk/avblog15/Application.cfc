@@ -4,7 +4,8 @@
 		this.name 							= "AVBlog154_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
 		this.applicationTimeout 			= createTimeSpan(0,2,0,0);
 		this.sessionManagement 				= true;
-		this.sessionTimeout 				= createTimeSpan(0,0,20,0);
+		this.sessionTimeout 				= createTimeSpan(0,0,40,0);
+		this.loginstorage					= "session";
 	</cfscript>
 
 	<cffunction name="onApplicationStart" returnType="boolean" output="false">
@@ -359,6 +360,8 @@
 			request.appMapping				 	= initRequestappMapping();
 			request.appPath					 	= initRequestappPath(request.appMapping);
 			request.cfcMapping					= replace(request.appMapping,'/','.','ALL');
+			if (request.cfcMapping is '.')
+				request.cfcMapping = "";
 			if (left(request.cfcMapping,1) is '.' and len(request.cfcMapping) gt 1)
 				request.cfcMapping = right(request.cfcMapping,decrementvalue(len(request.cfcMapping)));
 		</cfscript>

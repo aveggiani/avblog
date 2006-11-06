@@ -11,7 +11,7 @@ To install AVBlog unzip the file you download directly in the folder you want to
 	and then you can start the blog. At first the blog is configured to work using XML, so you have 
 	to log in (see later on how to do) and to change the storage system in the configuration settings.
 
-- 	To log into the administration section you simply had to add an url parameter, admin=1; so 
+- 	To log into the administration section you simply had to add an url parameter, mode=admin; so 
 	if you installed your blog in the yourblog folder under the yoursite domain you should type:
 	http://yoursite/yourblog/index.cfm?mode=admin
 	

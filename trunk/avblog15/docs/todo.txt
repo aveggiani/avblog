@@ -1,9 +1,0 @@
-- cocomment support
-- LiveClipboard: http://spaces.msn.com/editorial/rayozzie/demo/liveclip/liveclipsample/techPreview.html
-- EasyUtil http://easyutil.com/rec_api_ref.html
-- multiuser
-- aggregator
-- atom support
-- surevy plugin
-- forum plugin
-- MSN e AOL integration
