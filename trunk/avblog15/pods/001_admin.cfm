@@ -9,7 +9,7 @@
 				<cfif isuserinrole('admin') or isuserinrole('blogger')>
 					<span class="catListTitle">#application.language.language.greeting.xmltext# #listgetat(GetAuthUser(),1)#</span>
 					<br />
-					<span class="catListTitle">Blog Manager</span>
+					<span class="catListTitle">#application.language.language.blogmanager.xmltext#</span>
 					<br />
 				</cfif>
 				<cfif isuserinrole('admin')>
@@ -68,7 +68,7 @@
 				</cfif>
 				<br />
 				<br />
-				[ <a href="index.cfm?logout=1">Logout</a> ]
+				[ <a href="index.cfm?logout=1">#application.language.language.logout.xmltext#</a> ]
 			</div>		
 		</cfoutput>
 	</vb:pod>
