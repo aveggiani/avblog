@@ -62,7 +62,7 @@
 
 	<cffunction name="getAllCommentsCount" output="false" returntype="numeric">
 		<cfquery name="qryComments" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-			select count(*) as howmany from comments order by sdate desc, stime desc
+			select count(*) as howmany from comments
 		</cfquery>
 		<cfreturn qryComments.howmany>
 	</cffunction>

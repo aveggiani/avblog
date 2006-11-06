@@ -9,10 +9,10 @@
 
 #entries
 {
-	margin-right: -1px;
+	width: 410px;
+	margin-right: 0px;
 	padding-right: 0px;
-	padding-left: 5px;
-	border-right: 1px solid #003344;
+	margin-left: 5px;
 	float:left;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -23,27 +23,24 @@
 
 #side
 {
-	width: 200px;
-	border-left: 1px solid #003344;
-	float:left;
-	color: #003344;
-	text-align:left;
-	padding-left:5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-right:0px;
+	color: #808080;
+	width: 134px;
+	background: url(images/menutop.gif) no-repeat top left;
+	float: right;
+	padding: 10px;
+	border-right: 4px solid #FFF;
 }
 
 .sidelogo
 	{
 		padding: 4px;
-		width:200px;
+		width:120px;
 		text-align:center;
 	}
 	
 #header 
 {
-	background-color: #003344;
+	background: #000 url("images/header.gif") no-repeat;
 	height:70px;
 	text-align:left;
 	padding-top: 5px;
@@ -51,20 +48,31 @@
 	padding-right:10px;
 	padding-bottom:5px;
 	margin-right:0px;
-	border-top: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
+}
+
+#headertop
+{
+}
+
+#headerbottom
+{
+	background: #fff url("images/horizontal.gif") no-repeat;
+	height: 40px;
+	padding: 6px;
+	padding-left: 10px;
+	color: #ffffff;
+	padding-botto: 0px;
+	margin-bottom:0px;
 }
 
 #headerlogo
 {
 	height:70px;
-	background-color: #003344;
 	float:left;
 }
 
 #headertext
 {
-	background-color: #003344;
 	text-align:right; 
 	padding-right:10px;
 	margin-top:25px;
@@ -77,25 +85,35 @@
 	color: #FFFFFF;
 }
 
+#footertop
+{
+}
 
 #footer 
 {
-
-	background-color: #A7BCD6;
-	font-size: 9pt;	
-	padding: 5px;
+	width: 400px;
+	color: #ccc;
+	background: #F9F9F9;
+	margin-right: 0px;
+	margin-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	color: #003344;
-	border-top: 1px solid #003344;
-	border-left: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
-	border-right: 1px solid #999999;
-	clear:both;
+	text-decoration: none;
+	text-align:left;
+	height: 20px;
+	padding: 4px;
+	border: 1px solid #E4E4E4;
+	clear: both;
 }
 
+#footerbottom
+{
+}
 
 body {
 	background: #337FC6 url("images/bg.gif") top center repeat-y;
-	font: normal 8pt/13pt verdana, arial,sans-serif;
+	font: normal 8pt/11pt verdana,arial,sans-serif;
 	color: #808080;
 }
 
@@ -132,9 +150,10 @@ color: #FFFFFF;
 }
 
 .catList {
-	width:190px;
+	width:134px;
+	margin:0px;
+	padding:0px;
 	overflow:hidden;
-	padding-left: 5px;
 	padding-bottom: 10px;
 	font-size: 8pt;
 
@@ -207,13 +226,11 @@ select.monthArchive {
 }
 
 .blogDate {
-	background-color: #A7BCD6;
-	font-size: 9pt;	
-	padding: 5px;
-	color: #003344;
-	border-top: 1px solid #dddddd;
-	border-left: 1px solid #dddddd;
-	border-bottom: 1px solid #999999;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #76A7DC;
+	margin-bottom: 5px;
+	padding-left: 5px;
 }
 
 .blogTitle {
@@ -378,7 +395,7 @@ select.monthArchive {
 	color: #666;
 }
 input.editorForm {
-	font-size: 8pt;	
+	font-size: 9px;	
 	border: 1px solid #666;
 	background-color: White;
 }
@@ -419,11 +436,12 @@ input.editorForm {
 
 .tagcloud
 	{
-		width: 180px;
+		width: 120px;
 		padding: 4px;
 		border:1px solid #888888;
-		background-color: #cccccc;
+		background-color: #ffffff;
 		margin-left: 2px;
+		margin-bottom: 5px;
 	}
 	
 .smallestTag { font-size: xx-small; }
@@ -461,7 +479,7 @@ input.editorForm {
 	text-align: left;
 	padding: 5px;
 	margin: 10px;
-	width: 60%;
+	width: 90%;
 }
 
 .blogCategories { 
@@ -484,21 +502,20 @@ input.editorForm {
 }
 
 .pod {
+	padding: 0px;
 }
 
 .pod a {
 }
 
 .pod_top {
+	padding: 0px;
 }
 		
 .content_bottom {
 }
 .content {
-	background-color:#EDEDE7;
-	border-left: 1px solid #D8DDDD;
-	border-top: 1px solid #D8DDDD;
-	border-bottom: 1px solid #D8DDDD;
+	background: url(images/h2bg.gif) top left repeat-y;
 	margin-bottom: 5px;
 }
 
@@ -530,22 +547,13 @@ input.editorForm {
 	padding-bottom: 5px;
 }
 
-.dojoTabLabels {
-	width:20px;
+.button
+{
+	border: 1px solid #337FC6;
+	
 }
 
-.configLabels {
-	margin-bottom: 5px;
-	padding-bottom: 5px;
-}
-
-.formlabel {
-}
-
-.editorFormPost {
-	text-align:left;
-	font-size: 0,8em;
-	border-left: 1px solid #A7BCD6;
-	border-bottom: 1px solid #A7BCD6;
-	padding: 5px;
+.inputSize
+{
+	width:90px;
 }

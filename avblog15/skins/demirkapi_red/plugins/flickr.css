@@ -1,0 +1,51 @@
+.pluginflickrSide {
+	padding-left: 15px;
+	padding-bottom: 10px;
+	color: #000;
+}
+
+.pluginflickrSideTitle {
+	padding-bottom: 15px;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #FEE1D5;
+}
+
+.pluginflickrSideText {
+	padding-left: 0px;
+	padding-bottom: 10px;
+	font-size: 1.1em;
+	color: #000;
+	text-align:center;
+}
+
+.pluginflickrTitle {
+	padding-bottom: 10px;
+	font-size: 1.5em;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+.pluginflickrText {
+	text-align:center;
+	font-size: 1.0em;
+	color: #FFFFFF;
+	padding-bottom:4px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.pluginflickrTagCloud
+	{
+		padding: 4px;
+		margin-left: 2px;
+		line-height: 1.8em;
+	}
+	
+.pluginflickrsmallestTag { font-size: 1.1em; }
+.pluginflickrsmallTag { font-size: 1.4em; }
+.pluginflickrmediumTag { font-size: 1.9em; }
+.pluginflickrlargeTag { font-size: 2.0em; }
+.pluginflickrlargestTag { font-size: 2.3em; }
+

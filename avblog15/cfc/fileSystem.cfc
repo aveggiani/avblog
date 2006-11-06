@@ -107,7 +107,11 @@
 
 		<cfset var returnvalue = "">
 
-		<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
+		<cfif request.cfmx7>
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
+		<cfelse>
+			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
+		</cfif>
 
 		<cfreturn returnvalue>
 
@@ -119,8 +123,12 @@
 		<cfargument name="filter" required="no" type="string" default="*">
 
 		<cfset var returnvalue = "">
-
-		<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
+		
+		<cfif request.cfmx7>
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
+		<cfelse>
+			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
+		</cfif>
 
 		<cfreturn returnvalue>
 
@@ -132,7 +140,11 @@
 
 		<cfset var returnvalue = "">
 
-		<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
+		<cfif request.cfmx7>
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
+		<cfelse>
+			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
+		</cfif>
 
 		<cfreturn returnvalue>
 

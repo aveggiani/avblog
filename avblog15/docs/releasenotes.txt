@@ -1,3 +1,18 @@
+Version 1.5 -  11 november 2006
+
+- Ajax use expanded to the Flickr Plugin, the Photoblog plugin and the post editing function
+- Ajax used for captcha control
+- New Flickr and Delicious plugins
+- Updated versions of FCKeditor and TinyMCE
+- Added CFFM v 1.14 for file management in rich editors
+- Added microsummary support (still to improve, in the next version there will be a field
+in the post for it)
+- Added some skins
+- Revised pod mechanism; now pods are in the /pods folder and they are shown using the order
+specified by the filename
+- Added the personal folder, if you have personalizations please put them into this folder
+- Improved XMLRPC support
+
 Version 1.5 - Beta 2 - 26 July 2006
 
 - Ajax support using Dojo; actually it's used on the admin section, on the delicious plugin 

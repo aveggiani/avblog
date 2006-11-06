@@ -224,6 +224,8 @@
 	<intdateformat>(mm/gg/aaaa)</intdateformat>
 	<eurodateformat>(gg/mm/aaaa)</eurodateformat>
 	<loginfailed>username o password errati!</loginfailed>
+	<blogmanager>Blog Manager</blogmanager>
+	<logout>Logout</logout>
 </language>
 
 

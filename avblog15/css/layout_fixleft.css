@@ -9,18 +9,12 @@ body {
 	margin-top: 0;
 	margin-left: 0;
 	text-align:left;
-	width: 800px;
 }
 
 #entries
 {
-	width: 595px;
 	border-right: 1px solid #003344;
 	margin-right:-1px;
 	padding-right: 5px;
 }
 
-#side
-{
-	width: 194px;
-}

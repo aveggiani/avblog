@@ -30,7 +30,7 @@
 			</cfif>
 			<cfif thistag.executionmode is 'start'>
 				<a
-					href="javascript:<cfif isdefined('attributes.modal')>#attributes.modal#dlg.show();</cfif>viewWApane('#attributes.target#','#replace(attributes.href,'index.cfm','ajax.cfm')#')"
+					href="javascript:<cfif isdefined('attributes.modal')>#attributes.modal#dlg.show();</cfif>viewWApane('#attributes.target#','#JSStringFormat(replace(attributes.href,'index.cfm','ajax.cfm'))#')"
 					<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
 					<cfif isdefined('attributes.class')>class="#attributes.class#"</cfif>
 					>
