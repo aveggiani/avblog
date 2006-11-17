@@ -108,9 +108,10 @@
 		<cfset var returnvalue = "">
 
 		<cfif request.cfmx7>
-			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
+			<cfset arguments.filter = "#arguments.filter#.#request.xmlFilesExtension#">
+			<cfinclude template="#request.appmapping#customtags/directoryFixer.cfm">
 		<cfelse>
-			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#.#request.xmlFilesExtension#" sort="#arguments.sort#">
 		</cfif>
 
 		<cfreturn returnvalue>
@@ -125,9 +126,9 @@
 		<cfset var returnvalue = "">
 		
 		<cfif request.cfmx7>
-			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
+			<cfinclude template="#request.appmapping#customtags/directoryFixer.cfm">
 		<cfelse>
-			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#" sort="#arguments.sort#">
 		</cfif>
 
 		<cfreturn returnvalue>
@@ -137,13 +138,14 @@
 	<cffunction name="getDirectoryName" returntype="query">
 		<cfargument name="path" required="yes" type="string">
 		<cfargument name="filter" required="no" type="string" default="*">
+		<cfargument name="sort" required="no" type="string" default="name">
 
 		<cfset var returnvalue = "">
 
 		<cfif request.cfmx7>
-			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
+			<cfinclude template="#request.appmapping#customtags/directoryFixer.cfm">
 		<cfelse>
-			<cfdirectory action="LIST" listinfo="name" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
+			<cfdirectory action="LIST" directory="#arguments.path#" name="returnvalue" filter="#arguments.filter#">
 		</cfif>
 
 		<cfreturn returnvalue>

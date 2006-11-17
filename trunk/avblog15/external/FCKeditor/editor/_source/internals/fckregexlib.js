@@ -23,7 +23,7 @@ var FCKRegexLib = {
 AposEntity		: /&apos;/gi ,
 
 // Used by the Styles combo to identify styles that can't be applied to text.
-ObjectElements	: /^(?:IMG|TABLE|TR|TD|TH|INPUT|SELECT|TEXTAREA|HR|OBJECT|A|UL|OL|LI)$/i ,
+ObjectElements	: /^(?:IMG|TABLE|TR|TD|TH|INPUT|SELECT|textarea|HR|OBJECT|A|UL|OL|LI)$/i ,
 
 BlockElements	: /^(?:P|DIV|H1|H2|H3|H4|H5|H6|ADDRESS|PRE|OL|UL|LI|TD|TH)$/i ,
 

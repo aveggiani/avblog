@@ -30,19 +30,40 @@
 		<Attribute name="border" value="2" />
 		<Attribute name="align" value="right" />
 	</Style>
-	<Style name="Custom Bold" element="span">
-		<Attribute name="style" value="font-weight: bold;" />
+	<Style name="Code C++" element="textarea">
+		<Attribute name="class" value="c" />
 	</Style>
-	<Style name="Custom Italic" element="em" />
-	<Style name="Title" element="span">
-		<Attribute name="class" value="Title" />
+	<Style name="Code C#" element="textarea">
+		<Attribute name="class" value="c#" />
 	</Style>
-	<Style name="Code" element="span">
-		<Attribute name="class" value="Code" />
+	<Style name="Code CSS" element="textarea">
+		<Attribute name="class" value="css" />
 	</Style>
-	<Style name="Title H3" element="h3" />
-	<Style name="Custom Ruler" element="hr">
-		<Attribute name="size" value="1" />
-		<Attribute name="color" value="#ff0000" />
+	<Style name="Code Delphi" element="textarea">
+		<Attribute name="class" value="delphi" />
+	</Style>
+	<Style name="Code Java" element="textarea">
+		<Attribute name="class" value="php" />
+	</Style>
+	<Style name="Code Javascript" element="textarea">
+		<Attribute name="class" value="js" />
+	</Style>
+	<Style name="Code PHP" element="textarea">
+		<Attribute name="class" value="php" />
+	</Style>
+	<Style name="Code Python" element="textarea">
+		<Attribute name="class" value="python" />
+	</Style>
+	<Style name="Code Ruby" element="textarea">
+		<Attribute name="class" value="ruby" />
+	</Style>
+	<Style name="Code SQL" element="textarea">
+		<Attribute name="class" value="sql" />
+	</Style>
+	<Style name="Code VB" element="textarea">
+		<Attribute name="class" value="vb" />
+	</Style>
+	<Style name="Code XML" element="textarea">
+		<Attribute name="class" value="xml" />
 	</Style>
 </Styles>

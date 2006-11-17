@@ -96,14 +96,14 @@ FCKEditingArea.prototype.Start = function( html, secondCall )
 	}
 	else
 	{
-		var eTextarea = this.Textarea = oTargetDocument.createElement( 'textarea' ) ; 
-		eTextarea.className = 'SourceField' ;
-		eTextarea.dir = 'ltr' ;
-		eTextarea.style.width = eTextarea.style.height = '100%' ;
-		eTextarea.style.border = 'none' ;
-		eTargetElement.appendChild( eTextarea ) ;
+		var etextarea = this.textarea = oTargetDocument.createElement( 'textarea' ) ; 
+		etextarea.className = 'SourceField' ;
+		etextarea.dir = 'ltr' ;
+		etextarea.style.width = etextarea.style.height = '100%' ;
+		etextarea.style.border = 'none' ;
+		eTargetElement.appendChild( etextarea ) ;
 
-		eTextarea.value = html  ;
+		etextarea.value = html  ;
 
 		// Fire the "OnLoad" event.
 		FCKTools.RunFunction( this.OnLoad ) ;
@@ -170,7 +170,7 @@ FCKEditingArea.prototype.Focus = function()
 				this.Window.focus() ;
 		}
 		else
-			this.Textarea.focus() ;
+			this.textarea.focus() ;
 	}
 	catch(e) {}
 }
@@ -180,7 +180,7 @@ function FCKEditingArea_Cleanup()
 	this.TargetElement = null ;
 	this.IFrame = null ;
 	this.Document = null ;
-	this.Textarea = null ;
+	this.textarea = null ;
 	
 	if ( this.Window )
 	{

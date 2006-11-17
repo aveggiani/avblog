@@ -292,12 +292,14 @@
 		<cfargument name="categoria" type="string" required="No">
 
 		<cfscript>
-			var arrayShow 		= arraynew(1);
-			var mycategories 	= '';
-			var i				= 0;
-			var j				= 0;
-			var k				= 0;
-			var lastpubdate 	= '';
+			var arrayShow 				= arraynew(1);
+			var mycategories 			= '';
+			var mycategorieswithorder 	= '';
+			var i						= 0;
+			var j						= 0;
+			var k						= 0;
+			var l						= 0;
+			var lastpubdate 			= '';
 		</cfscript>
 
 		<cfsavecontent variable="rssfeed">
@@ -347,10 +349,15 @@
 								<cfloop index="j" from="1" to="#arraylen(arrayshow)#">
 									<cfscript>
 										enclosures = arrayShow[j].qryEnclosures;
-										mycategories=getMyCategories(arrayShow[j].id);
+										mycategorieswithorder=getMyCategories(arrayShow[j].id);
 										datetmp=createdate(left(arrayShow[j].date,4),mid(arrayShow[j].date,5,2),right(arrayShow[j].date,2));
 										timetmp="#arrayShow[j].time#";
 									</cfscript>
+									<cfloop index="l" from="1" to="#listlen(mycategorieswithorder)#">
+										<cfscript>
+											mycategories = listappend(mycategories,listrest(listgetat(mycategorieswithorder,l),'_'));
+										</cfscript>									
+									</cfloop>
 									<cfif (isdefined('arguments.category') and listfind(mycategories,arguments.category)) or not isdefined('arguments.category')>
 										<cfscript>
 											if (trim(arrayshow[j].excerpt) is not "")
@@ -364,7 +371,7 @@
 											<link><![CDATA[http://#cgi.server_name##getPermalink(arrayShow[j].date,arrayShow[j].menuitem)#]]></link>
 											<description><![CDATA[#description#]]></description>
 											<cfloop index="k" from="1" to="#listlen(mycategories)#">
-												<category><![CDATA[#listgetat(listgetat(mycategories,k),2,'_')#]]></category>
+												<category><![CDATA[#listgetat(mycategories,k)#]]></category>
 											</cfloop>
 											<author><![CDATA[#arrayshow[j].email# (#arrayshow[j].author#)]]></author>
 											<comments><![CDATA[http://#cgi.server_name##request.appmapping#index.cfm?mode=viewcomment&id=#arrayshow[j].id#]]></comments>
@@ -394,6 +401,17 @@
 	<cffunction name="atom" output="false" returntype="string">
 		<cfargument name="category" type="string" required="No">
 
+		<cfscript>
+			var arrayShow 				= arraynew(1);
+			var mycategories 			= '';
+			var mycategorieswithorder 	= '';
+			var i						= 0;
+			var j						= 0;
+			var k						= 0;
+			var l						= 0;
+			var lastpubdate 			= '';
+		</cfscript>
+
 		<cfsavecontent variable="atomfeed">
 			<cfoutput>
 				<feed xmlns="http://www.w3.org/2005/Atom">
@@ -412,11 +430,16 @@
 								</cfscript>
 								<cfloop index="j" from="1" to="#arraylen(arrayshow)#">
 									<cfscript>
-										mycategories=getMyCategories(arrayShow[j].id);
+										mycategorieswithorder=getMyCategories(arrayShow[j].id);
 										datetmp=createdate(left(arrayShow[j].date,4),mid(arrayShow[j].date,5,2),right(arrayShow[j].date,2));
 										timetmp="#arrayShow[j].time#";
 										enclosures = arrayShow[j].qryEnclosures;
 									</cfscript>
+									<cfloop index="l" from="1" to="#listlen(mycategorieswithorder)#">
+										<cfscript>
+											mycategories = listappend(mycategories,listrest(listgetat(mycategorieswithorder,l),'_'));
+										</cfscript>									
+									</cfloop>
 									<cfif i is 1 and j is 1>
 										<updated>#dateformat(datetmp,'yyyy-mm-dd')#T#timetmp#Z</updated>
 									</cfif>
@@ -428,13 +451,13 @@
 											<id>urn:uuid:#arrayshow[j].id#</id>
 											<title type="html"><![CDATA[#arrayshow[j].title#]]></title>
 											<updated>#dateformat(datetmp,'yyyy-mm-dd')#T#timetmp#Z</updated>
-											<link rel="alternate" type="text/html" href="http://#cgi.server_name##request.appmapping#permalinks/#left(arrayShow[j].date,4)#/#mid(arrayShow[j].date,5,2)#/#right(arrayShow[j].date,2)#/#rereplace(replace(arrayShow[j].menuitem,' ','-','ALL'),'[^A-Za-z0-9_-]*','','ALL')#"></link>
+											<link rel="alternate" type="text/html" href="http://#cgi.server_name##getPermalink(arrayShow[j].date,arrayShow[j].menuitem)#"></link>
 											<cfif isdefined('summary')>
 												<summary type="html"><![CDATA[#summary#]]></summary>
 											</cfif>
 											<content type="html"><![CDATA[#arrayshow[j].description#]]></content>
 											<cfloop index="k" from="1" to="#listlen(mycategories)#">
-												<category term="#listgetat(listgetat(mycategories,k),2,'_')#"></category>
+												<category term="#listgetat(mycategories,k)#"></category>
 											</cfloop>
 											<cfloop query="enclosures">
 												<link rel="enclosure" 

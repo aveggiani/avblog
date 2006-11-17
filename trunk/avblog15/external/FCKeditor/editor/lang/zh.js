@@ -92,7 +92,7 @@ Form			: "表單",
 Checkbox		: "核取方塊",
 RadioButton		: "選項按鈕",
 TextField		: "文字方塊",
-Textarea		: "文字區域",
+textarea		: "文字區域",
 HiddenField		: "隱藏欄位",
 Button			: "按鈕",
 SelectionField	: "清單/選單",
@@ -127,7 +127,7 @@ RadioButtonProp		: "選項按鈕屬性",
 ImageButtonProp		: "影像按鈕屬性",
 TextFieldProp		: "文字方塊屬性",
 SelectionFieldProp	: "清單/選單屬性",
-TextareaProp		: "文字區域屬性",
+textareaProp		: "文字區域屬性",
 FormProp			: "表單屬性",
 
 FontFormats			: "本文;已格式化;位址;標題 1;標題 2;標題 3;標題 4;標題 5;標題 6;本文 (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "下移",
 DlgSelectBtnSetValue : "設為預設值",
 DlgSelectBtnDelete	: "刪除",
 
-// Textarea Dialog
-DlgTextareaName	: "名稱",
-DlgTextareaCols	: "字元寬度",
-DlgTextareaRows	: "列數",
+// textarea Dialog
+DlgtextareaName	: "名稱",
+DlgtextareaCols	: "字元寬度",
+DlgtextareaRows	: "列數",
 
 // Text Field Dialog
 DlgTextName			: "名稱",

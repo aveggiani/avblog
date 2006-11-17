@@ -93,7 +93,7 @@ Form			: "Formular (Form)",
 Checkbox		: "Bifă (Checkbox)",
 RadioButton		: "Buton radio (RadioButton)",
 TextField		: "Câmp text (TextField)",
-Textarea		: "Suprafaţă text (Textarea)",
+textarea		: "Suprafaţă text (textarea)",
 HiddenField		: "Câmp ascuns (HiddenField)",
 Button			: "Buton",
 SelectionField	: "Câmp selecţie (SelectionField)",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Proprietăţi buton radio (Radio Button)",
 ImageButtonProp		: "Proprietăţi buton imagine (Image Button)",
 TextFieldProp		: "Proprietăţi câmp text (Text Field)",
 SelectionFieldProp	: "Proprietăţi câmp selecţie (Selection Field)",
-TextareaProp		: "Proprietăţi suprafaţă text (Textarea)",
+textareaProp		: "Proprietăţi suprafaţă text (textarea)",
 FormProp			: "Proprietăţi formular (Form)",
 
 FontFormats			: "Normal;Formatat;Adresa;Titlu 1;Titlu 2;Titlu 3;Titlu 4;Titlu 5;Titlu 6;Paragraf (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Jos",
 DlgSelectBtnSetValue : "Setează ca valoare selectată",
 DlgSelectBtnDelete	: "Şterge",
 
-// Textarea Dialog
-DlgTextareaName	: "Nume",
-DlgTextareaCols	: "Coloane",
-DlgTextareaRows	: "Linii",
+// textarea Dialog
+DlgtextareaName	: "Nume",
+DlgtextareaCols	: "Coloane",
+DlgtextareaRows	: "Linii",
 
 // Text Field Dialog
 DlgTextName			: "Nume",

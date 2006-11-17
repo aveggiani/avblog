@@ -93,7 +93,7 @@ Form			: "Forma",
 Checkbox		: "Atzīmēšanas kastīte",
 RadioButton		: "Izvēles poga",
 TextField		: "Teksta rinda",
-Textarea		: "Teksta laukums",
+textarea		: "Teksta laukums",
 HiddenField		: "Paslēpta teksta rinda",
 Button			: "Poga",
 SelectionField	: "Iezīmēšanas lauks",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Izvēles poga īpašības",
 ImageButtonProp		: "Attēlpogas īpašības",
 TextFieldProp		: "Teksta rindas  īpašības",
 SelectionFieldProp	: "Iezīmēšanas lauka īpašības",
-TextareaProp		: "Teksta laukuma īpašības",
+textareaProp		: "Teksta laukuma īpašības",
 FormProp			: "Formas īpašības",
 
 FontFormats			: "Normāls teksts;Formatēts teksts;Adrese;Virsraksts 1;Virsraksts 2;Virsraksts 3;Virsraksts 4;Virsraksts 5;Virsraksts 6;Rindkopa (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Lejup",
 DlgSelectBtnSetValue : "Noteikt kā iezīmēto vērtību",
 DlgSelectBtnDelete	: "Dzēst",
 
-// Textarea Dialog
-DlgTextareaName	: "Nosaukums",
-DlgTextareaCols	: "Kolonnas",
-DlgTextareaRows	: "Rindas",
+// textarea Dialog
+DlgtextareaName	: "Nosaukums",
+DlgtextareaCols	: "Kolonnas",
+DlgtextareaRows	: "Rindas",
 
 // Text Field Dialog
 DlgTextName			: "Nosaukums",

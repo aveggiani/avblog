@@ -187,6 +187,7 @@
 			--->
 		</script>
 	
+		<a name="addcomment"></a>
 		<div class="editorBody">
 			<div class="editorTitle"><cfoutput>#application.language.language.addcomment.xmltext#</cfoutput></div>
 				<div class="editorForm">
@@ -232,7 +233,7 @@
 											>
 										<cfelse>
 											<cf_externaleditor
-												whicheditor = "textarea"
+												whicheditor = "cf_externaleditor"
 												name		= "description"
 												valore		= ""
 												width		= "90%"

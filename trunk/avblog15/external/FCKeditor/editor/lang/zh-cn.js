@@ -92,7 +92,7 @@ Form			: "表单",
 Checkbox		: "复选框",
 RadioButton		: "单选按钮",
 TextField		: "单行文本",
-Textarea		: "多行文本",
+textarea		: "多行文本",
 HiddenField		: "隐藏域",
 Button			: "按钮",
 SelectionField	: "列表/菜单",
@@ -127,7 +127,7 @@ RadioButtonProp		: "单选按钮属性",
 ImageButtonProp		: "图像域属性",
 TextFieldProp		: "单行文本属性",
 SelectionFieldProp	: "菜单/列表属性",
-TextareaProp		: "多行文本属性",
+textareaProp		: "多行文本属性",
 FormProp			: "表单属性",
 
 FontFormats			: "普通;已编排格式;地址;标题 1;标题 2;标题 3;标题 4;标题 5;标题 6;段落(DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "下移",
 DlgSelectBtnSetValue : "设为初始化时选定",
 DlgSelectBtnDelete	: "删除",
 
-// Textarea Dialog
-DlgTextareaName	: "名称",
-DlgTextareaCols	: "字符宽度",
-DlgTextareaRows	: "行数",
+// textarea Dialog
+DlgtextareaName	: "名称",
+DlgtextareaCols	: "字符宽度",
+DlgtextareaRows	: "行数",
 
 // Text Field Dialog
 DlgTextName			: "名称",

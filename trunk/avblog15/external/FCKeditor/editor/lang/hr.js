@@ -92,7 +92,7 @@ Form			: "Form",
 Checkbox		: "Checkbox",
 RadioButton		: "Radio Button",
 TextField		: "Text Field",
-Textarea		: "Textarea",
+textarea		: "textarea",
 HiddenField		: "Hidden Field",
 Button			: "Button",
 SelectionField	: "Selection Field",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Radio Button svojstva",
 ImageButtonProp		: "Image Button svojstva",
 TextFieldProp		: "Text Field svojstva",
 SelectionFieldProp	: "Selection svojstva",
-TextareaProp		: "Textarea svojstva",
+textareaProp		: "textarea svojstva",
 FormProp			: "Form svojstva",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Normal (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Dolje",
 DlgSelectBtnSetValue : "Postavi kao odabranu vrijednost",
 DlgSelectBtnDelete	: "Obriši",
 
-// Textarea Dialog
-DlgTextareaName	: "Ime",
-DlgTextareaCols	: "Kolona",
-DlgTextareaRows	: "Redova",
+// textarea Dialog
+DlgtextareaName	: "Ime",
+DlgtextareaCols	: "Kolona",
+DlgtextareaRows	: "Redova",
 
 // Text Field Dialog
 DlgTextName			: "Ime",

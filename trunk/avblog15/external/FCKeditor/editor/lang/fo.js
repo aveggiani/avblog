@@ -93,7 +93,7 @@ Form			: "Seta inn Form",
 Checkbox		: "Seta inn Avmerkingarboks",
 RadioButton		: "Seta inn Radioknap",
 TextField		: "Seta inn Tekstteig",
-Textarea		: "Seta inn Tekstøki",
+textarea		: "Seta inn Tekstøki",
 HiddenField		: "Seta inn GoymdanTeig",
 Button			: "Seta inn knapp",
 SelectionField	: "Seta inn Valteig",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Eginleikar fyri radioknapp",
 ImageButtonProp		: "Eginleikar fyri myndaknapp",
 TextFieldProp		: "Eginleikar fyri Tekstateig",
 SelectionFieldProp	: "Eginleikar fyri Valteig",
-TextareaProp		: "Eginleikar fyri Tekstaøki",
+textareaProp		: "Eginleikar fyri Tekstaøki",
 FormProp			: "Eginleikar fyri form",
 
 FontFormats			: "Normalt;Sniðgevið;Adressa;Yvirskrift 1;Yvirskrift 2;Yvirskrift 3;Yvirskrift 4;Yvirskrift 5;Yvirskrift 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Niður",
 DlgSelectBtnSetValue : "Set sum útvald",
 DlgSelectBtnDelete	: "Sletta",
 
-// Textarea Dialog
-DlgTextareaName	: "Navn",
-DlgTextareaCols	: "talrøð",
-DlgTextareaRows	: "Rekkja",
+// textarea Dialog
+DlgtextareaName	: "Navn",
+DlgtextareaCols	: "talrøð",
+DlgtextareaRows	: "Rekkja",
 
 // Text Field Dialog
 DlgTextName			: "Navn",

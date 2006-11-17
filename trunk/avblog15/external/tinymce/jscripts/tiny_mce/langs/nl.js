@@ -37,6 +37,6 @@ help_desc : 'Help',
 bold_img : "bold.gif",
 italic_img : "italic.gif",
 underline_img : "underline.gif",
-clipboard_msg : 'Kopiëren/knippen/plakken is niet beschikbaar in Mozilla en Firefox.\nWilt u meer informatie over deze kwestie?',
+clipboard_msg : 'Kopiren/knippen/plakken is niet beschikbaar in Mozilla en Firefox.\nWilt u meer informatie over deze kwestie?',
 popup_blocked : 'Uw browser heeft zojuist geweigerd een popup-venster te tonen. Waarschijnlijk gebruikt u een poup-blocker die voor deze editor te streng omgaat met popups. Om het venster toch te tonen, zult u uw popup-blocker zo in moeten stellen dat het popups van deze website toestaat.'
 });

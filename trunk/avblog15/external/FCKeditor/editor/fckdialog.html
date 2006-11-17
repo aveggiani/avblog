@@ -211,7 +211,7 @@ function SetOnKeyDown( targetDocument )
 		{
 			case 13 :		// ENTER
 				var oTarget = e.srcElement || e.target ;
-				if ( oTarget.tagName == 'TEXTAREA' ) return ;
+				if ( oTarget.tagName == 'textarea' ) return ;
 				Ok() ;
 				return false ;
 			case 27 :		// ESC
@@ -232,7 +232,7 @@ function DisableContextMenu( targetDocument )
 	var oOnContextMenu = function( e )
 	{
 		var sTagName = e.target.tagName ;
-		if ( ! ( ( sTagName == "INPUT" && e.target.type == "text" ) || sTagName == "TEXTAREA" ) )
+		if ( ! ( ( sTagName == "INPUT" && e.target.type == "text" ) || sTagName == "textarea" ) )
 			e.preventDefault() ;
 	}
 	targetDocument.addEventListener( 'contextmenu', oOnContextMenu, true ) ;

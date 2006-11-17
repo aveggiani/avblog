@@ -92,7 +92,7 @@ Form			: "Forma",
 Checkbox		: "Žymimasis langelis",
 RadioButton		: "Žymimoji akutė",
 TextField		: "Teksto laukas",
-Textarea		: "Teksto sritis",
+textarea		: "Teksto sritis",
 HiddenField		: "Nerodomas laukas",
 Button			: "Mygtukas",
 SelectionField	: "Atrankos laukas",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Žymimosios akutės savybės",
 ImageButtonProp		: "Vaizdinio mygtuko savybės",
 TextFieldProp		: "Teksto lauko savybės",
 SelectionFieldProp	: "Atrankos lauko savybės",
-TextareaProp		: "Teksto srities savybės",
+textareaProp		: "Teksto srities savybės",
 FormProp			: "Formos savybės",
 
 FontFormats			: "Normalus;Formuotas;Kreipinio;Antraštinis 1;Antraštinis 2;Antraštinis 3;Antraštinis 4;Antraštinis 5;Antraštinis 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Žemyn",
 DlgSelectBtnSetValue : "Laikyti pažymėta reikšme",
 DlgSelectBtnDelete	: "Trinti",
 
-// Textarea Dialog
-DlgTextareaName	: "Vardas",
-DlgTextareaCols	: "Ilgis",
-DlgTextareaRows	: "Plotis",
+// textarea Dialog
+DlgtextareaName	: "Vardas",
+DlgtextareaCols	: "Ilgis",
+DlgtextareaRows	: "Plotis",
 
 // Text Field Dialog
 DlgTextName			: "Vardas",

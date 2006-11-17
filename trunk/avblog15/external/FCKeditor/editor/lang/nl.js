@@ -93,7 +93,7 @@ Form			: "Formulier",
 Checkbox		: "Aanvinkvakje",
 RadioButton		: "Selectievakje",
 TextField		: "Tekstveld",
-Textarea		: "Tekstvak",
+textarea		: "Tekstvak",
 HiddenField		: "Verborgen veld",
 Button			: "Knop",
 SelectionField	: "Selectieveld",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Eigenschappen selectievakje",
 ImageButtonProp		: "Eigenschappen afbeeldingsknop",
 TextFieldProp		: "Eigenschappen tekstveld",
 SelectionFieldProp	: "Eigenschappen selectieveld",
-TextareaProp		: "Eigenschappen tekstvak",
+textareaProp		: "Eigenschappen tekstvak",
 FormProp			: "Eigenschappen formulier",
 
 FontFormats			: "Normaal;Met opmaak;Adres;Kop 1;Kop 2;Kop 3;Kop 4;Kop 5;Kop 6;Normaal (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Omlaag",
 DlgSelectBtnSetValue : "Als geselecteerde waarde instellen",
 DlgSelectBtnDelete	: "Verwijderen",
 
-// Textarea Dialog
-DlgTextareaName	: "Naam",
-DlgTextareaCols	: "Kolommen",
-DlgTextareaRows	: "Rijen",
+// textarea Dialog
+DlgtextareaName	: "Naam",
+DlgtextareaCols	: "Kolommen",
+DlgtextareaRows	: "Rijen",
 
 // Text Field Dialog
 DlgTextName			: "Naam",

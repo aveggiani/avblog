@@ -91,7 +91,7 @@ FCKTools.DisableSelection = function( element )
 		switch ( e.tagName )
 		{
 			case 'IFRAME' :
-			case 'TEXTAREA' :
+			case 'textarea' :
 			case 'INPUT' :
 			case 'SELECT' :
 				/* Ignore the above tags */

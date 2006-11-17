@@ -93,7 +93,7 @@ Form			: "Formularz",
 Checkbox		: "Checkbox",
 RadioButton		: "Pole wyboru",
 TextField		: "Pole tekstowe",
-Textarea		: "Obszar tekstowy",
+textarea		: "Obszar tekstowy",
 HiddenField		: "Pole ukryte",
 Button			: "Przycisk",
 SelectionField	: "Lista wyboru",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Właściwości pola wyboru",
 ImageButtonProp		: "Właściwości przycisku obrazka",
 TextFieldProp		: "Właściwości pola tekstowego",
 SelectionFieldProp	: "Właściwości listy wyboru",
-TextareaProp		: "Właściwości obszaru tekstowego",
+textareaProp		: "Właściwości obszaru tekstowego",
 FormProp			: "Właściwości formularza",
 
 FontFormats			: "Normalny;Tekst sformatowany;Adres;Nagłówek 1;Nagłówek 2;Nagłówek 3;Nagłówek 4;Nagłówek 5;Nagłówek 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Do dołu",
 DlgSelectBtnSetValue : "Ustaw wartość zaznaczoną",
 DlgSelectBtnDelete	: "Usuń",
 
-// Textarea Dialog
-DlgTextareaName	: "Nazwa",
-DlgTextareaCols	: "Kolumnu",
-DlgTextareaRows	: "Wiersze",
+// textarea Dialog
+DlgtextareaName	: "Nazwa",
+DlgtextareaCols	: "Kolumnu",
+DlgtextareaRows	: "Wiersze",
 
 // Text Field Dialog
 DlgTextName			: "Nazwa",

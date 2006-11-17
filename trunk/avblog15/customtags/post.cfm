@@ -64,7 +64,13 @@
 		</cfif>
 		
 		<cfloop index="i" from="1" to="#arraylen(arrayShow)#">
-			
+			<cfscript>
+				someCodeInPost = false;
+				if (find('<textarea',arrayShow[i].excerpt))
+					someCodeInPost = true;
+				if (find('<textarea',arrayShow[i].description))
+					someCodeInPost = true;
+			</cfscript>
 			<cfif structkeyexists(arrayshow[i],'published')>
 
 				<cfif 
@@ -92,10 +98,12 @@
 					</cfif>
 					
 					<!--- no cache if comment or trackback mode --->
-					<cfif isdefined('url.mode') and listfind('addComment,viewcomment,addTrackBack,viewtrackback,admin',url.mode)>
-						<cfset request.caching = 'none'>
+					<cfif isdefined('url.mode') and listfind('addcomment,viewcomment,addtrackbackack,viewtrackback,admin',url.mode)>
+						<cfset mycaching = 'none'>
+					<cfelse>
+						<cfset mycaching = request.caching>
 					</cfif>
-					<cf_cache action="#request.caching#" name="#arrayShow[i].id#" timeout="#request.cachetimeout#">		
+					<cf_cache action="#mycaching#" name="#arrayShow[i].id#" timeout="#request.cachetimeout#">		
 		
 						<cfscript>
 							myCategories		= request.blog.getMyCategories(arrayShow[i].id);
@@ -176,7 +184,7 @@
 								<div class="blogTitle">
 									<a href="#permalink#"><span id="post-title">#publishinformation# #arrayShow[i].title#</span></a>
 								</div>
-								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
+								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
 									<div class="blogText">
 										#arrayShow[i].excerpt#
 										<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
@@ -192,7 +200,7 @@
 									<div id="blogText_#request.indexBlog#" class="blogText">
 								</cfif>
 								#arrayShow[i].description#
-								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
+								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
 									<div class="blogMore">
 										<a onclick="showDiv('blogExcerpt_#request.indexBlog#','blogText_#request.indexBlog#');">[#application.language.language.hideformore.xmltext#]</a>
 									</div>
@@ -248,7 +256,7 @@
 										</cfif>
 										</a> -
 									</cfif>
-									<a href="#request.appmapping#index.cfm?mode=addComment&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addcomment.xmltext#</a>
+									<a href="#request.appmapping#index.cfm?mode=addcomment&amp;id=#urlencodedformat(arrayShow[i].id)###addcomment">#application.language.language.addcomment.xmltext#</a>
 									<vb:icon type="trackback">
 									<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
 									<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
@@ -286,6 +294,31 @@
 						
 						</vb:content>
 		
+						<cfif someCodeInPost is true and directoryexists('#request.apppath#/external/dp.SyntaxHighlighter')>
+<cfsavecontent variable="db.SyntaxHighlighter">
+	<cfoutput>
+		<link type="text/css" rel="stylesheet" href="#request.appmapping#external/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCSharp.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushVb.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushSql.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushDelphi.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPython.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
+	</cfoutput>
+</cfsavecontent>
+<cfhtmlhead text="#db.SyntaxHighlighter#">
+<script class="javascript">
+	dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+						</cfif>
+
 					</cf_cache>
 					
 				</cfif>
@@ -571,32 +604,29 @@
 										</div>
 										<br />
 										<cfloop query="qryAuthoPings">
-											<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
-											<cftry>
-												<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
-												<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
-												<cfif arraylen(message) is 0>
-													<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/')>
-													<cfset message[1] = message[2]>
-												</cfif>
-												<div class="trackbackPing">
-													<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
-													<br />
-													<a href="#structValue.url#" target="_blank">#structValue.url#</a>
-													<br />
-													<strong>flerror:</strong> #flerror[1].xmltext#
-													<br />
-													<strong>message:</strong> #message[1].xmltext#
-												</div>
-												<cfcatch>
-													<div class="trackbackPing">
+											<div class="trackbackPing">
+												<cftry>
+													<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
+													<cfcatch></cfcatch>
+												</cftry>
+												<cftry>
+													<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
+													<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
+														<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
+														<br />
+														<a href="#structValue.url#" target="_blank">#structValue.url#</a>
+														<br />
+														<strong>flerror:</strong> #htmleditformat(flerror[1].xmltext)#
+														<br />
+														<strong>message:</strong> #htmleditformat(message[1].xmltext)#
+													<cfcatch>
 														<strong>#structValue.url#</strong>
 														<br />
 														<br />
-														#structValue.authopingresult#
-													</div>
-												</cfcatch>
-											</cftry>
+														#htmleditformat(structValue.authopingresult)#
+													</cfcatch>
+												</cftry>
+											</div>
 										</cfloop>
 									</div>
 								</div>

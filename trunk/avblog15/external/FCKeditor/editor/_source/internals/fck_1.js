@@ -64,7 +64,7 @@ FCK.GetHTML = FCK.GetXHTML = function( format )
 	// We assume that if the user is in source editing, the editor value must
 	// represent the exact contents of the source, as the user wanted it to be.
 	if ( FCK.EditMode == FCK_EDITMODE_SOURCE )
-			return FCK.EditingArea.Textarea.value ;
+			return FCK.EditingArea.textarea.value ;
 
 	var sXHTML ;
 	var oDoc = FCK.EditorDocument ;
@@ -277,7 +277,7 @@ FCK.SetHTML = function( html )
 		this.EditingArea.Start( html ) ;
 		
 		// Enables the context menu in the textarea.
-		this.EditingArea.Textarea._FCKShowContextMenu = true ;
+		this.EditingArea.textarea._FCKShowContextMenu = true ;
 	}
 
 	if ( FCKBrowserInfo.IsGecko )

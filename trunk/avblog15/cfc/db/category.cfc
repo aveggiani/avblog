@@ -101,7 +101,7 @@
 					<cfset categorySave = qryCategory.name>
 				<cfelse>
 					<cfquery name="qryCategory" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-						select from categories where id like '%#listgetat(arguments.listcategory,i)#'
+						select * from categories where id like '%#listgetat(arguments.listcategory,i)#'
 					</cfquery>
 					<cfif qryCategory.recordcount gt 0>
 						<cfset categorySave = qryCategory.name>

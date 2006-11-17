@@ -92,7 +92,7 @@ Form			: "Form",
 Checkbox		: "Onay Kutusu",
 RadioButton		: "Seçenek Düğmesi",
 TextField		: "Metin Girişi",
-Textarea		: "Çok Satırlı Metin",
+textarea		: "Çok Satırlı Metin",
 HiddenField		: "Gizli Veri",
 Button			: "Düğme",
 SelectionField	: "Seçim Mönüsü",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Seçenek Düğmesi Özellikleri",
 ImageButtonProp		: "Resimli Düğme Özellikleri",
 TextFieldProp		: "Metin Girişi Özellikleri",
 SelectionFieldProp	: "Seçim Mönüsü Özellikleri",
-TextareaProp		: "Çok Satırlı Metin Özellikleri",
+textareaProp		: "Çok Satırlı Metin Özellikleri",
 FormProp			: "Form Özellikleri",
 
 FontFormats			: "Normal;Biçimli;Adres;Başlık 1;Başlık 2;Başlık 3;Başlık 4;Başlık 5;Başlık 6;Paragraf (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Aşağı",
 DlgSelectBtnSetValue : "Seçili değer olarak ata",
 DlgSelectBtnDelete	: "Sil",
 
-// Textarea Dialog
-DlgTextareaName	: "İsim",
-DlgTextareaCols	: "Sütunlar",
-DlgTextareaRows	: "Satırlar",
+// textarea Dialog
+DlgtextareaName	: "İsim",
+DlgtextareaCols	: "Sütunlar",
+DlgtextareaRows	: "Satırlar",
 
 // Text Field Dialog
 DlgTextName			: "İsim",

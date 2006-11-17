@@ -92,7 +92,7 @@ Form			: "Formularo",
 Checkbox		: "Markobutono",
 RadioButton		: "Radiobutono",
 TextField		: "Teksta kampo",
-Textarea		: "Teksta Areo",
+textarea		: "Teksta Areo",
 HiddenField		: "Kaŝita Kampo",
 Button			: "Butono",
 SelectionField	: "Elekta Kampo",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Radiobutonaj Atributoj",
 ImageButtonProp		: "Bildbutonaj Atributoj",
 TextFieldProp		: "Atributoj de Teksta Kampo",
 SelectionFieldProp	: "Atributoj de Elekta Kampo",
-TextareaProp		: "Atributoj de Teksta Areo",
+textareaProp		: "Atributoj de Teksta Areo",
 FormProp			: "Formularaj Atributoj",
 
 FontFormats			: "Normala;Formatita;Adreso;Titolo 1;Titolo 2;Titolo 3;Titolo 4;Titolo 5;Titolo 6;Paragrafo (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Malsupren",
 DlgSelectBtnSetValue : "Agordi kiel Elektitan Valoron",
 DlgSelectBtnDelete	: "Forigi",
 
-// Textarea Dialog
-DlgTextareaName	: "Nomo",
-DlgTextareaCols	: "Kolumnoj",
-DlgTextareaRows	: "Vicoj",
+// textarea Dialog
+DlgtextareaName	: "Nomo",
+DlgtextareaCols	: "Kolumnoj",
+DlgtextareaRows	: "Vicoj",
 
 // Text Field Dialog
 DlgTextName			: "Nomo",

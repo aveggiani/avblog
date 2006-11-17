@@ -92,7 +92,7 @@ Form			: "Skjema",
 Checkbox		: "Sjekkboks",
 RadioButton		: "Radioknapp",
 TextField		: "Tekstfelt",
-Textarea		: "Tekstområde",
+textarea		: "Tekstområde",
 HiddenField		: "Skjult felt",
 Button			: "Knapp",
 SelectionField	: "Dropdown meny",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Radioknappegenskaper",
 ImageButtonProp		: "Bildeknappegenskaper",
 TextFieldProp		: "Tekstfeltegenskaper",
 SelectionFieldProp	: "Dropdown menyegenskaper",
-TextareaProp		: "Tekstfeltegenskaper",
+textareaProp		: "Tekstfeltegenskaper",
 FormProp			: "Skjemaegenskaper",
 
 FontFormats			: "Normal;Formatert;Adresse;Tittel 1;Tittel 2;Tittel 3;Tittel 4;Tittel 5;Tittel 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Ned",
 DlgSelectBtnSetValue : "Sett som valgt",
 DlgSelectBtnDelete	: "Slett",
 
-// Textarea Dialog
-DlgTextareaName	: "Navn",
-DlgTextareaCols	: "Kolonner",
-DlgTextareaRows	: "Rader",
+// textarea Dialog
+DlgtextareaName	: "Navn",
+DlgtextareaCols	: "Kolonner",
+DlgtextareaRows	: "Rader",
 
 // Text Field Dialog
 DlgTextName			: "Navn",

@@ -36,7 +36,7 @@ function spellChecker( textObject ) {
 	this.spellCheckerWin = null;
 	this.controlWin = null;
 	this.wordWin = null;
-	this.textArea = textObject;	// deprecated
+	this.textarea = textObject;	// deprecated
 	this.textInputs = arguments; 
 
 	// private methods
@@ -51,7 +51,7 @@ function spellChecker( textObject ) {
 	this.openChecker = openChecker;
 	this.startCheck = startCheck;
 	this.checkTextBoxes = checkTextBoxes;
-	this.checkTextAreas = checkTextAreas;
+	this.checktextareas = checktextareas;
 	this.spellCheckAll = spellCheckAll;
 	this.ignoreWord = ignoreWord;
 	this.ignoreAll = ignoreAll;
@@ -72,7 +72,7 @@ function checkTextBoxes() {
 }
 
 // call this method to check all textareas (and only textareas ) in the HTML document
-function checkTextAreas() {
+function checktextareas() {
 	this.textInputs = this._getFormInputs( "^textarea$" );
 	this.openChecker();
 }
@@ -266,7 +266,7 @@ function terminateSpell() {
 	if( numrepl > 0 ) {
 		// update the text field(s) on the opener window
 		for( var i = 0; i < this.textInputs.length; i++ ) {
-			// this.textArea.value = this.wordWin.text;
+			// this.textarea.value = this.wordWin.text;
 			if( this.wordWin ) {
 				if( this.wordWin.textInputs[i] ) {
 					this.textInputs[i].value = this.wordWin.textInputs[i];

@@ -72,7 +72,7 @@ dojo.lang.extend(dojo.widget.html.InlineEditBox, {
 		if(!this.editing){
 			dojo.html.addClass(this.editable, "editableRegion");
 			if(this.mode == "textarea"){
-				dojo.html.addClass(this.editable, "editableTextareaRegion");
+				dojo.html.addClass(this.editable, "editabletextareaRegion");
 			}
 		}
 	},
@@ -80,7 +80,7 @@ dojo.lang.extend(dojo.widget.html.InlineEditBox, {
 	mouseout: function(e){
 		if(!this.editing){
 			dojo.html.removeClass(this.editable, "editableRegion");
-			dojo.html.removeClass(this.editable, "editableTextareaRegion");
+			dojo.html.removeClass(this.editable, "editabletextareaRegion");
 		}
 	},
 

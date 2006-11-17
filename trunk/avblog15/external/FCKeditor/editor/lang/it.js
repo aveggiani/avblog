@@ -92,7 +92,7 @@ Form			: "Modulo",
 Checkbox		: "Checkbox",
 RadioButton		: "Radio Button",
 TextField		: "Campo di testo",
-Textarea		: "Area di testo",
+textarea		: "Area di testo",
 HiddenField		: "Campo nascosto",
 Button			: "Bottone",
 SelectionField	: "Menu di selezione",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Proprietà radio button",
 ImageButtonProp		: "Proprietà bottone immagine",
 TextFieldProp		: "Proprietà campo di testo",
 SelectionFieldProp	: "Proprietà menu di selezione",
-TextareaProp		: "Proprietà area di testo",
+textareaProp		: "Proprietà area di testo",
 FormProp			: "Proprietà modulo",
 
 FontFormats			: "Normale;Formattato;Indirizzo;Titolo 1;Titolo 2;Titolo 3;Titolo 4;Titolo 5;Titolo 6;Paragrafo (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Gi",
 DlgSelectBtnSetValue : "Imposta come predefinito",
 DlgSelectBtnDelete	: "Rimuovi",
 
-// Textarea Dialog
-DlgTextareaName	: "Nome",
-DlgTextareaCols	: "Colonne",
-DlgTextareaRows	: "Righe",
+// textarea Dialog
+DlgtextareaName	: "Nome",
+DlgtextareaCols	: "Colonne",
+DlgtextareaRows	: "Righe",
 
 // Text Field Dialog
 DlgTextName			: "Nome",

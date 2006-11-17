@@ -161,7 +161,7 @@ FCKXHtml.TagProcessors['form'] = function( node, htmlNode )
 	return node ;
 }
 
-// IE doens't hold the name attribute as an attribute for the <TEXTAREA> and <SELECT> tags.
+// IE doens't hold the name attribute as an attribute for the <textarea> and <SELECT> tags.
 FCKXHtml.TagProcessors['textarea'] = FCKXHtml.TagProcessors['select'] = function( node, htmlNode )
 { 
 	if ( htmlNode.name ) 

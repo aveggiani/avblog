@@ -5603,7 +5603,7 @@ dojo.require("dojo.lang.common");
 
 	*/
 
-	// FIXME: these work for some elements (e.g. DIV) but not others (e.g. TABLE, TEXTAREA)
+	// FIXME: these work for some elements (e.g. DIV) but not others (e.g. TABLE, textarea)
 
 	ds.isBorderBox = function(node){
 		return (ds.getBoxSizing(node) == bs.BORDER_BOX);

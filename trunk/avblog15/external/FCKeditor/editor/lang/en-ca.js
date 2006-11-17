@@ -93,7 +93,7 @@ Form			: "Form",
 Checkbox		: "Checkbox",
 RadioButton		: "Radio Button",
 TextField		: "Text Field",
-Textarea		: "Textarea",
+textarea		: "textarea",
 HiddenField		: "Hidden Field",
 Button			: "Button",
 SelectionField	: "Selection Field",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Radio Button Properties",
 ImageButtonProp		: "Image Button Properties",
 TextFieldProp		: "Text Field Properties",
 SelectionFieldProp	: "Selection Field Properties",
-TextareaProp		: "Textarea Properties",
+textareaProp		: "textarea Properties",
 FormProp			: "Form Properties",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Normal (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Down",
 DlgSelectBtnSetValue : "Set as selected value",
 DlgSelectBtnDelete	: "Delete",
 
-// Textarea Dialog
-DlgTextareaName	: "Name",
-DlgTextareaCols	: "Columns",
-DlgTextareaRows	: "Rows",
+// textarea Dialog
+DlgtextareaName	: "Name",
+DlgtextareaCols	: "Columns",
+DlgtextareaRows	: "Rows",
 
 // Text Field Dialog
 DlgTextName			: "Name",

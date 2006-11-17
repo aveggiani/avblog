@@ -92,7 +92,7 @@ Form			: "Formulário",
 Checkbox		: "Caixa de Verificação",
 RadioButton		: "Botão de Opção",
 TextField		: "Campo de Texto",
-Textarea		: "Área de Texto",
+textarea		: "Área de Texto",
 HiddenField		: "Campo Escondido",
 Button			: "Botão",
 SelectionField	: "Caixa de Combinação",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Propriedades do Botão de Opção",
 ImageButtonProp		: "Propriedades do Botão de imagens",
 TextFieldProp		: "Propriedades do Campo de Texto",
 SelectionFieldProp	: "Propriedades da Caixa de Combinação",
-TextareaProp		: "Propriedades da Área de Texto",
+textareaProp		: "Propriedades da Área de Texto",
 FormProp			: "Propriedades do Formulário",
 
 FontFormats			: "Normal;Formatado;Endereço;Título 1;Título 2;Título 3;Título 4;Título 5;Título 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Para baixo",
 DlgSelectBtnSetValue : "Definir um valor por defeito",
 DlgSelectBtnDelete	: "Apagar",
 
-// Textarea Dialog
-DlgTextareaName	: "Nome",
-DlgTextareaCols	: "Colunas",
-DlgTextareaRows	: "Linhas",
+// textarea Dialog
+DlgtextareaName	: "Nome",
+DlgtextareaCols	: "Colunas",
+DlgtextareaRows	: "Linhas",
 
 // Text Field Dialog
 DlgTextName			: "Nome",

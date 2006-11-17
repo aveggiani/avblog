@@ -93,7 +93,7 @@ Form			: "Űrlap",
 Checkbox		: "Jelölőnégyzet",
 RadioButton		: "Választógomb",
 TextField		: "Szövegmező",
-Textarea		: "Szövegterület",
+textarea		: "Szövegterület",
 HiddenField		: "Rejtettmező",
 Button			: "Gomb",
 SelectionField	: "Legördülő lista",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Választógomb tulajdonságai",
 ImageButtonProp		: "Képgomb tulajdonságai",
 TextFieldProp		: "Szövegmező tulajdonságai",
 SelectionFieldProp	: "Legördülő lista tulajdonságai",
-TextareaProp		: "Szövegterület tulajdonságai",
+textareaProp		: "Szövegterület tulajdonságai",
 FormProp			: "Űrlap tulajdonságai",
 
 FontFormats			: "Normál;Formázott;Címsor;Fejléc 1;Fejléc 2;Fejléc 3;Fejléc 4;Fejléc 5;Fejléc 6;Bekezdés (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Le",
 DlgSelectBtnSetValue : "Legyen az alapértelmezett érték",
 DlgSelectBtnDelete	: "Töröl",
 
-// Textarea Dialog
-DlgTextareaName	: "Név",
-DlgTextareaCols	: "Karakterek száma egy sorban",
-DlgTextareaRows	: "Sorok száma",
+// textarea Dialog
+DlgtextareaName	: "Név",
+DlgtextareaCols	: "Karakterek száma egy sorban",
+DlgtextareaRows	: "Sorok száma",
 
 // Text Field Dialog
 DlgTextName			: "Név",

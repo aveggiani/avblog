@@ -92,7 +92,7 @@ Form			: "Form",	//MISSING
 Checkbox		: "Checkbox",	//MISSING
 RadioButton		: "Radio Button",	//MISSING
 TextField		: "Text Field",	//MISSING
-Textarea		: "Textarea",	//MISSING
+textarea		: "textarea",	//MISSING
 HiddenField		: "Hidden Field",	//MISSING
 Button			: "Button",	//MISSING
 SelectionField	: "Selection Field",	//MISSING
@@ -127,7 +127,7 @@ RadioButtonProp		: "Radio Button Properties",	//MISSING
 ImageButtonProp		: "Image Button Properties",	//MISSING
 TextFieldProp		: "Text Field Properties",	//MISSING
 SelectionFieldProp	: "Selection Field Properties",	//MISSING
-TextareaProp		: "Textarea Properties",	//MISSING
+textareaProp		: "textarea Properties",	//MISSING
 FormProp			: "Form Properties",	//MISSING
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Down",	//MISSING
 DlgSelectBtnSetValue : "Set as selected value",	//MISSING
 DlgSelectBtnDelete	: "Delete",	//MISSING
 
-// Textarea Dialog
-DlgTextareaName	: "Name",	//MISSING
-DlgTextareaCols	: "Columns",	//MISSING
-DlgTextareaRows	: "Rows",	//MISSING
+// textarea Dialog
+DlgtextareaName	: "Name",	//MISSING
+DlgtextareaCols	: "Columns",	//MISSING
+DlgtextareaRows	: "Rows",	//MISSING
 
 // Text Field Dialog
 DlgTextName			: "Name",	//MISSING

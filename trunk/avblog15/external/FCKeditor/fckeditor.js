@@ -79,30 +79,30 @@ FCKeditor.prototype.CreateHtml = function()
 	return sHtml ;
 }
 
-FCKeditor.prototype.ReplaceTextarea = function()
+FCKeditor.prototype.Replacetextarea = function()
 {
 	if ( !this.CheckBrowser || FCKeditor_IsCompatibleBrowser() )
 	{
 		// We must check the elements firstly using the Id and then the name.
-		var oTextarea = document.getElementById( this.InstanceName ) ;
+		var otextarea = document.getElementById( this.InstanceName ) ;
 		var colElementsByName = document.getElementsByName( this.InstanceName ) ;
 		var i = 0;
-		while ( oTextarea || i == 0 )
+		while ( otextarea || i == 0 )
 		{
-			if ( oTextarea && oTextarea.tagName.toLowerCase() == 'textarea' )
+			if ( otextarea && otextarea.tagName.toLowerCase() == 'textarea' )
 				break ;
-			oTextarea = colElementsByName[i++] ;
+			otextarea = colElementsByName[i++] ;
 		}
 		
-		if ( !oTextarea )
+		if ( !otextarea )
 		{
-			alert( 'Error: The TEXTAREA with id or name set to "' + this.InstanceName + '" was not found' ) ;
+			alert( 'Error: The textarea with id or name set to "' + this.InstanceName + '" was not found' ) ;
 			return ;
 		}
 
-		oTextarea.style.display = 'none' ;
-		this._InsertHtmlBefore( this._GetConfigHtml(), oTextarea ) ;
-		this._InsertHtmlBefore( this._GetIFrameHtml(), oTextarea ) ;
+		otextarea.style.display = 'none' ;
+		this._InsertHtmlBefore( this._GetConfigHtml(), otextarea ) ;
+		this._InsertHtmlBefore( this._GetIFrameHtml(), otextarea ) ;
 	}
 }
 

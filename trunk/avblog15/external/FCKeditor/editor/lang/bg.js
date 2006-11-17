@@ -92,7 +92,7 @@ Form			: "Формуляр",
 Checkbox		: "Поле за отметка",
 RadioButton		: "Поле за опция",
 TextField		: "Текстово поле",
-Textarea		: "Текстова област",
+textarea		: "Текстова област",
 HiddenField		: "Скрито поле",
 Button			: "Бутон",
 SelectionField	: "Падащо меню с опции",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Параметри на полето за опция",
 ImageButtonProp		: "Параметри на бутона-изображение",
 TextFieldProp		: "Параметри на текстовото-поле",
 SelectionFieldProp	: "Параметри на падащото меню с опции",
-TextareaProp		: "Параметри на текстовата област",
+textareaProp		: "Параметри на текстовата област",
 FormProp			: "Параметри на формуляра",
 
 FontFormats			: "Нормален;Форматиран;Адрес;Заглавие 1;Заглавие 2;Заглавие 3;Заглавие 4;Заглавие 5;Заглавие 6;Параграф (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Надолу",
 DlgSelectBtnSetValue : "Настрой като избрана стойност",
 DlgSelectBtnDelete	: "Изтрий",
 
-// Textarea Dialog
-DlgTextareaName	: "Име",
-DlgTextareaCols	: "Колони",
-DlgTextareaRows	: "Редове",
+// textarea Dialog
+DlgtextareaName	: "Име",
+DlgtextareaCols	: "Колони",
+DlgtextareaRows	: "Редове",
 
 // Text Field Dialog
 DlgTextName			: "Име",

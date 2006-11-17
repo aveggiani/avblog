@@ -234,7 +234,7 @@ TinyMCE_Engine.prototype = {
 
 		theme = this.settings['theme'];
 		this.inlineStrict = 'A|BR|SPAN|BDO|MAP|OBJECT|IMG|TT|I|B|BIG|SMALL|EM|STRONG|DFN|CODE|Q|SAMP|KBD|VAR|CITE|ABBR|ACRONYM|SUB|SUP|#text|#comment';
-		this.inlineTransitional = 'A|BR|SPAN|BDO|OBJECT|APPLET|IMG|MAP|IFRAME|TT|I|B|U|S|STRIKE|BIG|SMALL|FONT|BASEFONT|EM|STRONG|DFN|CODE|Q|SAMP|KBD|VAR|CITE|ABBR|ACRONYM|SUB|SUP|INPUT|SELECT|TEXTAREA|LABEL|BUTTON|#text|#comment';
+		this.inlineTransitional = 'A|BR|SPAN|BDO|OBJECT|APPLET|IMG|MAP|IFRAME|TT|I|B|U|S|STRIKE|BIG|SMALL|FONT|BASEFONT|EM|STRONG|DFN|CODE|Q|SAMP|KBD|VAR|CITE|ABBR|ACRONYM|SUB|SUP|INPUT|SELECT|textarea|LABEL|BUTTON|#text|#comment';
 		this.blockElms = 'H[1-6]|P|DIV|ADDRESS|PRE|FORM|TABLE|LI|OL|UL|TD|BLOCKQUOTE|CENTER|DL|DT|DD|DIR|FIELDSET|FORM|NOSCRIPT|NOFRAMES|MENU|ISINDEX|SAMP';
 		this.blockRegExp = new RegExp("^(" + this.blockElms + ")$", "i");
 		this.posKeyCodes = new Array(13,45,36,35,33,34,37,38,39,40);
@@ -1565,7 +1565,7 @@ TinyMCE_Engine.prototype = {
 
 						tinyMCE.addEvent(element, "focus", function (e) {window.setTimeout(function() {TinyMCE_Engine.prototype.confirmAdd(e, settings);}, 10);});
 
-						if (element.nodeName != "TEXTAREA" && element.nodeName != "INPUT")
+						if (element.nodeName != "textarea" && element.nodeName != "INPUT")
 							tinyMCE.addEvent(element, "click", function (e) {window.setTimeout(function() {TinyMCE_Engine.prototype.confirmAdd(e, settings);}, 10);});
 						// tinyMCE.addEvent(element, "mouseover", function (e) {window.setTimeout(function() {TinyMCE_Engine.prototype.confirmAdd(e, settings);}, 10);});
 					} else {
@@ -3626,13 +3626,13 @@ TinyMCE_Control.prototype = {
 		this.formTargetElementId = form_element_name;
 
 		// Get replace_element contents
-		if (replace_element.nodeName == "TEXTAREA" || replace_element.nodeName == "INPUT")
+		if (replace_element.nodeName == "textarea" || replace_element.nodeName == "INPUT")
 			this.startContent = replace_element.value;
 		else
 			this.startContent = replace_element.innerHTML;
 
 		// If not text area or input
-		if (replace_element.nodeName != "TEXTAREA" && replace_element.nodeName != "INPUT") {
+		if (replace_element.nodeName != "textarea" && replace_element.nodeName != "INPUT") {
 			this.oldTargetElement = replace_element;
 
 			// Debug mode

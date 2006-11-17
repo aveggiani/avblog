@@ -94,7 +94,7 @@ Form			: "Formulář",
 Checkbox		: "Zaškrtávací políčko",
 RadioButton		: "Přepínač",
 TextField		: "Textové pole",
-Textarea		: "Textová oblast",
+textarea		: "Textová oblast",
 HiddenField		: "Skryté pole",
 Button			: "Tlačítko",
 SelectionField	: "Seznam",
@@ -129,7 +129,7 @@ RadioButtonProp		: "Vlastnosti přepínače",
 ImageButtonProp		: "Vlastností obrázkového tlačítka",
 TextFieldProp		: "Vlastnosti textového pole",
 SelectionFieldProp	: "Vlastnosti seznamu",
-TextareaProp		: "Vlastnosti textové oblasti",
+textareaProp		: "Vlastnosti textové oblasti",
 FormProp			: "Vlastnosti formuláře",
 
 FontFormats			: "Normální;Formátovaný;Adresa;Nadpis 1;Nadpis 2;Nadpis 3;Nadpis 4;Nadpis 5;Nadpis 6",
@@ -409,10 +409,10 @@ DlgSelectBtnDown	: "Dolů",
 DlgSelectBtnSetValue : "Nastavit jako vybranou hodnotu",
 DlgSelectBtnDelete	: "Smazat",
 
-// Textarea Dialog
-DlgTextareaName	: "Název",
-DlgTextareaCols	: "Sloupců",
-DlgTextareaRows	: "Řádků",
+// textarea Dialog
+DlgtextareaName	: "Název",
+DlgtextareaCols	: "Sloupců",
+DlgtextareaRows	: "Řádků",
 
 // Text Field Dialog
 DlgTextName			: "Název",

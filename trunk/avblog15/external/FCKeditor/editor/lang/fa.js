@@ -93,7 +93,7 @@ Form			: "فرم",
 Checkbox		: "خانهٴ گزینه‌ای",
 RadioButton		: "دکمهٴ رادیویی",
 TextField		: "فیلد متنی",
-Textarea		: "ناحیهٴ متنی",
+textarea		: "ناحیهٴ متنی",
 HiddenField		: "فیلد پنهان",
 Button			: "دکمه",
 SelectionField	: "فیلد چندگزینه‌ای",
@@ -128,7 +128,7 @@ RadioButtonProp		: "ویژگیهای دکمهٴ رادیویی",
 ImageButtonProp		: "ویژگیهای دکمهٴ تصویری",
 TextFieldProp		: "ویژگیهای فیلد متنی",
 SelectionFieldProp	: "ویژگیهای فیلد چندگزینه‌ای",
-TextareaProp		: "ویژگیهای ناحیهٴ متنی",
+textareaProp		: "ویژگیهای ناحیهٴ متنی",
 FormProp			: "ویژگیهای فرم",
 
 FontFormats			: "نرمال;فرمت‌شده;آدرس;سرنویس 1;سرنویس 2;سرنویس 3;سرنویس 4;سرنویس 5;سرنویس 6;بند;(DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "پائین",
 DlgSelectBtnSetValue : "تنظیم به عنوان مقدار ِبرگزیده",
 DlgSelectBtnDelete	: "حذف",
 
-// Textarea Dialog
-DlgTextareaName	: "نام",
-DlgTextareaCols	: "ستونها",
-DlgTextareaRows	: "سطرها",
+// textarea Dialog
+DlgtextareaName	: "نام",
+DlgtextareaCols	: "ستونها",
+DlgtextareaRows	: "سطرها",
 
 // Text Field Dialog
 DlgTextName			: "نام",
