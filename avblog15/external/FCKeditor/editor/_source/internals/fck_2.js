@@ -123,7 +123,7 @@ FCK.SwitchEditMode = function( noUndo )
 		sHtml = FCK.GetXHTML( FCKConfig.FormatSource ) ;
 	}
 	else
-		sHtml = this.EditingArea.Textarea.value ;
+		sHtml = this.EditingArea.textarea.value ;
 
 	FCK.EditMode = bIsWysiwyg ? FCK_EDITMODE_SOURCE : FCK_EDITMODE_WYSIWYG ;
 

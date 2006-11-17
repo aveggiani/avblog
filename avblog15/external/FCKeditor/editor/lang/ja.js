@@ -92,7 +92,7 @@ Form			: "フォーム",
 Checkbox		: "チェックボックス",
 RadioButton		: "ラジオボタン",
 TextField		: "１行テキスト",
-Textarea		: "テキストエリア",
+textarea		: "テキストエリア",
 HiddenField		: "不可視フィールド",
 Button			: "ボタン",
 SelectionField	: "選択フィールド",
@@ -127,7 +127,7 @@ RadioButtonProp		: "ラジオボタン プロパティ",
 ImageButtonProp		: "画像ボタン プロパティ",
 TextFieldProp		: "１行テキスト プロパティ",
 SelectionFieldProp	: "選択フィールド プロパティ",
-TextareaProp		: "テキストエリア プロパティ",
+textareaProp		: "テキストエリア プロパティ",
 FormProp			: "フォーム プロパティ",
 
 FontFormats			: "標準;書式付き;アドレス;見出し 1;見出し 2;見出し 3;見出し 4;見出し 5;見出し 6;標準 (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "下へ",
 DlgSelectBtnSetValue : "選択した値を設定",
 DlgSelectBtnDelete	: "削除",
 
-// Textarea Dialog
-DlgTextareaName	: "名前",
-DlgTextareaCols	: "列",
-DlgTextareaRows	: "行",
+// textarea Dialog
+DlgtextareaName	: "名前",
+DlgtextareaCols	: "列",
+DlgtextareaRows	: "行",
 
 // Text Field Dialog
 DlgTextName			: "名前",

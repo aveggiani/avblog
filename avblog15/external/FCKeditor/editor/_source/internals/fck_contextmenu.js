@@ -227,14 +227,14 @@ function FCK_ContextMenu_GetListener( listenerName )
 				}
 			}} ;
 
-		case 'Textarea' :
+		case 'textarea' :
 			return {
 			AddItems : function( menu, tag, tagName )
 			{
-				if ( tagName == 'TEXTAREA' )
+				if ( tagName == 'textarea' )
 				{
 					menu.AddSeparator() ;
-					menu.AddItem( 'Textarea', FCKLang.TextareaProp, 52 ) ;
+					menu.AddItem( 'textarea', FCKLang.textareaProp, 52 ) ;
 				}
 			}} ;
 

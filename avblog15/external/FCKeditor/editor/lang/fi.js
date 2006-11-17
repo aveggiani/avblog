@@ -92,7 +92,7 @@ Form			: "Lomake",
 Checkbox		: "Valintaruutu",
 RadioButton		: "Radiopainike",
 TextField		: "Tekstikenttä",
-Textarea		: "Tekstilaatikko",
+textarea		: "Tekstilaatikko",
 HiddenField		: "Piilokenttä",
 Button			: "Painike",
 SelectionField	: "Valintakenttä",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Radiopainikkeen ominaisuudet",
 ImageButtonProp		: "Kuvapainikkeen ominaisuudet",
 TextFieldProp		: "Tekstikentän ominaisuudet",
 SelectionFieldProp	: "Valintakentän ominaisuudet",
-TextareaProp		: "Tekstilaatikon ominaisuudet",
+textareaProp		: "Tekstilaatikon ominaisuudet",
 FormProp			: "Lomakkeen ominaisuudet",
 
 FontFormats			: "Normaali;Muotoiltu;Osoite;Otsikko 1;Otsikko 2;Otsikko 3;Otsikko 4;Otsikko 5;Otsikko 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Alas",
 DlgSelectBtnSetValue : "Aseta valituksi",
 DlgSelectBtnDelete	: "Poista",
 
-// Textarea Dialog
-DlgTextareaName	: "Nimi",
-DlgTextareaCols	: "Sarakkeita",
-DlgTextareaRows	: "Rivejä",
+// textarea Dialog
+DlgtextareaName	: "Nimi",
+DlgtextareaCols	: "Sarakkeita",
+DlgtextareaRows	: "Rivejä",
 
 // Text Field Dialog
 DlgTextName			: "Nimi",

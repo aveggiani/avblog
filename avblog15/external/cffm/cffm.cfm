@@ -208,6 +208,7 @@
     </cfcatch>
 </cftry>
 
+<cfset url.editorType="fck">
 <cfscript>
 	if (getFileFromPath(getCurrentTemplatePath()) eq "cffm_image.cfm") 
 	{

@@ -93,7 +93,7 @@ Form			: "Formulari",
 Checkbox		: "Casella de verificació",
 RadioButton		: "Botó d'opció",
 TextField		: "Camp de text",
-Textarea		: "Àrea de text",
+textarea		: "Àrea de text",
 HiddenField		: "Camp ocult",
 Button			: "Botó",
 SelectionField	: "Camp de selecció",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Propietats del botó d'opció",
 ImageButtonProp		: "Propietats del botó d'imatge",
 TextFieldProp		: "Propietats del camp de text",
 SelectionFieldProp	: "Propietats del camp de selecció",
-TextareaProp		: "Propietats de l'àrea de text",
+textareaProp		: "Propietats de l'àrea de text",
 FormProp			: "Propietats del formulari",
 
 FontFormats			: "Normal;Formatejat;Adreça;Encapçalament 1;Encapçalament 2;Encapçalament 3;Encapçalament 4;Encapçalament 5;Encapçalament 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Avall",
 DlgSelectBtnSetValue : "Selecciona per defecte",
 DlgSelectBtnDelete	: "Elimina",
 
-// Textarea Dialog
-DlgTextareaName	: "Nom",
-DlgTextareaCols	: "Columnes",
-DlgTextareaRows	: "Files",
+// textarea Dialog
+DlgtextareaName	: "Nom",
+DlgtextareaCols	: "Columnes",
+DlgtextareaRows	: "Files",
 
 // Text Field Dialog
 DlgTextName			: "Nom",

@@ -92,7 +92,7 @@ Form			: "Formulaire",
 Checkbox		: "Case à cocher",
 RadioButton		: "Bouton radio",
 TextField		: "Champ texte",
-Textarea		: "Zone de texte",
+textarea		: "Zone de texte",
 HiddenField		: "Champ caché",
 Button			: "Bouton",
 SelectionField	: "Liste/menu",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Propriétés du bouton radio",
 ImageButtonProp		: "Propriétés du bouton image",
 TextFieldProp		: "Propriétés du champ texte",
 SelectionFieldProp	: "Propriétés de la liste/du menu",
-TextareaProp		: "Propriétés de la zone de texte",
+textareaProp		: "Propriétés de la zone de texte",
 FormProp			: "Propriétés du formulaire",
 
 FontFormats			: "Normal;Formaté;Adresse;En-tête 1;En-tête 2;En-tête 3;En-tête 4;En-tête 5;En-tête 6;Normal (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Descendre",
 DlgSelectBtnSetValue : "Valeur sélectionnée",
 DlgSelectBtnDelete	: "Supprimer",
 
-// Textarea Dialog
-DlgTextareaName	: "Nom",
-DlgTextareaCols	: "Colonnes",
-DlgTextareaRows	: "Lignes",
+// textarea Dialog
+DlgtextareaName	: "Nom",
+DlgtextareaCols	: "Colonnes",
+DlgtextareaRows	: "Lignes",
 
 // Text Field Dialog
 DlgTextName			: "Nom",

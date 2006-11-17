@@ -93,7 +93,7 @@ Form			: "ফর্ম",
 Checkbox		: "চেক বাক্স",
 RadioButton		: "রেডিও বাটন",
 TextField		: "টেক্সট ফীল্ড",
-Textarea		: "টেক্সট এরিয়া",
+textarea		: "টেক্সট এরিয়া",
 HiddenField		: "গুপ্ত ফীল্ড",
 Button			: "বাটন",
 SelectionField	: "বাছাই ফীল্ড",
@@ -128,7 +128,7 @@ RadioButtonProp		: "রেডিও বাটন প্রোপার্টি"
 ImageButtonProp		: "ছবি বাটন প্রোপার্টি",
 TextFieldProp		: "টেক্সট ফীল্ড প্রোপার্টি",
 SelectionFieldProp	: "বাছাই ফীল্ড প্রোপার্টি",
-TextareaProp		: "টেক্সট এরিয়া প্রোপার্টি",
+textareaProp		: "টেক্সট এরিয়া প্রোপার্টি",
 FormProp			: "ফর্ম প্রোপার্টি",
 
 FontFormats			: "সাধারণ;ফর্মেটেড;ঠিকানা;শীর্ষক ১;শীর্ষক ২;শীর্ষক ৩;শীর্ষক ৪;শীর্ষক ৫;শীর্ষক ৬;শীর্ষক (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "নীচে",
 DlgSelectBtnSetValue : "বাছাই করা ভ্যালু হিসেবে সেট কর",
 DlgSelectBtnDelete	: "ডিলীট",
 
-// Textarea Dialog
-DlgTextareaName	: "নাম",
-DlgTextareaCols	: "কলাম",
-DlgTextareaRows	: "রো",
+// textarea Dialog
+DlgtextareaName	: "নাম",
+DlgtextareaCols	: "কলাম",
+DlgtextareaRows	: "রো",
 
 // Text Field Dialog
 DlgTextName			: "নাম",

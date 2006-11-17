@@ -92,7 +92,7 @@ Form			: "បែបបទ",
 Checkbox		: "ប្រអប់ជ្រើសរើស",
 RadioButton		: "ប៉ូតុនរង្វង់មូល",
 TextField		: "ជួរសរសេរអត្ថបទ",
-Textarea		: "តំបន់សរសេរអត្ថបទ",
+textarea		: "តំបន់សរសេរអត្ថបទ",
 HiddenField		: "ជួរលាក់",
 Button			: "ប៉ូតុន",
 SelectionField	: "ជួរជ្រើសរើស",
@@ -127,7 +127,7 @@ RadioButtonProp		: "ការកំណត់ប៉ូតុនរង្វង់
 ImageButtonProp		: "ការកំណត់ប៉ូតុនរូបភាព",
 TextFieldProp		: "ការកំណត់ជួរអត្ថបទ",
 SelectionFieldProp	: "ការកំណត់ជួរជ្រើសរើស",
-TextareaProp		: "ការកំណត់កន្លែងសរសេរអត្ថបទ",
+textareaProp		: "ការកំណត់កន្លែងសរសេរអត្ថបទ",
 FormProp			: "ការកំណត់បែបបទ",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Normal (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "ក្រោម",
 DlgSelectBtnSetValue : "Set as selected value",	//MISSING
 DlgSelectBtnDelete	: "លប់",
 
-// Textarea Dialog
-DlgTextareaName	: "ឈ្មោះ",
-DlgTextareaCols	: "ជូរឈរ",
-DlgTextareaRows	: "ជូរផ្តេក",
+// textarea Dialog
+DlgtextareaName	: "ឈ្មោះ",
+DlgtextareaCols	: "ជូរឈរ",
+DlgtextareaRows	: "ជូរផ្តេក",
 
 // Text Field Dialog
 DlgTextName			: "ឈ្មោះ",

@@ -2,7 +2,7 @@
  * $Id: editor_plugin_src.js 96 2006-10-10 21:29:54Z spocke $
  *
  * @author Moxiecode
- * @copyright Copyright © 2004-2006, Moxiecode Systems AB, All rights reserved.
+ * @copyright Copyright  2004-2006, Moxiecode Systems AB, All rights reserved.
  */
 
 /* Import plugin specific language pack */
@@ -79,7 +79,7 @@ var TinyMCE_FullScreenPlugin = {
 			iframe.style.width = w + "px";
 			iframe.style.height = h + "px";
 
-			tinyMCE.selectElements(cd, 'SELECT,INPUT,BUTTON,TEXTAREA', function (n) {
+			tinyMCE.selectElements(cd, 'SELECT,INPUT,BUTTON,textarea', function (n) {
 				tinyMCE.addCSSClass(n, 'mceItemFullScreenHidden');
 
 				return false;
@@ -99,7 +99,7 @@ var TinyMCE_FullScreenPlugin = {
 			iframe.style.width = ds.oldWidth ? ds.oldWidth : '';
 			iframe.style.height = ds.oldHeight ? ds.oldHeight : '';
 
-			tinyMCE.selectElements(cd, 'SELECT,INPUT,BUTTON,TEXTAREA', function (n) {
+			tinyMCE.selectElements(cd, 'SELECT,INPUT,BUTTON,textarea', function (n) {
 				tinyMCE.removeCSSClass(n, 'mceItemFullScreenHidden');
 
 				return false;

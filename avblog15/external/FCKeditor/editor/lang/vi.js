@@ -93,7 +93,7 @@ Form			: "Biểu mẫu",
 Checkbox		: "Nút kiểm",
 RadioButton		: "Nút chọn",
 TextField		: "Trường văn bản",
-Textarea		: "Vùng văn bản",
+textarea		: "Vùng văn bản",
 HiddenField		: "Trường ẩn",
 Button			: "Nút",
 SelectionField	: "Ô chọn",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Thuộc tính Nút chọn",
 ImageButtonProp		: "Thuộc tính Nút hình ảnh",
 TextFieldProp		: "Thuộc tính Trường văn bản",
 SelectionFieldProp	: "Thuộc tính Ô chọn",
-TextareaProp		: "Thuộc tính Vùng văn bản",
+textareaProp		: "Thuộc tính Vùng văn bản",
 FormProp			: "Thuộc tính Biểu mẫu",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Normal (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Xuống",
 DlgSelectBtnSetValue : "Giá trị được chọn",
 DlgSelectBtnDelete	: "Xoá",
 
-// Textarea Dialog
-DlgTextareaName	: "Tên",
-DlgTextareaCols	: "Cột",
-DlgTextareaRows	: "Hàng",
+// textarea Dialog
+DlgtextareaName	: "Tên",
+DlgtextareaCols	: "Cột",
+DlgtextareaRows	: "Hàng",
 
 // Text Field Dialog
 DlgTextName			: "Tên",

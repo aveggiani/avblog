@@ -93,7 +93,7 @@ Form			: "טופס",
 Checkbox		: "תיבת סימון",
 RadioButton		: "לחצן אפשרויות",
 TextField		: "שדה טקסט",
-Textarea		: "איזור טקסט",
+textarea		: "איזור טקסט",
 HiddenField		: "שדה חבוי",
 Button			: "כפתור",
 SelectionField	: "שדה בחירה",
@@ -128,7 +128,7 @@ RadioButtonProp		: "מאפייני לחצן אפשרויות",
 ImageButtonProp		: "מאפיני כפתור תמונה",
 TextFieldProp		: "מאפייני שדה טקסט",
 SelectionFieldProp	: "מאפייני שדה בחירה",
-TextareaProp		: "מאפיני איזור טקסט",
+textareaProp		: "מאפיני איזור טקסט",
 FormProp			: "מאפיני טופס",
 
 FontFormats			: "נורמלי;קוד;כתובת;כותרת;כותרת 2;כותרת 3;כותרת 4;כותרת 5;כותרת 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "למטה",
 DlgSelectBtnSetValue : "קבע כברירת מחדל",
 DlgSelectBtnDelete	: "מחק",
 
-// Textarea Dialog
-DlgTextareaName	: "שם",
-DlgTextareaCols	: "עמודות",
-DlgTextareaRows	: "שורות",
+// textarea Dialog
+DlgtextareaName	: "שם",
+DlgtextareaCols	: "עמודות",
+DlgtextareaRows	: "שורות",
 
 // Text Field Dialog
 DlgTextName			: "שם",

@@ -93,7 +93,7 @@ Form			: "Formulário",
 Checkbox		: "Caixa de Seleção",
 RadioButton		: "Botão de Opção",
 TextField		: "Caixa de Texto",
-Textarea		: "Área de Texto",
+textarea		: "Área de Texto",
 HiddenField		: "Campo Oculto",
 Button			: "Botão",
 SelectionField	: "Caixa de Listagem",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Formatar Botão de Opção",
 ImageButtonProp		: "Formatar Botão de Imagem",
 TextFieldProp		: "Formatar Caixa de Texto",
 SelectionFieldProp	: "Formatar Caixa de Listagem",
-TextareaProp		: "Formatar Área de Texto",
+textareaProp		: "Formatar Área de Texto",
 FormProp			: "Formatar Formulário",
 
 FontFormats			: "Normal;Formatado;Endereço;Título 1;Título 2;Título 3;Título 4;Título 5;Título 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Para baixo",
 DlgSelectBtnSetValue : "Definir como selecionado",
 DlgSelectBtnDelete	: "Remover",
 
-// Textarea Dialog
-DlgTextareaName	: "Nome",
-DlgTextareaCols	: "Colunas",
-DlgTextareaRows	: "Linhas",
+// textarea Dialog
+DlgtextareaName	: "Nome",
+DlgtextareaCols	: "Colunas",
+DlgtextareaRows	: "Linhas",
 
 // Text Field Dialog
 DlgTextName			: "Nome",

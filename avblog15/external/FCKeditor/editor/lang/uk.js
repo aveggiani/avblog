@@ -92,7 +92,7 @@ Form			: "Форма",
 Checkbox		: "Флагова кнопка",
 RadioButton		: "Кнопка вибору",
 TextField		: "Текстове поле",
-Textarea		: "Текстова область",
+textarea		: "Текстова область",
 HiddenField		: "Приховане поле",
 Button			: "Кнопка",
 SelectionField	: "Список",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Властивості кнопки вибору",
 ImageButtonProp		: "Властивості кнопки із зображенням",
 TextFieldProp		: "Властивості текстового поля",
 SelectionFieldProp	: "Властивості списку",
-TextareaProp		: "Властивості текстової області",
+textareaProp		: "Властивості текстової області",
 FormProp			: "Властивості форми",
 
 FontFormats			: "Нормальний;Форматований;Адреса;Заголовок 1;Заголовок 2;Заголовок 3;Заголовок 4;Заголовок 5;Заголовок 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Вниз",
 DlgSelectBtnSetValue : "Встановити як вибране значення",
 DlgSelectBtnDelete	: "Видалити",
 
-// Textarea Dialog
-DlgTextareaName	: "Ім'я",
-DlgTextareaCols	: "Колонки",
-DlgTextareaRows	: "Строки",
+// textarea Dialog
+DlgtextareaName	: "Ім'я",
+DlgtextareaCols	: "Колонки",
+DlgtextareaRows	: "Строки",
 
 // Text Field Dialog
 DlgTextName			: "Ім'я",

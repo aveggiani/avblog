@@ -94,7 +94,7 @@ Form			: "Indsæt formular",
 Checkbox		: "Indsæt afkrydsningsfelt",
 RadioButton		: "Indsæt alternativknap",
 TextField		: "Indsæt tekstfelt",
-Textarea		: "Indsæt tekstboks",
+textarea		: "Indsæt tekstboks",
 HiddenField		: "Indsæt skjult felt",
 Button			: "Indsæt knap",
 SelectionField	: "Indsæt liste",
@@ -129,7 +129,7 @@ RadioButtonProp		: "Egenskaber for alternativknap",
 ImageButtonProp		: "Egenskaber for billedknap",
 TextFieldProp		: "Egenskaber for tekstfelt",
 SelectionFieldProp	: "Egenskaber for liste",
-TextareaProp		: "Egenskaber for tekstboks",
+textareaProp		: "Egenskaber for tekstboks",
 FormProp			: "Egenskaber for formular",
 
 FontFormats			: "Normal;Formateret;Adresse;Overskrift 1;Overskrift 2;Overskrift 3;Overskrift 4;Overskrift 5;Overskrift 6;Normal (DIV)",
@@ -409,10 +409,10 @@ DlgSelectBtnDown	: "Ned",
 DlgSelectBtnSetValue : "Sæt som valgt",
 DlgSelectBtnDelete	: "Slet",
 
-// Textarea Dialog
-DlgTextareaName	: "Navn",
-DlgTextareaCols	: "Kolonner",
-DlgTextareaRows	: "Rækker",
+// textarea Dialog
+DlgtextareaName	: "Navn",
+DlgtextareaCols	: "Kolonner",
+DlgtextareaRows	: "Rækker",
 
 // Text Field Dialog
 DlgTextName			: "Navn",

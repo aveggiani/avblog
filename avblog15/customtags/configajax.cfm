@@ -315,7 +315,7 @@
 												<cfif application.configuration.config.options.whichricheditor.xmltext is 'textarea'>
 													<cfset open = true>
 												</cfif>
-												<vb:waccordionPane id="textarea" label="Textarea" class="dojopaccordionpane" open="#open#">
+												<vb:waccordionPane id="textarea" label="textarea" class="dojopaccordionpane" open="#open#">
 												</vb:waccordionPane>
 												<cfset open=false>
 												<cfif application.configuration.config.options.whichricheditor.xmltext is 'fckeditor'>

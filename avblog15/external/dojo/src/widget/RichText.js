@@ -139,7 +139,7 @@ dojo.widget.defineWidget(
 				(this.domNode.nodeName.toLowerCase() == "textarea")){
 				this.textarea = this.domNode;
 				var html = dojo.string.trim(this.textarea.value);
-				if(html == ""){ html = " "; }
+				if(html == ""){ html = ""; }
 				this.domNode = document.createElement("div");
 				with(this.textarea.style){
 					display = "block";
@@ -172,7 +172,7 @@ dojo.widget.defineWidget(
 				});
 			}else{
 				var html = dojo.string.trim(this.domNode.innerHTML);
-				if(html == ""){ html = " "; }
+				if(html == ""){ html = ""; }
 			}
 					
 			this._oldHeight = dojo.style.getContentHeight(this.domNode);
@@ -194,9 +194,9 @@ dojo.widget.defineWidget(
 			}
 					
 			if(this.saveName != ""){
-				var saveTextarea = document.getElementById("dojo.widget.RichText.savedContent");
-				if (saveTextarea.value != "") {
-					var datas = saveTextarea.value.split(this._SEPARATOR);
+				var savetextarea = document.getElementById("dojo.widget.RichText.savedContent");
+				if (savetextarea.value != "") {
+					var datas = savetextarea.value.split(this._SEPARATOR);
 					for (var i = 0; i < datas.length; i++) {
 						var data = datas[i].split(":");
 						if (data[0] == this.saveName) {
@@ -602,7 +602,7 @@ dojo.widget.defineWidget(
 				e.preventDefault();
 				e.stopPropagation();
 				// FIXME: this is a poor-man's indent/outdent. It would be
-				// better if it added 4 " " chars in an undoable way.
+				// better if it added 4 "" chars in an undoable way.
 				// Unfortuantly pasteHTML does not prove to be undoable 
 				this.execCommand((e.shiftKey ? "outdent" : "indent"));
 			}else if(dojo.render.html.ie){
@@ -741,7 +741,7 @@ dojo.widget.defineWidget(
 		onFocus: function(e){ 
 			if( (dojo.render.html.mozilla)&&(this._initialFocus) ){
 				this._initialFocus = false;
-				if(dojo.string.trim(this.editNode.innerHTML) == " "){
+				if(dojo.string.trim(this.editNode.innerHTML) == ""){
 					this.execCommand("selectall");
 					this.window.getSelection().collapseToStart();
 				}
@@ -1302,15 +1302,15 @@ dojo.widget.defineWidget(
 		 * Saves the content in an onunload event if the editor has not been closed
 		 */
 		_saveContent: function(e){
-			var saveTextarea = document.getElementById("dojo.widget.RichText.savedContent");
-			saveTextarea.value += this._SEPARATOR + this.saveName + ":" + this.getEditorContent();
+			var savetextarea = document.getElementById("dojo.widget.RichText.savedContent");
+			savetextarea.value += this._SEPARATOR + this.saveName + ":" + this.getEditorContent();
 		},
 
 		getEditorContent: function(){
 			var ec = "";
 			try{
 				ec = (this._content.length > 0) ? this._content : this.editNode.innerHTML;
-				if(dojo.string.trim(ec) == " "){ ec = ""; }
+				if(dojo.string.trim(ec) == ""){ ec = ""; }
 			}catch(e){ /* squelch */ }
 
 			dojo.lang.forEach(this.contentFilters, function(ef){

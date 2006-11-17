@@ -93,7 +93,7 @@ Form			: "Vorm",
 Checkbox		: "Märkeruut",
 RadioButton		: "Raadionupp",
 TextField		: "Tekstilahter",
-Textarea		: "Tekstiala",
+textarea		: "Tekstiala",
 HiddenField		: "Varjatud lahter",
 Button			: "Nupp",
 SelectionField	: "Valiklahter",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Raadionupu omadused",
 ImageButtonProp		: "Piltnupu omadused",
 TextFieldProp		: "Tekstilahtri omadused",
 SelectionFieldProp	: "Valiklahtri omadused",
-TextareaProp		: "Tekstiala omadused",
+textareaProp		: "Tekstiala omadused",
 FormProp			: "Vormi omadused",
 
 FontFormats			: "Tavaline;Vormindatud;Aadress;Pealkiri 1;Pealkiri 2;Pealkiri 3;Pealkiri 4;Pealkiri 5;Pealkiri 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Alla",
 DlgSelectBtnSetValue : "Sea valitud olekuna",
 DlgSelectBtnDelete	: "Kustuta",
 
-// Textarea Dialog
-DlgTextareaName	: "Nimi",
-DlgTextareaCols	: "Veerge",
-DlgTextareaRows	: "Ridu",
+// textarea Dialog
+DlgtextareaName	: "Nimi",
+DlgtextareaCols	: "Veerge",
+DlgtextareaRows	: "Ridu",
 
 // Text Field Dialog
 DlgTextName			: "Nimi",

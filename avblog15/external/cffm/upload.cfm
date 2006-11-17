@@ -26,9 +26,9 @@
 <cfinvoke component="#cffm#" method="init">
 	<!--- includeDir = You can and probably should hard code this... by default, the directory is a 
 		directory named "custom" located in the same directory as this file. --->
-	<cfinvokeargument name="includeDir" value="#ExpandPath(".")#/custom">
+	<cfinvokeargument name="includeDir" value="#request.apppath#/user/files">
 	<!--- includeDirWeb = web path to the directory specified above. --->
-	<cfinvokeargument name="includeDirWeb" value="/custom">
+	<cfinvokeargument name="includeDirWeb" value="#request.appmapping#user/files">
 	<!--- disallowedExtensions = file extensions you don't want people to upload --->
 	<cfinvokeargument name="disallowedExtensions" value="cfm,cfml,cfc,dbm,dbml,php,php3,php4,php5,asp,aspx,pl,plx,pls,cgi,jsp,pif,scr,vbs,exe">
 	<!---

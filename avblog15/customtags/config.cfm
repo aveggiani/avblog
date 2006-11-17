@@ -166,7 +166,7 @@
 									<option value="tinyMCE"		<cfif application.configuration.config.options.whichricheditor.xmltext is 'tinyMCE'>selected</cfif>>tinyMCE</option>
 								</cfselect>
 								<cfformgroup type="accordion" width="100%" height="200" selectedindex="{whichricheditor.selectedIndex}">
-									<cfformgroup type="page" label="Textarea">
+									<cfformgroup type="page" label="textarea">
 									</cfformgroup>
 									<cfformgroup type="page" label="FCK Editor">
 										<cfselect name="fckeditortoolbarset" label="#application.language.language.configwichtfckeditortoolbar.xmltext#">

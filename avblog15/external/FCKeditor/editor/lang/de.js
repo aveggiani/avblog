@@ -93,7 +93,7 @@ Form			: "Formular",
 Checkbox		: "Checkbox",
 RadioButton		: "Radiobutton",
 TextField		: "Textfeld einzeilig",
-Textarea		: "Textfeld mehrzeilig",
+textarea		: "Textfeld mehrzeilig",
 HiddenField		: "verstecktes Feld",
 Button			: "Klickbutton",
 SelectionField	: "Auswahlfeld",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Optionsfeld Eigenschaften",
 ImageButtonProp		: "Bildbutton Eigenschaften",
 TextFieldProp		: "Textfeld (einzeilig) Eigenschaften",
 SelectionFieldProp	: "Auswahlfeld Eigenschaften",
-TextareaProp		: "Textfeld (mehrzeilig) Eigenschaften",
+textareaProp		: "Textfeld (mehrzeilig) Eigenschaften",
 FormProp			: "Formular Eigenschaften",
 
 FontFormats			: "Normal;Formatiert;Addresse;Überschrift 1;Überschrift 2;Überschrift 3;Überschrift 4;Überschrift 5;Überschrift 6;Normal (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Runter",
 DlgSelectBtnSetValue : "Setze als Standardwert",
 DlgSelectBtnDelete	: "Entfernen",
 
-// Textarea Dialog
-DlgTextareaName	: "Name",
-DlgTextareaCols	: "Spalten",
-DlgTextareaRows	: "Reihen",
+// textarea Dialog
+DlgtextareaName	: "Name",
+DlgtextareaCols	: "Spalten",
+DlgtextareaRows	: "Reihen",
 
 // Text Field Dialog
 DlgTextName			: "Name",

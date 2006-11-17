@@ -1,5 +1,10 @@
 <cfcomponent name="Users">
 
+	<cfscript>
+		if (get().recordcount is 0)
+			save('Administrator','admin@admin','admin','admin','admin');
+	</cfscript>
+
 	<cffunction name="get" returntype="query" output="false">
 
 		<cfscript>

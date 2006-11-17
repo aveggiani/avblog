@@ -92,7 +92,7 @@ Form			: "Forma",
 Checkbox		: "Polje za potvrdu",
 RadioButton		: "Radio-dugme",
 TextField		: "Tekstualno polje",
-Textarea		: "Zona teksta",
+textarea		: "Zona teksta",
 HiddenField		: "Skriveno polje",
 Button			: "Dugme",
 SelectionField	: "Izborno polje",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Osobine radio-dugmeta",
 ImageButtonProp		: "Osobine dugmeta sa slikom",
 TextFieldProp		: "Osobine tekstualnog polja",
 SelectionFieldProp	: "Osobine izbornog polja",
-TextareaProp		: "Osobine zone teksta",
+textareaProp		: "Osobine zone teksta",
 FormProp			: "Osobine forme",
 
 FontFormats			: "Normal;Formatirano;Adresa;Naslov 1;Naslov 2;Naslov 3;Naslov 4;Naslov 5;Naslov 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Dole",
 DlgSelectBtnSetValue : "Podesi kao označenu vrednost",
 DlgSelectBtnDelete	: "Obriši",
 
-// Textarea Dialog
-DlgTextareaName	: "Naziv",
-DlgTextareaCols	: "Broj kolona",
-DlgTextareaRows	: "Broj redova",
+// textarea Dialog
+DlgtextareaName	: "Naziv",
+DlgtextareaCols	: "Broj kolona",
+DlgtextareaRows	: "Broj redova",
 
 // Text Field Dialog
 DlgTextName			: "Naziv",

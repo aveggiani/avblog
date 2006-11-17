@@ -60,7 +60,7 @@
 	if( isCompatible() )
 		showHTMLEditor();
 	else
-		showTextArea();
+		showtextarea();
 	</cfscript>
 
 </cffunction>
@@ -112,7 +112,7 @@
 </cffunction>
 
 <cffunction
-	name="showTextArea"
+	name="showtextarea"
 	access="private"
 	output="true"
 	returnType="void"

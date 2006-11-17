@@ -39,7 +39,7 @@ FCK._GetBehaviorsStyle = function()
 			sTableBehavior = 'url(' + sBasePath + 'css/behaviors/showtableborders.htc)' ;
 
 		// Disable resize handlers.
-		sStyle += 'INPUT,TEXTAREA,SELECT,.FCK__Anchor,.FCK__PageBreak' ;
+		sStyle += 'INPUT,textarea,SELECT,.FCK__Anchor,.FCK__PageBreak' ;
 
 		if ( FCKConfig.DisableObjectResizing )
 		{

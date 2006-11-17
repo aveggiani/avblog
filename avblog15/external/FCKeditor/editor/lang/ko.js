@@ -93,7 +93,7 @@ Form			: "폼",
 Checkbox		: "체크박스",
 RadioButton		: "라디오버튼",
 TextField		: "입력필드",
-Textarea		: "입력영역",
+textarea		: "입력영역",
 HiddenField		: "숨김필드",
 Button			: "버튼",
 SelectionField	: "펼침목록",
@@ -128,7 +128,7 @@ RadioButtonProp		: "라디오버튼 속성",
 ImageButtonProp		: "이미지버튼 속성",
 TextFieldProp		: "입력필드 속성",
 SelectionFieldProp	: "펼침목록 속성",
-TextareaProp		: "입력영역 속성",
+textareaProp		: "입력영역 속성",
 FormProp			: "폼 속성",
 
 FontFormats			: "Normal;Formatted;Address;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "아래로",
 DlgSelectBtnSetValue : "선택된것으로 설정",
 DlgSelectBtnDelete	: "삭제",
 
-// Textarea Dialog
-DlgTextareaName	: "이름",
-DlgTextareaCols	: "칸수",
-DlgTextareaRows	: "줄수",
+// textarea Dialog
+DlgtextareaName	: "이름",
+DlgtextareaCols	: "칸수",
+DlgtextareaRows	: "줄수",
 
 // Text Field Dialog
 DlgTextName			: "이름",

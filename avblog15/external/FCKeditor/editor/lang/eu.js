@@ -93,7 +93,7 @@ Form			: "Formularioa",
 Checkbox		: "Kontrol-laukia",
 RadioButton		: "Aukera-botoia",
 TextField		: "Testu Eremua",
-Textarea		: "Testu-area",
+textarea		: "Testu-area",
 HiddenField		: "Ezkutuko Eremua",
 Button			: "Botoia",
 SelectionField	: "Hautespen Eremua",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Aukera-botoiaren Ezaugarriak",
 ImageButtonProp		: "Irudi Botoiaren Ezaugarriak",
 TextFieldProp		: "Testu Eremuaren Ezaugarriak",
 SelectionFieldProp	: "Hautespen Eremuaren Ezaugarriak",
-TextareaProp		: "Testu-arearen Ezaugarriak",
+textareaProp		: "Testu-arearen Ezaugarriak",
 FormProp			: "Formularioaren Ezaugarriak",
 
 FontFormats			: "Arrunta;Formateatua;Helbidea;Izenburua 1;Izenburua 2;Izenburua 3;Izenburua 4;Izenburua 5;Izenburua 6;Paragrafoa (DIV)",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Behera",
 DlgSelectBtnSetValue : "Aukeratutako balorea ezarri",
 DlgSelectBtnDelete	: "Ezabatu",
 
-// Textarea Dialog
-DlgTextareaName	: "Izena",
-DlgTextareaCols	: "Zutabeak",
-DlgTextareaRows	: "Lerroak",
+// textarea Dialog
+DlgtextareaName	: "Izena",
+DlgtextareaCols	: "Zutabeak",
+DlgtextareaRows	: "Lerroak",
 
 // Text Field Dialog
 DlgTextName			: "Izena",

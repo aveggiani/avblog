@@ -19,7 +19,7 @@
  * 		Abdul-Aziz Al-Oraij (top7up@hotmail.com)
  */
 
-BODY, TEXTAREA, INPUT, TD, SELECT
+BODY, textarea, INPUT, TD, SELECT
 {
 	font-family: Tahoma,verdana,arial,sans-serif;
 }

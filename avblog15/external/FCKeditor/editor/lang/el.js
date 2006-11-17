@@ -93,7 +93,7 @@ Form			: "Φόρμα",
 Checkbox		: "Κουτί επιλογής",
 RadioButton		: "Κουμπί Radio",
 TextField		: "Πεδίο κειμένου",
-Textarea		: "Περιοχή κειμένου",
+textarea		: "Περιοχή κειμένου",
 HiddenField		: "Κρυφό πεδίο",
 Button			: "Κουμπί",
 SelectionField	: "Πεδίο επιλογής",
@@ -128,7 +128,7 @@ RadioButtonProp		: "Ιδιότητες κουμπιού radio",
 ImageButtonProp		: "Ιδιότητες κουμπιού εικόνας",
 TextFieldProp		: "Ιδιότητες πεδίου κειμένου",
 SelectionFieldProp	: "Ιδιότητες πεδίου επιλογής",
-TextareaProp		: "Ιδιότητες περιοχής κειμένου",
+textareaProp		: "Ιδιότητες περιοχής κειμένου",
 FormProp			: "Ιδιότητες φόρμας",
 
 FontFormats			: "Κανονικό;Μορφοποιημένο;Διεύθυνση;Επικεφαλίδα 1;Επικεφαλίδα 2;Επικεφαλίδα 3;Επικεφαλίδα 4;Επικεφαλίδα 5;Επικεφαλίδα 6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "Κάτω",
 DlgSelectBtnSetValue : "Προεπιλεγμένη επιλογή",
 DlgSelectBtnDelete	: "Διαγραφή",
 
-// Textarea Dialog
-DlgTextareaName	: "Όνομα",
-DlgTextareaCols	: "Στήλες",
-DlgTextareaRows	: "Σειρές",
+// textarea Dialog
+DlgtextareaName	: "Όνομα",
+DlgtextareaCols	: "Στήλες",
+DlgtextareaRows	: "Σειρές",
 
 // Text Field Dialog
 DlgTextName			: "Όνομα",

@@ -92,7 +92,7 @@ Form			: "Formulär",
 Checkbox		: "Kryssruta",
 RadioButton		: "Alternativknapp",
 TextField		: "Textfält",
-Textarea		: "Textruta",
+textarea		: "Textruta",
 HiddenField		: "Dolt fält",
 Button			: "Knapp",
 SelectionField	: "Flervalslista",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Egenskaper för alternativknapp",
 ImageButtonProp		: "Egenskaper för bildknapp",
 TextFieldProp		: "Egenskaper för textfält",
 SelectionFieldProp	: "Egenskaper för flervalslista",
-TextareaProp		: "Egenskaper för textruta",
+textareaProp		: "Egenskaper för textruta",
 FormProp			: "Egenskaper för formulär",
 
 FontFormats			: "Normal;Formaterad;Adress;Rubrik 1;Rubrik 2;Rubrik 3;Rubrik 4;Rubrik 5;Rubrik 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Ner",
 DlgSelectBtnSetValue : "Markera som valt värde",
 DlgSelectBtnDelete	: "Radera",
 
-// Textarea Dialog
-DlgTextareaName	: "Namn",
-DlgTextareaCols	: "Kolumner",
-DlgTextareaRows	: "Rader",
+// textarea Dialog
+DlgtextareaName	: "Namn",
+DlgtextareaCols	: "Kolumner",
+DlgtextareaRows	: "Rader",
 
 // Text Field Dialog
 DlgTextName			: "Namn",

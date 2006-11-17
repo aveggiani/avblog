@@ -92,7 +92,7 @@ Form			: "Borang",
 Checkbox		: "Checkbox",
 RadioButton		: "Butang Radio",
 TextField		: "Text Field",
-Textarea		: "Textarea",
+textarea		: "textarea",
 HiddenField		: "Field Tersembunyi",
 Button			: "Butang",
 SelectionField	: "Field Pilihan",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Ciri-ciri Butang Radio",
 ImageButtonProp		: "Ciri-ciri Butang Bergambar",
 TextFieldProp		: "Ciri-ciri Text Field",
 SelectionFieldProp	: "Ciri-ciri Selection Field",
-TextareaProp		: "Ciri-ciri Textarea",
+textareaProp		: "Ciri-ciri textarea",
 FormProp			: "Ciri-ciri Borang",
 
 FontFormats			: "Normal;Telah Diformat;Alamat;Heading 1;Heading 2;Heading 3;Heading 4;Heading 5;Heading 6;Perenggan (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Turun ke bawah",
 DlgSelectBtnSetValue : "Set sebagai nilai terpilih",
 DlgSelectBtnDelete	: "Padam",
 
-// Textarea Dialog
-DlgTextareaName	: "Nama",
-DlgTextareaCols	: "Lajur",
-DlgTextareaRows	: "Baris",
+// textarea Dialog
+DlgtextareaName	: "Nama",
+DlgtextareaCols	: "Lajur",
+DlgtextareaRows	: "Baris",
 
 // Text Field Dialog
 DlgTextName			: "Nama",

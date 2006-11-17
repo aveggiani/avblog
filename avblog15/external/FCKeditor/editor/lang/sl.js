@@ -92,7 +92,7 @@ Form			: "Obrazec",
 Checkbox		: "Potrditveno polje",
 RadioButton		: "Izbirno polje",
 TextField		: "Vnosno polje",
-Textarea		: "Vnosno območje",
+textarea		: "Vnosno območje",
 HiddenField		: "Skrito polje",
 Button			: "Gumb",
 SelectionField	: "Spustni seznam",
@@ -127,7 +127,7 @@ RadioButtonProp		: "Lastnosti izbirnega polja",
 ImageButtonProp		: "Lastnosti gumba s sliko",
 TextFieldProp		: "Lastnosti vnosnega polja",
 SelectionFieldProp	: "Lastnosti spustnega seznama",
-TextareaProp		: "Lastnosti vnosnega območja",
+textareaProp		: "Lastnosti vnosnega območja",
 FormProp			: "Lastnosti obrazca",
 
 FontFormats			: "Navaden;Oblikovan;Napis;Naslov 1;Naslov 2;Naslov 3;Naslov 4;Naslov 5;Naslov 6",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "Dol",
 DlgSelectBtnSetValue : "Postavi kot privzeto izbiro",
 DlgSelectBtnDelete	: "Izbriši",
 
-// Textarea Dialog
-DlgTextareaName	: "Ime",
-DlgTextareaCols	: "Stolpcev",
-DlgTextareaRows	: "Vrstic",
+// textarea Dialog
+DlgtextareaName	: "Ime",
+DlgtextareaCols	: "Stolpcev",
+DlgtextareaRows	: "Vrstic",
 
 // Text Field Dialog
 DlgTextName			: "Ime",

@@ -93,7 +93,7 @@ Form			: "نموذج",
 Checkbox		: "خانة إختيار",
 RadioButton		: "زر خيار",
 TextField		: "مربع نص",
-Textarea		: "ناحية نص",
+textarea		: "ناحية نص",
 HiddenField		: "إدراج حقل خفي",
 Button			: "زر ضغط",
 SelectionField	: "قائمة منسدلة",
@@ -128,7 +128,7 @@ RadioButtonProp		: "خصائص زر الخيار",
 ImageButtonProp		: "خصائص زر الصورة",
 TextFieldProp		: "خصائص مربع النص",
 SelectionFieldProp	: "خصائص القائمة المنسدلة",
-TextareaProp		: "خصائص ناحية النص",
+textareaProp		: "خصائص ناحية النص",
 FormProp			: "خصائص النموذج",
 
 FontFormats			: "عادي;منسّق;دوس;العنوان 1;العنوان  2;العنوان  3;العنوان  4;العنوان  5;العنوان  6",
@@ -408,10 +408,10 @@ DlgSelectBtnDown	: "تحريك لأسفل",
 DlgSelectBtnSetValue : "إجعلها محددة",
 DlgSelectBtnDelete	: "إزالة",
 
-// Textarea Dialog
-DlgTextareaName	: "الاسم",
-DlgTextareaCols	: "الأعمدة",
-DlgTextareaRows	: "الصفوف",
+// textarea Dialog
+DlgtextareaName	: "الاسم",
+DlgtextareaCols	: "الأعمدة",
+DlgtextareaRows	: "الصفوف",
 
 // Text Field Dialog
 DlgTextName			: "الاسم",

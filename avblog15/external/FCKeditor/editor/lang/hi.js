@@ -92,7 +92,7 @@ Form			: "फ़ॉर्म",
 Checkbox		: "चॅक बॉक्स",
 RadioButton		: "रेडिओ बटन",
 TextField		: "टेक्स्ट फ़ील्ड",
-Textarea		: "टेक्स्ट एरिया",
+textarea		: "टेक्स्ट एरिया",
 HiddenField		: "गुप्त फ़ील्ड",
 Button			: "बटन",
 SelectionField	: "चुनाव फ़ील्ड",
@@ -127,7 +127,7 @@ RadioButtonProp		: "रेडिओ बटन प्रॉपर्टीज़",
 ImageButtonProp		: "तस्वीर बटन प्रॉपर्टीज़",
 TextFieldProp		: "टेक्स्ट फ़ील्ड प्रॉपर्टीज़",
 SelectionFieldProp	: "चुनाव फ़ील्ड प्रॉपर्टीज़",
-TextareaProp		: "टेक्स्त एरिया प्रॉपर्टीज़",
+textareaProp		: "टेक्स्त एरिया प्रॉपर्टीज़",
 FormProp			: "फ़ॉर्म प्रॉपर्टीज़",
 
 FontFormats			: "साधारण;फ़ॉर्मैटॅड;पता;शीर्षक 1;शीर्षक 2;शीर्षक 3;शीर्षक 4;शीर्षक 5;शीर्षक 6;शीर्षक (DIV)",
@@ -407,10 +407,10 @@ DlgSelectBtnDown	: "नीचे",
 DlgSelectBtnSetValue : "चुनी गई वैल्यू सॅट करें",
 DlgSelectBtnDelete	: "डिलीट",
 
-// Textarea Dialog
-DlgTextareaName	: "नाम",
-DlgTextareaCols	: "कॉलम",
-DlgTextareaRows	: "पंक्तियां",
+// textarea Dialog
+DlgtextareaName	: "नाम",
+DlgtextareaCols	: "कॉलम",
+DlgtextareaRows	: "पंक्तियां",
 
 // Text Field Dialog
 DlgTextName			: "नाम",

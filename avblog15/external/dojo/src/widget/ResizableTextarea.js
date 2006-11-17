@@ -8,7 +8,7 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-dojo.provide("dojo.widget.ResizableTextarea");
+dojo.provide("dojo.widget.Resizabletextarea");
 dojo.require("dojo.html");
 dojo.require("dojo.widget.*");
 dojo.require("dojo.widget.LayoutContainer");
@@ -16,21 +16,21 @@ dojo.require("dojo.widget.ResizeHandle");
 
 dojo.widget.tags.addParseTreeHandler("dojo:resizabletextarea");
 
-dojo.widget.ResizableTextarea = function(){
+dojo.widget.Resizabletextarea = function(){
 	dojo.widget.HtmlWidget.call(this);
 }
 
-dojo.inherits(dojo.widget.ResizableTextarea, dojo.widget.HtmlWidget);
+dojo.inherits(dojo.widget.Resizabletextarea, dojo.widget.HtmlWidget);
 
-dojo.lang.extend(dojo.widget.ResizableTextarea, {
-	templatePath: dojo.uri.dojoUri("src/widget/templates/HtmlResizableTextarea.html"),
-	templateCssPath: dojo.uri.dojoUri("src/widget/templates/HtmlResizableTextarea.css"),
-	widgetType: "ResizableTextarea",
+dojo.lang.extend(dojo.widget.Resizabletextarea, {
+	templatePath: dojo.uri.dojoUri("src/widget/templates/HtmlResizabletextarea.html"),
+	templateCssPath: dojo.uri.dojoUri("src/widget/templates/HtmlResizabletextarea.css"),
+	widgetType: "Resizabletextarea",
 	tagName: "dojo:resizabletextarea",
 	isContainer: false,
-	textAreaNode: null,
-	textAreaContainer: null,
-	textAreaContainerNode: null,
+	textareaNode: null,
+	textareaContainer: null,
+	textareaContainerNode: null,
 	statusBar: null,
 	statusBarContainerNode: null,
 	statusLabelNode: null,
@@ -40,7 +40,7 @@ dojo.lang.extend(dojo.widget.ResizableTextarea, {
 	resizeHandle: null,
 
 	fillInTemplate: function(args, frag){
-		this.textAreaNode = this.getFragNodeRef(frag).cloneNode(true);
+		this.textareaNode = this.getFragNodeRef(frag).cloneNode(true);
 
 		// FIXME: Safari apparently needs this!
 		document.body.appendChild(this.domNode);
@@ -55,15 +55,15 @@ dojo.lang.extend(dojo.widget.ResizableTextarea, {
 		);
 
 
-		this.textAreaContainer = dojo.widget.createWidget(
+		this.textareaContainer = dojo.widget.createWidget(
 			"LayoutContainer",
 			{ layoutAlign: "client" },
-			this.textAreaContainerNode
+			this.textareaContainerNode
 		);
-		this.rootLayout.addChild(this.textAreaContainer);
+		this.rootLayout.addChild(this.textareaContainer);
 
-		this.textAreaContainer.domNode.appendChild(this.textAreaNode);
-		with(this.textAreaNode.style){
+		this.textareaContainer.domNode.appendChild(this.textareaNode);
+		with(this.textareaNode.style){
 			width="100%";
 			height="100%";
 		}
@@ -101,10 +101,10 @@ dojo.lang.extend(dojo.widget.ResizableTextarea, {
 	},
 
 	hideContent: function(){
-		this.textAreaNode.style.display = "none";
+		this.textareaNode.style.display = "none";
 	},
 
 	showContent: function(){
-		this.textAreaNode.style.display = "";
+		this.textareaNode.style.display = "";
 	}
 });
