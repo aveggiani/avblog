@@ -1,4 +1,4 @@
-Version 1.5 -  11 november 2006
+Version 1.5 -  20 november 2006
 
 - Ajax use expanded to the Flickr Plugin, the Photoblog plugin and the post editing function
 - Ajax used for captcha control
