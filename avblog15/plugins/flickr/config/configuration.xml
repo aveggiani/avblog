@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-				<apikey><![CDATA[]]></apikey>
-				<secret><![CDATA[]]></secret>
+				<apikey/>
+				<secret/>
 				<photonumber>6</photonumber>
 			</plugin>

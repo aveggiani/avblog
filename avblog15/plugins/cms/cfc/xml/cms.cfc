@@ -6,7 +6,7 @@
 		</cfif>
 	</cffunction>
 
-	<cffunction name="getFromPermalink" output="false" returntype="uuid">
+	<cffunction name="getFromPermalink" output="false" returntype="string">
 		<cfargument name="title" type="string">
 		
 		<cfscript>
@@ -14,7 +14,7 @@
 			qryGet = getcms(0);
 		</cfscript>
 		<cfquery name="qryGet" dbtype="query">
-			select id from qryGet where name = '#arguments.title#'
+			select id from qryGet where permalink = '#arguments.title#'
 		</cfquery>
 		
 		<cfreturn qryGet.id>
@@ -24,7 +24,7 @@
 		<cfargument name="id" required="yes" type="string">
 	
 		<cfscript>
-			var qryGet 			= querynew("id,name,ordername,category,ordercategory,description,date,sdate");
+			var qryGet 			= querynew("id,permalink,name,ordername,category,ordercategory,description,date,sdate");
 			var getDirectory 	= '';
 			var filter 			= '';
 		
@@ -44,6 +44,7 @@
 				xmlContent = xmlParse(xmlContent);
 				queryaddrow(qryGet,1);
 				querysetcell(qryGet,'id',listgetat(getDirectory.name,1,'.'),getDirectory.currentrow);
+				querysetcell(qryGet,'id',application.objPermalinks.getPermalinkFromTitle(xmlContent.cms.document.xmlattributes.name),getDirectory.currentrow);
 				querysetcell(qryGet,'name',xmlContent.cms.document.xmlattributes.name,getDirectory.currentrow);
 				querysetcell(qryGet,'ordername',xmlContent.cms.document.xmlattributes.ordername,getDirectory.currentrow);
 				querysetcell(qryGet,'category',xmlContent.cms.document.xmlattributes.category,getDirectory.currentrow);

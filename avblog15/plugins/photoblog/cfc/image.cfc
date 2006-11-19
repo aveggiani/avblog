@@ -68,44 +68,56 @@
 	<cffunction name="exifReader" returntype="xml">
 		<cfargument name="image" type="string">
 
-		<cfscript>
-			photo = arguments.image;
-			photoFile = createObject("java","java.io.File").init(photo);
-			//set the path
-			paths = ArrayNew(1);
-			paths[1] = '#request.apppath#/external/class/metadata-extractor-2.3.1.jar';
-			//create the loader
-			loader = application.JavaLoader.init(paths); 
-			//create the JpegMetadataReader instace
-			JpegMetadataReader = loader.create("com.drew.imaging.jpeg.JpegMetadataReader");
-			//Read jpg file
-			JpegMetadata = JpegMetadataReader.readMetadata(photoFile);
-			//get directory iterator
-			JpegDirectories = jpegMetadata.getDirectoryIterator();
-		</cfscript>
-		
-		<!--- output all EXIF info tags --->
-		<cfoutput>
-			<cfxml variable="returnValue">
-				<exif>
-					<cfloop condition="JpegDirectories.hasNext()">
-						<tags>
-							<cfset currentDirectory = JpegDirectories.next() />
-							<cfset tags = currentDirectory.getTagIterator() />
-							<cfloop condition="tags.hasNext()">
-								<cfset currentTag = tags.next()>
-								<tag>
-									<type>#currentTag.getTagType()#</type>
-									<name>#currentTag.getTagName()#</name>
-									<description>#currentTag.getDescription()#</description>
-									<value>#currentTag.toString()#</value>
-								</tag>
-							</cfloop>
-						</tags>
-					</cfloop>
-				</exif>
-			</cfxml>
-		</cfoutput>
+		<cftry>
+			<cfscript>
+				photo = arguments.image;
+				photoFile = createObject("java","java.io.File").init(photo);
+				//set the path
+				paths = ArrayNew(1);
+				paths[1] = '#request.apppath#/external/class/metadata-extractor-2.3.1.jar';
+				//create the loader
+				loader = application.JavaLoader.init(paths); 
+				//create the JpegMetadataReader instace
+				JpegMetadataReader = loader.create("com.drew.imaging.jpeg.JpegMetadataReader");
+				//Read jpg file
+				JpegMetadata = JpegMetadataReader.readMetadata(photoFile);
+				//get directory iterator
+				JpegDirectories = jpegMetadata.getDirectoryIterator();
+			</cfscript>
+			
+			<!--- output all EXIF info tags --->
+			<cfoutput>
+				<cfxml variable="returnValue">
+					<exif>
+						<cfloop condition="JpegDirectories.hasNext()">
+							<tags>
+								<cfset currentDirectory = JpegDirectories.next() />
+								<cfset tags = currentDirectory.getTagIterator() />
+								<cfloop condition="tags.hasNext()">
+									<cfset currentTag = tags.next()>
+									<tag>
+										<type>#currentTag.getTagType()#</type>
+										<name>#currentTag.getTagName()#</name>
+										<description>#currentTag.getDescription()#</description>
+										<value>#currentTag.toString()#</value>
+									</tag>
+								</cfloop>
+							</tags>
+						</cfloop>
+					</exif>
+				</cfxml>
+			</cfoutput>
+			<cfcatch>
+				<cfoutput>
+					<cfxml variable="returnValue">
+						<exif>
+							<tags>
+							</tags>
+						</exif>
+					</cfxml>
+				</cfoutput>
+			</cfcatch>
+		</cftry>
 
 		<cfreturn returnValue>
 	</cffunction>

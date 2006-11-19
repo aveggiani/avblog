@@ -68,7 +68,7 @@
 				</cfif>
 				<br />
 				<br />
-				[ <a href="index.cfm?logout=1">#application.language.language.logout.xmltext#</a> ]
+				[ <a href="#request.appmapping#index.cfm?logout=1">#application.language.language.logout.xmltext#</a> ]
 			</div>		
 		</cfoutput>
 	</vb:pod>

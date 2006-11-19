@@ -32,7 +32,8 @@
 							<span class="catListTitle">#application.cms.category#</span>
 							<br />
 							<cfoutput>
-								&nbsp;<a href="#request.appmapping#permalinks/cms/#replace(application.cms.name,'&','&amp;','ALL')#">#application.cms.name#</a>
+								<cfset foldername = application.objPermalinks.getPermalinkFromTitle(application.cms.name)>
+								&nbsp;<a href="#request.appmapping#permalinks/cms/#replace(foldername,'&','&amp;','ALL')#">#application.cms.name#</a>
 								<br />
 							</cfoutput>
 						</cfoutput>
@@ -153,7 +154,10 @@
 								</tr>
 								<tr>
 									<td align="right">#application.pluginslanguage.cms.language.namefile.xmltext#:</td>
-									<td><input type="text" size="50" name="name" <cfif isdefined('url.id')>value="#mycms.name#"</cfif> class="editorForm"/></td>
+									<td>
+										<input type="text" size="50" name="name" <cfif isdefined('url.id')>value="#mycms.name#"</cfif> class="editorForm"/>
+										<input type="hidden" name="old_name" <cfif isdefined('url.id')>value="#mycms.name#"</cfif> />
+									</td>
 								</tr>
 								<tr>
 									<td align="right">#application.pluginslanguage.cms.language.ordercategory.xmltext#:</td>

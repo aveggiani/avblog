@@ -3,18 +3,17 @@
 	<cffunction name="init" access="public">
 	</cffunction>
 
-	<cffunction name="getFromPermalink" output="false" returntype="uuid">
+	<cffunction name="getFromPermalink" output="false" returntype="string">
 		<cfargument name="title" type="string">
 		
 		<cfscript>
-			var qryGet 			= '';
+			var qryGet = '';
+			qryGet = getcms(0);
 		</cfscript>
-		
-		<cfquery name="qryGet" datasource="#request.db#">
-			select id from cms 
-				where name = '#arguments.title#'
+		<cfquery name="qryGet" dbtype="query">
+			select id from qryGet where permalink = '#arguments.title#'
 		</cfquery>
-
+		
 		<cfreturn qryGet.id>
 	</cffunction>
 
@@ -26,12 +25,17 @@
 		</cfscript>
 		
 		<cfquery name="qryGet" datasource="#request.db#">
-			select id,name,ordername,category,ordercategory,description,sdate from cms 
+			select id,name,ordername,category,ordercategory,description,sdate,'' as permalink from cms 
 				<cfif arguments.id is not 0>
 					where id = '#arguments.id#'
 				</cfif>
 				order by ordercategory,ordername
 		</cfquery>
+		<cfloop query="qryGet">
+			<cfscript>
+				querySetCell(qryGet,'permalink',application.objPermalinks.getPermalinkFromTitle(qryGet.name),qryGet.currentrow);
+			</cfscript>
+		</cfloop>
 
 		<cfscript>
 			rowDate = listtoarray(valuelist(qryGet.sdate));

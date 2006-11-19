@@ -94,9 +94,10 @@ Create table "photoblog" (
 	"id" Char (50) NOT NULL ,
 	"id_gallery" Char (50),
 	"name" Char (50),
-	"file" Char (50),
+	"sfile" Char (50),
 	"description" Long,
 	"sdate" Char (50),
+	"imageorder" Char (3),
 primary key ("id") 
 ) 
 /
