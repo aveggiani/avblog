@@ -98,38 +98,40 @@
 				status = objZip.extract(zipfilepath='#request.appPath#/user/photoblog/tmp/#file#',extractpath='#request.appPath#/user/photoblog/galleries/#arguments.name#/original/',usefoldernames='no');
 			</cfscript>
 			<!--- get the list of the file extracted --->
-			<cfdirectory action="list" name="filesextracted" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
+			<cfdirectory action="list" name="filesextracted" filter="*.*" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
 			<!--- loop over the list, resize the images and create the storage info --->
 			<cfloop query="filesextracted">
-				<cfscript>
-					exifTags = xmlsearch(exifReader('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#'),'//tag');
-				</cfscript>
-				<cfloop index="i" from="1" to="#arraylen(exifTags)#">
-					<cfif exifTags[i].name.xmltext is 'orientation' and left(exifTags[i].description.xmltext,3) is not 'top' and left(exifTags[i].description.xmltext,3) is not 'bot'>
-						<cfscript>
-							objImage = createobject('component','cfc.external.imagecfc.image');
-							objImage.rotate('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#',-90);
-						</cfscript>
-					</cfif>
-				</cfloop>
-				<cfscript>
-					if (application.pluginsconfiguration.photoblog.plugin.copyright.use.xmltext)
-						{
-							// create the thumbnail
-							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
-							// create the big image
-							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
-						}
-					else
-						{
-							// create the thumbnail
-							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth);
-							// create the big image
-							objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
-						}
-					//
-					xmlImage = xmlImage & objStoragephotoblog.saveImage(createuuid(),filesextracted.name,listgetat(filesextracted.name,1,'.'),'',galleryid,filesextracted.currentrow);
-				</cfscript>
+				<cfif filesextracted.name contains '.jpg' or filesextracted.name contains '.gif'> 
+					<cfscript>
+						exifTags = xmlsearch(exifReader('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#'),'//tag');
+					</cfscript>
+					<cfloop index="i" from="1" to="#arraylen(exifTags)#">
+						<cfif exifTags[i].name.xmltext is 'orientation' and left(exifTags[i].description.xmltext,3) is not 'top' and left(exifTags[i].description.xmltext,3) is not 'bot'>
+							<cfscript>
+								objImage = createobject('component','cfc.external.imagecfc.image');
+								objImage.rotate('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#',-90);
+							</cfscript>
+						</cfif>
+					</cfloop>
+					<cfscript>
+						if (application.pluginsconfiguration.photoblog.plugin.copyright.use.xmltext)
+							{
+								// create the thumbnail
+								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+								// create the big image
+								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+							}
+						else
+							{
+								// create the thumbnail
+								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth);
+								// create the big image
+								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
+							}
+						//
+						xmlImage = xmlImage & objStoragephotoblog.saveImage(createuuid(),filesextracted.name,listgetat(filesextracted.name,1,'.'),'',galleryid,filesextracted.currentrow);
+					</cfscript>
+				</cfif>
 			</cfloop>
 			<cfscript>
 				objStoragephotoblog.saveGallery(galleryid,arguments.name,arguments.category,arguments.description,xmlImage);
@@ -143,7 +145,6 @@
 				</cftry>
 			</cfif>
 		</cfif>
-		
 		<cfreturn ok>
 
 	</cffunction>

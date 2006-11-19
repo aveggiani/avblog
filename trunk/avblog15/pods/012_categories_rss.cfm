@@ -12,7 +12,7 @@
 					<span class="catListTitle"><cfoutput>#application.language.language.feed.xmltext#</cfoutput><br /></span>
 					<span class="catListElement">[<a href="#request.appmapping#feed/rss.cfm">RSS</a>][<a href="#request.appmapping#feed/atom.cfm">ATOM</a>] All<br /></span>
 					<cfloop query="categories">
-						<span class="catListElement">[<a href="#request.appmapping#feed/rss.cfm?category=#categories.name#">RSS</a>][<a href="#request.appmapping#feed/atom.cfm?category=#categories.name#">ATOM</a>] #listrest(categories.name,'_')#<br /></span>
+						<span class="catListElement">[<a href="#request.appmapping#feed/rss.cfm?category=#listrest(categories.name,'_')#">RSS</a>][<a href="#request.appmapping#feed/atom.cfm?category=#listrest(categories.name,'_')#">ATOM</a>] #listrest(categories.name,'_')#<br /></span>
 					</cfloop>
 				</cfoutput>
 			</div>

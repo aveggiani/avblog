@@ -10,6 +10,9 @@
  			<meta name="DC.creator" content="#application.language.language.author.xmltext#" />
  			<meta http-equiv="content-type" content="text/html;charset=#request.charset#" />
 			<meta name="description" content="#application.configuration.config.headers.description.xmltext#" />
+			<cfif cgi.script_name does not contain 'permalinks' and isdefined('url.mode') and listfind('addcomment,viewcomment,addtrackback,viewtrackback',url.mode)>
+				<meta name="ROBOTS" content="NOINDEX">
+			</cfif>
 			<cfif not isdefined('url.id')>
 	 			<meta name="DC.title" content="#application.configuration.config.headers.title.xmltext#" />
 				<title>#application.configuration.config.headers.title.xmltext#</title>

@@ -97,7 +97,7 @@
 					description = '#arguments.description#',
 					sdate = '#year(now())##right("0"&month(now()),2)##right("0"&day(now()),2)#',
 					imageorder = '#arguments.imageorder#'
-				where id = '#arguments.id#
+				where id = '#arguments.id#'
 			</cfquery>
 		</cfif>
 		
@@ -116,7 +116,7 @@
 		<cfset var qryImage = "">
 		
 		<cfquery name="qryImage" datasource="#request.db#" username="#request.dbusr#" password="#request.dbpwd#">
-			select id from photoblog where id = '#arguments.id#'
+			select id from photobloggallery where id = '#arguments.id#'
 		</cfquery>
 		<cfif qryImage.recordcount is 0>
 			<cfquery name="qryImage" datasource="#request.db#">

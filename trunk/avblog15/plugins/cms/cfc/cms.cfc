@@ -17,7 +17,7 @@
 		</cfscript>
 	</cffunction>
 
-	<cffunction name="getFromPermalink" output="false" returntype="uuid">
+	<cffunction name="getFromPermalink" output="false" returntype="string">
 		<cfargument name="title" type="string">
 		
 		<cfreturn objStoragecms.getFromPermalink(arguments.title)>
@@ -37,11 +37,13 @@
 		<cfargument name="category" 		required="yes" 	type="string">
 		<cfargument name="ordercategory"	required="yes" 	type="string">
 		<cfargument name="name" 			required="yes" 	type="string">
+		<cfargument name="old_name" 		required="yes" 	type="string">
 		<cfargument name="ordername" 		required="yes" 	type="string">
 		<cfargument name="description" 		required="yes" 	type="string">
 		<cfargument name="id" 				required="no" 	type="string" default="#createuuid()#">
 
 		<cfscript>
+			var foldername = '';
 			objStoragecms.save(id,name,ordername,category,ordercategory,description);
 		</cfscript>
         <cflock timeout="10" throwontimeout="Yes" name="#arguments.id#" type="EXCLUSIVE">
@@ -49,9 +51,15 @@
         </cflock>
 		
 		<cfscript>
-			application.fileSystem.createDirectory('#request.appPath#/permalinks/cms','#arguments.name#');
-			application.fileSystem.copyFile('#request.appPath#/permalinks','#request.appPath#/permalinks/cms/#arguments.name#','index_cms.cfm');
-			application.fileSystem.renameFile('#request.appPath#/permalinks/cms/#arguments.name#','index_cms.cfm','index.cfm');
+			if (arguments.old_name is not "" and arguments.old_name is not arguments.name)
+				{
+					foldername = application.objPermalinks.getPermalinkFromTitle(arguments.old_name);
+					application.fileSystem.deleteDirectory('#request.appPath#/permalinks/cms/#foldername#','true');
+				}
+			foldername = application.objPermalinks.getPermalinkFromTitle(arguments.name);
+			application.fileSystem.createDirectory('#request.appPath#/permalinks/cms','#foldername#');
+			application.fileSystem.copyFile('#request.appPath#/permalinks','#request.appPath#/permalinks/cms/#foldername#','index_cms.cfm');
+			application.fileSystem.renameFile('#request.appPath#/permalinks/cms/#foldername#','index_cms.cfm','index.cfm');
 		</cfscript>
 
 		<cfreturn id>

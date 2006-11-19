@@ -1,30 +1,30 @@
 <cfsilent><?xml version="1.0" encoding="UTF-8"?>
 <config>
 					<headers>
-						<title>AVBlog 1.5</title>
+						<title>AVBlog demo site</title>
 						<description>Blog</description>
 						<charset>UTF-8</charset>
 					</headers>
 					<labels>
-						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;">Andrea Veggiani</div><a href="index.cfm?mode=admin">Administration</a>&nbsp;|&nbsp;<a href="http://www.avblog.org/index.cfm">AVBlog project</a>]]></header>
-						<footer>Copyright 2006 - Your name here</footer>
+						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;">AVBlog Demo Site</div><div style="float:right;padding-right:10px;"><a href="http://www.avblog.org/index.cfm">AVBlog project</a></div>]]></header>
+						<footer>Copyright 2006 - Andrea Veggiani</footer>
 					</labels>
 					<owner>
-						<author>Blog Owner</author>
-						<email>andrea@dinamica.it</email>
-						<blogurl>url Owner</blogurl>
+						<author>your name</author>
+						<email>admin@admin</email>
+						<blogurl>yourblogurl here</blogurl>
 					</owner>
 					<internationalization>
 						<language>en</language>
-						<setlocale>en_GB</setlocale>
+						<setlocale>en_EN</setlocale>
 						<timeoffset>0</timeoffset>
 						<timeoffsetGMT>1</timeoffsetGMT>
 					</internationalization>
 					<options>
 						<privateblog>false</privateblog>
 						<subscriptions>true</subscriptions>
-						<emailtitlecontent>false</emailtitlecontent>
-						<emailpostcontent>false</emailpostcontent>
+						<emailtitlecontent>true</emailtitlecontent>
+						<emailpostcontent>true</emailpostcontent>
 						<sendemail>true</sendemail>
 						<maxbloginhomepage>10</maxbloginhomepage>
 						<search>true</search>
@@ -34,8 +34,8 @@
 						<richeditortrackbacks>true</richeditortrackbacks>
 						<richeditor>true</richeditor>
 						<whichricheditor>fckeditor</whichricheditor>
-						<xmppgatewayname>avblog</xmppgatewayname>
-						<wichcaptcha>lylacaptcha</wichcaptcha>
+						<xmppgatewayname/>
+						<wichcaptcha>builtin</wichcaptcha>
 						<useajax>true</useajax>
 						<pods>
 							<tagcloud>true</tagcloud>
@@ -69,7 +69,7 @@
 							<email>
 								<active>false</active>
 								<scheduleinterval>5</scheduleinterval>
-								<subjectkey>avblog</subjectkey>
+								<subjectkey/>
 								<pop3/>
 								<port/>
 								<user/>
@@ -84,7 +84,7 @@
 								</gtalk>
 							</im>
 							<flashlite>
-								<active>false</active>
+								<active>true</active>
 							</flashlite>
 						</feed>
 						<comment>
@@ -96,7 +96,7 @@
 							<allowprivatecomment>true</allowprivatecomment>
 						</comment>
 						<blogstorage>
-							<storage>xml</storage>
+							<storage>db</storage>
 							<xml>
 								<folder>storage/xml</folder>
 							</xml>
@@ -113,7 +113,7 @@
 						</blogstorage>
 					</options>
 					<layout>
-						<theme>internet_music</theme>
+						<theme>blue_blog</theme>
 						<layout>centered</layout>
 						<useiconset>silk</useiconset>
 						<usesocialbuttons>true</usesocialbuttons>
@@ -124,13 +124,13 @@
 						<applicationstart>false</applicationstart>
 						<applicationend>false</applicationend>
 						<postview>true</postview>
-						<postadd>true</postadd>
-						<postmodify>true</postmodify>
-						<commentadd>true</commentadd>
+						<postadd>false</postadd>
+						<postmodify>false</postmodify>
+						<commentadd>false</commentadd>
 						<trackbackadd>true</trackbackadd>
 						<login>true</login>
 						<logout>true</logout>
-						<pageview>false</pageview>
+						<pageview>true</pageview>
 						<download>true</download>
 					</log>
 				</config></cfsilent>

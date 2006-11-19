@@ -16,7 +16,7 @@
 			<cfif isuserinrole('admin') and isdefined('form.okcms')>
 				<cfscript>
 					objcms = createobject("component","cfc.cms");
-					id = objcms.save(form.category,form.ordercategory,form.name,ordername,form.fckdescription);					
+					id = objcms.save(form.category,form.ordercategory,form.name,form.old_name,ordername,form.fckdescription);					
 					application.cms = objcms.getcms(0);
 				</cfscript>
 				<cflocation url="#cgi.script_name#?mode=plugin&plugin=cms&pluginmode=view&id=#id#" addtoken="no">
@@ -24,7 +24,7 @@
 			<cfif isuserinrole('admin') and isdefined('form.okModcms')>
 				<cfscript>
 					objcms = createobject("component","cfc.cms");
-					id = objcms.save(form.category,form.ordercategory,form.name,ordername,form.fckdescription,form.id);					
+					id = objcms.save(form.category,form.ordercategory,form.name,form.old_name,ordername,form.fckdescription,form.id);					
 					application.cms = objcms.getcms(0);
 				</cfscript>
 				<cflocation url="#cgi.script_name#?mode=plugin&plugin=cms&pluginmode=view&id=#id#" addtoken="no">

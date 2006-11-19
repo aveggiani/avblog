@@ -251,11 +251,13 @@ CREATE TABLE [dbo].[photoblog] (
 
 	[name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
-	[file] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[sfile] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
 	[description] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
 	[sdate] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+
+	[imageorder] [nvarchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 

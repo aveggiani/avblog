@@ -52,17 +52,19 @@
 			plugin_library_allowedfiletype_gif = 'false';
 	</cfscript>
 	<cfxml variable="configlibraryXML">
-		<plugin>
-			<allowfile>
-				<type allow="#plugin_library_allowedfiletype_allfiles#">all files</type>
-				<type mime="application/msword" allow="#plugin_library_allowedfiletype_doc#">.doc</type>
-				<type mime="application/x-zip-compressed" allow="#plugin_library_allowedfiletype_zip#">.zip</type>
-				<type mime="text/plain" allow="#plugin_library_allowedfiletype_txt#">.txt</type>
-				<type mime="application/pdf" allow="#plugin_library_allowedfiletype_pdf#">.pdf</type>
-				<type mime="image/jpeg" allow="#plugin_library_allowedfiletype_jpg#">.jpg</type>
-				<type mime="image/gif" allow="#plugin_library_allowedfiletype_gif#">.gif</type>
-			</allowfile>
-		</plugin>
+		<cfoutput>
+			<plugin>
+				<allowfile>
+					<type allow="#plugin_library_allowedfiletype_allfiles#">all files</type>
+					<type mime="application/msword" allow="#plugin_library_allowedfiletype_doc#">.doc</type>
+					<type mime="application/x-zip-compressed" allow="#plugin_library_allowedfiletype_zip#">.zip</type>
+					<type mime="text/plain" allow="#plugin_library_allowedfiletype_txt#">.txt</type>
+					<type mime="application/pdf" allow="#plugin_library_allowedfiletype_pdf#">.pdf</type>
+					<type mime="image/jpeg" allow="#plugin_library_allowedfiletype_jpg#">.jpg</type>
+					<type mime="image/gif" allow="#plugin_library_allowedfiletype_gif#">.gif</type>
+				</allowfile>
+			</plugin>
+		</cfoutput>
 	</cfxml>
 	<!--- save configuration on file --->
 	<cflock type="exclusive" name="config" timeout="10">

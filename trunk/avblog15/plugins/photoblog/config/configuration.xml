@@ -2,7 +2,7 @@
 <plugin>
 				<copyright>
 					<use>true</use>
-					<text>Andrea Veggiani</text>
+					<text>avblog</text>
 				</copyright>
 				<thumbnail>
 					<width>150</width>
@@ -11,7 +11,7 @@
 					<width>800</width>
 				</big>
 				<layout>
-					<type>ajax</type>
+					<type>ajaxpresentation</type>
 					<orientation>vertical</orientation>
 				</layout>
 			</plugin>

@@ -18,17 +18,19 @@
 <cfelse>
 	<!--- saving plugin configuration file --->
 	<cfxml variable="configlibraryXML">
-		<plugin>
-			<allowfile>
-				<type allow="<cfif attributes.structForm.plugin_library_allowedfiletype_allfiles is false>false<cfelse>true</cfif>">all files</type>
-				<type mime="application/msword" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_doc is false>false<cfelse>true</cfif>">.doc</type>
-				<type mime="application/x-zip-compressed" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_zip is false>false<cfelse>true</cfif>">.zip</type>
-				<type mime="text/plain" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_txt is false>false<cfelse>true</cfif>">.txt</type>
-				<type mime="application/pdf" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_pdf is false>false<cfelse>true</cfif>">.pdf</type>
-				<type mime="image/jpeg" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_jpg is false>false<cfelse>true</cfif>">.jpg</type>
-				<type mime="image/gif" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_gif is false>false<cfelse>true</cfif>">.gif</type>
-			</allowfile>
-		</plugin>
+		<cfoutput>
+			<plugin>
+				<allowfile>
+					<type allow="<cfif attributes.structForm.plugin_library_allowedfiletype_allfiles is false>false<cfelse>true</cfif>">all files</type>
+					<type mime="application/msword" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_doc is false>false<cfelse>true</cfif>">.doc</type>
+					<type mime="application/x-zip-compressed" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_zip is false>false<cfelse>true</cfif>">.zip</type>
+					<type mime="text/plain" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_txt is false>false<cfelse>true</cfif>">.txt</type>
+					<type mime="application/pdf" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_pdf is false>false<cfelse>true</cfif>">.pdf</type>
+					<type mime="image/jpeg" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_jpg is false>false<cfelse>true</cfif>">.jpg</type>
+					<type mime="image/gif" allow="<cfif attributes.structForm.plugin_library_allowedfiletype_gif is false>false<cfelse>true</cfif>">.gif</type>
+				</allowfile>
+			</plugin>
+		</cfoutput>
 	</cfxml>
 	<!--- save configuration on file --->
 	<cflock type="exclusive" name="config" timeout="10">
