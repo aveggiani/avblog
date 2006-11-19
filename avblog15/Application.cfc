@@ -1,11 +1,11 @@
 <cfcomponent output="false">
 
 	<cfscript>
-		this.name 							= "AVBlog154_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
+		this.name 							= "AVBlog15_#hash(cgi.server_name)#_#left(hash(listfirst(cgi.script_name,'/')),14)#";
 		this.applicationTimeout 			= createTimeSpan(0,2,0,0);
 		this.sessionManagement 				= true;
 		this.sessionTimeout 				= createTimeSpan(0,0,40,0);
-		this.loginstorage					= "session";
+		// this.loginstorage					= "session";
 	</cfscript>
 
 	<cffunction name="onApplicationStart" returnType="boolean" output="false">
@@ -145,11 +145,17 @@
 				<!--- login section --->
 				<cflogin>
 					<cfif IsDefined("cflogin")>
-						<cfscript>
-							qryUser = request.users.authenticate(cflogin.name,cflogin.password);
-						</cfscript>
-						<cfif qryUser.recordcount is not 0>
-							<cfloginuser name="#qryUser.fullname#, #qryUser.email#, #cflogin.name#" Password="#qryUser.pwd#" roles="#qryUser.role#">
+						<cfif cflogin.name is not "" and cflogin.password is not "">
+							<cfscript>
+								qryUser = request.users.authenticate(cflogin.name,cflogin.password);
+							</cfscript>
+							<cfif qryUser.recordcount is not 0>
+								<cfloginuser name="#qryUser.fullname#, #qryUser.email#, #cflogin.name#" Password="#qryUser.pwd#" roles="#qryUser.role#">
+							<cfelse>
+								<cfscript>
+									request.loginfailed	= true;
+								</cfscript>
+							</cfif>
 						<cfelse>
 							<cfscript>
 								request.loginfailed	= true;
@@ -508,12 +514,12 @@
 			
 			/* this for using XMPP gateway, remember to make a mapping with this name on the CF Admin and to make
 			ti point to the root of AVBlog */
-			application.mapping					= "andreaveggianiblog";
+			application.mapping					= "";
 
 			application.configurationCFC		= createobject("component","cfc.configuration");
 
 			/* initialize main CFCs */
-			application.RSSATom				= createobject("component","cfc.rssatom"); 
+			application.RSSATom					= createobject("component","cfc.rssatom"); 
 			application.fileSystem				= createobject("component","cfc.fileSystem");
 			application.blogCFC					= createobject("component","cfc.blog");
 			application.objPermalinks			= createobject("component","cfc.permalinks");
@@ -544,8 +550,8 @@
 			application.pluginslanguage			= application.configurationCFC.loadpluginslanguage(application.plugins);
 			application.layoutthemeplugins		= application.configurationCFC.loadlayoutthemeplugins(application.configuration.config.layout.theme.xmltext);
 
-			request.links					= createobject("component","cfc.links");
-			request.users					= createobject("component","cfc.users");
+			request.links						= createobject("component","cfc.links");
+			request.users						= createobject("component","cfc.users");
 
 			application.links			 		= request.links.loadLinks();
 			application.users					= request.users.loadUsers();
@@ -587,12 +593,13 @@
 			updateBlog();
 		</cfscript>
 
-		<!--- be careful here, it's a method to force restarting of the XMPP gateway --->
+		<!--- be careful here, it's a method to force restarting of the XMPP gateway
 		<cftry>
 			<cfinclude template="gateway/resetGatewayInstance.cfm">
 			<cfcatch>
 			</cfcatch>
 		</cftry>
+		--->
 
 	</cffunction>
 

@@ -15,10 +15,10 @@ User-agent: *
 Disallow: /customtags/
 
 User-agent: *
-Disallow: /external/
+Disallow: /docs/
 
 User-agent: *
-Disallow: /feed/
+Disallow: /external/
 
 User-agent: *
 Disallow: /gateway/
@@ -30,10 +30,10 @@ User-agent: *
 Disallow: /languages/
 
 User-agent: *
-Disallow: /pods/
+Disallow: /plugins/
 
 User-agent: *
-Disallow: /plugins/
+Disallow: /pods/
 
 User-agent: *
 Disallow: /skins/
