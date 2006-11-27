@@ -22,10 +22,11 @@
 	
 		<cfscript>
 			var qryGet 			= '';
+			var arrayPermalinks = arraynew(1);
 		</cfscript>
 		
 		<cfquery name="qryGet" datasource="#request.db#">
-			select id,name,ordername,category,ordercategory,description,sdate,'' as permalink from cms 
+			select id,name,ordername,category,ordercategory,description,sdate from cms 
 				<cfif arguments.id is not 0>
 					where id = '#arguments.id#'
 				</cfif>
@@ -33,13 +34,14 @@
 		</cfquery>
 		<cfloop query="qryGet">
 			<cfscript>
-				querySetCell(qryGet,'permalink',application.objPermalinks.getPermalinkFromTitle(qryGet.name),qryGet.currentrow);
+				arrayappend(arrayPermalinks,application.objPermalinks.getPermalinkFromTitle(qryGet.name));
 			</cfscript>
 		</cfloop>
 
 		<cfscript>
 			rowDate = listtoarray(valuelist(qryGet.sdate));
-			queryAddColumn(qryGet,'date',rowDate);
+			queryAddColumn(qryGet,'date','VarChar',rowDate);
+			queryAddColumn(qryGet,'permalink','VarChar',arrayPermalinks);
 		</cfscript>
 
 		<cfreturn qryGet>

@@ -604,28 +604,35 @@
 										</div>
 										<br />
 										<cfloop query="qryAuthoPings">
+											<cfset skip = "false">
 											<div class="trackbackPing">
 												<cftry>
 													<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
-													<cfcatch></cfcatch>
-												</cftry>
-												<cftry>
-													<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
-													<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
-														<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
-														<br />
-														<a href="#structValue.url#" target="_blank">#structValue.url#</a>
-														<br />
-														<strong>flerror:</strong> #htmleditformat(flerror[1].xmltext)#
-														<br />
-														<strong>message:</strong> #htmleditformat(message[1].xmltext)#
 													<cfcatch>
-														<strong>#structValue.url#</strong>
-														<br />
-														<br />
-														#htmleditformat(structValue.authopingresult)#
+														<cfset skip = "true">
 													</cfcatch>
 												</cftry>
+												<cfif not skip>
+													<cftry>
+														<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
+														<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
+															<strong>#right(qryAuthoPings.date,2)# #lsdateformat(createdate(2000,(val(mid(qryAuthoPings.date,5,2))),1),'mmmm')# #left(qryAuthoPings.date,4)# #qryAuthoPings.time#</strong>
+															<br />
+															<a href="#structValue.url#" target="_blank">#structValue.url#</a>
+															<br />
+															<strong>flerror:</strong> #htmleditformat(flerror[1].xmltext)#
+															<br />
+															<strong>message:</strong> #htmleditformat(message[1].xmltext)#
+														<cfcatch>
+															<strong>#structValue.url#</strong>
+															<br />
+															<br />
+															<cfif not isstruct(structValue.authopingresult)>
+																#htmleditformat(structValue.authopingresult)#
+															</cfif>
+														</cfcatch>
+													</cftry>
+												</cfif>
 											</div>
 										</cfloop>
 									</div>
