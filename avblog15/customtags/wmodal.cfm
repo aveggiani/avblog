@@ -26,9 +26,7 @@
 					<cfif isdefined('attributes.bgColor')>bgColor="#attributes.bgColor#"</cfif>
 					<cfif isdefined('attributes.bgOpacity')>bgOpacity="#attributes.bgOpacity#"</cfif>
 					<cfif isdefined('attributes.toggle')>toggle="#attributes.toggle#"</cfif>
-					<cfif isdefined('attributes.toggleDuration')>toggleDuration="#attributes.toggleDuration#"</cfif>
-					templateCssPath="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/dojo.css"
-					>
+					<cfif isdefined('attributes.toggleDuration')>toggleDuration="#attributes.toggleDuration#"</cfif>>
 			<cfelse>
 				</div>
 			</cfif>

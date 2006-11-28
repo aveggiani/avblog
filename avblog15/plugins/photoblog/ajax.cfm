@@ -5,8 +5,7 @@
 	<cfcase value="rotate">
 		<cfscript>
 			objphotoblog = createobject("component","cfc.photoblog");
-			objImage = createobject('component','cfc.image');
-			objImageCFC = createobject('component','cfc.external.imagecfc.image');
+			objImageCFC = createobject('component','#request.cfcMapping#.external.imagecfc.image');
 			if (not directoryexists('#url.path#/original/rotate'))
 				application.fileSystem.createdirectory('#url.path#/original','rotate');
 			if (not fileexists('#url.path#/original/rotate/#url.file#'))
@@ -14,9 +13,9 @@
 			else
 				objImageCFC.rotate('','#url.path#/original/rotate/#url.file#','#url.path#/original/rotate/#url.file#',#url.rotate#);
 			// create the thumbnail
-			objImage.resize('#url.path#/original/rotate/#url.file#','#url.path#/thumb/#url.file#',url.thumb,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+			objImageCFC.scalex('','#url.path#/original/rotate/#url.file#','#url.path#/thumb/#url.file#',url.thumb);
 			// create the big image
-			objImage.resize('#url.path#/original/rotate/#url.file#','#url.path#/big/#url.file#',url.big,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+			objImageCFC.scalex('','#url.path#/original/rotate/#url.file#','#url.path#/big/#url.file#',url.big);
 		</cfscript>
 		<cfoutput>
 			<img src="#url.webpath#/#url.file#" align="absmiddle" />

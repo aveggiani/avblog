@@ -3,7 +3,7 @@
 		<cfif isuserinrole('admin')>
 			<cfsetting requesttimeout="600">
 			<cfscript>
-				application.objPermalinks.updatePermalinks();
+				application.objPermalinks.updateAllPermalinks();
 			</cfscript>
 			<div class="blogTitle">
 				<br />

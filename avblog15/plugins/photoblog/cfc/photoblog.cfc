@@ -94,11 +94,11 @@
 			<cfscript>
 				galleryid = createuuid();
 				objZip = createobject('component','zip.zip');
-				objImage = createobject('component','image');
+				objImage = createobject('component','#request.cfcMapping#external.imagecfc.image');
 				status = objZip.extract(zipfilepath='#request.appPath#/user/photoblog/tmp/#file#',extractpath='#request.appPath#/user/photoblog/galleries/#arguments.name#/original/',usefoldernames='no');
 			</cfscript>
 			<!--- get the list of the file extracted --->
-			<cfdirectory action="list" name="filesextracted" filter="*.*" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
+			<cfdirectory action="list" name="filesextracted" sort="name" filter="*.*" directory="#request.appPath#/user/photoblog/galleries/#arguments.name#/original">
 			<!--- loop over the list, resize the images and create the storage info --->
 			<cfloop query="filesextracted">
 				<cfif filesextracted.name contains '.jpg' or filesextracted.name contains '.gif'> 
@@ -116,17 +116,23 @@
 					<cfscript>
 						if (application.pluginsconfiguration.photoblog.plugin.copyright.use.xmltext)
 							{
+								fontDetails = structnew();
+								fontDetails.size = 8;
+								fontDetails.color="white";
 								// create the thumbnail
-								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+								objImage.scalex('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth);
+								objImage.addText('','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#', 2, 2, fontDetails, application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+
 								// create the big image
-								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth,application.pluginslanguage.photoblog.language.watermarktext.xmltext);
+								objImage.scalex('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
+								objImage.addText('','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#', 2, 2, fontDetails, application.pluginslanguage.photoblog.language.watermarktext.xmltext);
 							}
 						else
 							{
 								// create the thumbnail
-								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth);
+								objImage.scalex('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/thumb/#filesextracted.name#',arguments.thumbwidth);
 								// create the big image
-								objImage.resize('#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
+								objImage.scalex('','#request.appPath#/user/photoblog/galleries/#arguments.name#/original/#filesextracted.name#','#request.appPath#/user/photoblog/galleries/#arguments.name#/big/#filesextracted.name#',arguments.bigwidth);
 							}
 						//
 						xmlImage = xmlImage & objStoragephotoblog.saveImage(createuuid(),filesextracted.name,listgetat(filesextracted.name,1,'.'),'',galleryid,filesextracted.currentrow);

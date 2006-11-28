@@ -11,7 +11,7 @@
 					<cfif isdefined('attributes.style')>style="#attributes.style#"</cfif>
 					<cfif isdefined('attributes.selectedTab')>selectedTab="#attributes.selectedTab#"</cfif>
 					<cfif isdefined('attributes.labelPosition')>labelPosition="#attributes.labelPosition#"</cfif>
-					templateCssPath="#request.appmapping#skins/#application.configuration.config.layout.theme.xmltext#/dojo.css"
+					<cfif isdefined('attributes.closebutton')>closebutton="#attributes.closebutton#"</cfif>
 					>
 			<cfelse>
 				</div>
