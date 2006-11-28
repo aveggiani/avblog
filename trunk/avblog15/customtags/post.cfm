@@ -223,7 +223,7 @@
 										</cfloop></span>
 									</div>
 								</cfif>
-								<cfif application.configuration.config.layout.usesocialbuttons.xmltext>
+								<cfif application.configuration.config.layout.usesocialbuttons.xmltext and not application.configuration.config.options.privateblog.xmltext>
 									<div class="blogSocial">
 										#application.language.language.socialbuttonstext.xmltext#
 										<a href="http://del.icio.us/post?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="del.icio.us"><img src="#request.appmapping#images/ico/delicious.png" alt="del.icio.us" border="0"  align="middle" /></a>
@@ -257,10 +257,12 @@
 										</a> -
 									</cfif>
 									<a href="#request.appmapping#index.cfm?mode=addcomment&amp;id=#urlencodedformat(arrayShow[i].id)###addcomment">#application.language.language.addcomment.xmltext#</a>
-									<vb:icon type="trackback">
-									<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
-									<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
-										<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
+									<cfif application.configuration.config.options.trackbacks.xmltext>
+										<vb:icon type="trackback">
+										<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
+										<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
+											<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
+										</cfif>
 									</cfif>
 								</div>
 								<cfif isuserinrole('admin') or (isuserinrole('blogger') and arrayShow[i].author is listgetat(GetAuthUser(),1))>
@@ -416,6 +418,8 @@
 								<input type="Text" name="title" style="width:200px;" <cfif attributes.type is 'update'>value="#title#"</cfif> class="editorForm"/>
 								#application.language.language.title.xmltext#
 							</div>
+							<input type="hidden" name="fckexcerpt" value="" />
+							<!---
 							<strong>#application.language.language.except.xmltext#</strong>
 							<cfif attributes.type is 'update'>
 								<cfset valore=excerpt>
@@ -429,6 +433,7 @@
 								width		= "100%"
 								height		= "150"
 							>
+							--->
 							<strong>#application.language.language.fulltext.xmltext#</strong>
 							<cfif attributes.type is 'update'>
 								<cfset valore=description>
@@ -463,7 +468,7 @@
 								</vb:wcontentpane>
 								<div style="clear:both;">
 								</div>
-								<cfif useajax()>
+								<cfif useajax() and isuserinrole('admin')>
 									<hr />
 									<input type="text" style="width:200px;" name="insertCategory" />
 									<input type="button" value="#application.language.language.insertcategory.xmltext#" onclick="postNewCategory(document.theForm.insertCategory.value)" />
@@ -589,30 +594,27 @@
 								</tbody>
 							</table>
 						</vb:wtitlepane>
-						<vb:wtitlepane id="lhtab2" label="#application.language.language.authoping.xmltext#" open="false" labelNodeClass="dojopTitlepanelabel" containerNodeClass="dojopTitlepaneContainer">
-							<cfset arrayping = xmlsearch(application.authoping,'//address')>
-							<div class="configLabels">
-								<cfloop index="i" from="1" to="#arraylen(arrayping)#">
-									<input name="authoping" type="checkbox" value="#arrayping[i].xmlattributes.url#" /> #arrayping[i].xmltext#<br  />
-								</cfloop>
-							</div>
-							<cfif isdefined('qryAuthoPings') and qryAuthoPings.recordcount gt 0>
+						<cfif not application.configuration.config.options.privateblog.xmltext>
+							<vb:wtitlepane id="lhtab2" label="#application.language.language.authoping.xmltext#" open="false" labelNodeClass="dojopTitlepanelabel" containerNodeClass="dojopTitlepaneContainer">
+								<cfset arrayping = xmlsearch(application.authoping,'//address')>
 								<div class="configLabels">
-									<div class="trackbackPingBox">
-										<div align="center">
-											#application.language.language.authopingstilnow.xmltext#
-										</div>
-										<br />
-										<cfloop query="qryAuthoPings">
-											<cfset skip = "false">
-											<div class="trackbackPing">
-												<cftry>
-													<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
-													<cfcatch>
-														<cfset skip = "true">
-													</cfcatch>
-												</cftry>
-												<cfif not skip>
+									<cfloop index="i" from="1" to="#arraylen(arrayping)#">
+										<input name="authoping" type="checkbox" value="#arrayping[i].xmlattributes.url#" /> #arrayping[i].xmltext#<br  />
+									</cfloop>
+								</div>
+								<cfif isdefined('qryAuthoPings') and qryAuthoPings.recordcount gt 0>
+									<div class="configLabels">
+										<div class="trackbackPingBox">
+											<div align="center">
+												#application.language.language.authopingstilnow.xmltext#
+											</div>
+											<br />
+											<cfloop query="qryAuthoPings">
+												<div class="trackbackPing">
+													<cftry>
+														<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
+														<cfcatch></cfcatch>
+													</cftry>
 													<cftry>
 														<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
 														<cfset message=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/string')>
@@ -627,18 +629,16 @@
 															<strong>#structValue.url#</strong>
 															<br />
 															<br />
-															<cfif not isstruct(structValue.authopingresult)>
-																#htmleditformat(structValue.authopingresult)#
-															</cfif>
+															#htmleditformat(structValue.authopingresult)#
 														</cfcatch>
 													</cftry>
-												</cfif>
-											</div>
-										</cfloop>
+												</div>
+											</cfloop>
+										</div>
 									</div>
-								</div>
-							</cfif>
-						</vb:wtitlepane>
+								</cfif>
+							</vb:wtitlepane>
+						</cfif>
 						<cfif application.configuration.config.options.trackbacks.xmltext>
 							<vb:wtitlepane id="lhtab2" label="#application.language.language.trackbacks.xmltext#" open="false" labelNodeClass="dojopTitlepanelabel" containerNodeClass="dojopTitlepaneContainer">
 								<div class="configLabels">

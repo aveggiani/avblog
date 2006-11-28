@@ -7,6 +7,8 @@
 			<cfif isuserinrole('admin') and isdefined('form.okphotoblog')>
 				<cfscript>
 					objphotoblog = createobject("component","cfc.photoblog");
+					if (not isdefined('form.watermark'))
+						form.watermark = '';
 					ok = objphotoblog.save(form.name,form.category,form.fckdescription,form.watermark,form.thumbwidth,form.bigwidth);					
 					application.photoblog = objphotoblog.getphotoblog();
 				</cfscript>

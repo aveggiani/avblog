@@ -2,7 +2,7 @@
 <plugin>
 				<copyright>
 					<use>true</use>
-					<text>avblog</text>
+					<text>opentur.it</text>
 				</copyright>
 				<thumbnail>
 					<width>150</width>
@@ -11,7 +11,7 @@
 					<width>800</width>
 				</big>
 				<layout>
-					<type>ajaxpresentation</type>
-					<orientation>vertical</orientation>
+					<type>ajax</type>
+					<orientation>horizontal</orientation>
 				</layout>
 			</plugin>

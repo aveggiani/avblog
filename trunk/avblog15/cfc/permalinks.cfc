@@ -40,6 +40,18 @@
 		</cfloop>
 	</cffunction>
 
+	<cffunction name="updateAllPermalinks" access="public" returntype="void">
+		<cfscript>
+			application.objPermalinks.updatePermalinks();
+			if (directoryexists('#request.apppath#/plugins/cms'))
+				application.objPermalinks.updatePluginCMSSES();
+			if (directoryexists('#request.apppath#/plugins/photoblog'))
+				application.objPermalinks.updatePluginPhotoblogSES();
+			application.objPermalinks.updateCategorySES();
+			application.objPermalinks.updateMonthSES();
+		</cfscript>
+	</cffunction>
+
 	<cffunction name="updatePermalinks" access="public" returntype="void">
 		
 		<cfloop index="i" from="1" to="#listlen(application.days)#">

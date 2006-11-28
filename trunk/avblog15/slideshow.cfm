@@ -15,13 +15,34 @@
 					qryGallery		= objphotoblog.getphotoblog(url.gallery);
 					qryImages		= objphotoblog.getphotoblogImage(url.gallery);
 					arraySlide		= arraynew(1);
+					arrayFilename	= arraynew(1);
+					arrayName		= arraynew(1);
+					arrayDescription= arraynew(1);
 					dimension		= application.photoblogObj.getImageSize('#request.apppath#/user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#');
 				</cfscript>
+				<cfloop query="qryImages">
+					<cfscript>
+						arrayappend(arraySlide,qryimages.id);
+						arrayappend(arrayFilename,qryimages.file);
+						arrayappend(arrayName,qryimages.name);
+						arrayappend(arrayDescription,qryimages.Description);
+						if (qryImages.id is url.image)
+							{
+								currentImage = qryImages.file;
+								currentTitle = qryImages.name;
+								currentDescription = qryImages.description;
+								currentPosition = qryImages.currentrow;
+							}
+					</cfscript>
+				</cfloop>
 				<cfif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajax'>
 					<cfset imgUrls="">
-					<cfloop query="qryImages">
-						<cfset imgUrls = imgUrls & ";#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#">
-					</cfloop>
+					<cfscript>
+						for (i=currentPosition;i lte arraylen(arraySlide); i = i + 1 )
+							imgUrls = imgUrls & "; #request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#arrayFilename[i]#";
+						for (i=1;i lt currentPosition; i = i + 1 )
+							imgUrls = imgUrls & "; #request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#arrayFilename[i]#";
+					</cfscript>
 					<vb:dojo>
 					<cfoutput>
 						<div class="slideshowView">
@@ -32,12 +53,20 @@
 								<a href="index.cfm?mode=plugin&plugin=photoblog&pluginmode=view&id=#url.gallery#">index</a>
 								]
 							</div>
-							<vb:wslideshow
-								imgUrls="#imgurls#"
-								transitionInterval="700"
-								delay="4000" 
-								src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#"
-								imgWidth="#dimension.width#" imgHeight="#dimension.height#" />
+							<div style="width:100%; border:3px solid white; text-align:center; margin-top:30px;">
+								<div style="width:16%;float:left; border:3px solid white;">
+								</div>
+								<div style="position:relative;float:left;">
+									<vb:wslideshow
+										imgUrls="#imgurls#" 
+										transitionInterval="700"
+										delay="4000" 
+										src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#arrayFilename[currentPosition]#"
+										imgWidth="#dimension.width#" imgHeight="#dimension.height#" />
+								</div>
+								<div style="width:16%;float:left; border:3px solid white;">
+								</div>
+							</div>
 						</div>
 					</cfoutput>
 				<cfelseif useAjax()and application.pluginsconfiguration.photoblog.plugin.layout.type.xmltext is 'ajaxpresentation'>
@@ -46,29 +75,27 @@
 						<div class="slideshowView">
 							<div class="slideshowDate">#lsdateformat(createdate(left(qryGallery.date,4),mid(qryGallery.date,5,2),right(qryGallery.date,2)),'dd mmmm yyyy')#</div>
 							<div class="slideshowTitle">#qryGallery.name#</div>
-							<vb:wshow>
-								<cfloop query="qryImages">
-									<vb:wshowslide title="#qryImages.name#">
-										<img class="slideshowImageborder" src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#qryImages.file#">
-										<br />
-										#qryImages.Description#
-									</vb:wshowslide>
-								</cfloop>
-							</vb:wshow>
+							<div style="clear:both; border:1px solid blue;">
+								<vb:wshow>
+									<cfloop index="i" from="#currentPosition#" to="#arraylen(arraySlide)#">
+										<vb:wshowslide title="#arrayName[i]#">
+											<img class="slideshowImageborder" src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#arrayFilename[i]#">
+											<br />
+											#arrayDescription[i]#
+										</vb:wshowslide>
+									</cfloop>
+									<cfloop index="i" from="1" to="#decrementvalue(currentPosition)#">
+										<vb:wshowslide title="#arrayName[i]#">
+											<img class="slideshowImageborder" src="#request.appmapping#user/photoblog/galleries/#qryGallery.name#/big/#arrayFilename[i]#">
+											<br />
+											#arrayDescription[i]#
+										</vb:wshowslide>
+									</cfloop>
+								</vb:wshow>
+							</div>
 						</div>
 					</cfoutput>
 				<cfelse>
-					<cfloop query="qryImages">
-						<cfscript>
-							arrayappend(arraySlide,qryimages.id);
-							if (qryImages.id is url.image)
-								{
-									currentImage = qryImages.file;
-									currentTitle = qryImages.name;
-									currentDescription = qryImages.description;
-								}
-						</cfscript>
-					</cfloop>
 					<cfloop index="i" from="1" to="#arraylen(arraySlide)#">
 						<cfif arraySlide[i] is url.image>
 							<cfscript>
