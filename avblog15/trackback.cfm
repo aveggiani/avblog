@@ -1,4 +1,5 @@
 <cfsilent>
+<<<<<<< .mine
 	<cfif application.configuration.config.options.trackbacks.xmltext>
 		<cfsetting enablecfoutputonly="yes">
 		<cfsetting showdebugoutput="no">
@@ -10,9 +11,8 @@
 			if (not StructKeyExists(form, 'blog_name'))
 				form.blog_name 	= '';
 		</cfscript>
-		<cfif isdefined('form')>
-			<cfif structkeyexists(form,'blog_name') 
-				and 
+		<cfif isdefined('form') and isdefined('form.url')>
+			<cfif
 				request.trackbacks.filterspam(trim(form.blog_name))
 				and
 				request.trackbacks.filterspam(trim(form.title))
@@ -108,7 +108,7 @@
 			</cfif>
 		<cfelse>
 			<cfscript>
-				xmlResult =  "<?xml version=""1.0"" encoding=""utf-8""?><response><error>1</error><message>Request not properly formatted, non parameters passed</message></response>";
+				xmlResult =  "<?xml version=""1.0"" encoding=""utf-8""?><response><error>1</error><message>Request not properly formatted, the required url parameter was not passed</message></response>";
 			</cfscript>
 		</cfif>
 	</cfif>
