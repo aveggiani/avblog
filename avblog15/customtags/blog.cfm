@@ -100,7 +100,7 @@
 			<cfif canViewPost()>
 				<cfif isdefined('id')>
 					<!--- logs view post --->
-					<cfif application.configuration.config.log.postview.xmltext and not (isuserinrole('admin') or isuserinrole('blogger'))>
+					<cfif application.configuration.config.log.postview.xmltext and not (isuserinrole('admin'))>
 						<cfscript>
 							structLogValue  				= structnew();
 							structLogValue.date				= now();
