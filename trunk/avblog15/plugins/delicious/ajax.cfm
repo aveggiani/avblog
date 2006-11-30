@@ -4,9 +4,11 @@
 		<cfscript>
 			if (isdefined('url.tag'))
 				mylinks = xmlsearch(application.deliciousObj.getAllPosts(url.tag),'//post');
+			else
+				mylinks = xmlsearch(application.deliciousObj.getAllPosts(),'//post');
 		</cfscript>
 		<cfoutput>
-			<cfif isdefined('url.tag')>
+			<cfif isdefined('mylinks')>
 				<div dojoType="ContentPane" layoutAlign="client" id="TagPane" executeScripts="true">
 					<vb:content>
 						<div class="pluginDeliciousShow">
