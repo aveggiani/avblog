@@ -10,6 +10,7 @@
 				<span class="catListTitle"><cfoutput>#application.pluginslanguage.delicious.language.manager.xmltext#</cfoutput></span>
 				<br />
 				[ <a href="<cfoutput>#request.appmapping#</cfoutput>index.cfm?mode=plugin&amp;pluginmode=showall&amp;plugin=delicious"><cfoutput>#application.pluginslanguage.delicious.language.showall.xmltext#</cfoutput></a> ]
+				<br />
 			</cfif>
 		</cfif>
 	</cfcase>
@@ -128,6 +129,7 @@
 						
 		<cfif useajax()>
 			<div dojoType="ContentPane" layoutAlign="client" id="TagPane" executeScripts="true">
+				<cfinclude template="../ajax.cfm">
 			</div>
 		<cfelse>
 			<cfinclude template="../ajax.cfm">
