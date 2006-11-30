@@ -418,8 +418,6 @@
 								<input type="Text" name="title" style="width:200px;" <cfif attributes.type is 'update'>value="#title#"</cfif> class="editorForm"/>
 								#application.language.language.title.xmltext#
 							</div>
-							<input type="hidden" name="fckexcerpt" value="" />
-							<!---
 							<strong>#application.language.language.except.xmltext#</strong>
 							<cfif attributes.type is 'update'>
 								<cfset valore=excerpt>
@@ -433,7 +431,6 @@
 								width		= "100%"
 								height		= "150"
 							>
-							--->
 							<strong>#application.language.language.fulltext.xmltext#</strong>
 							<cfif attributes.type is 'update'>
 								<cfset valore=description>
