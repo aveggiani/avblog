@@ -1,5 +1,4 @@
 <cfsilent>
-<<<<<<< .mine
 	<cfif application.configuration.config.options.trackbacks.xmltext>
 		<cfsetting enablecfoutputonly="yes">
 		<cfsetting showdebugoutput="no">
