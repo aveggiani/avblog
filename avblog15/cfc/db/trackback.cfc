@@ -120,11 +120,11 @@
 		<cfloop query="filter">
 			<cfscript>
 				if (
-					arguments.blog_name contains ' #filter.trackbacksblogname# '
+					arguments.blog_name contains ' #filter.item# '
 					or
-					arguments.blog_name contains '#filter.trackbacksblogname# '
+					arguments.blog_name contains '#filter.item# '
 					or
-					arguments.blog_name contains ' #filter.trackbacksblogname#'
+					arguments.blog_name contains ' #filter.item#'
 					)
 					returnvalue = false;
 			</cfscript>
