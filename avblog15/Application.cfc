@@ -370,6 +370,8 @@
 				request.cfcMapping = "";
 			if (left(request.cfcMapping,1) is '.' and len(request.cfcMapping) gt 1)
 				request.cfcMapping = right(request.cfcMapping,decrementvalue(len(request.cfcMapping)));
+			else if (request.cfcMapping is '.')
+				request.cfcMapping = '';
 		</cfscript>
 	</cffunction>
 

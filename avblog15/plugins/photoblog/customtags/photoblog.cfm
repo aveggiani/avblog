@@ -65,6 +65,7 @@
 				<cfscript>
 					myname = myphotoblog.name;
 					myphotoblogimages = application.photoblogObj.getphotoblogimage(myphotoblog.id);
+					mygallery = myphotoblog.id;
 				</cfscript>
 				<div class="blogBody">
 					<div class="blogDate">#lsdateformat(createdate(left(myphotoblog.date,4),mid(myphotoblog.date,5,2),right(myphotoblog.date,2)),'dd mmmm yyyy')#</div>
@@ -77,7 +78,7 @@
 								<tr>
 									<cfloop query="myphotoblogimages">
 										<td valign="top" align="center">
-											<a href="#request.appmapping#slideshow.cfm?gallery=#myphotoblog.id#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
+											<a href="#request.appmapping#slideshow.cfm?gallery=#mygallery#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
 											<!---
 											<br/>
 											<strong>#myphotoblogimages.name#</strong>
@@ -100,7 +101,7 @@
 											<cfloop query="myphotoblogimages">
 												<tr>
 													<td valign="top" align="center">
-														<a href="#request.appmapping#slideshow.cfm?gallery=#myphotoblog.id#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
+														<a href="#request.appmapping#slideshow.cfm?gallery=#mygallery#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
 														<br/>
 														<strong>#myphotoblogimages.name#</strong>
 													</td>
@@ -118,7 +119,7 @@
 						<div id="photoBlogViewImagesBoth">
 							<cfloop query="myphotoblogimages">
 								<div id="photoBlogViewImagesBothSingle">
-									<a href="#request.appmapping#slideshow.cfm?gallery=#myphotoblog.id#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
+									<a href="#request.appmapping#slideshow.cfm?gallery=#mygallery#&image=#myphotoblogimages.id#"><img src="user/photoblog/galleries/#myname#/thumb/#myphotoblogimages.file#"></a>
 									<br/>
 									<strong>#myphotoblogimages.name#</strong>
 								</div>
@@ -127,9 +128,9 @@
 					</cfif>
 					<div class="blogAuthor" align="right">
 						<cfif isuserinrole('admin')>
-							[<a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=delete&amp;id=#myphotoblog.id#">#application.language.language.delete.xmltext#</a>] 
+							[<a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=delete&amp;id=#mygallery#">#application.language.language.delete.xmltext#</a>] 
 							<cfif useAjax()>
-								[<a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=edit&amp;id=#myphotoblog.id#">#application.language.language.edit.xmltext#</a>]
+								[<a href="#request.appmapping#index.cfm?mode=plugin&amp;plugin=photoblog&amp;pluginmode=edit&amp;id=#mygallery#">#application.language.language.edit.xmltext#</a>]
 							</cfif>
 						</cfif>
 					</div>

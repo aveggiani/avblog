@@ -1,6 +1,6 @@
 
 FCKConfig.AutoDetectLanguage = false ;
-FCKConfig.DefaultLanguage = 'it' ;
+FCKConfig.DefaultLanguage = 'en' ;
 FCKConfig.LinkBrowserURL	= "/avblog/avblog15/external/cffm/cffm.cfm";
 FCKConfig.ImageBrowserURL	= "/avblog/avblog15/external/cffm/cffm.cfm";
 FCKConfig.FlashBrowserURL	= "/avblog/avblog15/external/cffm/cffm.cfm";
