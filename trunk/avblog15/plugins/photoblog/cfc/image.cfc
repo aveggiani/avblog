@@ -65,7 +65,7 @@
 	  </cfscript>
 	</cffunction>
 
-	<cffunction name="exifReader" returntype="xml">
+	<cffunction name="exifReader" returntype="any">
 		<cfargument name="image" type="string">
 
 		<cftry>
