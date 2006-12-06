@@ -11,12 +11,12 @@
 					</labels>
 					<owner>
 						<author>your name</author>
-						<email>admin@admin</email>
+						<email>yourmail@yourmail.put</email>
 						<blogurl>yourblogurl here</blogurl>
 					</owner>
 					<internationalization>
 						<language>en</language>
-						<setlocale>en_EN</setlocale>
+						<setlocale>ar_AE</setlocale>
 						<timeoffset>0</timeoffset>
 						<timeoffsetGMT>1</timeoffsetGMT>
 					</internationalization>
@@ -69,7 +69,7 @@
 							<email>
 								<active>false</active>
 								<scheduleinterval>5</scheduleinterval>
-								<subjectkey/>
+								<subjectkey>avblog</subjectkey>
 								<pop3/>
 								<port/>
 								<user/>
@@ -96,7 +96,7 @@
 							<allowprivatecomment>true</allowprivatecomment>
 						</comment>
 						<blogstorage>
-							<storage>db</storage>
+							<storage>xml</storage>
 							<xml>
 								<folder>storage/xml</folder>
 							</xml>
