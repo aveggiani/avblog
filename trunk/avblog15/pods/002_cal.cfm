@@ -99,6 +99,8 @@
 							
 							day = day.substring(day,day.length-2,day.length);
 							
+							if (day=='0') day = '01';
+
 							// redirect...
 							window.location.href='<cfoutput>#request.appMapping#</cfoutput>permalinks/'+y+'/'+month+'/'+day;
 						}

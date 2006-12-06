@@ -433,7 +433,7 @@
 										</cfoutput>
 									</div>
 								</vb:wcontentpane>
-							</div>
+							</vb:wtab>
 						</div>
 					</vb:wcontentpane>
 					<vb:wcontentpane id="lhtab7" label="storage" executescripts="true">
