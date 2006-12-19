@@ -11,7 +11,7 @@
 					</labels>
 					<owner>
 						<author>your name</author>
-						<email>yourmail@yourmail.put</email>
+						<email>admin@admin</email>
 						<blogurl>yourblogurl here</blogurl>
 					</owner>
 					<internationalization>
@@ -69,7 +69,7 @@
 							<email>
 								<active>false</active>
 								<scheduleinterval>5</scheduleinterval>
-								<subjectkey>avblog</subjectkey>
+								<subjectkey/>
 								<pop3/>
 								<port/>
 								<user/>
@@ -96,7 +96,7 @@
 							<allowprivatecomment>true</allowprivatecomment>
 						</comment>
 						<blogstorage>
-							<storage>xml</storage>
+							<storage>db</storage>
 							<xml>
 								<folder>storage/xml</folder>
 							</xml>
