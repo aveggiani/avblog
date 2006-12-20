@@ -463,7 +463,7 @@
 						textMailPost = form.title & '<br /><br />' & form.fckdescription;
 					else
 						textMailPost = '';
-					request.subscriptions.check('blog',application.language.language.author.xmltext,'',id);
+					request.subscriptions.check('blog',form.author,'',id);
 				</cfscript>
 			</cfif>
 			<!--- Ping trackback if present --->

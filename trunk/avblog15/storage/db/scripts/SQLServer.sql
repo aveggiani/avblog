@@ -255,7 +255,7 @@ CREATE TABLE [dbo].[photoblog] (
 
 	[description] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
-	[sdate] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+	[sdate] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
 
 	[imageorder] [nvarchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
 
