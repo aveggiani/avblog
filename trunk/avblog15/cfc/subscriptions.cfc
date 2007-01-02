@@ -65,10 +65,22 @@
 						subjectText = '#application.configuration.config.headers.title.xmltext# - #application.language.language.subscribersnewcomment.xmltext#';
 						Text		= '<a href="http://#cgi.SERVER_NAME#/#permalink#">http://#cgi.SERVER_NAME#/#permalink#</a><br /><br />#arguments.commentText#';
 					}
-				request.mail.send(qrySubscribers.email,application.configuration.config.owner.email.xmltext,subjectText,text,'html');
+				request.mail.send(qrySubscribers.email,application.configuration.config.owner.email.xmltext,makeImageUrlAbsolute(subjectText),makeImageUrlAbsolute(text),'html');
 			</cfscript>
 		</cfloop>
 
+	</cffunction>
+
+	<cffunction name="makeImageUrlAbsolute" returntype="string" output="false" access="private">
+		<cfargument name="url">
+		
+		<cfscript>
+			var returnvalue = '';
+	
+			returnvalue = replace(url,'src="/','src="http://#cgi.SERVER_NAME#/','ALL');
+		</cfscript>
+		
+		<cfreturn returnvalue>
 	</cffunction>
 
 </cfcomponent>

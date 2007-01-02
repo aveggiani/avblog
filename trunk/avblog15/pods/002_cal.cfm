@@ -1,25 +1,19 @@
 <cfsilent>
 	<cfimport taglib="../customtags/" prefix="vb">
+
 	<cfif application.days is not "">
 		<cfset days=application.days>
-	<cfelse>
-		<cfset days=dateformat(now(),'yyyymmdd')>
 	</cfif>
 	
-	<cfif isdefined('url.date')>
-		<cfset mydate=url.date>
-	<cfelse>
+	<cfif not isdefined('url.date')>
 		<cfif listlen(application.days) gt 0>
 			<cfset url.date=listfirst(application.days)>
 			<cfset days = application.days>
-		<cfelse>
-			<cfset url.date=dateformat(now(),'yyyymmdd')>
-			<cfset days=url.date>
 		</cfif>
 	</cfif>
 </cfsilent>
 
-<cfif directoryexists('#request.apppath#/external/jscalendar')>
+<cfif directoryexists('#request.apppath#/external/jscalendar') and isdefined('days')>
 
 	<cfhtmlhead text="
 	  <script type=""text/javascript"" src=""#request.appmapping#external/jscalendar/calendar.js""></script>
