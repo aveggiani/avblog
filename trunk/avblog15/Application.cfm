@@ -3,7 +3,6 @@
 	applicationTimeout 			= "#createTimeSpan(0,2,0,0)#"
 	sessionManagement 			= "yes"
 	sessionTimeout 				= "#createTimeSpan(0,0,20,0)#"
-	loginstorage				= "session"
 	>
 	
 <cferror type="request" template="error.cfm" mailto="#application.configuration.config.owner.email.xmltext#">
