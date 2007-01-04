@@ -46,7 +46,7 @@ Shameless Begging:
 -->
 <captcha version="1.0">
 	<configs>
-		<config name="outputDirectory" value="images/"/>
+		<config name="outputDirectory" value="../../../../images/captcha/"/>
 		<config name="outputDirectoryIsRelative" value="true"/>
 		<config name="saltType" value="auto"/><!-- auto/defined -->
 		<config name="saltValue" value=""/>

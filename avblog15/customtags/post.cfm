@@ -184,28 +184,34 @@
 								<div class="blogTitle">
 									<a href="#permalink#"><span id="post-title">#publishinformation# #arrayShow[i].title#</span></a>
 								</div>
-								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+								<cfif arrayShow[i].description is ''>
 									<div class="blogText">
 										#arrayShow[i].excerpt#
-										<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
-											<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8>
-												<a onclick="showDiv('blogText_#request.indexBlog#','blogExcerpt_#request.indexBlog#');">[#application.language.language.clickformore.xmltext#]</a>
-											</cfif>
-										</div>
 									</div>
-								</cfif>
-								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
-									<div id="blogText_#request.indexBlog#" class="blogText" style="display:none">
 								<cfelse>
-									<div id="blogText_#request.indexBlog#" class="blogText">
-								</cfif>
-								#arrayShow[i].description#
-								<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
-									<div class="blogMore">
-										<a onclick="showDiv('blogExcerpt_#request.indexBlog#','blogText_#request.indexBlog#');">[#application.language.language.hideformore.xmltext#]</a>
+									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+										<div class="blogText">
+											#arrayShow[i].excerpt#
+											<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
+												<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8>
+													<a onclick="showDiv('blogText_#request.indexBlog#','blogExcerpt_#request.indexBlog#');">[#application.language.language.clickformore.xmltext#]</a>
+												</cfif>
+											</div>
+										</div>
+									</cfif>
+									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+										<div id="blogText_#request.indexBlog#" class="blogText" style="display:none">
+									<cfelse>
+										<div id="blogText_#request.indexBlog#" class="blogText">
+									</cfif>
+									#arrayShow[i].description#
+									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+										<div class="blogMore">
+											<a onclick="showDiv('blogExcerpt_#request.indexBlog#','blogText_#request.indexBlog#');">[#application.language.language.hideformore.xmltext#]</a>
+										</div>
+									</cfif>
 									</div>
 								</cfif>
-								</div>
 								<div id="enclosures_#request.indexBlog#" class="enclosures" style="display:none">
 									<cfset qryEnclosures = arrayShow[i].qryEnclosures>
 									<cfloop query="qryEnclosures">

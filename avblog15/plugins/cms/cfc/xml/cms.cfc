@@ -44,7 +44,7 @@
 				xmlContent = xmlParse(xmlContent);
 				queryaddrow(qryGet,1);
 				querysetcell(qryGet,'id',listgetat(getDirectory.name,1,'.'),getDirectory.currentrow);
-				querysetcell(qryGet,'id',application.objPermalinks.getPermalinkFromTitle(xmlContent.cms.document.xmlattributes.name),getDirectory.currentrow);
+				querysetcell(qryGet,'permalink',application.objPermalinks.getPermalinkFromTitle(xmlContent.cms.document.xmlattributes.name),getDirectory.currentrow);
 				querysetcell(qryGet,'name',xmlContent.cms.document.xmlattributes.name,getDirectory.currentrow);
 				querysetcell(qryGet,'ordername',xmlContent.cms.document.xmlattributes.ordername,getDirectory.currentrow);
 				querysetcell(qryGet,'category',xmlContent.cms.document.xmlattributes.category,getDirectory.currentrow);
