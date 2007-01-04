@@ -56,6 +56,7 @@
 		<cfscript>
 			if (not StructKeyExists(application, 'configuration')) init();
 
+			if (StructKeyExists(url, 'reinit')) init();
 			//init();
 
 			initRequest();
@@ -63,8 +64,6 @@
 
 			if (not isdefined('session.id'))
 				onSessionStart();
-
-			if (StructKeyExists(url, 'reinit')) init();
 		</cfscript>
 
 		<!--- logout section --->

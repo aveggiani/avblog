@@ -187,7 +187,7 @@
 							request.blog.saveCommentEntry(form.id,form.author,form.email,form.description,emailvisible,private,published);
 						</cfscript>
 						<!--- delete the capthca image --->
-						<cfif isdefined('form.captcha') and fileexists('#request.appPath#/#form.captchaImage#')>
+						<cfif isdefined('form.captcha') and fileexists('#request.appPath#/#form.captchaImage#') and form.captchaImage does not contain 'avblog.cfm'>
 							<cffile action="delete" file="#request.appPath#/#form.captchaImage#">
 						</cfif>
 					
