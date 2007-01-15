@@ -10,6 +10,7 @@
 // include your contact information in the header, as can be seen above.
 
 // full day names
+
 Calendar._DN = new Array
 ("Domingo",
  "Segunda",
@@ -42,6 +43,10 @@ Calendar._SDN = new Array
  "Sex",
  "Sab",
  "Dom");
+
+// First day of the week. "0" means display Sunday first, "1" means display
+// Monday first, etc.
+Calendar._FD = 0;
 
 // full month names
 Calendar._MN = new Array

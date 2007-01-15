@@ -537,15 +537,21 @@
 				application.fileSystem.createDirectory('#tempDir#','#listgetat(arguments.date,2,'/')#');
 
 			tempDir = "#tempDir#/#listgetat(arguments.date,2,'/')#";
-			application.fileSystem.copyFile('#request.appPath#/permalinks','#tempdir#','index_month.cfm');
-			application.fileSystem.renameFile('#tempdir#','index_month.cfm','index.cfm');
-
+			if (not fileexists('#tempDir#/index.cfm'))
+				{
+					application.fileSystem.copyFile('#request.appPath#/permalinks','#tempdir#','index_month.cfm');
+					application.fileSystem.renameFile('#tempdir#','index_month.cfm','index.cfm');
+				}
+				
 			if (not directoryexists('#tempDir#/#listgetat(arguments.date,1,'/')#'))
 				application.fileSystem.createDirectory('#tempDir#','#listgetat(arguments.date,1,'/')#');
 
 			tempDir = "#tempDir#/#listgetat(arguments.date,1,'/')#";
-			application.fileSystem.copyFile('#request.appPath#/permalinks','#tempdir#','index_day.cfm');
-			application.fileSystem.renameFile('#tempdir#','index_day.cfm','index.cfm');
+			if (not fileexists('#tempDir#/index.cfm'))
+				{
+					application.fileSystem.copyFile('#request.appPath#/permalinks','#tempdir#','index_day.cfm');
+					application.fileSystem.renameFile('#tempdir#','index_day.cfm','index.cfm');
+				}
 
 			if (not directoryexists('#tempDir#/#arguments.shortTitle#'))
 				application.fileSystem.createDirectory('#tempDir#','#arguments.shortTitle#');

@@ -364,7 +364,7 @@
 			qryCategories	= application.objCategoryStorage.get();
 		 </cfscript>
 		 
-		<cfhtmlhead text="<script src=""js/dynamic_enclosures.js""></script>">
+		<cfhtmlhead text="<script type=""text/javascript"" src=""#request.appmapping#js/dynamic_enclosures.js""></script>">
 
 		<vb:content>
 			<div class="editorBody">
@@ -616,7 +616,8 @@
 												<div class="trackbackPing">
 													<cftry>
 														<cfwddx action="wddx2cfml" input="#qryAuthoPings.svalue#" output="structValue">
-														<cfcatch></cfcatch>
+														<cfcatch>
+														</cfcatch>
 													</cftry>
 													<cftry>
 														<cfset flerror=xmlsearch(xmlparse(structValue.authopingresult),'//member/value/boolean')>
@@ -629,10 +630,18 @@
 															<br />
 															<strong>message:</strong> #htmleditformat(message[1].xmltext)#
 														<cfcatch>
-															<strong>#structValue.url#</strong>
-															<br />
-															<br />
-															#htmleditformat(structValue.authopingresult)#
+															<cfif isdefined('structValue')>
+																<cfif structkeyexists(structValue,'url')>
+																	<strong>#structValue.url#</strong>
+																	<br />
+																	<br />
+																	#htmleditformat(structValue.authopingresult)#
+																<cfelse>
+																	<cfdump var="#structValue#">
+																</cfif>
+															<cfelse>
+																<cfdump var="#qryAuthoPings.svalue#">
+															</cfif>
 														</cfcatch>
 													</cftry>
 												</div>

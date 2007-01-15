@@ -1,6 +1,6 @@
 <cfif thistag.executionmode is 'start'>
 	<cfinclude template="../include/functions.cfm">
-	<cfif useajax()>
+	<cfif useajax() and (not isdefined('url.mode') or isdefined('url.mode') and url.mode is not 'updateentry')>
 		<cfparam name="attributes.whichLibrary" default="dojo">
 	<cfelse>
 		<cfset attributes.whichLibrary="noajax">

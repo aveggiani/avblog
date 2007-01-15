@@ -192,7 +192,7 @@
 			<div class="editorTitle"><cfoutput>#application.language.language.addcomment.xmltext#</cfoutput></div>
 				<div class="editorForm">
 					<table width="100%" border="0">
-						<cfform name="addcomment" action="#cgi.script_name#?mode=viewcomment&amp;id=#url.id#&cache=1" method="post">
+						<cfform id="addcomment" name="addcomment" action="#cgi.script_name#?mode=viewcomment&amp;id=#url.id#&cache=1" method="post">
 							<cfscript>
 								if (isdefined('cookie.blogxml_autore'))
 									authorvalue="#cookie.blogxml_autore#";
@@ -219,7 +219,13 @@
 									<!---
 										<td><cfinput required="yes" validate="email" message="#application.language.language.addcommentemailalert.xmltext#" type="text" size="50" name="email"  class="editorForm" value="#emailvalue#" /></td>
 									--->
-									<td><cfinput required="yes" validate="regular_expression" pattern="^[A-Za-z0-9\._-]+@([0-9a-zA-Z][0-9A-Za-z_-]+\.)+[a-z]{2,4}$" message="#application.language.language.addcommentemailalert.xmltext#" type="text" size="50" name="email"  class="editorForm" value="#emailvalue#" /></td>
+									<td>
+										<cfif request.railo>
+											<input type="text" size="50" name="email"  class="editorForm" value="#emailvalue#" />
+										<cfelse>
+											<cfinput required="yes" validate="regular_expression" pattern="^[A-Za-z0-9\._-]+@([0-9a-zA-Z][0-9A-Za-z_-]+\.)+[a-z]{2,4}$" message="#application.language.language.addcommentemailalert.xmltext#" type="text" size="50" name="email"  class="editorForm" value="#emailvalue#" />
+										</cfif>
+									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="center">
@@ -288,7 +294,11 @@
 										<input type="button" value="#application.language.language.clear.xmltext#" 
 											onClick="if(confirm('#JSStringFormat(application.language.language.cancelaction.xmltext)#')) { history.back() }"> 
 										<input type="hidden" name="addComment">
-										<input type="button" onclick="verifySubmit();" value="#application.language.language.insertcomment.xmltext#" />
+										<cfif request.railo>
+											<input type="submit" value="#application.language.language.insertcomment.xmltext#" />
+										<cfelse>
+											<input type="button" onclick="verifySubmit();" value="#application.language.language.insertcomment.xmltext#" />
+										</cfif>
 									</td>
 								</tr>	
 						</cfoutput>

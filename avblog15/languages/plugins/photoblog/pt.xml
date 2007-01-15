@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <language id="pt-BR">
-	<uploaderror>Erro ao carregar!</uploaderror>
+	<uploaderror>Erro no upload!</uploaderror>
 	<add>adicionar</add>
 	<modify>modificar</modify>
 	<name>FotoBlog</name>
-	<photoblogmanager>Administrador do Fotoblog</photoblogmanager>
+	<photoblogmanager>Gerenciar Fotoblog</photoblogmanager>
 	<watermark>Marca d'água</watermark>
 	<watermarktext>Texto da marca d'água</watermarktext>
-	<thumbwidth>espessura do thumbnail</thumbwidth>
+	<thumbwidth>Largura da miniatura</thumbwidth>
 	<layouttype>Tipo de layout</layouttype>
 	<layoutorientation>Orientação do layout</layoutorientation>
-	<bigwidth>Espessura grande</bigwidth>
+	<bigwidth>Largura grande</bigwidth>
 	<zipfile>Zipar Arquivo</zipfile>
-	<galleryname>Nome da galeria</galleryname>
-	<gallerycategory>Categoria da galeria</gallerycategory>
-	<nofiles>Não existem galerias nesse momento!</nofiles>
-	<addgallery>adicionar galeria</addgallery>
-	<editgallery>editar galeria</editgallery>
-	<emptyarchive>Não tem Fotoblog</emptyarchive>
-	<gallerydate>date</gallerydate>
-	<gallerydescription>description</gallerydescription>
-	<photoname>photo name</photoname>
-	<originalExifData>Original Image Exif Data</originalExifData>
-	<imageorder>order</imageorder>
+	<galleryname>Nome do álbum</galleryname>
+	<gallerycategory>Categoria do álbum</gallerycategory>
+	<nofiles>Não existem álbuns nesse momento!</nofiles>
+	<addgallery>Adicionar álbum</addgallery>
+	<editgallery>Editar álbum</editgallery>
+	<emptyarchive>Nenhum arquivo</emptyarchive>
+	<gallerydate>Data do álgum</gallerydate>
+	<gallerydescription>Descrição do álbum</gallerydescription>
+	<photoname>Nome da foto</photoname>
+	<originalExifData>Dados originais do Exif da imagem</originalExifData>
+	<imageorder>Ordem</imageorder>
 </language>

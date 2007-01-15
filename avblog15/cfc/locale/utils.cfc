@@ -100,7 +100,7 @@
 		</cfscript>
 	</cffunction>
 
-	<cffunction name="getLocalizedYear" access="public" returnType="string" output="false"
+	<cffunction name="getLocalizedYear" access="public" returnType="string" output="true"
 				hint="Returns localized year, probably only useful for BE calendars like in thailand, etc.">
 		<cfargument name="thisYear" type="numeric" required="true">
 		<cfscript>
@@ -132,7 +132,7 @@
 		<cfset variables.sDateFormat = createObject("java","java.text.SimpleDateFormat")>
 		<cfset variables.aCalendar = createObject("java","java.util.GregorianCalendar").init(variables.aLocale)>
 		<cfset variables.dateSymbols=createObject("java","java.text.DateFormatSymbols").init(variables.aLocale)>
-			
+		
 	</cffunction>
 
 	<cffunction name="timeLocaleFormat" access="public" returnType="string" output="false"

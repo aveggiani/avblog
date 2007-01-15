@@ -37,22 +37,7 @@
 			</script>
 		</cfsavecontent>
 		<cfhtmlhead text="#dojoAjax#">
-		<cfhtmlhead text="<script src=""js/dynamic_table.js""></script>">
-		<!---
-		<cfset request.linkAdmin = "javascript:viewAdminLink('#request.appmapping#ajax.cfm">
-		<cfsavecontent variable="dojoAjax">
-			<cfoutput>
-				<script language="JavaScript" type="text/javascript">
-					function viewAdminLink(target)
-						{
-							var MainPane = dojo.widget.byId("MainPane");
-							MainPane.setUrl(target+'&when='+Date());
-						}
-				</script>
-			</cfoutput>		
-		</cfsavecontent>
-		<cfhtmlhead text="#dojoAjax#">
-		--->
+		<cfhtmlhead text="<script type=""text/javascript"" src=""#request.appmapping#js/dynamic_table.js""></script>">
 	<cfelse>
 		<cfsavecontent variable="nodojoAjax">
 			<cfoutput>
