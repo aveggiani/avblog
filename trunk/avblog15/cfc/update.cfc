@@ -4,7 +4,7 @@
 		
 		<cfscript>
 			if (not directoryexists('#request.apppath#/include/version') or not fileexists('#request.apppath#/include/version/version.cfm'))
-				makeVersion('1.0x');
+				makeVersion('1.5.1');
 			version = getVersion();
 			if (version is not request.version)
 				{

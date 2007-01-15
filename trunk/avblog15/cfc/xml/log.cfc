@@ -29,7 +29,8 @@
 		<cfargument name="time" 		type="string" 	required="yes">
 		
 		<cfscript>
-			var qrylogResult 	= querynew("id,date,time,type,svalue,param1,param2");
+			var qrylogResult 	= querynew("id,date,time,sdate,stime,type,svalue,param1,param2");
+			var qrylogResult2 	= '';
 			var qrylog 			= '';
 			var strFile			= '';
 			var strFileValue	= '';
@@ -53,6 +54,8 @@
 				querysetcell(qrylogResult,'id',listgetat(qryLog.name,5,'_'));
 				querysetcell(qrylogResult,'date',listgetat(qryLog.name,1,'_'));
 				querysetcell(qrylogResult,'time','#listgetat(qryLog.name,2,'_')#:#listgetat(qryLog.name,3,'_')#:#listgetat(qryLog.name,4,'_')#');
+				querysetcell(qrylogResult,'sdate',listgetat(qryLog.name,1,'_'));
+				querysetcell(qrylogResult,'stime','#listgetat(qryLog.name,2,'_')#:#listgetat(qryLog.name,3,'_')#:#listgetat(qryLog.name,4,'_')#');
 				listapp = listdeleteat(qryLog.name,1,'_');
 				listapp = listdeleteat(listapp,1,'_');
 				listapp = listdeleteat(listapp,1,'_');
@@ -64,11 +67,11 @@
 			</cfscript>
 		</cfloop>
 		
-		<cfquery name="qryLogResult" dbtype="query">
-			select * from qryLogResult order by [date] desc, [time] desc
+		<cfquery name="qrylogResult2" dbtype="query">
+			select * from qryLogResult order by sdate desc, stime desc
 		</cfquery>
 		
-		<cfreturn qryLogResult>
+		<cfreturn qrylogResult2>
 	</cffunction>
 
 	<cffunction name="getOnlyHeader" access="public" output="false" returntype="query">

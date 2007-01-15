@@ -164,6 +164,8 @@
 		</cfcase>
 		<cfcase value="viewComment">
 			<cfif isdefined('form.addComment')>
+				<cfset captchaFailed = false>
+				<cfset spamFailed = false>
 				<cfif isuserinrole('admin') or isuserinrole('blogger') or (isdefined('form.captcha') and session.captchatext is form.captcha)>
 					<cfif cgi.HTTP_REFERER contains 'index.cfm?mode=addComment&id=#urlencodedformat(form.id)#'
 						and 
@@ -257,12 +259,12 @@
 							</cfscript>
 						</cfif>
 					<cfelse>
-						<cfset request.spamFailed = true>
+						<cfset spamFailed = true>
 					</cfif>
 				<cfelse>
-					<cfset request.captchaFailed = true>
+					<cfset captchaFailed = true>
 				</cfif>
-				<cflocation url="#cgi.script_name#?mode=viewcomment&id=#form.id#&addedcomment=1&cache=1" addtoken="no">
+				<cflocation url="#cgi.script_name#?mode=viewcomment&id=#form.id#&addedcomment=1&cache=1&spamFailed=#spamFailed#&captchaFailed=#captchaFailed#" addtoken="no">
 			</cfif>
 			<cfif isdefined('url.publish') and isuserinrole('admin')>
 				<cfscript>
@@ -491,9 +493,13 @@
 							arrayCall[1] = 'weblogUpdates.ping';
 						else
 							arrayCall[1] = 'ping';
-						arrayCall[2] = '#application.configuration.config.owner.author.xmltext#';
 						if (listgetat(form.authoping,i) does not contain 'icerocket')
-							arrayCall[3] = '#application.configuration.config.owner.blogurl.xmltext#';
+							{
+								arrayCall[2] = '#application.configuration.config.headers.title.xmltext#';
+								arrayCall[3] = '#application.configuration.config.owner.blogurl.xmltext#';
+							}
+						else
+							arrayCall[2] = '#application.configuration.config.owner.blogurl.xmltext#';
 						myString = objXmlrpc.CFML2XMLRPC(arrayCall);
 					</cfscript>
 					<cftry>
@@ -505,6 +511,7 @@
 							<cfset	authopingresult = cfcatch>
 						</cfcatch>
 					</cftry>
+					<cfdump var="#authopingresult#">
 					<cfscript>
 						structLogValue  				= structnew();
 						structLogValue.url				= listgetat(form.authoping,i);

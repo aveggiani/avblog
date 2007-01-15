@@ -1,22 +1,22 @@
 <cfsilent><?xml version="1.0" encoding="UTF-8"?>
 <config>
 					<headers>
-						<title>AVBlog demo site</title>
+						<title>AVBlog 1.5.1 demo site</title>
 						<description>Blog</description>
 						<charset>UTF-8</charset>
 					</headers>
 					<labels>
-						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;">AVBlog Demo Site</div><div style="float:right;padding-right:10px;"><a href="http://www.avblog.org/index.cfm">AVBlog project</a></div>]]></header>
+						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;"></div><div style="float:right;padding-right:10px;"><a href="/avblog15/index.cfm?mode=admin">Administration</a> | <a href="http://www.avblog.org/index.cfm">AVBlog project</a></div>]]></header>
 						<footer>Copyright 2006 - Andrea Veggiani</footer>
 					</labels>
 					<owner>
 						<author>your name</author>
-						<email>admin@admin</email>
+						<email>admin@admin.nowhere</email>
 						<blogurl>yourblogurl here</blogurl>
 					</owner>
 					<internationalization>
 						<language>en</language>
-						<setlocale>ar_AE</setlocale>
+						<setlocale>en_US</setlocale>
 						<timeoffset>0</timeoffset>
 						<timeoffsetGMT>1</timeoffsetGMT>
 					</internationalization>
@@ -96,7 +96,7 @@
 							<allowprivatecomment>true</allowprivatecomment>
 						</comment>
 						<blogstorage>
-							<storage>db</storage>
+							<storage>xml</storage>
 							<xml>
 								<folder>storage/xml</folder>
 							</xml>
@@ -113,8 +113,8 @@
 						</blogstorage>
 					</options>
 					<layout>
-						<theme>blue_blog</theme>
-						<layout>centered</layout>
+						<theme>default</theme>
+						<layout>justified</layout>
 						<useiconset>silk</useiconset>
 						<usesocialbuttons>true</usesocialbuttons>
 					</layout>
@@ -127,10 +127,10 @@
 						<postadd>false</postadd>
 						<postmodify>false</postmodify>
 						<commentadd>false</commentadd>
-						<trackbackadd>true</trackbackadd>
+						<trackbackadd>false</trackbackadd>
 						<login>true</login>
 						<logout>true</logout>
-						<pageview>true</pageview>
+						<pageview>false</pageview>
 						<download>true</download>
 					</log>
 				</config></cfsilent>

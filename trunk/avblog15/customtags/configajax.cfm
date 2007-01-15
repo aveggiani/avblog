@@ -367,7 +367,7 @@
 									<div class="editorForm" style="position:relative; text-align:left; padding:10px;">
 										<cfoutput>
 											<div class="configLabels">
-												<cfinput type="checkbox" name="feedemail" checked="#application.configuration.config.options.feed.email.active.xmltext#">
+												<input type="checkbox" name="feedemail" checked="#application.configuration.config.options.feed.email.active.xmltext#">
 												#application.language.language.configfeedemail.xmltext#
 											</div>
 											<div class="configLabels">
@@ -375,7 +375,7 @@
 												#application.language.language.configfeedemailschedule.xmltext#
 											</div>
 											<div class="configLabels">
-												<cfinput type="text" style="width:150px;" required="yes" name="feedmailkey" value="#application.configuration.config.options.feed.email.subjectkey.xmltext#">
+												<cfinput type="text" style="width:150px;" name="feedmailkey" value="#application.configuration.config.options.feed.email.subjectkey.xmltext#">
 												#application.language.language.configfeedemailsubject.xmltext#
 											</div>
 											<div class="configLabels">

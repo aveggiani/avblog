@@ -30,6 +30,7 @@
 		<cfargument name="value" required="yes" type="string">
 
 		<cfset stringtoSave="<?xml version=""1.0"" encoding=""#request.charset#""?><cfsilent>#arguments.value#</cfsilent>">
+		
         <cflock timeout="10" throwontimeout="Yes" name="#arguments.path##arguments.name#" type="EXCLUSIVE">
 			<cffile charset="#request.charset#" action="write" file="#arguments.path#/#arguments.name#.#request.xmlFilesExtension#" nameconflict="OVERWRITE" output="#stringtoSave#">
 		</cflock>

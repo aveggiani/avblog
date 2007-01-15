@@ -11,24 +11,24 @@
 				{
 					queryaddrow(qryReturnValue,1);
 					querysetcell(qryReturnValue,'item',PingList[i].xmltext,i);
-					querysetcell(qryReturnValue,'url',lcase(PingList[i].xmlattributes.url),i);
+					querysetcell(qryReturnValue,'url',PingList[i].xmlattributes.url,i);
 				}
 		</cfscript>
 		<cfquery name="qryReturnValue" dbtype="query">
 			select * from qryReturnValue order by item
 		</cfquery>
 
-
 		<cfreturn qryReturnValue>
 	</cffunction>
 	
 	<cffunction name="savePingList" access="public" returntype="void">
 		<cfargument name="structForm" required="yes">
-
+		
 		<cfscript>
 			var PingList = '';
 		</cfscript>
 		<cfsetting enablecfoutputonly="yes">
+
 		<cfsavecontent variable="PingList">
 			<cfoutput><ping></cfoutput>
 				<cfloop collection="#arguments.structForm#" item="fieldName">
@@ -42,6 +42,7 @@
 				</cfloop>
 			<cfoutput></ping></cfoutput>
 		</cfsavecontent>
+
 		<cfscript>
 			application.fileSystem.writeXML('#request.appPath#/config','ping',PingList);
 		</cfscript>

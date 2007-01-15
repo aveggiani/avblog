@@ -121,7 +121,7 @@
 							<cfcase value="pageview">
 								<cfif isdefined('url.detail')>
 									<cfquery name="qryDetail" dbtype="query">
-										select * from qry where type = '#url.detail#' order by [date] desc, [time] desc
+										select * from qry where type = '#url.detail#' order by sdate desc, stime desc
 									</cfquery>
 									<cfscript>
 										page = listgetat(url.detail,1,'_');
