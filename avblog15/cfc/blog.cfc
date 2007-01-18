@@ -349,6 +349,7 @@
 								<cfloop index="j" from="1" to="#arraylen(arrayshow)#">
 									<cfscript>
 										enclosures = arrayShow[j].qryEnclosures;
+										mycategories =	'';
 										mycategorieswithorder=getMyCategories(arrayShow[j].id);
 										datetmp=createdate(left(arrayShow[j].date,4),mid(arrayShow[j].date,5,2),right(arrayShow[j].date,2));
 										timetmp="#arrayShow[j].time#";
@@ -430,6 +431,7 @@
 								</cfscript>
 								<cfloop index="j" from="1" to="#arraylen(arrayshow)#">
 									<cfscript>
+										mycategories =	'';
 										mycategorieswithorder=getMyCategories(arrayShow[j].id);
 										datetmp=createdate(left(arrayShow[j].date,4),mid(arrayShow[j].date,5,2),right(arrayShow[j].date,2));
 										timetmp="#arrayShow[j].time#";

@@ -7,12 +7,11 @@
 		qryCategories = request.blog.getCategories();
 	</cfscript>
 	<cfsavecontent variable="xmlResult">
-		<cfoutput>
-			<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+		<cfoutput><urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
 			   <url>
 				  <loc>#application.configuration.config.owner.blogurl.xmltext#</loc>
 				  <lastmod>#left(qryBlogs.date,4)#-#mid(qryBlogs.date,5,2)#-#right(qryBlogs.date,2)#</lastmod>
-				  <changefreq>dayly</changefreq>
+				  <changefreq>daily</changefreq>
 				  <priority>0.8</priority>
 			   </url>
 			   <cfloop query="qryBlogs">
@@ -39,5 +38,4 @@
 			</urlset>
 		</cfoutput>
 	</cfsavecontent>	
-</cfsilent>
-<cfcontent type="text/xml"><cfoutput>#xmlResult#</cfoutput>
+</cfsilent><cfcontent type="text/xml"><cfoutput>#xmlResult#</cfoutput>

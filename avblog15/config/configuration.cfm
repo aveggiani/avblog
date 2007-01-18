@@ -6,7 +6,7 @@
 						<charset>UTF-8</charset>
 					</headers>
 					<labels>
-						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;"></div><div style="float:right;padding-right:10px;"><a href="/avblog15/index.cfm?mode=admin">Administration</a> | <a href="http://www.avblog.org/index.cfm">AVBlog project</a></div>]]></header>
+						<header><![CDATA[<div style="float:left;font-size:1.7em;font-weight:bold;"></div><div style="float:right;padding-right:10px;">| <a href="http://www.avblog.org/index.cfm">AVBlog project</a></div>]]></header>
 						<footer>Copyright 2006 - Andrea Veggiani</footer>
 					</labels>
 					<owner>

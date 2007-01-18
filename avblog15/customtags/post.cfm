@@ -189,14 +189,14 @@
 										#arrayShow[i].excerpt#
 									</div>
 								<cfelse>
-									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
 										<div class="blogText">
 											#arrayShow[i].excerpt#
-											<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
-												<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8>
+											<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8 and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+												<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
 													<a onclick="showDiv('blogText_#request.indexBlog#','blogExcerpt_#request.indexBlog#');">[#application.language.language.clickformore.xmltext#]</a>
-												</cfif>
-											</div>
+												</div>
+											</cfif>
 										</div>
 									</cfif>
 									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>

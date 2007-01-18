@@ -6,7 +6,7 @@
 		<body>
 			<script type='text/javascript' src='http://track.mybloglog.com/js/jsserv.php?mblID=2005111310312554'></script>
 			<div id="main">
-				<cfinclude template="../header_top.cfm">
+				<cfinclude template="../top.cfm">
 				<div id="entries">
 					<span class="blogTitle">
 						<cfif not isdefined('form.xmlsource')>
