@@ -45,8 +45,6 @@
 			application.objPermalinks.updatePermalinks();
 			if (directoryexists('#request.apppath#/plugins/cms'))
 				application.objPermalinks.updatePluginCMSSES();
-			if (directoryexists('#request.apppath#/plugins/photoblog'))
-				application.objPermalinks.updatePluginPhotoblogSES();
 			application.objPermalinks.updateCategorySES();
 			application.objPermalinks.updateMonthSES();
 		</cfscript>
@@ -68,49 +66,26 @@
 
 	<cffunction name="updatePluginCMSSES" access="public" returntype="void">
 		
-		<!--- update for Category SES --->
-		<cfscript>
-			qryCms = application.cmsObj.getcms();
-		</cfscript>
-		<cfif not directoryexists('#request.apppath#/permalinks/cms')>
+		<cfif directoryexists('#request.apppath#/plugins/cms')>
 			<cfscript>
-				application.fileSystem.createDirectory('#request.appPath#/permalinks','cms');
+				qryCms = application.cmsObj.getcms();
 			</cfscript>
-		</cfif>
-		<cfloop query="qryCms">
-			<cfif not directoryexists('#request.apppath#/permalinks/cms/#qryCms.name#')>
+			<cfif not directoryexists('#request.apppath#/permalinks/cms')>
 				<cfscript>
-					// create directory and copy file for category SES
-					application.fileSystem.createDirectory('#request.appPath#/permalinks/cms','#qryCms.name#');
-					application.fileSystem.copyFile('#request.appPath#/permalinks','#request.appPath#/permalinks/cms/#qryCms.name#','index_cms.cfm');
-					application.fileSystem.renameFile('#request.appPath#/permalinks/cms/#qryCms.name#','index_cms.cfm','index.cfm');
+					application.fileSystem.createDirectory('#request.appPath#/permalinks','cms');
 				</cfscript>
 			</cfif>
-		</cfloop>
-
-	</cffunction>
-
-	<cffunction name="updatePluginPhotoblogSES" access="public" returntype="void">
-		
-		<!--- update for Category SES --->
-		<cfscript>
-			qryCategories = application.blogCFC.getCategories();
-		</cfscript>
-		<cfif not directoryexists('#request.apppath#/permalinks/categories')>
-			<cfscript>
-				application.fileSystem.createDirectory('#request.appPath#/permalinks','categories');
-			</cfscript>
+			<cfloop query="qryCms">
+				<cfif not directoryexists('#request.apppath#/permalinks/cms/#qryCms.name#')>
+					<cfscript>
+						// create directory and copy file for category SES
+						application.fileSystem.createDirectory('#request.appPath#/permalinks/cms','#qryCms.name#');
+						application.fileSystem.copyFile('#request.appPath#/permalinks','#request.appPath#/permalinks/cms/#qryCms.name#','index_cms.cfm');
+						application.fileSystem.renameFile('#request.appPath#/permalinks/cms/#qryCms.name#','index_cms.cfm','index.cfm');
+					</cfscript>
+				</cfif>
+			</cfloop>
 		</cfif>
-		<cfloop query="qryCategories">
-			<cfif not directoryexists('#request.apppath#/permalinks/categories/#listlast(qryCategories.name,'_')#')>
-				<cfscript>
-					// create directory and copy file for category SES
-					application.fileSystem.createDirectory('#request.appPath#/permalinks/categories','#listlast(qryCategories.name,'_')#');
-					application.fileSystem.copyFile('#request.appPath#/permalinks','#request.appPath#/permalinks/categories/#listlast(qryCategories.name,'_')#','index_category.cfm');
-					application.fileSystem.renameFile('#request.appPath#/permalinks/categories/#listlast(qryCategories.name,'_')#','index_category.cfm','index.cfm');
-				</cfscript>
-			</cfif>
-		</cfloop>
 
 	</cffunction>
 
