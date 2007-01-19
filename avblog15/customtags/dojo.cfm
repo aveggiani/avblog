@@ -18,7 +18,8 @@
 	<cfscript>
 		request.structdojo = structnew();
 	</cfscript>
-<cfelseif isdefined('attributes.use')>
+</cfif>
+<cfif isdefined('attributes.use')>
 	<cfif not StructKeyExists(request.structdojo,attributes.use)>
 		<cfsavecontent variable="dojo">
 			<cfoutput>
