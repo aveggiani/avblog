@@ -10,7 +10,7 @@
 
 <cfswitch expression="#attributes.whichLibrary#">
 	<cfcase value="dojo">
-		<cf_dojo>
+		<cf_dojo use="ContentPane">
 		<cfoutput>
 			<cfif not isdefined('request.viewWApane')>
 				<cfsavecontent variable="dojo">

@@ -57,6 +57,7 @@
 	<cfcase value="showall">
 
 		<cfif useajax()>
+			<vb:dojo use="ContentPane">
 			<cfsavecontent variable="dojo">
 				<cfoutput>
 					<script language="JavaScript" type="text/javascript">
@@ -70,7 +71,6 @@
 			</cfsavecontent>
 			<cfset processpage = "ajax">
 			<cfhtmlhead text="#dojo#">
-			<vb:dojo>
 		<cfelse>
 			<cfsavecontent variable="nodojo">
 				<cfoutput>
