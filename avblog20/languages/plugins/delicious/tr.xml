@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="en">
+	<rssAddress>RSS url from Delicious</rssAddress>
+	<linksnumber>Max number of links to view</linksnumber>
+	<title>My Del.icio.us</title>
+	<showall>Show more</showall>
+	<manager>Delicious manager</manager>
+	<adminmessage>use Configuration settings</adminmessage>
+	<username>username</username>
+	<password>password</password>
+</language>

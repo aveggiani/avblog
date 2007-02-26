@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="it">
+	<nofiles>Al momento non ci sono pagine</nofiles>
+	<add>aggiungi</add>
+	<modify>modifica</modify>
+	<namefile>nome</namefile>
+	<categoryfile>categoria</categoryfile>
+	<name>Micro-Cms</name>
+	<ordername>ordine pagina</ordername>
+	<ordercategory>ordine categoria</ordercategory>
+	<cmsmanager>Micro-Cms Manager</cmsmanager>
+	<emptyarchive>archivio pagine vuoto</emptyarchive>
+	<addcms>aggiungi pagina</addcms>
+	<ordercms>ordina pagine</ordercms>
+	<modifycms>modifica pagina</modifycms>
+	<deleted>pagina cancellata</deleted>
+</language>
+	

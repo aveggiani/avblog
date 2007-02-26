@@ -1,0 +1,559 @@
+#main
+{
+	width: 580px;
+	background: #fff url("images/sidebar.gif") repeat-y right;
+	border: solid 10px #fff;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#entries
+{
+	width: 410px;
+	margin-right: 0px;
+	padding-right: 0px;
+	margin-left: 5px;
+	float:left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #003344;
+	text-decoration: none;
+	text-align:left;
+}
+
+#side
+{
+	color: #808080;
+	width: 134px;
+	background: url(images/menutop.gif) no-repeat top left;
+	float: right;
+	padding: 10px;
+	border-right: 4px solid #FFF;
+}
+
+.sidelogo
+	{
+		padding: 4px;
+		width:120px;
+		text-align:center;
+	}
+	
+#header 
+{
+	background: #000 url("images/header.gif") no-repeat;
+	height:70px;
+	text-align:left;
+	padding-top: 5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+	margin-right:0px;
+}
+
+#headertop
+{
+}
+
+#headerbottom
+{
+	background: #fff url("images/horizontal.gif") no-repeat;
+	height: 40px;
+	padding: 6px;
+	padding-left: 10px;
+	color: #ffffff;
+	padding-botto: 0px;
+	margin-bottom:0px;
+}
+
+#headerlogo
+{
+	height:70px;
+	float:left;
+}
+
+#headertext
+{
+	text-align:right; 
+	padding-right:10px;
+	margin-top:25px;
+	height:45px;
+	font: bold 16px;  
+	color: #FFFFFF
+}
+#headertext a
+{
+	color: #FFFFFF;
+}
+
+#footertop
+{
+}
+
+#footer 
+{
+	width: 400px;
+	color: #ccc;
+	background: #F9F9F9;
+	margin-right: 0px;
+	margin-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #003344;
+	text-decoration: none;
+	text-align:left;
+	height: 20px;
+	padding: 4px;
+	border: 1px solid #E4E4E4;
+	clear: both;
+}
+
+#footerbottom
+{
+}
+
+body {
+	background: #337FC6 url("images/bg.gif") top center repeat-y;
+	font: normal 8pt/11pt verdana,arial,sans-serif;
+	color: #808080;
+}
+
+.logoText { font: bold 16px; color: #C5C5C5; }
+
+input, textarea, select {
+	font-size: 8pt;
+	padding: 2px;
+}
+
+a, a:visited {
+	text-decoration: underline;
+	color: #000;
+	
+}
+
+a:hover {
+	color: #808080;
+}
+
+hr {
+color: #FFFFFF;
+  background-color: #FFFFFF;
+  height: 1px;
+  width: 100%;
+  border: outset #5F7C9A 1px;}
+
+
+.login {
+  top : 0px;
+  padding : 20px;
+  text-align: center;
+  font-size: 7.5pt;
+}
+
+.catList {
+	width:134px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	padding-bottom: 10px;
+	font-size: 8pt;
+
+}
+.catListTitle {
+	padding-bottom: 10px;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+	color: #4592CA;
+}
+.catListElement {
+	color: #666;
+	padding-left: 5px;
+}
+
+.Links {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
+
+}
+.LinksTitle {
+	padding-bottom: 10px;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+	color: #4592CA;
+}
+.LinksElement {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
+}
+
+select.monthArchive {
+	font-size: 8pt;
+	color: #003344;
+ 	width:180px;
+	background-color: #FFF; 
+	padding: 0px;
+}
+
+.functionMenu {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-size: 8pt;
+	color: #333;
+}
+
+.blogNotPublished {
+	margin: 0px;
+	padding: 0px;
+	background-color:#EDEDE7;
+}
+
+.blogBody {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	overflow-x: hidden;
+}
+
+.blogBodyPostDate {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-bottom: 2px;
+	padding-bottom: 10px;
+	overflow-x: hidden;
+}
+
+.blogDate {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #76A7DC;
+	margin-bottom: 5px;
+	padding-left: 5px;
+}
+
+.blogTitle {
+	font-size: 14pt;
+	color:  #5F7C9A;;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	letter-spacing: -0.05em;
+}
+
+.blogText {
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+.blogMore { 
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+.blogAuthor { 
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogAuthor a {
+	color: #333333;
+}
+
+.blogCommands { 
+	border-top: 1px dashed #ccc;
+	padding-top: 4px;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogCommands a {
+	color: #333333;
+}
+
+.blogAdmin {
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+.statisticsMenu {
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-top:1px solid black;
+	margin-top:10px;
+	text-align:center;
+}
+
+.trackbackPingBox {
+	border: 1px solid red;
+	font-size: 12pt;	
+	color: #666;
+	padding: 5px;
+}
+.trackbackPing {
+	font-size: 8pt;	
+	color: #666;
+	padding: 5px;
+	border-bottom: 1px dashed;
+}
+.commentBodyPrivate {
+	border: 1px solid red;
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.commentBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.commentDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-size: 8pt;
+	padding: 5px;
+	color: #003344;
+}
+.commentText {
+	font-size: 8pt;
+	color: #666;
+}
+.commentAuthor {
+	font-size: 8pt;
+	color: #666;
+	text-align: left;
+	font-weight: bold;
+}
+
+.trackbackBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.trackbackDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-size: 8pt;
+	padding: 5px;
+	color: #003344;
+}
+.trackbackText {
+	font-size: 8pt;
+	color: #666;
+}
+
+.editorBody {
+	margin-top: 0px;
+	background-color: #eee;
+	padding: 0px;
+	width: 100%;
+	overflow-x: hidden;
+	margin-bottom: 15px;
+}
+.editorTitle {
+	font-weight: bold;
+	background-color: #A7BCD6;
+	padding: 5px;
+	color: #003344;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.editorList {
+	font-size: 10pt;
+	color: #666;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	border-bottom: 1px dashed #FBC3AE;
+	margin-bottom: 10px;	
+}
+.editorForm {
+	font-size: 8pt;
+	padding-left: 5px;
+	color: #666;
+}
+input.editorForm {
+	font-size: 9px;	
+	border: 1px solid #666;
+	background-color: White;
+}
+
+.text {
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+	
+.searchField
+	{
+		margin-left:10px;
+		margin-top:10px;
+		margin-right:2px;
+		margin-bottom:0px;
+		width:100px;
+	}
+
+.pageSelected
+	{
+		color: red;
+	}
+	
+.code
+	{
+		border:1px solid #888888;
+		background-color: #cccccc;
+		padding: 6px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:12px;
+		overflow: auto;
+		max-height: 200px;
+		width:510px;
+	}
+
+.tagcloud
+	{
+		width: 120px;
+		padding: 4px;
+		border:1px solid #888888;
+		background-color: #ffffff;
+		margin-left: 2px;
+		margin-bottom: 5px;
+	}
+	
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
+
+.enclosures {
+
+	background-color: #eeeeee;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	display: none;
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	color: #000000;
+	margin: 10px;
+	padding: 15px;
+
+}
+
+.blogSocial { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	background-color: #eeeeee;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	color: #333;
+	text-align: left;
+	padding: 5px;
+	margin: 10px;
+	width: 90%;
+}
+
+.blogCategories { 
+	font-variant: small-caps; 
+	font-size: 8pt;	
+	color: #333;
+	text-align: left;
+	padding-left: 5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.blogCategories a {
+	color: #D0420A;
+}
+
+.pod_bottom {
+	border-bottom: 1px dotted black;
+	margin-bottom: 5px;
+}
+
+.pod {
+	padding: 0px;
+}
+
+.pod a {
+}
+
+.pod_top {
+	padding: 0px;
+}
+		
+.content_bottom {
+}
+.content {
+	background: url(images/h2bg.gif) top left repeat-y;
+	margin-bottom: 5px;
+}
+
+.content_inner {
+	padding: 5px;
+}
+
+.content a {
+}
+
+.content_top {
+}
+
+.adminMenu {
+	font-size: 9pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+	border-bottom: 1px solid #ccc;
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
+}
+
+.button
+{
+	border: 1px solid #337FC6;
+	
+}
+
+.inputSize
+{
+	width:90px;
+}

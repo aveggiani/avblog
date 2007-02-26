@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+				<copyright>
+					<use>true</use>
+					<text>avblog</text>
+				</copyright>
+				<thumbnail>
+					<width>150</width>
+				</thumbnail>
+				<big>
+					<width>800</width>
+				</big>
+				<layout>
+					<type>ajax</type>
+					<orientation>vertical</orientation>
+				</layout>
+			</plugin>

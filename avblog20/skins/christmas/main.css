@@ -1,0 +1,606 @@
+#main
+{
+	padding: 10px;
+	width: 800px;
+}
+
+#entries
+{
+	width:99%;
+	margin-right: -1px;
+	padding-right: 5px;
+	border-right: 1px solid #003344;
+	float:left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #003344;
+	text-decoration: none;
+	text-align:left;
+	width:595px;
+}
+
+#side
+{
+	width: 194px;
+	border-left: 1px solid #003344;
+	float:right;
+	color: #003344;
+	text-align:left;
+	padding-left:5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+#header 
+{
+	width: 800px;
+	height:90px;
+	text-align:left;
+	padding-top: 5px;
+	margin-right:5px;
+	border-bottom: 1px solid black;
+}
+
+#header a
+{
+	color: #990305;
+}
+
+#headerlogo
+{
+	height:90px;
+	float:left;
+	font: bold 22px Georgia, Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	color: #990305
+}
+
+#headertext
+{
+	text-align:right; 
+	padding-right:10px;
+	margin-top:25px;
+	height:45px;
+	font: bold 20px Georgia, Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	color: #990305
+}
+#headertext a
+{
+	color: #990305;
+}
+
+
+#footer 
+{
+	text-align:left;
+	height: 20px;
+	clear:both;
+	background-color: #990305;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight:bold;
+	padding: 5px;
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	color: #FFFFFF;
+}
+
+body { 
+	
+	background:url(images/bg-snow-white.gif);
+	background-color: #FFFFFF; margin: 0px; cursor: default;}
+
+input, textarea, select {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+a {
+	color: #990305;
+	text-decoration: none;
+}
+a:hover {
+	color: #990305;
+	text-decoration: underline;
+
+}
+
+hr {
+	width: 100%;
+	height: 0px;
+	color:#ffffff;
+	border-top: 2px dashed #990305; 
+
+}
+
+.login {
+  top : 0px;
+  padding : 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 7.5pt;
+}
+
+.catList {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #000;
+}
+.catListTitle {
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+}
+.catListElement {
+	width:190px;
+	overflow:hidden;
+	color: #333;
+	padding-left: 5px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+.Links {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000;
+}
+.LinksTitle {
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+}
+.LinksElement {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #666;
+	padding-left: 5px;
+}
+
+select.monthArchive {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #333;
+ 	width:180px;
+	background-color: #FFF; 
+}
+.functionMenu {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #000;
+}
+
+.commentNotPublished {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+}
+
+.trackbackNotPublished {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+}
+
+.blogNotPublished {
+	margin: 0px;
+	padding: 0px;
+	background-color:#EDEDE7;
+}
+
+.blogBody {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #990305;
+	
+}
+
+.blogBodyPostDate {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+	
+}
+
+.blogDate {
+	background:url(images/img28.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+	text-align:right;
+	height: 27px;
+	font-family:  Georgia, serif;
+	font-size: 16px;	
+	padding: 5px;
+	border-bottom: 2px solid #990305;
+	color: #D0420A;
+	font-weight: bold;
+}
+
+.blogTitle {
+	font-family: Georgia, serif;
+	font-size: 13pt;
+	color: #666;
+	margin-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	letter-spacing: 0.2em;
+}
+
+.blogText {
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	color: #000000;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.blogMore { 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+.trackbackPingBox {
+	border: 1px solid red;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;	
+	color: #666;
+	padding: 5px;
+}
+.trackbackPing {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	padding: 5px;
+	border-bottom: 1px dashed;
+}
+
+.blogAuthor { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #333;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogAuthor a {
+	color: #333333;
+}
+
+.blogCategories { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	color: #333;
+	text-align: left;
+	padding-left: 5px;
+	padding-top:5px;
+}
+
+.blogCategories a {
+	color: #990305;
+}
+.blogCommands { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	color: #333;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogCommands a {
+	color: #333333;
+}
+
+.blogAdmin {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #333;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.statisticsMenu {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-top:1px solid black;
+	margin-top:10px;
+	text-align:center;
+}
+
+.commentBody {
+	margin-top: 5px;
+	margin-left: 5px;
+	border-bottom: 1px dashed #FBC3AE;
+	background-color: #F6F6F6;
+	padding: 5px;
+	
+	margin-bottom: 15px;
+	}
+.commentDate {
+	margin-top: 5px;
+	text-align: right;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+}
+
+.commentText {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;	
+	color: #666;
+}
+
+.commentAuthor {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;	
+	color: #333;
+	text-align: right;
+}
+
+.commentBodyPrivate {
+	border: 1px solid red;
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	
+	color: #666;
+}
+
+.trackbackBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	
+	color: #666;
+}
+
+.trackbackDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #003344;
+}
+
+.trackbackText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+
+.editorBody {
+	margin-top: 5px;
+	background-color: #F6F6F6;
+	padding: 0px;
+}
+
+.editorTitle {
+	font-family: Georgia, serif;
+	font-size: 13pt;	
+	background-color: #DADADA;
+	padding: 5px;
+	color: #000;
+	border-bottom: 2px solid #990305;
+}
+
+.editorList {
+	font-family: Georgia, serif;
+	font-size: 10pt;
+	color: #666;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	border-bottom: 1px dashed #FBC3AE;
+	margin-bottom: 10px;	
+}
+.editorForm {
+	font-family: Georgia, serif;
+	font-size: 10pt;
+	color: #666;
+}
+input.editorForm {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	border: 1px solid #666;
+	background-color: White;
+	
+}
+
+.text {
+	font-family: Georgia, serif;
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+.sidelogo
+	{
+		padding: 4px;
+		width:168px;
+		text-align:center;
+	}
+	
+.searchField
+	{
+		margin-left:10px;
+		margin-top:10px;
+		margin-right:2px;
+		margin-bottom:0px;
+		width:100px;
+	}
+
+.pageSelected
+	{
+		color: red;
+	}
+	
+.code
+	{
+		border:1px solid #990305;
+		background-color: #FBC3AE;
+		padding: 6px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:12px;
+		overflow: auto;
+		max-height: 200px;
+		width:510px;
+	}
+	
+.tagcloud
+	{
+		width: 180px;
+		padding: 4px;
+		border:1px solid #888888;
+		background-color: #cccccc;
+		margin-left: 2px;
+	}
+	
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
+
+.enclosures {
+
+	background-color: #eeeeee;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	display: none;
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	color: #000000;
+	margin: 10px;
+	padding: 15px;
+
+}
+
+.blogSocial { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	background-color: #eeeeee;
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	color: #333;
+	text-align: left;
+	padding: 5px;
+	margin: 10px;
+	width: 60%;
+}
+
+.blogCategories { 
+	font-variant: small-caps; 
+	font-family: Georgia, serif;
+	font-size: 8pt;	
+	color: #333;
+	text-align: left;
+	padding-left: 5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.blogCategories a {
+	color: #D0420A;
+}
+
+.pod_bottom {
+	border-bottom: 1px dotted black;
+	margin-bottom: 5px;
+}
+
+.pod {
+}
+
+.pod a {
+}
+
+.pod_top {
+}
+		
+.content_bottom {
+}
+.content {
+}
+
+.content_inner {
+}
+
+.content a {
+}
+
+.content_top {
+}
+
+.adminMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+	border-bottom: 1px solid #ccc;
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
+}
+
+.button
+{
+	border: 1px solid #337FC6;
+	
+}
+
+.inputSize
+{
+	width:90px;
+}

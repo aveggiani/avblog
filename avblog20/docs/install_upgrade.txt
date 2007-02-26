@@ -1,0 +1,24 @@
+To upgrade your AVBlog unzip the file you download in a new folder, then:
+
+IF YOU HAVE XML STORAGE
+
+1) 	copy your config, storage and user (and personal if present) folders from your old installation to the new folder
+2) 	it's done, when launching your blog from the new folder it should work and authomatically
+	upgrade your content
+	
+Alternatevly you can:
+
+1) copy all the folder on the new folder except config,storage amd user into your old installation
+2) it's done :), but remember to make a backup first of your old installation.
+
+In case something fails, remember ALWAYS to remove the file, if it exists, include/version/version.cfm
+and then retry one of the two methods.
+
+IF YOU HAVE DB STORAGE
+
+You have to make some upgrade to the DB, you can referrer to the scripts in the storage/db/scripts folder;
+anyway in this release major changes was:
+
+- Added table spamlist
+- Added table enclosures
+- Changed from file to sfile field name in the tables: photoblog,library

@@ -1,0 +1,516 @@
+#main
+{
+	padding: 10px;
+	width: 800px;
+}
+
+#entries
+{
+	margin-right: -1px;
+	padding-right: 0px;
+	border-right: 1px solid #000000;
+	float:left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #000000;
+	text-decoration: none;
+	text-align:left;
+	width:595px;
+}
+
+#side
+{
+	width: 199px;
+	float:right;
+	color: #000000;
+	text-align:left;
+	padding-left:0px;
+	paddin-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.sidelogo
+	{
+		padding: 4px;
+		width:168px;
+		text-align:center;
+	}
+	
+#header 
+{
+	width: 780px;
+	background-color: #000000;
+	height:60px;
+	text-align:left;
+	padding-top: 5px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:5px;
+	margin-right:5px;
+}
+
+#headerlogo
+{
+	height:60px;
+	background-color: #000000;
+	float:left;
+}
+
+#headertext
+{
+	background-color: #000000;
+	text-align:right; 
+	padding-right:10px;
+	margin-top:15px;
+	height:45px;
+	font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	color: #ffffff
+}
+#headertext a
+{
+	color: #990000;
+}
+
+
+#footer 
+{
+	text-align:left;
+	height: 20px;
+	clear:both;
+	background-color: #990000;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	padding: 10px;
+	border: 1px solid #000000;
+	color: #ffffff;
+}
+
+
+body { background-color: #eeeeee; margin: 0px; cursor: default;}
+
+.logoText { font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  color: #C5C5C5; }
+
+input, textarea, select {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 2px;
+}
+
+a
+{
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+hr {
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	height: 0px;
+	width: 100%;
+	border-top: solid #990000 1px;
+	border-bottom: 0px;
+	border-right: 0px;
+	border-left: 0px;
+}
+
+
+.login {
+  top : 0px;
+  padding : 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 7.5pt;
+}
+
+.catList {
+	width:190px;
+	overflow:hidden;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+
+}
+.catListTitle {
+	padding-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: #990000;
+}
+.catListElement {
+	color: #666;
+	padding-left: 5px;
+}
+
+.Links {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+
+}
+.LinksTitle {
+	padding-bottom: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+	color: #990000;
+}
+.LinksElement {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+select.monthArchive {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+ 	width:180px;
+	background-color: #FFF; 
+	padding: 0px;
+}
+
+.functionMenu {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333;
+}
+
+.blogNotPublished {
+	margin: 0px;
+	padding: 0px;
+	background-color:#EDEDE7;
+}
+
+.blogBody {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	border-top: 1px solid #000000;
+	overflow-x: hidden;
+}
+
+.blogBodyPostDate {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-bottom: 2px;
+	padding-bottom: 10px;
+	overflow-x: hidden;
+}
+
+.blogDate {
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	background-color: #990000;
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	font-weight: bold;
+	padding: 5px;
+	color: #ffffff;
+}
+
+.blogTitle {
+	font-family:Georgia, serif;
+	font-size: 14pt;
+	color:  #000000;;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	letter-spacing: -0.05em;
+}
+.blogText {
+	font-family: Georgia, serif;
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+.blogMore { 
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+.blogAuthor { 
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-right: 5px;
+	padding-bottom: 4px;
+}
+
+.blogAuthor a {
+	color: #333333;
+}
+
+.blogCommands { 
+	border-top: 1px dashed #990000;
+	padding-top: 4px;
+	margin-top: 4px;
+	font-family:  Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogCommands a {
+	color: #333333;
+}
+
+.blogAdmin {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+.statisticsMenu {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-top:1px solid black;
+	margin-top:10px;
+	text-align:center;
+}
+
+.trackbackPingBox {
+	border: 1px solid red;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;	
+	color: #666;
+	padding: 5px;
+}
+.trackbackPing {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	padding: 5px;
+	border-bottom: 1px dashed;
+}
+.commentBodyPrivate {
+	border: 1px solid red;
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.commentBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.commentDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #000000;
+}
+.commentText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+.commentAuthor {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	text-align: left;
+	font-weight: bold;
+}
+
+.trackbackBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	overflow-x: hidden;
+	color: #666;
+}
+.trackbackDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #000000;
+}
+.trackbackText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+
+.editorBody {
+	margin-top: 0px;
+	background-color: #eee;
+	padding: 0px;
+	width: 100%;
+	overflow-x: hidden;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #000000;
+}
+.editorTitle {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	background-color: #990000;
+	padding: 5px;
+	color: #000000;
+	font-weight: bold;
+}
+.editorList {
+	font-family: Georgia, serif;
+	font-size: 10pt;
+	color: #666;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	border-bottom: 1px dashed #FBC3AE;
+	margin-bottom: 10px;	
+}
+.editorForm {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+input.editorForm {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	border: 1px solid #666;
+	background-color: White;
+}
+
+.text {
+	font-family: Georgia, serif;
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+	
+.searchField
+	{
+		margin-left:10px;
+		margin-top:10px;
+		margin-right:2px;
+		margin-bottom:0px;
+		width:100px;
+	}
+
+.pageSelected
+	{
+		color: red;
+	}
+	
+	
+.code
+	{
+		border:1px solid #888888;
+		background-color: #cccccc;
+		padding: 6px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:12px;
+		overflow: auto;
+		max-height: 200px;
+		width:510px;
+	}
+	
+.tagcloud
+	{
+		width: 180px;
+		padding: 4px;
+		border:1px solid #888888;
+		background-color: #BCBCBC;
+		margin-left: 0px;
+	}
+	
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
+
+.enclosures {
+
+	border: 1px solid #D0420A;
+	display: none;
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	color: #000000;
+	margin: 10px;
+	padding: 15px;
+
+}
+
+.pod_bottom {
+	border-bottom: 1px dotted #003344;
+	margin-bottom: 5px;
+}
+
+.pod {
+}
+
+.pod a {
+}
+
+.pod_top {
+}
+		
+.content_bottom {
+}
+.content {
+}
+
+.content_inner {
+}
+
+.content a {
+}
+
+.content_top {
+}
+
+.adminMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
+}

@@ -1,0 +1,583 @@
+/* Main theme named Voodoo Dolly by http://www.oswd.org/designs/search/keyword/keyword/voodoo/ */
+
+#main
+{
+	padding: 0px;
+	width: 800px;
+	background:#ffffff url(images/body_bg.jpg) repeat-y;
+}
+
+#entries
+{
+	margin-right: -1px;
+	padding-right: 0px;
+	padding-left: 2px;
+	padding-right: 0px;
+	border-right: 1px solid #7e7e7e;
+	float:left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #003344;
+	text-decoration: none;
+	text-align:left;
+	width:595px;
+}
+
+#side
+{
+	width: 190px;
+	border-left: 1px solid #7e7e7e;
+	float:left;
+	color: #003344;
+	text-align:left;
+	padding-left:5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+
+
+#header 
+{
+	border:0px;
+	padding: 0px;
+	margin: 0px;
+	width: 800px;
+	height: 120px;
+	background:#ffffff url(images/header_bg.jpg);
+	text-align:left;
+}
+
+#headertop
+{
+	width: 800px;
+	height: 9px;
+	background:#ffffff url(images/page_top.jpg) no-repeat;
+	margin-top: 0px;
+	padding: 0px;
+	border:0px;
+}
+
+#headerbottom
+{
+	border:0px;
+	width: 800px;
+	height: 39px;
+	background:#ffffff url(images/nav_bg.jpg);
+}
+
+#header a
+{
+	color: #ffffff;
+}
+
+#headerlogo
+{
+	height:60px;
+	float:left;
+}
+
+#headertext
+{
+	text-align:right; 
+	padding-right:10px;
+	font: bold 16px Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;  
+	color: #FFFFFF
+}
+#headertext a
+{
+	color: #FFFFFF;
+}
+
+
+#footer 
+{
+	text-align:center;
+	height: 20px;
+	clear:both;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight:bold;
+	padding: 5px;
+	border-top: 2px solid #7e7e7e;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+#footerbottom
+{
+	height:11px;
+	background:#f0f5f9 url(images/page_bottom.jpg) no-repeat bottom;
+}
+
+body { background-color: #FFFFFF; margin: 0px; cursor: default;}
+
+input, textarea, select {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+a {
+	color: #9e281e;
+}
+a:hover {
+	color: #9e281e;
+}
+
+hr {
+	width: 100%;
+	height: 0px;
+	color:#ffffff;
+	border-top: 1px solid #9e281e; 
+}
+
+.login {
+  top : 0px;
+  padding : 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 7.5pt;
+}
+
+.catList {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #000;
+}
+.catListTitle {
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #444444;
+	font-weight: bold;
+}
+.catListElement {
+	width:190px;
+	overflow:hidden;
+	color: #333;
+	padding-left: 5px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+.Links {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000;
+}
+.LinksTitle {
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #666;
+	font-weight: bold;
+}
+.LinksElement {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #666;
+	padding-left: 5px;
+}
+
+select.monthArchive {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #333;
+ 	width:180px;
+	background-color: #FFF; 
+}
+.functionMenu {
+	padding-left: 5px;
+	padding-bottom: 10px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #000;
+}
+
+.commentNotPublished {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+}
+
+.trackbackNotPublished {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+}
+
+.blogNotPublished {
+	margin: 0px;
+	padding: 0px;
+	background-color:#EDEDE7;
+}
+
+.blogBody {
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	
+}
+
+.blogBodyPostDate {
+	border: 1px solid red;
+	margin-left: 0px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 10px;
+}
+
+.blogDate {
+	border-top: 1px solid #9e281e;
+	border-bottom: 1px solid #9e281e;
+	font-family:  Verdana;
+	font-size: 13pt;	
+	padding-top: 5px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	color: #444;
+	font-weight: bold;
+	background-image:url(images/titlebackground.gif);
+}
+
+.blogTitle {
+	font-family: Verdana;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #000000;
+	margin-left: 0px;
+	padding-top: 5px;
+	padding-bottom: 8px;
+	padding-left: 5px;
+	letter-spacing: 0.2em;
+}
+
+.blogText {
+	font-family: Verdana;
+	font-size: 9pt;	
+	color: #000000;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.blogMore { 
+	font-family: Verdana;
+	font-size: 8pt;	
+	color: #666;
+	text-align: right;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+.trackbackPingBox {
+	border: 1px solid red;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12pt;	
+	color: #666;
+	padding: 5px;
+}
+.trackbackPing {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	color: #666;
+	padding: 5px;
+	border-bottom: 1px dashed;
+}
+
+.blogAuthor { 
+	font-variant: small-caps; 
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #333;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.blogAuthor a {
+	color: #333333;
+}
+
+.blogCategories { 
+	font-variant: small-caps; 
+	font-family: Verdana;
+	font-size: 8pt;	
+	color: #333;
+	text-align: left;
+	padding-left: 5px;
+	padding-top:10px;
+}
+
+.blogCategories a {
+	color: #D0420A;
+}
+.blogCommands { 
+	font-variant: small-caps; 
+	font-family: Verdana;
+	font-size: 8pt;	
+	color: #333;
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+.blogCommands a {
+	color: #333333;
+}
+
+.blogAdmin {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color: #333;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.statisticsMenu {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	border-top:1px solid black;
+	margin-top:10px;
+	text-align:center;
+}
+
+.commentBody {
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-bottom: 1px dashed #9e281e;
+	background-color: #eeeeee;
+	padding: 5px;
+	
+	margin-bottom: 15px;
+	}
+.commentDate {
+	margin-top: 5px;
+	text-align: right;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+}
+
+.commentText {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;	
+	color: #666;
+}
+
+.commentAuthor {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;	
+	color: #333;
+	text-align: right;
+}
+
+.commentBodyPrivate {
+	border: 1px solid red;
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	
+	color: #666;
+}
+
+.trackbackBody {
+	margin-top: 5px;
+	margin-left: 20px;
+	padding: 5px;
+	
+	color: #666;
+}
+
+.trackbackDate {
+	border-bottom: 1px dashed #ccc;
+	margin-top: 5px;
+	text-align: right;
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	padding: 5px;
+	color: #003344;
+}
+
+.trackbackText {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+}
+
+.editorBody {
+	margin-top: 5px;
+	background-color: #F6F6F6;
+	padding: 0px;
+}
+
+.editorTitle {
+	font-family: Verdana;
+	font-size: 13pt;	
+	background-color: #DADADA;
+	padding: 5px;
+	color: #000;
+	border-bottom: 2px solid #D0420A;
+}
+
+.editorList {
+	font-family: Verdana;
+	font-size: 10pt;
+	color: #666;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+	border-bottom: 1px dashed #9e281e;
+	margin-bottom: 10px;	
+}
+.editorForm {
+	font-family: Verdana;
+	font-size: 10pt;
+	color: #666;
+}
+input.editorForm {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;	
+	border: 1px solid #666;
+	background-color: White;
+	
+}
+
+.text {
+	font-family: Verdana;
+	font-size: 10pt;	
+	color: #666;
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+.sidelogo
+	{
+		padding: 4px;
+		width:168px;
+		text-align:center;
+	}
+	
+.searchField
+	{
+		margin-left:10px;
+		margin-top:10px;
+		margin-right:2px;
+		margin-bottom:0px;
+		width:100px;
+	}
+
+.pageSelected
+	{
+		color: red;
+	}
+	
+.code
+	{
+		border:1px solid #D0420A;
+		background-color: #666666;
+		padding: 6px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:12px;
+		overflow: auto;
+		max-height: 200px;
+		width:100%;
+	}
+	
+.tagcloud
+	{
+		width: 180px;
+		padding: 4px;
+		border:1px solid #888888;
+		background-color: #BCBCBC;
+		margin-left: 0px;
+	}
+	
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
+
+.enclosures {
+
+	border: 1px solid #D0420A;
+	display: none;
+	font-family: Georgia, serif;
+	font-size: 9pt;	
+	color: #000000;
+	margin: 10px;
+	padding: 15px;
+
+}
+
+.pod_bottom {
+	border-bottom: 1px dotted #003344;
+	margin-bottom: 5px;
+}
+
+.pod {
+}
+
+.pod a {
+}
+
+.pod_top {
+}
+		
+.content_bottom {
+}
+.content {
+padding: 5px;
+}
+
+.content_inner {
+}
+
+.content a {
+}
+
+.content_top {
+}
+
+.adminMenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align:left;
+}
+
+#headerBottom {
+}
+
+.littleIcon {
+	padding-left: 5px;
+	padding-right:0px;
+	padding-bottom: 5px;
+}
+
+
+

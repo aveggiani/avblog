@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="pt-BR">
+	<rssAddress>url RSS do Delicious</rssAddress>
+	<linksnumber>Número máx. de links para visualizar</linksnumber>
+	<title>Meu Del.icio.us</title>
+	<showall>Mostrar mais</showall>
+	<manager>Gerenciar Delicious</manager>
+	<adminmessage>Usar parâmetros de configuração</adminmessage>
+	<username>Usuário</username>
+	<password>Senha</password>
+</language>
