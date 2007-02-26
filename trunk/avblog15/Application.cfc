@@ -249,7 +249,6 @@
 		<cfreturn true>
 	</cffunction>
 
-<!---
 	<cffunction name="onError">
 	   <cfargument name="Except" required=true />
 	   <cfargument type="String" name = "EventName" required=true />
@@ -309,7 +308,6 @@
 
 		<cfreturn true>
 	</cffunction>
---->
 
 	<cffunction access="public" name="initRequest" output="false" returnType="void">
 		<cfscript>

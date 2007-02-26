@@ -213,7 +213,10 @@
 						strGet.published		= 'true';
 				}
 			else
-				strGet.title		= '(#application.language.language.postdeleted.xmltext#)';
+				{
+					strGet.title		= '(#application.language.language.postdeleted.xmltext#)';
+					strGet.deleted		= 'true';
+				}
 		</cfscript>
 		
 		<cfreturn strGet>

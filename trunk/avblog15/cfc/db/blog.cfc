@@ -188,20 +188,28 @@
 		</cfquery>
 		
 		<cfscript>
-			strGet.id			= qryGet.id;
-			strGet.date			= qryGet.sdate;
-			strGet.time			= qryGet.stime;
-			strGet.author		= qryGet.author;
-			strGet.email		= qryGet.email;
-			strGet.menuitem		= qryGet.menuitem;
-			strGet.title		= qryGet.title;
-			strGet.description	= qryGet.description;
-			strGet.excerpt		= qryGet.excerpt;
-			strGet.qryEnclosures= qryEnclosures;
-			if (qryGet.published is '')
-				strGet.published	= 'true';
+			if (qryGet.recordcount gt 0)
+				{
+					strGet.id			= qryGet.id;
+					strGet.date			= qryGet.sdate;
+					strGet.time			= qryGet.stime;
+					strGet.author		= qryGet.author;
+					strGet.email		= qryGet.email;
+					strGet.menuitem		= qryGet.menuitem;
+					strGet.title		= qryGet.title;
+					strGet.description	= qryGet.description;
+					strGet.excerpt		= qryGet.excerpt;
+					strGet.qryEnclosures= qryEnclosures;
+					if (qryGet.published is '')
+						strGet.published	= 'true';
+					else
+						strGet.published	= qryGet.published;
+				}
 			else
-				strGet.published	= qryGet.published;
+				{
+					strGet.title		= '(#application.language.language.postdeleted.xmltext#)';
+					strGet.deleted		= 'true';
+				}
 		</cfscript>
 		
 		<cfreturn strGet>

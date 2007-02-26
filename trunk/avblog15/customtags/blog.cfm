@@ -125,7 +125,7 @@
 			<cfif canViewPost() and isdefined('id')>
 				<cfif isdefined('url.captchaFailed') and url.captchaFailed>
 					<vb:post id="#id#" type="captchaFailed">
-				<cfelseif isdefined('request.spamFailed') and url.spamFailed>
+				<cfelseif isdefined('url.spamFailed') and url.spamFailed>
 					<vb:post id="#id#" type="spamFailed">
 				<cfelse>
 					<!--- logs view post --->
