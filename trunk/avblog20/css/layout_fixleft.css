@@ -1,0 +1,20 @@
+body {
+	margin-bottom: 0;
+	margin-top: 0;
+	margin-left: 0;
+	padding: 0px 0px 0px 0px;
+}
+
+#main {
+	margin-top: 0;
+	margin-left: 0;
+	text-align:left;
+}
+
+#entries
+{
+	border-right: 1px solid #003344;
+	margin-right:-1px;
+	padding-right: 5px;
+}
+

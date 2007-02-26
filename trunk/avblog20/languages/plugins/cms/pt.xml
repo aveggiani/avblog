@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="pt-BR">
+	<nofiles>Nenhum arquivo no CMS neste momento!</nofiles>
+	<add>Adicionar</add>
+	<modify>Modificar</modify>
+	<namefile>Nome</namefile>
+	<categoryfile>Categoria</categoryfile>
+	<categoryfile>Categoria</categoryfile>
+	<name>Micro-Cms</name>
+	<ordername>Ordenar por Nome</ordername>
+	<ordercategory>Ordenar por Categoria</ordercategory>
+	<cmsmanager>Gerenciar CMS</cmsmanager>
+	<emptyarchive>Arquivo está vazio</emptyarchive>
+	<addcms>Adicionar uma página</addcms>
+	<ordercms>Ordenar páginas</ordercms>
+	<modifycms>Modificar página</modifycms>
+	<deleted>Página apagada</deleted>
+</language>

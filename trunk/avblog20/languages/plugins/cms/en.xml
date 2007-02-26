@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="en">
+	<nofiles>No files in cms at the moment!</nofiles>
+	<add>add</add>
+	<modify>modify</modify>
+	<namefile>name</namefile>
+	<categoryfile>categoria</categoryfile>
+	<categoryfile>category</categoryfile>
+	<name>Micro-Cms</name>
+	<ordername>name order</ordername>
+	<ordercategory>category order</ordercategory>
+	<cmsmanager>Micro-Cms Manager</cmsmanager>
+	<emptyarchive>file archive is empty</emptyarchive>
+	<addcms>add a page</addcms>
+	<ordercms>order pages</ordercms>
+	<modifycms>modify a page</modifycms>
+	<deleted>page deleted</deleted>
+</language>

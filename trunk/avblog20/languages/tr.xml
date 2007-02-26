@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language id="tr">
+	<language_description>Dil</language_description>
+	<user>User Name</user>
+	<monthly_archive>Aylık Arşiv</monthly_archive>
+	<categories>Kategoriler</categories>
+	<links>Linkler</links>
+	<linkstitle>Linkler</linkstitle>
+	<addblog>Kayıt Ekle</addblog>	
+	<add>Ekle</add>
+	<edit>Güncelle</edit>
+	<delete>Sil</delete>
+	<blog_date>Kayıt Tarihi</blog_date>
+	<blog_time>Kayıt Zamanı</blog_time>
+	<category>Kategori</category>
+	<category_select>(none)</category_select>
+	<menu_item>Menüdeki Konu</menu_item>
+	<title>Konu</title>
+	<clear>İptal</clear>
+	<confirm>Değişiklikleri onayla</confirm>
+	<insertblog>Kayıt Ekle</insertblog>
+	<addcomment>Yorum Ekle</addcomment>
+	<author>Gönderen</author>
+	<addcommentauthalert>Lütfen adınızı belirtiniz</addcommentauthalert>
+	<addcommentemailalert>Lütfen e-mail adresinizi belirtiniz</addcommentemailalert>
+	<addcommenttextalert>Lütfen görüşlerinizi belirtiniz</addcommenttextalert>
+	<email>E-mail</email>
+	<insertcomment>Yorum Ekle</insertcomment>
+	<insertcategory>Kategori Ekle</insertcategory>
+	<editcategory>Kategori Güncelle</editcategory>
+	<link_address>Link Adresleri</link_address>
+	<link_description>Link Tanımı</link_description>
+	<editlink>Link Güncelle</editlink> 
+	<insertlink>Link Ekle</insertlink>
+	<reset>Blogu yeniden yükle</reset>
+	<backup>Blog/Konfigürasyonu Yedekle</backup>
+	<newcommentadded>Blogunuzda yeni bir yorum var</newcommentadded>
+	<comment>yorum</comment>
+	<comments>yorumlar</comments>
+	<commentsentby>yorum gönderen</commentsentby>
+	<cancelaction>İptal etmek istiyor musunuz?</cancelaction>
+	<loadingcalendar>Takvim yükleniyor ...</loadingcalendar>
+	<titleconfig>Konfigürasyon Ayarları</titleconfig>
+	<changeconfig>Konfigürasyonu Güncelle</changeconfig>
+	<linksito>Site URL</linksito>
+	<description>Tanım</description>
+	<header>Başlık</header>
+	<footer>Alt Başlık</footer>
+	<visualthemes>Temalar</visualthemes>
+	<sendemail>Yorumları e-mail ile bildir</sendemail>
+	<sitetitle>Site Konusu</sitetitle>
+	<authomaticbackup>Otomatik Yedekle</authomaticbackup>
+	<maxbackupindirectory>Max. Yedekleme Sürümü</maxbackupindirectory>
+	<maxbloginhomepage>Max. anasayfa kayıt zamanı</maxbloginhomepage>
+	<addblogdatealert>Belirtilen tarih geçerli bir tarih değil!</addblogdatealert>
+	<addblogmenualert>Lütfen menü için bir başlık belirtiniz</addblogmenualert>
+	<addblogtitlealert>Lütfen bu blog için ana başlığı belirtiniz</addblogtitlealert>
+	<addblogtextalert>Lütfen bir metin giriniz</addblogtextalert>
+	<calweekdays>"Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"</calweekdays> <!-- Use always comma and double quotes -->
+	<calmonths>"Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"</calmonths>
+	<caltoggle>Haftanın ilk günü</caltoggle>
+	<calprevyear>Yıl (menü için)</calprevyear>
+	<calprevmonth>Ay (menü için)</calprevmonth>
+	<calgotoday>Bugüne git</calgotoday>
+	<calnextmonth>Ay (menü için)</calnextmonth>
+	<calnextyear>Yıl (menü için)</calnextyear>
+	<calseldate>Lütfen bir tarih seçiniz</calseldate>
+	<calparttoday>(bugün)</calparttoday>
+	<calmonfirst>Pazartesiden başla</calmonfirst>
+	<calsunfirst>Pazardan başla</calsunfirst>
+	<calclose>Pazardan başla</calclose>
+	<caltoday>Bugün</caltoday>
+	<caldateformat>y-mm-dd</caldateformat>
+	<caldateformatlong>D, M d</caldateformatlong>
+	<user>Kullanıcı Adı</user>
+	<password>Şifre</password>
+	<accesstype>Erişim</accesstype>
+	<greeting>Merhaba</greeting>
+	<users>Kullanıcılar</users>
+	<edituser>Kullanıcıları Güncelle</edituser>
+	<adduser>Kullanıcı Ekle</adduser>
+	<saveorder>Sıralamayı kaydet</saveorder>
+	<layout>Sayfa Düzeni</layout>
+	<layoutfixleft>Sola dayalı</layoutfixleft>
+	<layoutcentered>Ortalı</layoutcentered>
+	<layoutjustified>Sayfaya yayılmış</layoutjustified>
+	<showall>Tüm Postaları Göster</showall>
+	<InternationalSettings>Uluslararası Ayarlar</InternationalSettings>
+	<timeoffset>Zaman Dilimi</timeoffset>
+	<userfullname>Tam Ad</userfullname>
+	<useremail>E-mail</useremail>
+	<clickformore>daha fazla ...</clickformore>
+	<hideformore>.. gizle</hideformore>
+	<trackback>trackback</trackback>
+	<trackbacks>trackbacks</trackbacks>
+	<addtrackback>trackback ekle</addtrackback>
+	<privatecomment>özel</privatecomment>
+	<privatecomments>özel</privatecomments>
+	<captcha>Resimdeki yazıyı giriniz</captcha>
+	<showemailonlytoblogger>E-mail adresini sadece blog sahibine göster</showemailonlytoblogger>
+	<privatecommentadd>Özel mesaj</privatecommentadd>
+	<subscribecomment>Kaydol</subscribecomment>
+	<trackbackthis>Bu kaydın Trackback URL adresi</trackbackthis>
+	<trackbackadd>Trackback Ekle</trackbackadd>
+	<trackbackurl>URL</trackbackurl>
+	<trackbacktitle>Konu Başlığınız</trackbacktitle>
+	<trackbackblogname>Blog Adınız</trackbackblogname>
+	<trackbackto>Trackback kaydını url için pingle</trackbackto>
+	<newtrackbackadded>Yeni trackback eklendi</newtrackbackadded>
+	<newtrackbackping>Yeni trackback ping</newtrackbackping>
+	<captcharequired>Resimdeki metni giriniz</captcharequired>
+	<captchanotitle>Hata</captchanotitle>
+	<captchanotext>Girdiğiniz text resimdeki ile uyuşmadı</captchanotext>
+	<publishedfuture>gelecek zaman</publishedfuture>
+	<publishedno>yayınlanmadı</publishedno>
+	<feed>FEED</feed>
+	<recentpost>Son Kayıtlar</recentpost>
+	<recentcomment>Son Yorumlar</recentcomment>
+	<officialmailinglist>Mail Listesi</officialmailinglist>
+	<joinofficialmailinglist>Kaydol</joinofficialmailinglist>
+	<statistics>İstatistikler</statistics>
+	<postdeleted>Kayıt Silindi</postdeleted>
+	<subscribersnewcomment>kaydolunan kayıtta yeni yorum</subscribersnewcomment>
+	<subscribersnewpost>nuovo post</subscribersnewpost>
+	<subscribersnewpostok>Grazie, il tuo indirizzo è stato salvato; riceverai una mail ad ogni inserimento di un nuovo post</subscribersnewpostok>
+	<subscribersnewposttitle>Sottoscrivi il Blog</subscribersnewposttitle>
+	<subscribersnewpostalert>avvisa subscribers</subscribersnewpostalert>
+	<timealert>geçerli bir tarih giriniz</timealert>
+	<trackbackpingstilnow>şu ana kadar yapılmış trackback pingleri</trackbackpingstilnow>
+	<configpermalink>Sabit Linkler</configpermalink>
+	<configricheditorinpost>Kayıt girerken kullanılacak araç</configricheditorinpost>
+	<configricheditrointrackback>Trackback güncellerken kullanılacak araç</configricheditrointrackback>
+	<configsmtpsettings>smtp ayarları</configsmtpsettings>
+	<configsmtpsettingssmtp>smtp</configsmtpsettingssmtp>
+	<configsmtpsettingsport>smtp portu</configsmtpsettingsport>
+	<configsmtpsettingsuser>kullanıcı</configsmtpsettingsuser>
+	<configsmtpsettingspwd>şifre</configsmtpsettingspwd>
+	<configauthorgoogleaccount>Google Talk hesabı</configauthorgoogleaccount>
+	<configricheditorincomments>yorumlarda kullanılan araç</configricheditorincomments>
+	<configspamprotectionincomments>yorumlar için email spam koruması</configspamprotectionincomments>
+	<configspamprotectionincommenttext>text ('@' yerine geçecek)</configspamprotectionincommenttext>
+	<configcommentsubstion>kayda kaydol</configcommentsubstion>
+	<configallowprivatecomment>özel yorumlara izin ver</configallowprivatecomment>
+	<configwichricheditor>editor seç</configwichricheditor>
+	<configwichtfckeditortoolbar>FCKEditor toolbar seç</configwichtfckeditortoolbar>
+	<configfeedapi>XML-RPC feed için izin ver</configfeedapi>
+	<configfeedapittype>API seç</configfeedapittype>
+	<configfeedemail>email feed için izin ver</configfeedemail>
+	<configfeedemailschedule>emailleri her dakika kontrol et</configfeedemailschedule>
+	<configfeedemailscheduleerror>5 ile 60 arası bir değer belirtiniz</configfeedemailscheduleerror>
+	<configfeedemailsubject>konu anahtarı</configfeedemailsubject>
+	<configfeedemailpop3>POP3 hesabı e-mail adresi</configfeedemailpop3>
+	<configfeedemailport>POP3 portu</configfeedemailport>
+	<configfeedemailuser>POP3 kullanıcı hesabı</configfeedemailuser>
+	<configfeedemailpwd>POP3 kullanıcı şifresi</configfeedemailpwd>
+	<configfeedim>IM feed için izin ver</configfeedim>
+	<configfeedimtype>IM seç</configfeedimtype>
+	<configfeedimgoogleaccount>google hesabı</configfeedimgoogleaccount>
+	<configfeedimgooglepwd>şifre</configfeedimgooglepwd>
+	<configfeedflashlite>flashlite feed için izin ver</configfeedflashlite>
+	<configstoragedatasourceusername>kullanıcı adı</configstoragedatasourceusername>
+	<configstoragedatasourcepwd>şifre</configstoragedatasourcepwd>
+	<logsessionstart>oturum başlangıç kaydını tut</logsessionstart>
+	<logsessionend>oturum bitiş kaydını tut</logsessionend>
+	<logapplicationstart>uygulama başlangıç kaydını tut</logapplicationstart>
+	<logapplicationend>uygulama bitiş kaydını tut</logapplicationend>
+	<logpostview>kayda bakış kaydını tut</logpostview>
+	<logpostadd>kayıt ekleme kaydını tut</logpostadd>
+	<logpostmodify>kayıt güncelleme kaydını tut</logpostmodify>
+	<logcommentadd>yorum ekleme kaydını tut</logcommentadd>
+	<logtrackbackadd>trackback ekleme kaydını tut</logtrackbackadd>
+	<loglogin>girişlerin kaydını tut</loglogin>
+	<loglogout>çıkışların kaydını tut</loglogout>
+	<logpageview>sayfaya bakışların kaydını tut</logpageview>
+	<logdownload>indirmelerin kaydını tut</logdownload>
+	<pluginselect>plugin</pluginselect>
+	<published>Yayınla</published>
+	<notpublished>Yayınlama</notpublished>
+	<charset>karakter seti</charset>
+	<commentmoderate>yorumları yönet</commentmoderate>
+	<trackbacksmoderate>trackbackleri yönet</trackbacksmoderate>
+	<search>ara</search>
+	<searchresult>aramada bulunan </searchresult>
+	<page>sayfa</page>
+	<authoping>Otomatik pingler</authoping>
+	<authopingstilnow>Şu ana kadarki otomatik pingler</authopingstilnow>
+	<configxmppgatewayname>XMPP Gateway adı</configxmppgatewayname>
+	<privateblog>Özel BLOG</privateblog>
+	<commentadded>Yorum Eklendi</commentadded>
+	<commentaddedonmoderation>Yorum yönetimi aktifleştirildi. Yorumunuz moderatör onayı sonrası aktif olacaktır.</commentaddedonmoderation>
+	<wizards>Sihirbazlar</wizards>
+	<wizardxmltodb>Xml den Veritabanına</wizardxmltodb>
+	<wizarddbtoxml>Veritabanından XMLe</wizarddbtoxml>
+	<timeoffsetGMT>GMT ile zaman farkı</timeoffsetGMT>
+	<deleteSelected>Delete selected items</deleteSelected>
+	<subscriptions>Subscriptions</subscriptions>
+	<spamlist>Spam list</spamlist>
+	<spamsavelist>Save list</spamsavelist>
+	<insertrow>Insert row</insertrow>
+	<enclosures>Enclosures</enclosures>
+	<except>Except</except>
+	<fulltext>Full story</fulltext>
+	<checkpermalinks>Repair permalinks</checkpermalinks>
+	<permalinkserpaired>Permalinks repaired!</permalinkserpaired>
+	<iconsets>Icon Set</iconsets>
+	<notuseiconsets>do not use icons</notuseiconsets>
+	<socialbuttons>Social Buttons</socialbuttons>
+	<socialbuttonstext>Social Buttons: </socialbuttonstext>
+	<imports>Imports</imports>
+	<from>from</from>
+	<subscriptions>blog subscription</subscriptions>
+	<emailtitlecontent>email post title upon reader advise</emailtitlecontent>
+	<emailpostcontent>email post content upon reader advise</emailpostcontent>
+	<tagcloud>TagCloud</tagcloud>
+	<recentcomments>recent comments</recentcomments>
+	<recentposts>recent posts</recentposts>
+	<rss>rss</rss>
+	<archivemonths>Archive</archivemonths>
+	<selectall>Select all</selectall>
+	<useajax>Use Ajax</useajax>
+	<wichcaptcha>Wich captcha</wichcaptcha>
+	<spamnotitle>Error!</spamnotitle>
+	<spamnotext>Your comment has been rejected as one or more words included in the author Spam List where found!</spamnotext>
+	<intdateformat>(mm/dd/yyyy)</intdateformat>
+	<eurodateformat>(dd/mm/yyyy)</eurodateformat>
+	<loginfailed>username or password are not correct!</loginfailed>
+	<blogmanager>Blog Manager</blogmanager>
+	<logout>Logout</logout>
+</language>

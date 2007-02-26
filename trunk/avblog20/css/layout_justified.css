@@ -1,0 +1,20 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#main {
+	width: 100%;
+}
+
+#entries
+{
+	width: 79%;
+	border-right: 1px solid #003344;
+	margin-right:-1px;
+}
+
+#side
+{
+	width: 19%;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="pt-BR">
+	<nofiles>Não existem arquivos na biblioteca neste momento!</nofiles>
+	<uploaderror>Erro no upload!</uploaderror>
+	<add>Adicionar</add>
+	<modify>Modificar</modify>
+	<fieldfile>Arquivo</fieldfile>
+	<namefile>Nome</namefile>
+	<categoryfile>Categoria</categoryfile>
+	<name>Biblioteca</name>
+	<librarymanager>Gerenciar Biblioteca</librarymanager>
+	<emptyarchive>Arquivo está vazio</emptyarchive>
+	<addlibrary>Adicionar um arquivo</addlibrary>
+	<modifylibrary>Modificar um arquivo</modifylibrary>
+	<filetypeallowed>Tipo de arquivo permitido</filetypeallowed>
+</language>

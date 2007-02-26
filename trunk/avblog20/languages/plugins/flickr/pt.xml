@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="pt-BR">
+	<apikey>Chave API</apikey>
+	<secret>Segredo compartilhado</secret>
+	<photonumber>Número máximo de fotos para visualizar</photonumber>
+	<title>Minhas fotos no Flickr</title>
+	<manager>Gerenciar Flickr</manager>
+	<adminmessage>usar parâmetros de configuração</adminmessage>
+	<login>Logim</login>
+	<myflickr>meu flicrk</myflickr>
+	<flickrmanager>Gerenciador do Flickr</flickrmanager>
+	<notinset>Não configurado</notinset>
+	<mytags>Minhas Tags</mytags>
+	<mysets>Minhas configurações</mysets>
+	<photos>Fotos</photos>
+	<showall>Exibir todas</showall>
+</language>

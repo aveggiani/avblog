@@ -1,0 +1,15 @@
+RSS/Atom Feed CFC
+
+version:    2.06
+released:   2005-09-29
+author:     Roger Benningfield
+blog:       http://admin.mxblogspace.journurl.com/
+license:    Don't strip out or change this version/author/license info.
+			Don't redistribute without permission.
+			Other than that, use as necessary.
+license
+exception:  The xmlNodeCount() and fullLeft() methods were adapted from
+			other folks' code. The above license does not apply to either
+			method.
+
+Redistributed with permission

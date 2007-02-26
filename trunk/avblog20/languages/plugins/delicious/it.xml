@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="it">
+	<rssAddress>Indirizzo RSS di Delicous da includere</rssAddress>
+	<linksnumber>Numero di links da visualizzare nel pod</linksnumber>
+	<title>I miei link su Del.icio.us</title>
+	<showall>Visualizza tutti</showall>
+	<manager>Delicious manager</manager>
+	<adminmessage>settaggi in Configurazione</adminmessage>
+	<username>username</username>
+	<password>password</password>
+</language>
+	
