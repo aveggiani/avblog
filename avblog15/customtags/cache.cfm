@@ -65,9 +65,7 @@ function FileLastModified(filename){
         <cfset fileExpire = fileCreated + timeout>
         <cfif DateCompare(fileExpire, Now()) is 1>
                <!--- Read file, output content and exit --->
-               <cflock timeout="20" throwontimeout="No" name="CacheOnFileIsReading" type="READONLY">
-                    <cffile action="READ" charset="#request.charset#" file="#cachedirectory##fileCached#" variable="output">
-               </cflock>
+               <cffile action="READ" charset="#request.charset#" file="#cachedirectory##fileCached#" variable="output">
 			   <cfif isdefined("attributes.variableName")>
 					<cfset "caller.#attributes.variableName#" =	output>   
 			   <cfelse>

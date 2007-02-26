@@ -183,7 +183,7 @@
 		
 		<cfscript>
 			qryCategory = application.fileSystem.getDirectory('#request.appPath#/#request.xmlstoragepath#/categories/','','#arguments.prefix#_*');
-			if (not request.cfmx6 and not request.bluedragon and not request.railo)
+			if (not request.bluedragon and not request.railo)
 				{
 					application.fileSystem.renameDirectory('#request.appPath#/#request.xmlstoragepath#/categories/#qryCategory.name#','#arguments.prefix#_#arguments.category#');
 					application.fileSystem.renameDirectory('#request.appPath#/permalinks/categories/#listlast(qryCategory.name,'_')#','#arguments.category#');

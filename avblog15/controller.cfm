@@ -172,8 +172,6 @@
 						request.trackbacks.filterspam(form.author)
 						and
 						request.trackbacks.filterspam(form.email)
-						and
-						request.trackbacks.filterspam(form.description)
 						>
 						<cfscript>
 							if (isdefined('form.emailvisible'))

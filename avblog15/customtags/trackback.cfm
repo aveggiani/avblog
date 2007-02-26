@@ -4,7 +4,7 @@
 		<cfinclude template="../include/functions.cfm">
 		<cfparam name="url.start" default="1">
 		<cfparam name="start" default="1">
-		<cfparam name="steps" default="20">
+		<cfparam name="steps" default="40">
 		<cfparam name="from" default="1">
 		<cfif isuserinrole('admin')>
 			<vb:content>

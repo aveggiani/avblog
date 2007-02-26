@@ -64,276 +64,281 @@
 		</cfif>
 		
 		<cfloop index="i" from="1" to="#arraylen(arrayShow)#">
-			<cfscript>
-				someCodeInPost = false;
-				if (find('<textarea',arrayShow[i].excerpt))
-					someCodeInPost = true;
-				if (find('<textarea',arrayShow[i].description))
-					someCodeInPost = true;
-			</cfscript>
-			<cfif structkeyexists(arrayshow[i],'published')>
-
-				<cfif 
-					isuserinrole('blogger') and listgetat(GetAuthUser(),1) is arrayshow[i].author and not arrayshow[i].published
-					or
-					isuserinrole('admin') and not arrayshow[i].published
-					or
-					arrayshow[i].published>
-			
-					<cfif isdefined('url.addedcomment')>
-						<vb:content>
-							<cfoutput>
-								<div align="center" class="blogText">
-									<hr />
-									#application.language.language.commentadded.xmltext#
-									<cfif application.configuration.config.options.comment.commentmoderate.xmltext>
-										<br />
-										<br />
-										#application.language.language.commentaddedonmoderation.xmltext#
-									</cfif>
-									<hr />
-								</div>
-							</cfoutput>
-						</vb:content>
-					</cfif>
-					
-					<!--- no cache if comment or trackback mode --->
-					<cfif isdefined('url.mode') and listfind('addcomment,viewcomment,addtrackbackack,viewtrackback,admin',url.mode)>
-						<cfset mycaching = 'none'>
-					<cfelse>
-						<cfset mycaching = request.caching>
-					</cfif>
-					<cf_cache action="#mycaching#" name="#arrayShow[i].id#" timeout="#request.cachetimeout#">		
-		
-						<cfscript>
-							myCategories		= request.blog.getMyCategories(arrayShow[i].id);
-							trackbacks			= arraynew(1);
-							comments			= arraynew(1);
-							howmanycomments 	= 0;
-							howmanytrackbacks	= 0;
-							privateComments 	= 0;
-							comments 			= request.blog.getComments(arrayShow[i].id);
-							trackbacks			= request.trackbacks.get(arrayShow[i].id);
-							
-							permalink = getPermalink(arrayShow[i].date,arrayShow[i].menuitem);
-							
-							for (k=1;k lte arraylen(comments);k=k+1)
-								{
-									if (comments[k].private is 'true') 
-										{
-											privateComments = incrementvalue(privateComments);
-										}
-									if (comments[k].published or (not comments[k].published and not application.configuration.config.options.comment.commentmoderate.xmltext) or isuserinrole('admin')) 
-										{
-											howmanycomments = incrementvalue(howmanycomments);
-										}
-								}
-							for (k=1;k lte arraylen(trackbacks);k=k+1)
-								{
-									if (trackbacks[k].published or (not trackbacks[k].published and not application.configuration.config.options.trackbacksmoderate.xmltext) or isuserinrole('admin')) 
-										{
-											howmanytrackbacks = incrementvalue(howmanytrackbacks);
-										}
-								}
-							mydate	= createdate(left(arrayShow[i].date,4),mid(arrayShow[i].date,5,2),right(arrayShow[i].date,2));
-						</cfscript>
-						<cfif i is 1>
-							<cfoutput>
-								<div class="blogDate">#application.objLocale.dateLocaleFormat(mydate,"long")#</div>
-							</cfoutput>
-						</cfif>
-						<vb:content>
-						<cfoutput>
-							<!--
-								<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns##"
-										 xmlns:dc="http://purl.org/dc/elements/1.1/"
-										 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-								<rdf:Description
-									rdf:about="http://#cgi.SERVER_NAME##request.appmapping#index.cfm?mode=viewEntry&id=#arrayShow[i].id#"
-									dc:identifier="http://#cgi.SERVER_NAME##request.appmapping#index.cfm?mode=viewEntry&id=#arrayShow[i].id#"
-									dc:title="#arrayShow[i].title#"
-									trackback:ping="http://#cgi.SERVER_NAME##request.appmapping#trackback.cfm?id=#arrayShow[i].id#" />
-								</rdf:RDF>
-							-->
-							<a name="#arrayShow[i].id#"></a>
-							<cfif (isuserinrole('admin') or isuserinrole('blogger')) and 
-								(
-									arrayShow[i].date gt dateformat(now(),'yyyymmdd') 
-									or 
-									(
-										arrayShow[i].date is dateformat(now(),'yyyymmdd') 
-										and 
-										replace(arrayShow[i].time,':','','ALL') gt timeformat(now(),'HHMMSS')
-									)
-								)>
-								<cfscript>
-									blogClass = "blogBodyPostDate";
-									publishinformation = "(#application.language.language.publishedfuture.xmltext#)";
-								</cfscript>
-							<cfelse>
-								<cfscript>
-									blogClass = "blogBody";
-									publishinformation = "";
-								</cfscript>
-							</cfif>
-							<cfif not arrayShow[i].published>
-								<cfset publishinformation = "(#application.language.language.publishedno.xmltext#)">
-								<div class="blogNotPublished">
-							</cfif>
-							<div class="#blogClass#">
-								<div class="blogTitle">
-									<a href="#permalink#"><span id="post-title">#publishinformation# #arrayShow[i].title#</span></a>
-								</div>
-								<cfif arrayShow[i].description is ''>
-									<div class="blogText">
-										#arrayShow[i].excerpt#
+			<cfif not structkeyexists(arrayShow[i],'deleted')>
+				<cfscript>
+					someCodeInPost = false;
+					if (find('<textarea',arrayShow[i].excerpt))
+						someCodeInPost = true;
+					if (find('<textarea',arrayShow[i].description))
+						someCodeInPost = true;
+				</cfscript>
+				<cfif structkeyexists(arrayshow[i],'published')>
+	
+					<cfif 
+						isuserinrole('blogger') and listgetat(GetAuthUser(),1) is arrayshow[i].author and not arrayshow[i].published
+						or
+						isuserinrole('admin') and not arrayshow[i].published
+						or
+						arrayshow[i].published>
+				
+						<cfif isdefined('url.addedcomment')>
+							<vb:content>
+								<cfoutput>
+									<div align="center" class="blogText">
+										<hr />
+										#application.language.language.commentadded.xmltext#
+										<cfif application.configuration.config.options.comment.commentmoderate.xmltext>
+											<br />
+											<br />
+											#application.language.language.commentaddedonmoderation.xmltext#
+										</cfif>
+										<hr />
 									</div>
+								</cfoutput>
+							</vb:content>
+						</cfif>
+						
+						<!--- no cache if comment or trackback mode --->
+						<cfif isdefined('url.mode') and listfind('addcomment,viewcomment,addtrackbackack,viewtrackback,admin',url.mode)>
+							<cfset mycaching = 'none'>
+						<cfelse>
+							<cfset mycaching = request.caching>
+						</cfif>
+						<cf_cache action="#mycaching#" name="#arrayShow[i].id#" timeout="#request.cachetimeout#">		
+			
+							<cfscript>
+								myCategories		= request.blog.getMyCategories(arrayShow[i].id);
+								trackbacks			= arraynew(1);
+								comments			= arraynew(1);
+								howmanycomments 	= 0;
+								howmanytrackbacks	= 0;
+								privateComments 	= 0;
+								comments 			= request.blog.getComments(arrayShow[i].id);
+								trackbacks			= request.trackbacks.get(arrayShow[i].id);
+								
+								permalink = getPermalink(arrayShow[i].date,arrayShow[i].menuitem);
+								
+								for (k=1;k lte arraylen(comments);k=k+1)
+									{
+										if (comments[k].private is 'true') 
+											{
+												privateComments = incrementvalue(privateComments);
+											}
+										if (comments[k].published or (not comments[k].published and not application.configuration.config.options.comment.commentmoderate.xmltext) or isuserinrole('admin')) 
+											{
+												howmanycomments = incrementvalue(howmanycomments);
+											}
+									}
+								for (k=1;k lte arraylen(trackbacks);k=k+1)
+									{
+										if (trackbacks[k].published or (not trackbacks[k].published and not application.configuration.config.options.trackbacksmoderate.xmltext) or isuserinrole('admin')) 
+											{
+												howmanytrackbacks = incrementvalue(howmanytrackbacks);
+											}
+									}
+								mydate	= createdate(left(arrayShow[i].date,4),mid(arrayShow[i].date,5,2),right(arrayShow[i].date,2));
+							</cfscript>
+							<cfif i is 1>
+								<cfoutput>
+									<div class="blogDate">#application.objLocale.dateLocaleFormat(mydate,"long")#</div>
+								</cfoutput>
+							</cfif>
+							<vb:content>
+							<cfoutput>
+								<!--
+									<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns##"
+											 xmlns:dc="http://purl.org/dc/elements/1.1/"
+											 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+									<rdf:Description
+										rdf:about="http://#cgi.SERVER_NAME##request.appmapping#index.cfm?mode=viewEntry&id=#arrayShow[i].id#"
+										dc:identifier="http://#cgi.SERVER_NAME##request.appmapping#index.cfm?mode=viewEntry&id=#arrayShow[i].id#"
+										dc:title="#arrayShow[i].title#"
+										trackback:ping="http://#cgi.SERVER_NAME##request.appmapping#trackback.cfm?id=#arrayShow[i].id#" />
+									</rdf:RDF>
+								-->
+								<a name="#arrayShow[i].id#"></a>
+								<cfif (isuserinrole('admin') or isuserinrole('blogger')) and 
+									(
+										arrayShow[i].date gt dateformat(now(),'yyyymmdd') 
+										or 
+										(
+											arrayShow[i].date is dateformat(now(),'yyyymmdd') 
+											and 
+											replace(arrayShow[i].time,':','','ALL') gt timeformat(now(),'HHMMSS')
+										)
+									)>
+									<cfscript>
+										blogClass = "blogBodyPostDate";
+										publishinformation = "(#application.language.language.publishedfuture.xmltext#)";
+									</cfscript>
 								<cfelse>
-									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
+									<cfscript>
+										blogClass = "blogBody";
+										publishinformation = "";
+									</cfscript>
+								</cfif>
+								<cfif not arrayShow[i].published>
+									<cfset publishinformation = "(#application.language.language.publishedno.xmltext#)">
+									<div class="blogNotPublished">
+								</cfif>
+								<div class="#blogClass#">
+									<div class="blogTitle">
+										<a href="#permalink#"><span id="post-title">#publishinformation# #arrayShow[i].title#</span></a>
+									</div>
+									<cfif arrayShow[i].description is ''>
 										<div class="blogText">
 											#arrayShow[i].excerpt#
-											<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8 and cgi.SCRIPT_NAME does not contain '/permalinks/'>
-												<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
-													<a onclick="showDiv('blogText_#request.indexBlog#','blogExcerpt_#request.indexBlog#');">[#application.language.language.clickformore.xmltext#]</a>
-												</div>
-											</cfif>
 										</div>
-									</cfif>
-									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
-										<div id="blogText_#request.indexBlog#" class="blogText" style="display:none">
 									<cfelse>
-										<div id="blogText_#request.indexBlog#" class="blogText">
-									</cfif>
-									#arrayShow[i].description#
-									<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
-										<div class="blogMore">
-											<a onclick="showDiv('blogExcerpt_#request.indexBlog#','blogText_#request.indexBlog#');">[#application.language.language.hideformore.xmltext#]</a>
+										<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>'>
+											<div class="blogText">
+												#arrayShow[i].excerpt#
+												<cfif trim(arrayShow[i].description) is not "" and trim(arrayShow[i].description) is not '<p>&nbsp;</p>' and len(arrayShow[i].description) gt 8 and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+													<div id="blogExcerpt_#request.indexBlog#" name="blogExcerpt_#request.indexBlog#" style="display:block" class="blogMore">
+														<a onclick="showDiv('blogText_#request.indexBlog#','blogExcerpt_#request.indexBlog#');">[#application.language.language.clickformore.xmltext#]</a>
+													</div>
+												</cfif>
+											</div>
+										</cfif>
+										<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+											<div id="blogText_#request.indexBlog#" class="blogText" style="display:none">
+										<cfelse>
+											<div id="blogText_#request.indexBlog#" class="blogText">
+										</cfif>
+										#arrayShow[i].description#
+										<cfif trim(arrayShow[i].excerpt) is not "" and trim(arrayShow[i].excerpt) is not '<p>&nbsp;</p>' and cgi.SCRIPT_NAME does not contain '/permalinks/'>
+											<div class="blogMore">
+												<a onclick="showDiv('blogExcerpt_#request.indexBlog#','blogText_#request.indexBlog#');">[#application.language.language.hideformore.xmltext#]</a>
+											</div>
+										</cfif>
 										</div>
 									</cfif>
+									<div id="enclosures_#request.indexBlog#" class="enclosures" style="display:none">
+										<cfset qryEnclosures = arrayShow[i].qryEnclosures>
+										<cfloop query="qryEnclosures">
+											<a href="#request.appmapping#user/enclosures/#qryEnclosures.name#">#qryEnclosures.name#</a> (#qryEnclosures.length# bytes - #qryEnclosures.type#)
+											<br />
+										</cfloop>
 									</div>
-								</cfif>
-								<div id="enclosures_#request.indexBlog#" class="enclosures" style="display:none">
-									<cfset qryEnclosures = arrayShow[i].qryEnclosures>
-									<cfloop query="qryEnclosures">
-										<a href="#request.appmapping#user/enclosures/#qryEnclosures.name#">#qryEnclosures.name#</a> (#qryEnclosures.length# bytes - #qryEnclosures.type#)
-										<br />
-									</cfloop>
-								</div>
-								<cfif listlen(myCategories) gt 0>
-									<div class="blogCategories">
-										#application.language.language.categories.xmltext#:
-										<span id="post-category">
-										<cfloop index="item" list="#myCategories#">
-											<a href="#request.appmapping#permalinks/categories/#listrest(item,'_')#">#listrest(item,'_')#</a>
-											<cfif item is not listlast(myCategories)>,</cfif>
-										</cfloop></span>
-									</div>
-								</cfif>
-								<cfif application.configuration.config.layout.usesocialbuttons.xmltext and not application.configuration.config.options.privateblog.xmltext>
-									<div class="blogSocial">
-										#application.language.language.socialbuttonstext.xmltext#
-										<a href="http://del.icio.us/post?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="del.icio.us"><img src="#request.appmapping#images/ico/delicious.png" alt="del.icio.us" border="0"  align="middle" /></a>
-										<a href="http://digg.com/submit?phase=2&amp;url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="digg"><img src="#request.appmapping#images/ico/digg.png" alt="digg" border="0"  align="middle" /></a>
-										<a href="http://www.newsvine.com/_tools/seed&amp;save?u=http://#cgi.server_name##permalink#&amp;h=#arrayShow[i].title#" title="NewsVine"><img src="#request.appmapping#images/ico/newsvine.png" alt="NewsVine"  align="middle" border="0" /></a>
-										<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://#cgi.server_name##permalink#&amp;=#arrayShow[i].title#" title="YahooMyWeb"><img src="#request.appmapping#images/ico/yahoomyweb.png" alt="YahooMyWeb"  align="middle" border="0" /></a>
-										<a href="http://www.furl.net/storeIt.jsp?u=http://#cgi.server_name##permalink#&amp;t=#arrayShow[i].title#" title="Furl"><img src="#request.appmapping#images/ico/furl.png" alt="Furl" border="0"  align="middle" /></a>
-										<a href="http://cgi.fark.com/cgi/fark/edit.pl?new_url=http://#cgi.server_name##permalink#&amp;new_comment=#arrayShow[i].title#&amp;new_comment=http%3A%2F%2Fwww.digitalmediaminute.com&amp;linktype=Misc" title="Fark"><img src="#request.appmapping#images/ico/fark.png" alt="Fark" border="0"  align="middle" /></a>
-										<a href="http://www.spurl.net/spurl.php?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="Spurl"><img src="#request.appmapping#images/ico/spurl.png" alt="Spurl" border="0"  align="middle" /></a>
-										<a href="http://tailrank.com/share/?text=&amp;link_href=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="TailRank"><img src="#request.appmapping#images/ico/tailrank.png" alt="TailRank" border="0"  align="middle" /></a>
-										<a href="http://ma.gnolia.com/beta/bookmarklet/add?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#&amp;description=#arrayShow[i].title#" title="Ma.gnolia"><img src="#request.appmapping#images/ico/magnolia.png" alt="Ma.gnolia" border="0"  align="middle" /></a>
-										<a href="http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="blogmarks"><img src="#request.appmapping#images/ico/blogmarks.png" alt="blogmarks" border="0"  align="middle" /></a>
-										<a href="http://co.mments.com/track?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="co.mments"><img src="#request.appmapping#images/ico/co_mments.gif" alt="co.mments" border="0"  align="middle" /></a>
-										<a href="http://reddit.com/submit?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="Reddit"><img src="#request.appmapping#images/ico/reddit.png" alt="Reddit" border="0"  align="middle" /></a>
-									</div>
-								</cfif>
-								<div class="blogAuthor">
-									<vb:icon type="date"> #arrayShow[i].time# | <vb:icon type="author"> <a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
-								</div>
-								<div class="blogCommands">
-									<vb:icon type="permalink"> <a href="#permalink#">permalink</a>
-									<cfif qryEnclosures.recordcount gt 0>
-										<vb:icon type="enclosure"> <a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
+									<cfif listlen(myCategories) gt 0>
+										<div class="blogCategories">
+											#application.language.language.categories.xmltext#:
+											<span id="post-category">
+											<cfloop index="item" list="#myCategories#">
+												<a href="#request.appmapping#permalinks/categories/#listrest(item,'_')#">#listrest(item,'_')#</a>
+												<cfif item is not listlast(myCategories)>,</cfif>
+											</cfloop></span>
+										</div>
 									</cfif>
-									<vb:icon type="comment">
-									<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
-										<a href="#request.appmapping#index.cfm?mode=viewcomment&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanycomments# #iif(howmanycomments EQ 1, DE(application.language.language.comment.xmltext), DE(application.language.language.comments.xmltext))#
-										<cfif privateComments gt 0>
-											(#privateComments# <cfif privatecomments is 1>#application.language.language.privatecomment.xmltext#<cfelse>#application.language.language.privatecomments.xmltext#</cfif>)
+									<cfif application.configuration.config.layout.usesocialbuttons.xmltext and not application.configuration.config.options.privateblog.xmltext>
+										<div class="blogSocial">
+											#application.language.language.socialbuttonstext.xmltext#
+											<a href="http://del.icio.us/post?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="del.icio.us"><img src="#request.appmapping#images/ico/delicious.png" alt="del.icio.us" border="0"  align="middle" /></a>
+											<a href="http://digg.com/submit?phase=2&amp;url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="digg"><img src="#request.appmapping#images/ico/digg.png" alt="digg" border="0"  align="middle" /></a>
+											<a href="http://www.newsvine.com/_tools/seed&amp;save?u=http://#cgi.server_name##permalink#&amp;h=#arrayShow[i].title#" title="NewsVine"><img src="#request.appmapping#images/ico/newsvine.png" alt="NewsVine"  align="middle" border="0" /></a>
+											<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http://#cgi.server_name##permalink#&amp;=#arrayShow[i].title#" title="YahooMyWeb"><img src="#request.appmapping#images/ico/yahoomyweb.png" alt="YahooMyWeb"  align="middle" border="0" /></a>
+											<a href="http://www.furl.net/storeIt.jsp?u=http://#cgi.server_name##permalink#&amp;t=#arrayShow[i].title#" title="Furl"><img src="#request.appmapping#images/ico/furl.png" alt="Furl" border="0"  align="middle" /></a>
+											<a href="http://cgi.fark.com/cgi/fark/edit.pl?new_url=http://#cgi.server_name##permalink#&amp;new_comment=#arrayShow[i].title#&amp;new_comment=http%3A%2F%2Fwww.digitalmediaminute.com&amp;linktype=Misc" title="Fark"><img src="#request.appmapping#images/ico/fark.png" alt="Fark" border="0"  align="middle" /></a>
+											<a href="http://www.spurl.net/spurl.php?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="Spurl"><img src="#request.appmapping#images/ico/spurl.png" alt="Spurl" border="0"  align="middle" /></a>
+											<a href="http://tailrank.com/share/?text=&amp;link_href=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="TailRank"><img src="#request.appmapping#images/ico/tailrank.png" alt="TailRank" border="0"  align="middle" /></a>
+											<a href="http://ma.gnolia.com/beta/bookmarklet/add?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#&amp;description=#arrayShow[i].title#" title="Ma.gnolia"><img src="#request.appmapping#images/ico/magnolia.png" alt="Ma.gnolia" border="0"  align="middle" /></a>
+											<a href="http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="blogmarks"><img src="#request.appmapping#images/ico/blogmarks.png" alt="blogmarks" border="0"  align="middle" /></a>
+											<a href="http://co.mments.com/track?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="co.mments"><img src="#request.appmapping#images/ico/co_mments.gif" alt="co.mments" border="0"  align="middle" /></a>
+											<a href="http://reddit.com/submit?url=http://#cgi.server_name##permalink#&amp;title=#arrayShow[i].title#" title="Reddit"><img src="#request.appmapping#images/ico/reddit.png" alt="Reddit" border="0"  align="middle" /></a>
+										</div>
+									</cfif>
+									<div class="blogAuthor">
+										<vb:icon type="date"> #arrayShow[i].time# | <vb:icon type="author"> <a href="mailto:#arrayShow[i].email#">#arrayShow[i].author#</a>
+									</div>
+									<div class="blogCommands">
+										<vb:icon type="permalink"> <a href="#permalink#">permalink</a>
+										<cfif qryEnclosures.recordcount gt 0>
+											<vb:icon type="enclosure"> <a onclick="ShowHideDivEnclosures('enclosures_#request.indexBlog#');">#application.language.language.enclosures.xmltext# (#qryEnclosures.recordcount#)</a>
 										</cfif>
-										</a> -
-									</cfif>
-									<a href="#request.appmapping#index.cfm?mode=addcomment&amp;id=#urlencodedformat(arrayShow[i].id)###addcomment">#application.language.language.addcomment.xmltext#</a>
-									<cfif application.configuration.config.options.trackbacks.xmltext>
-										<vb:icon type="trackback">
-										<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
-										<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
-											<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
+										<vb:icon type="comment">
+										<cfif howmanycomments is not 0 and not isdefined('url.viewcomment')>
+											<a href="#request.appmapping#index.cfm?mode=viewcomment&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanycomments# #iif(howmanycomments EQ 1, DE(application.language.language.comment.xmltext), DE(application.language.language.comments.xmltext))#
+											<cfif privateComments gt 0>
+												(#privateComments# <cfif privatecomments is 1>#application.language.language.privatecomment.xmltext#<cfelse>#application.language.language.privatecomments.xmltext#</cfif>)
+											</cfif>
+											</a> -
 										</cfif>
+										<a href="#request.appmapping#index.cfm?mode=addcomment&amp;id=#urlencodedformat(arrayShow[i].id)###addcomment">#application.language.language.addcomment.xmltext#</a>
+										<cfif application.configuration.config.options.trackbacks.xmltext>
+											<vb:icon type="trackback">
+											<a href="#request.appmapping#index.cfm?mode=addtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.addtrackback.xmltext#</a>
+											<cfif howmanytrackbacks is not 0 and not isdefined('url.viewtrackback')>
+												<a href="#request.appmapping#index.cfm?mode=viewtrackback&amp;id=#urlencodedformat(arrayShow[i].id)#">#howmanytrackbacks# #application.language.language.trackback.xmltext#</a>
+											</cfif>
+										</cfif>
+									</div>
+									<cfif isuserinrole('admin') or (isuserinrole('blogger') and arrayShow[i].author is listgetat(GetAuthUser(),1))>
+										<div class="blogAdmin">
+											[<a href="#request.appmapping#index.cfm?mode=deleteentry&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.delete.xmltext#</a>] 
+											[<a href="#request.appmapping#index.cfm?mode=updateentry&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.edit.xmltext#</a>]
+										</div>
 									</cfif>
 								</div>
-								<cfif isuserinrole('admin') or (isuserinrole('blogger') and arrayShow[i].author is listgetat(GetAuthUser(),1))>
-									<div class="blogAdmin">
-										[<a href="#request.appmapping#index.cfm?mode=deleteentry&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.delete.xmltext#</a>] 
-										[<a href="#request.appmapping#index.cfm?mode=updateentry&amp;id=#urlencodedformat(arrayShow[i].id)#">#application.language.language.edit.xmltext#</a>]
+								<cfif not arrayShow[i].published>
 									</div>
 								</cfif>
-							</div>
-							<cfif not arrayShow[i].published>
-								</div>
+	
+							</cfoutput>
+							
+							<!--- comment section --->
+							<cfif isdefined('url.mode') and url.mode is 'addComment' and url.id is arrayShow[i].id>
+								<cf_comment mode="add" title="#arrayShow[i].title#" permalink="#permalink#">
 							</cfif>
-
-						</cfoutput>
+							<cfif isdefined('url.mode') and url.mode is 'viewcomment' and isdefined('comments')>
+								<cf_comment mode="show" comments="#comments#" blogid="#arrayShow[i].id#">
+							</cfif>
+							
+							<!--- trackback section --->
+							<cfif isdefined('url.mode') and url.mode is 'addTrackBack' and url.id is arrayShow[i].id>
+								<cf_trackback mode="add">
+							</cfif>
+							<cfif isdefined('url.mode') and url.mode is 'viewtrackback' and isdefined('trackbacks')>
+								<cf_trackback mode ="show" trackbacks="#trackbacks#" blogid="#arrayShow[i].id#">
+							</cfif>
+							
+							</vb:content>
+			
+							<cfif someCodeInPost is true and directoryexists('#request.apppath#/external/dp.SyntaxHighlighter')>
+	<cfsavecontent variable="db.SyntaxHighlighter">
+		<cfoutput>
+			<link type="text/css" rel="stylesheet" href="#request.appmapping#external/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCSharp.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushVb.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushSql.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushDelphi.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPython.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+			<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
+		</cfoutput>
+	</cfsavecontent>
+	<cfhtmlhead text="#db.SyntaxHighlighter#">
+	<script class="javascript">
+		dp.SyntaxHighlighter.HighlightAll('code');
+	</script>
+							</cfif>
+	
+						</cf_cache>
 						
-						<!--- comment section --->
-						<cfif isdefined('url.mode') and url.mode is 'addComment' and url.id is arrayShow[i].id>
-							<cf_comment mode="add" title="#arrayShow[i].title#" permalink="#permalink#">
-						</cfif>
-						<cfif isdefined('url.mode') and url.mode is 'viewcomment' and isdefined('comments')>
-							<cf_comment mode="show" comments="#comments#" blogid="#arrayShow[i].id#">
-						</cfif>
-						
-						<!--- trackback section --->
-						<cfif isdefined('url.mode') and url.mode is 'addTrackBack' and url.id is arrayShow[i].id>
-							<cf_trackback mode="add">
-						</cfif>
-						<cfif isdefined('url.mode') and url.mode is 'viewtrackback' and isdefined('trackbacks')>
-							<cf_trackback mode ="show" trackbacks="#trackbacks#" blogid="#arrayShow[i].id#">
-						</cfif>
-						
-						</vb:content>
-		
-						<cfif someCodeInPost is true and directoryexists('#request.apppath#/external/dp.SyntaxHighlighter')>
-<cfsavecontent variable="db.SyntaxHighlighter">
-	<cfoutput>
-		<link type="text/css" rel="stylesheet" href="#request.appmapping#external/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCSharp.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushVb.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushSql.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushDelphi.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushPython.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushRuby.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCss.js"></script>
-		<script class="javascript" src="#request.appmapping#external/dp.SyntaxHighlighter/Scripts/shBrushCpp.js"></script>
-	</cfoutput>
-</cfsavecontent>
-<cfhtmlhead text="#db.SyntaxHighlighter#">
-<script class="javascript">
-	dp.SyntaxHighlighter.HighlightAll('code');
-</script>
-						</cfif>
-
-					</cf_cache>
+					</cfif>
 					
 				</cfif>
-				
-			</cfif>
-			<cfset request.indexBlog = request.indexBlog + 1>	
-		
+				<cfset request.indexBlog = request.indexBlog + 1>	
+			<cfelse>
+				<cfoutput>
+					<div class="blogDate">#arrayshow[i].title#</div>
+				</cfoutput>
+			</cfif>		
 		</cfloop>
 
 	</cfcase>
