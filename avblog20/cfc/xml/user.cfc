@@ -42,7 +42,7 @@
 				<cfscript>
 					queryaddrow(this.qryUsers,1);
 					querysetcell(this.qryUsers,'id',javacast('String',tempUsers.Users.User[k].xmlattributes.id),k);
-					querysetcell(this.qryUsers,'fullname',javacast('String',tempUsers.Users.User[k].xmltext),k);
+					querysetcell(this.qryUsers,'fullname',javacast('String',tempUsers.Users.User[k].fullname.xmltext),k);
 					querysetcell(this.qryUsers,'email',javacast('String',tempUsers.Users.User[k].xmlattributes.email),k);
 					querysetcell(this.qryUsers,'us',javacast('String',tempUsers.Users.User[k].xmlattributes.us),k);
 					querysetcell(this.qryUsers,'pwd',javacast('String',tempUsers.Users.User[k].xmlattributes.pwd),k);
@@ -55,8 +55,8 @@
 						querysetcell(this.qryUsers,'blogaddress',javacast('String',tempUsers.Users.User[k].xmlattributes.blogaddress),k);
 					else
 						querysetcell(this.qryUsers,'blogaddress','',k);
-					if (structkeyexists(tempUsers.Users.User[k].xmlattributes,'description'))
-						querysetcell(this.qryUsers,'description',javacast('String',tempUsers.Users.User[k].xmlattributes.description),k);
+					if (structkeyexists(tempUsers.Users.User[k],'description'))
+						querysetcell(this.qryUsers,'description',javacast('String',tempUsers.Users.User[k].description.xmltext),k);
 					else
 						querysetcell(this.qryUsers,'description','',k);
 				</cfscript>
@@ -172,7 +172,7 @@
 				<Users>
 					<cfloop query="this.qryUsers">
 						<User ID="#this.qryUsers.id#" EMAIL="#this.qryUsers.email#"  US="#this.qryUsers.us#"  PWD="#this.qryUsers.pwd#" ROLE="#this.qryUsers.role#" PERSONALBLOG="#this.qryUsers.personalblog#" BLOGADDRESS="#this.qryUsers.blogaddress#">
-							<fullname><![CDATA[#this.qryUsers.fullname#]]></fullname>>
+							<fullname><![CDATA[#trim(this.qryUsers.fullname)#]]></fullname>
 							<description><![CDATA[#this.qryUsers.description#]]></description>
 						</User>
 					</cfloop>

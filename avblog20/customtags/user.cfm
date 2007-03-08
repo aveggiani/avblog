@@ -67,10 +67,15 @@
 						<tr>
 							<td align="right">#application.language.language.user_description.xmltext#</td>
 							<td>
+								<cfif isdefined('url.updateuser')>
+									<cfset valore=qryMyUser.description>
+								<cfelse>
+									<cfset valore=" ">
+								</cfif>
 								<cf_externaleditor
 									whicheditor = "#application.configuration.config.options.whichricheditor.xmltext#"
 									name		= "description"
-									valore		= ""
+									valore		= "#valore#"
 									width		= "100%"
 									height		= "300"
 								>
